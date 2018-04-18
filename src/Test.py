@@ -71,7 +71,7 @@ class Web_scraping:
             'from': 'Heppala'
         })
         try:
-             with open(os.path.expanduser(r"~/Desktop/db.json"), "w") as outfile:
+             with open(os.path.join(cwd, "db.json"), "w") as outfile:
                  json.dump(data, outfile)
  
         
