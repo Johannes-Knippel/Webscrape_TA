@@ -1,10 +1,13 @@
 
 
 import requests
+import os
+
 
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query
+
 
 
 
@@ -58,6 +61,24 @@ class Web_scraping:
     '''
     #TinyDB
     def parse_to_tinydb(self):
+        cwd = os.getcwd()
+        print(cwd)
+        data = {}
+        data['people'] = []
+        data['people'].append({ 
+            'name': 'Hans',
+            'website': 'bierdimpfe.bavaria',
+            'from': 'Heppala'
+        })
+        try:
+             with open(os.path.expanduser(r"~/Desktop/db.json"), "w") as outfile:
+                 json.dump(data, outfile)
+ 
+        
+        except:
+            print("Error opening file")     
+                  
+        
         print(self.item_name.string)       
         
 
