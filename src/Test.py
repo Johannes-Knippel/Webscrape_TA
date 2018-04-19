@@ -62,24 +62,44 @@ class Web_scraping:
     #TinyDB
     def parse_to_tinydb(self):
         cwd = os.getcwd()
-        print(cwd)
-        data = {}
-        data['people'] = []
-        data['people'].append({ 
-            'name': 'Hans',
-            'website': 'bierdimpfe.bavaria',
-            'from': 'Heppala'
-        })
         try:
-             with open(os.path.join(cwd, "db.json"), "w") as outfile:
-                 json.dump(data, outfile)
- 
+            #create the database or use the existing one
+            db = TinyDB('db.json')
+            #create the tables inside the database
+            tableReviews = db.table('REVIEWS')
+            tableUsers = db.table('USERS')
+            tablePictures = db.table('PICTURES')
+            tableRestaurants = db.table('RESTAURANTS')
         
         except:
-            print("Error opening file")     
-                  
+            print("Error opening file")    
         
-        print(self.item_name.string)       
+        
+        
+        #define the data to insert into database including an auto increment ID for each Table
+        dataReviews = {'fruit':'orange', 'price':25}
+        dataUsers = {'fruit':'orange', 'price':25}
+        dataPictures = {'fruit':'orange', 'price':25}     
+        dataRestaurants = {'name':self.item_name.string, 'rating_amount':self.rating_amount.string, 'price_level':self.price_level.string, 'address':self.item_address.string, 'locality':self.item_locality.string}
+ 
+             
+        #Insertion into Tables
+        tableReviews.insert(dataReviews)
+        tableUsers.insert(dataUsers)
+        tablePictures.insert(dataPictures)
+        ##############################################################bis hier 19.04.18##################################################
+        
+        if tableRestaurants.contains(dataRestaurants):
+            duplicate = duplicate + 1            
+        else:
+             tableRestaurants.insert(dataRestaurants)
+
+            
+        print(tableRestaurants.all())
+        ft = Query()
+        suche = tableRestaurants.search(ft.name == self.item_name.string)
+        print(suche)         
+            
         
 
 
