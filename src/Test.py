@@ -33,7 +33,7 @@ class Web_scraping:
             print("Anzahl Bewertungen:" + self.rating_amount.string)
             
         for self.popularity in soup.find_all('span', {'class': 'header_popularity popIndexValidation'}):
-            print("Popularität:" + self.popularity.text)
+            print("Popularitaet:" + self.popularity.text)
         
         for self.price_level in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
             print("Preis Level:" + self.price_level.string)
@@ -45,7 +45,7 @@ class Web_scraping:
             print('Kontaktdaten:' + self.contact_details.text)
         
         for self.address in soup.find('span', {'class': 'street-address'}):
-            print("Straße:" + self.address.string)
+            print("Strasse:" + self.address.string)
     
         for self.locality in soup.find('span', {'class': 'locality'}):
             print("PLZ:" + self.locality.string)
@@ -117,22 +117,3 @@ ws = Web_scraping()
 url = "https://www.tripadvisor.de/Restaurant_Review-g504000-d720608-Reviews-Star_Inn-Harome_North_Yorkshire_England.html"        
 ws.get_single_data(url)
 ws.parse_to_tinydb()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
