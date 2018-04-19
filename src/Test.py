@@ -89,7 +89,7 @@ class Web_scraping:
         tablePictures.insert(dataPictures)
         ##############################################################bis hier 19.04.18##################################################
         
-        if tableRestaurants.contains(dataRestaurants):
+        if tableRestaurants.contains(where('price')):
             duplicate = duplicate + 1            
         else:
              tableRestaurants.insert(dataRestaurants)
