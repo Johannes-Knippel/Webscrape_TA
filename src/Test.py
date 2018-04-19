@@ -2,11 +2,12 @@
 
 import requests
 import os
+import tkinter as tk
 
-
+from tkinter import ttk
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
-from tinydb import TinyDB,Query
+from tinydb import TinyDB,Query,where
 
 
 
@@ -85,24 +86,39 @@ class Web_scraping:
         dataReviews = {'fruit':'orange', 'price':25}
         dataUsers = {'fruit':'orange', 'price':25}
         dataPictures = {'fruit':'orange', 'price':25}     
-        dataRestaurants = {'name':self.name.string, 'rating_amount':self.rating_amount.string, 'price_level':self.price_level.string, 'address':self.item_address.string, 'locality':self.item_locality.string}
+        dataRestaurants = {'name':self.name.string, 'rating_amount':self.rating_amount.string, 'popularity':self.popularity.text,'price_level':self.price_level.string, 'cuisine':self.cuisine.text, 'contact_details':self.contact_details.text, 'address':self.address.string, 'locality':self.locality.string, 'phonenumber':self.phonenumber.text}
  
+        #################################bis hier 19.04.18###############
+        # Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
+        # Implementieren dieser IDs per auto increment funktion.
+        
+        
              
         #Insertion into Tables
-        tableReviews.insert(dataReviews)
-        tableUsers.insert(dataUsers)
-        tablePictures.insert(dataPictures)
-        ##############################################################bis hier 19.04.18##################################################
-        
-        if tableRestaurants.contains(dataRestaurants):
-            duplicate = duplicate + 1            
+        #tableReviews.insert(dataReviews)
+        #tableUsers.insert(dataUsers)
+        #tablePictures.insert(dataPictures)
+       
+       
+        #check if there already exists an entry with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+        if tableRestaurants.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
+            #pop up a message box
+            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
+            popup = tk.Tk()
+            popup.wm_title("!")
+            label = ttk.Label(popup, text=msg)
+            label.pack(side="top", fill="x", pady=10)
+            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+            B1.pack()
+            popup.mainloop()
+        # if there is no such entry, parse the data into the corresponding table of the database        
         else:
              tableRestaurants.insert(dataRestaurants)
 
             
         print(tableRestaurants.all())
         ft = Query()
-        suche = tableRestaurants.search(ft.name == self.item_name.string)
+        suche = tableRestaurants.search(ft.name == self.name.string)
         print(suche)         
             
         
@@ -114,7 +130,7 @@ class Web_scraping:
 # main-function
 # All functions are executed
 ws = Web_scraping()
-url = "https://www.tripadvisor.de/Restaurant_Review-g504000-d720608-Reviews-Star_Inn-Harome_North_Yorkshire_England.html"        
+url = "https://www.tripadvisor.de/Restaurant_Review-g504000-d1576318-Reviews-Pheasant_Inn-Harome_North_Yorkshire_England.html"        
 ws.get_single_data(url)
 ws.parse_to_tinydb()
 
