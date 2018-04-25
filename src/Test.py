@@ -3,6 +3,7 @@
 import requests
 import os
 import tkinter as tk
+import unicodedata
 
 from tkinter import ttk
 from bs4 import BeautifulSoup
@@ -67,6 +68,7 @@ class Web_scraping:
     '''
     #TinyDB
     def parse_to_tinydb(self):
+        
         cwd = os.getcwd()
         try:
             #create the database or use the existing one
@@ -82,25 +84,71 @@ class Web_scraping:
         
         
         
-        #define the data to insert into database including an auto increment ID for each Table
-        dataReviews = {'fruit':'orange', 'price':25}
-        dataUsers = {'fruit':'orange', 'price':25}
-        dataPictures = {'fruit':'orange', 'price':25}     
-        dataRestaurants = {'name':self.name.string, 'rating_amount':self.rating_amount.string, 'popularity':self.popularity.text,'price_level':self.price_level.string, 'cuisine':self.cuisine.text, 'contact_details':self.contact_details.text, 'address':self.address.string, 'locality':self.locality.string, 'phonenumber':self.phonenumber.text}
- 
-        #################################bis hier 19.04.18###############
-        # Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
-        # Implementieren dieser IDs per auto increment funktion.
+        #define the data to insert into database including an auto increment ID for each Table  
         
         
-             
-        #Insertion into Tables
-        #tableReviews.insert(dataReviews)
-        #tableUsers.insert(dataUsers)
-        #tablePictures.insert(dataPictures)
-       
-       
-        #check if there already exists an entry with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+        #HANDLE REVIEWS
+        #check if there already exists an entry in the REVIEWSs-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+#        if tableReviews.contains((where('++') == self.name.string) & (where('address') == self.address.string)): 
+#            #pop up a message box
+#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
+#            popup = tk.Tk()
+#            popup.wm_title("!")
+#            label = ttk.Label(popup, text=msg)
+#            label.pack(side="top", fill="x", pady=10)
+#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+#            B1.pack()
+#            popup.mainloop()
+        # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
+#        else:
+#            idReview =   
+#            dataReviews = {'fruit':'orange', 'price':25}
+#            tableReviews.insert(dataReviews)
+        
+        
+        
+        #HANDLE USERS
+        #check if there already exists an entry in the USERS-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+#        if tableUsers.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
+#            #pop up a message box
+#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
+#            popup = tk.Tk()
+#            popup.wm_title("!")
+#            label = ttk.Label(popup, text=msg)
+#            label.pack(side="top", fill="x", pady=10)
+#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+#            B1.pack()
+#            popup.mainloop()
+        # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
+#        else:
+#            idUser = 
+#            dataUsers = {'fruit':'orange', 'price':25}  
+#            tableUsers.insert(dataUsers)
+        
+        
+        
+        #HANDLE PICTURES
+        #check if there already exists an entry in the PICTURES-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+#        if tablePictures.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
+#            #pop up a message box
+#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
+#            popup = tk.Tk()
+#            popup.wm_title("!")
+#            label = ttk.Label(popup, text=msg)
+#            label.pack(side="top", fill="x", pady=10)
+#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+#            B1.pack()
+#            popup.mainloop()
+        # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
+#        else:
+#            idPicture =   
+#            dataPictures = {'fruit':'orange', 'price':25} 
+#            tableRestaurants.insert(dataRestaurants)
+        
+        
+        
+        #HANDLE RESTAURANTS
+        #check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
         if tableRestaurants.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
             #pop up a message box
             msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
@@ -111,9 +159,18 @@ class Web_scraping:
             B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
             B1.pack()
             popup.mainloop()
-        # if there is no such entry, parse the data into the corresponding table of the database        
+        # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
         else:
-             tableRestaurants.insert(dataRestaurants)
+            self.popularity2 = unicodedata.normalize("NFKD", self.popularity.text)
+            self.idRestaurant = 1  
+            dataRestaurants = {'id':self.idRestaurant, 'name':self.name.string, 'rating_amount':self.rating_amount.string, 'popularity':self.popularity2,'price_level':self.price_level.string, 'cuisine':self.cuisine.text, 'contact_details':self.contact_details.text, 'address':self.address.string, 'locality':self.locality.string, 'phonenumber':self.phonenumber.text}
+            tableRestaurants.insert(dataRestaurants) 
+        
+        #################################bis hier 19.04.18###############
+        # Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
+        # Implementieren dieser IDs per auto increment funktion.
+      
+      
 
             
         print(tableRestaurants.all())
@@ -127,10 +184,10 @@ class Web_scraping:
 
 
 
-# main-function
+# Main-function
 # All functions are executed
 ws = Web_scraping()
-url = "https://www.tripadvisor.de/Restaurant_Review-g504000-d1576318-Reviews-Pheasant_Inn-Harome_North_Yorkshire_England.html"        
+url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"        
 ws.get_single_data(url)
 ws.parse_to_tinydb()
 
