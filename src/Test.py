@@ -57,44 +57,95 @@ class Web_scraping:
             
             
             
-        self.bewertungen = soup.find_all('div', class_='review-container')
+        
+        
+        #get all the review containers from current page
+        review_containers = soup.find_all('div', class_= 'review-container')
+        reviewsPerPage = len(review_containers)
+        #print (reviewsPerPage)
+        
+        #get the pageNumbers for all reviews per restaurant
+        pageNumbers = soup.find_all('a', class_= 'pageNum')
+        pages = len(pageNumbers)
+        
+        #Extract data from single containers   
+        for container in review_containers:
+                
+            for link in container.find_all('a', href=True):
+                href = "https://www.tripadvisor.de" + str(link.get('href'))
+                #pass it to the function where single data is scraped
+                self.get_single_review_data(href)
+        
+        #create a new_url for each page of the reviews
+        for index in range (10,pages*10, 10):
+            
+            data = url.split("Reviews-")
+            new_url = data[0]+"Reviews-or"+str(index)+'-'+data[1]
+            #print(new_url)
+            #pass the new_url to the loop_trough_review_pages function
+            self.loop_through_review_pages(new_url)
     
-        print(len(self.bewertungen))
+    
+    
+    
+    def loop_through_review_pages(self, loop_url):
+        source_code = requests.get(loop_url)
+        plain_text = source_code.text
+        soup = BeautifulSoup(plain_text, "html.parser")
         
-        self.first_review = self.bewertungen[0]
+        #get all review containers but on the nuw_url
+        review_containers = soup.find_all('div', class_= 'review-container')
+        reviewsPerPage = len(review_containers)
         
-        for link in self.first_review.find_all('a', href=True):
-            self.href = "https://www.tripadvisor.de" + str(link.get('href'))
-            print(self.href)
-            
-            self.get_single_review_data(self.href)
-            
-
-            
+        #search trough all reviews on the page
+        for container in review_containers:
+                
+            for link in container.find_all('a', href=True):
+                href = "https://www.tripadvisor.de" + str(link.get('href'))
+                #pass it to the function where single data is scraped
+                self.get_single_review_data(href)
+                
+    
+    
     
     def get_single_review_data(self,review_url):
-        print(review_url)
             
         source_code2 = requests.get(review_url)
         plain_text2 = source_code2.text
         soup = BeautifulSoup(plain_text2, "html.parser")
         
-        self.bewertungen = soup.find('div', class_='review-container')
+        #Lists to store scraped data in
         
-        self.bewertungen.find('h1', {'class': 'heading_title'})
-        print(self.bewertungen.text)
+        usernames = []
+        noReviews = []
+        titles = []
+        content = []
+        ratings = []
         
-        self.titel = soup.find('div', {'id': 'PAGEHEADING'})
-        print('Titel:' + self.titel.text)
-               
+        self.title = soup.find('div', {'id': 'PAGEHEADING'}).text
+        titles.append(self.title)
+        #print('Titel:' + self.title.text)
         
+        self.content = soup.find('p', {'class': 'partial_entry'})
+        content.append(self.content)
         
+        self.username = soup.find('span', {'class': 'expand_inline scrname'}).text
+        usernames.append(self.username)
+        
+        self.noReviews = soup.find('div', {'class:': 'memberBadgingNoText'})
+        noReviews.append(self.noReviews)
+        
+        self.rating = soup.find('span', 'alt')
+        #print(self.rating)
         
         
         #print(first_link)
         #titel = soup.find('p', {'class': 'entry'})
         
-        #print(titel)
+        print(usernames)
+        #print(noReviews)
+        print(titles)
+        print(content)
         
  
  
