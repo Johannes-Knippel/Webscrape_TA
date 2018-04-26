@@ -54,6 +54,47 @@ class Web_scraping:
         
         for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
             print("Telefonnummer:" + self.phonenumber.text)
+            
+            
+            
+        self.bewertungen = soup.find_all('div', class_='review-container')
+    
+        print(len(self.bewertungen))
+        
+        self.first_review = self.bewertungen[0]
+        
+        for link in self.first_review.find_all('a', href=True):
+            self.href = "https://www.tripadvisor.de" + str(link.get('href'))
+            print(self.href)
+            
+            self.get_single_review_data(self.href)
+            
+
+            
+    
+    def get_single_review_data(self,review_url):
+        print(review_url)
+            
+        source_code2 = requests.get(review_url)
+        plain_text2 = source_code2.text
+        soup = BeautifulSoup(plain_text2, "html.parser")
+        
+        self.bewertungen = soup.find('div', class_='review-container')
+        
+        self.bewertungen.find('h1', {'class': 'heading_title'})
+        print(self.bewertungen.text)
+        
+        self.titel = soup.find('div', {'id': 'PAGEHEADING'})
+        print('Titel:' + self.titel.text)
+               
+        
+        
+        
+        
+        #print(first_link)
+        #titel = soup.find('p', {'class': 'entry'})
+        
+        #print(titel)
         
  
  
@@ -189,5 +230,5 @@ class Web_scraping:
 ws = Web_scraping()
 url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"        
 ws.get_single_data(url)
-ws.parse_to_tinydb()
+#ws.parse_to_tinydb()
 
