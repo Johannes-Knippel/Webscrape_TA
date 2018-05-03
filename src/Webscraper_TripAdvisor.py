@@ -4,6 +4,7 @@ import requests
 import os
 import unicodedata
 import validators
+import threading
 from tkinter import *
 from tkinter import messagebox
 
@@ -56,9 +57,7 @@ class Web_scraping:
         for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
             print("Telefonnummer:" + self.phonenumber.text)
             
-            
-            
-        
+                   
         
         #get all the review containers from current page
         review_containers = soup.find_all('div', class_= 'review-container')
@@ -85,11 +84,14 @@ class Web_scraping:
             #print(new_url)
             #pass the new_url to the loop_trough_review_pages function
             self.loop_through_review_pages(new_url)
-    
-    
-    
-    
+       
+     
+     
+        
+           
+    #loop through the restaurant reviews
     def loop_through_review_pages(self, loop_url):
+        
         source_code = requests.get(loop_url)
         plain_text = source_code.text
         soup = BeautifulSoup(plain_text, "html.parser")
@@ -105,7 +107,10 @@ class Web_scraping:
                 href = "https://www.tripadvisor.de" + str(link.get('href'))
                 #pass it to the function where single data is scraped
                 self.get_single_review_data(href)
-                
+          
+    
+    
+    
     
     
     
@@ -140,6 +145,7 @@ class Web_scraping:
         #print(self.rating)
         
         print(usernames)
+        self.threadParse(self.usernames)
         #print(noReviews)
         print(titles)
         print(content)
@@ -155,26 +161,42 @@ class Web_scraping:
         '''
        #Get the whole text of the review
         #for self.item_name in soup.find('p'):
-         #   print(self.item_name.string)
-        
-        for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
-            print(self.item_name.string)
-            
-        
-        #1. Moeglichkeit
-       # for self.item_name in soup.find('p', {'class': 'partial_entry'}):
         #    print(self.item_name.string)
+            
+        #self.item_name = soup.find('p')
+        #print(self.item_name.string)
+        
+        #for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
+        #    print(self.item_name.string)
+        #self.item_name = soup.findAll('script', {'type': 'application/ld+json'})
+        #for dict in self.item_name:
+           # print(dict["reviewBody"])
+
+
+        #1. Moeglichkeit
+        #for self.item_name in soup.find('p', {'class': 'partial_entry'}):
+        #    print(self.item_name.string)
+        #self.item_name = soup.find('p', {'class': 'partial_entry'})
+        #print(self.item_name.string)
         
         # 2. Moeglichkeit
-       # table = soup.findAll('div',attrs={"class":"partial_entry"})
+        #table = soup.findAll('div',attrs={"class":"partial_entry"})
         #for review in table:
-         #   print(review.find('p').text)
+        #    print(review.find('p').text)
         
         #Get URL from review pictures
         for link in soup.findAll('img', {'class': 'centeredImg'}):
             self.src = link.get('src')
             print("source of picture: " + self.src)
  
+    
+    
+    
+    def helloCallBack(self, string):
+        self.txt.insert(END, string + '\n')
+        
+    def threadParse(self, string2):
+        threading.Thread(target=self.helloCallBack(string2)).start()
 
 
     '''
@@ -314,7 +336,7 @@ class Web_scraping:
         restaurant_label.grid(row=1, column=0,
                              sticky=W)
 
-        restaurant_entry = Entry(roots, width=100)
+        restaurant_entry = Entry(roots, width=150)
 
         restaurant_entry.grid(row=1, column=1)
 
@@ -338,10 +360,17 @@ class Web_scraping:
 
         scrape_button = Button(roots, text='Go Scrape', command=go_scrape)
 
-        check_url_Button.grid(columnspan=2, sticky=W)
-        scrape_button.grid(columnspan=3, sticky=W)
-
+        check_url_Button.grid(columnspan=3, sticky=W)
+        scrape_button.grid(columnspan=5, sticky=W)
+        
+        #adding Scraped Data as a Logfile displaying in a textbox
+        self.txt = Text(roots, width=24, height=10)
+        self.txt.grid(row=4, column=1)
+    
+    
         roots.mainloop()
+                
+           
 
 if __name__ == "__main__":
     ws = Web_scraping()
@@ -349,6 +378,6 @@ if __name__ == "__main__":
     #ws.parse_to_tinydb()
 
     #url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"
-    #ws.get_single_data(url)
+
 
 
