@@ -2,10 +2,11 @@
 
 import requests
 import os
-import tkinter as tk
 import unicodedata
+import validators
+from tkinter import *
+from tkinter import messagebox
 
-from tkinter import ttk
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query,where
@@ -122,15 +123,15 @@ class Web_scraping:
         content = []
         ratings = []
         
-        self.title = soup.find('div', {'id': 'PAGEHEADING'}).text
-        titles.append(self.title)
+        self.titles = soup.find('div', {'id': 'PAGEHEADING'}).text
+        titles.append(self.titles)
         #print('Titel:' + self.title.text)
         
-        self.content = soup.find('p', {'class': 'partial_entry'})
+        self.content = soup.find('p', {'class': 'partial_entry'}).text
         content.append(self.content)
         
-        self.username = soup.find('span', {'class': 'expand_inline scrname'}).text
-        usernames.append(self.username)
+        self.usernames = soup.find('span', {'class': 'expand_inline scrname'}).text
+        usernames.append(self.usernames)
         
         self.noReviews = soup.find('div', {'class:': 'memberBadgingNoText'})
         noReviews.append(self.noReviews)
@@ -138,16 +139,41 @@ class Web_scraping:
         self.rating = soup.find('span', 'alt')
         #print(self.rating)
         
-        
-        #print(first_link)
-        #titel = soup.find('p', {'class': 'entry'})
-        
         print(usernames)
         #print(noReviews)
         print(titles)
         print(content)
+        print(review_url)
+       
+       
+       #print(first_link)
+        #titel = soup.find('p', {'class': 'entry'})
+       
+        '''
+        @author: JohannaSickendiek
+       
+        '''
+       #Get the whole text of the review
+        #for self.item_name in soup.find('p'):
+         #   print(self.item_name.string)
         
- 
+        for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
+            print(self.item_name.string)
+            
+        
+        #1. Moeglichkeit
+       # for self.item_name in soup.find('p', {'class': 'partial_entry'}):
+        #    print(self.item_name.string)
+        
+        # 2. Moeglichkeit
+       # table = soup.findAll('div',attrs={"class":"partial_entry"})
+        #for review in table:
+         #   print(review.find('p').text)
+        
+        #Get URL from review pictures
+        for link in soup.findAll('img', {'class': 'centeredImg'}):
+            self.src = link.get('src')
+            print("source of picture: " + self.src)
  
 
 
@@ -271,15 +297,67 @@ class Web_scraping:
         print(suche)         
             
         
+    '''
+    @author: Skanny Morandi
+    
+    opens a GUI that validates a given url-string and starts the scraping on button click
+    '''
 
+    def start_GUI(self):
+
+        roots = Tk()
+        roots.title('Tripadvisor Scraper')
+        instruction = Label(roots, text='Please provide Restaurant-Url\n')
+        instruction.grid(row=0, column=0, sticky=E)
+
+        restaurant_label = Label(roots, text='Restaurant-URL ')
+        restaurant_label.grid(row=1, column=0,
+                             sticky=W)
+
+        restaurant_entry = Entry(roots, width=100)
+
+        restaurant_entry.grid(row=1, column=1)
+
+
+        def check_url():
+            base_restaurant_url_= "https://www.tripadvisor.de/Restaurant_Review"
+            url_to_check = restaurant_entry.get()
+            if  (not validators.url(url_to_check)) or \
+                (base_restaurant_url_ not in url_to_check):
+
+                messagebox.showwarning("Warning", "This seems not to be valid Tripadvisor restaurant URL")
+
+            else:
+                messagebox.showinfo("Vaildation successful", "Url seems to be valid")
+
+
+        check_url_Button= Button(roots, text='Validate Url', command=check_url)
+
+        def go_scrape():
+            self.get_single_data(restaurant_entry.get())
+
+        scrape_button = Button(roots, text='Go Scrape', command=go_scrape)
+
+        check_url_Button.grid(columnspan=2, sticky=W)
+        scrape_button.grid(columnspan=3, sticky=W)
+
+        roots.mainloop()
+
+if __name__ == "__main__":
+    ws = Web_scraping()
+    ws.start_GUI()
+    #ws.parse_to_tinydb()
+
+    #url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"
+    #ws.get_single_data(url)
 
 
 
 
 # Main-function
 # All functions are executed
-ws = Web_scraping()
-url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"        
-ws.get_single_data(url)
+#ws = Web_scraping()
+        
+#ws.get_single_data(url)
 #ws.parse_to_tinydb()
 
