@@ -1,4 +1,4 @@
-
+######## Stand: 06.05.2018####### (ALLES FUNKTIONIERT BIS AUF CONTENT VON REVIEWS)
 
 import requests
 import os
@@ -140,27 +140,75 @@ class Web_scraping:
         
         print(usernames)
         #print(noReviews)
+        
+        for self.numberOfReviews in soup.findAll('span', {'class': 'badgetext'})[0]:
+            print("Number of reviews: " + self.numberOfReviews.string)
+            
+            
+        for self.numberOfLikes in soup.findAll('span', {'class': 'badgetext'})[1]:
+            print("Number of likes: " + self.numberOfLikes.string)
+        
+        
+        #################### TRY TO GET NUMBER OF POINTS REVIEW ####################
+        
+        for self.points in soup.findAll('div', {'class':'floatContainer'})[0]:
+            class50 = soup.findAll('span', {'class':'ui_bubble_rating bubble_50'})[1]
+            class45 = soup.findAll('span', {'class':'ui_bubble_rating bubble_45'})[1]
+            class40 = soup.findAll('span', {'class':'ui_bubble_rating bubble_40'})[1]
+            class35 = soup.find('span', {'class':'ui_bubble_rating bubble_35'})
+            class30 = soup.find('span', {'class':'ui_bubble_rating bubble_30'})
+            class25 = soup.find('span', {'class':'ui_bubble_rating bubble_25'})
+            class20 = soup.find('span', {'class':'ui_bubble_rating bubble_20'})
+            class15 = soup.find('span', {'class':'ui_bubble_rating bubble_15'})
+            class10 = soup.find('span', {'class':'ui_bubble_rating bubble_15'})
+            if class50:
+                print("5 von 5 Punkten erreicht")
+            elif class45:
+                print("4.5 von 5 Punkten erreicht")
+            elif class40 :
+                print("4 von 5 Punkten erreicht")
+            elif class35:
+                print("3.5 von 5 Punkten erreicht")
+            elif class30 :
+                print("3 von 5 Punkten erreicht")
+            elif class25:
+                print("2.5 von 5 Punkten erreicht")
+            elif class20 :
+                print("2 von 5 Punkten erreicht")
+            elif class15:
+                print("1.5 von 5 Punkten erreicht")
+            elif class10 :
+                print("1 von 5 Punkten erreicht")
+            else:
+                print ("Keine Punkte!")
+        
+        #numberPoints = soup.find('span', attrs = {'class':'ui_bubble_rating bubble_50'})
+        #numberPoints = text(numberPoints['alt'])
+        #print("Number of points: " + numberPoints)
+        
+        ########################################################################################
         print(titles)
         print(content)
         print(review_url)
        
        
+       
+        #################### TRY TO GET CONTENT OF  REVIEW ##################################
+       
        #print(first_link)
         #titel = soup.find('p', {'class': 'entry'})
-       
-       '''
-       @ author Johanna Sickendiek
-       
-       '''
+
        
        
        #Get the whole text of the review
         #for self.item_name in soup.find('p'):
          #   print(self.item_name.string)
         
-        for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
-           print(self.item_name.string)
+        #for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
+         #   find_string = soup.body.findAll(text='reviewBody')
+          #  print("conten: " + find_string.string)
         
+  
         
         #1. Möglichkeit
        # for self.item_name in soup.find('p', {'class': 'partial_entry'}):
@@ -170,6 +218,9 @@ class Web_scraping:
        # table = soup.findAll('div',attrs={"class":"partial_entry"})
         #for review in table:
          #   print(review.find('p').text)
+        
+        ##################################################################################
+        
         
         #Get URL from review pictures
         for link in soup.findAll('img', {'class': 'centeredImg'}):
@@ -306,7 +357,8 @@ class Web_scraping:
 # Main-function
 # All functions are executed
 ws = Web_scraping()
-url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"        
+url = "https://www.tripadvisor.de/Restaurant_Review-g187309-d983126-Reviews-Sollner_Hof-Munich_Upper_Bavaria_Bavaria.html"        
+url2 = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"        
 ws.get_single_data(url)
 #ws.parse_to_tinydb()
 
