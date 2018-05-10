@@ -4,11 +4,13 @@ import requests
 import os
 import tkinter as tk
 import unicodedata
+import json
 
 from tkinter import ttk
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query,where
+from bs4.element import NavigableString
 
 
 
@@ -29,31 +31,31 @@ class Web_scraping:
         soup = BeautifulSoup(plain_text, "html.parser")
         
         for self.name in soup.find('h1', {'class': 'heading_title'}):
-            print("Name:" + self.name.string)
+            print("Name: " + self.name.string)
+            
+        self.overallPoints = soup.find('div', {'class':'rs rating'})
+        print ("Punkteskala: " + self.overallPoints.div.span['content'])
         
         for self.rating_amount in soup.find('span', {'property': 'count'}):
-            print("Anzahl Bewertungen:" + self.rating_amount.string)
+            print("Anzahl Bewertungen: " + self.rating_amount.string)
             
         for self.popularity in soup.find_all('span', {'class': 'header_popularity popIndexValidation'}):
-            print("Popularitaet:" + self.popularity.text)
+            print("Popularitaet: " + self.popularity.text)
         
         for self.price_level in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
-            print("Preis Level:" + self.price_level.string)
+            print("Preis Level: " + self.price_level.string)
         
         for self.cuisine in soup.find_all('span', {'class': 'header_links rating_and_popularity'}):
-            print('Kueche:' + self.cuisine.text)
-        
-        for self.contact_details in soup.find('div', {'class': 'blRow'}):
-            print('Kontaktdaten:' + self.contact_details.text)
+            print('Kueche: ' + self.cuisine.text)
         
         for self.address in soup.find('span', {'class': 'street-address'}):
-            print("Strasse:" + self.address.string)
+            print("Strasse: " + self.address.string)
     
         for self.locality in soup.find('span', {'class': 'locality'}):
-            print("PLZ:" + self.locality.string)
+            print("PLZ + Ort: " + self.locality.string)
         
         for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
-            print("Telefonnummer:" + self.phonenumber.text)
+            print("Telefonnummer: " + self.phonenumber.text)
             
             
             
@@ -115,31 +117,9 @@ class Web_scraping:
         soup = BeautifulSoup(plain_text2, "html.parser")
         
         #Lists to store scraped data in
-        
-        usernames = []
-        noReviews = []
-        titles = []
-        content = []
-        ratings = []
-        
-        self.titles = soup.find('div', {'id': 'PAGEHEADING'}).text
-        titles.append(self.titles)
-        #print('Titel:' + self.title.text)
-        
-        self.content = soup.find('p', {'class': 'partial_entry'}).text
-        content.append(self.content)
-        
-        self.usernames = soup.find('span', {'class': 'expand_inline scrname'}).text
-        usernames.append(self.usernames)
-        
-        self.noReviews = soup.find('div', {'class:': 'memberBadgingNoText'})
-        noReviews.append(self.noReviews)
-        
-        self.rating = soup.find('span', 'alt')
-        #print(self.rating)
-        
-        print(usernames)
-        #print(noReviews)
+      
+        self.username = soup.find('span', {'class': 'expand_inline scrname'}).text
+        print('Username: ' + self.username)
         
         for self.numberOfReviews in soup.findAll('span', {'class': 'badgetext'})[0]:
             print("Number of reviews: " + self.numberOfReviews.string)
@@ -147,80 +127,18 @@ class Web_scraping:
             
         for self.numberOfLikes in soup.findAll('span', {'class': 'badgetext'})[1]:
             print("Number of likes: " + self.numberOfLikes.string)
-        
-        
-        #################### TRY TO GET NUMBER OF POINTS REVIEW ####################
-        
-        for self.points in soup.findAll('div', {'class':'floatContainer'})[0]:
-            class50 = soup.findAll('span', {'class':'ui_bubble_rating bubble_50'})[1]
-            class45 = soup.findAll('span', {'class':'ui_bubble_rating bubble_45'})[1]
-            class40 = soup.findAll('span', {'class':'ui_bubble_rating bubble_40'})[1]
-            class35 = soup.find('span', {'class':'ui_bubble_rating bubble_35'})
-            class30 = soup.find('span', {'class':'ui_bubble_rating bubble_30'})
-            class25 = soup.find('span', {'class':'ui_bubble_rating bubble_25'})
-            class20 = soup.find('span', {'class':'ui_bubble_rating bubble_20'})
-            class15 = soup.find('span', {'class':'ui_bubble_rating bubble_15'})
-            class10 = soup.find('span', {'class':'ui_bubble_rating bubble_15'})
-            if class50:
-                print("5 von 5 Punkten erreicht")
-            elif class45:
-                print("4.5 von 5 Punkten erreicht")
-            elif class40 :
-                print("4 von 5 Punkten erreicht")
-            elif class35:
-                print("3.5 von 5 Punkten erreicht")
-            elif class30 :
-                print("3 von 5 Punkten erreicht")
-            elif class25:
-                print("2.5 von 5 Punkten erreicht")
-            elif class20 :
-                print("2 von 5 Punkten erreicht")
-            elif class15:
-                print("1.5 von 5 Punkten erreicht")
-            elif class10 :
-                print("1 von 5 Punkten erreicht")
-            else:
-                print ("Keine Punkte!")
-        
-        #numberPoints = soup.find('span', attrs = {'class':'ui_bubble_rating bubble_50'})
-        #numberPoints = text(numberPoints['alt'])
-        #print("Number of points: " + numberPoints)
-        
-        ########################################################################################
-        print(titles)
-        print(content)
-        print(review_url)
-       
-       
-       
-        #################### TRY TO GET CONTENT OF  REVIEW ##################################
-       
-       #print(first_link)
-        #titel = soup.find('p', {'class': 'entry'})
+             
+        self.item_name = soup.find('script', {'type': 'application/ld+json'})
+        json_string = str(self.item_name.string)
+        obj = json.loads(json_string)
+        self.title = obj["name"]
+        print ("Titel: " + self.title)
+        self.review = obj["reviewBody"]
+        print ("Bewertung: " + self.review)
+            
+        self.points = soup.find('div', {'class':'rating'})
+        print ("Rating: "+ self.points.span.span['alt'].split()[0])
 
-       
-       
-       #Get the whole text of the review
-        #for self.item_name in soup.find('p'):
-         #   print(self.item_name.string)
-        
-        #for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
-         #   find_string = soup.body.findAll(text='reviewBody')
-          #  print("conten: " + find_string.string)
-        
-  
-        
-        #1. Möglichkeit
-       # for self.item_name in soup.find('p', {'class': 'partial_entry'}):
-        #    print(self.item_name.string)
-        
-        # 2. Möglichkeit
-       # table = soup.findAll('div',attrs={"class":"partial_entry"})
-        #for review in table:
-         #   print(review.find('p').text)
-        
-        ##################################################################################
-        
         
         #Get URL from review pictures
         for link in soup.findAll('img', {'class': 'centeredImg'}):
