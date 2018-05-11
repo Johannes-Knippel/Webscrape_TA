@@ -5,6 +5,8 @@ import os
 import unicodedata
 import validators
 import threading
+import json
+
 from tkinter import *
 from tkinter import messagebox
 
@@ -30,34 +32,36 @@ class Web_scraping:
         plain_text = source_code.text
         soup = BeautifulSoup(plain_text, "html.parser")
         
-        for self.name in soup.find('h1', {'class': 'heading_title'}):
-            print("Name:" + self.name.string)
+        self.name = soup.find('h1', {'class': 'heading_title'})
+        print("Name: " + self.name.string)
+            
+        self.overallPoints = soup.find('div', {'class':'rs rating'})
+        print ("Punkteskala: " + self.overallPoints.div.span['content'])
         
         for self.rating_amount in soup.find('span', {'property': 'count'}):
-            print("Anzahl Bewertungen:" + self.rating_amount.string)
+            print("Anzahl Bewertungen: " + self.rating_amount.string)
             
         for self.popularity in soup.find_all('span', {'class': 'header_popularity popIndexValidation'}):
-            print("Popularitaet:" + self.popularity.text)
+            print("Popularitaet: " + self.popularity.text)
         
         for self.price_level in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
-            print("Preis Level:" + self.price_level.string)
+            print("Preis Level: " + self.price_level.string)
         
         for self.cuisine in soup.find_all('span', {'class': 'header_links rating_and_popularity'}):
-            print('Kueche:' + self.cuisine.text)
-        
-        for self.contact_details in soup.find('div', {'class': 'blRow'}):
-            print('Kontaktdaten:' + self.contact_details.text)
+            print('Kueche: ' + self.cuisine.text)
         
         for self.address in soup.find('span', {'class': 'street-address'}):
-            print("Strasse:" + self.address.string)
+            print("Strasse: " + self.address.string)
     
         for self.locality in soup.find('span', {'class': 'locality'}):
-            print("PLZ:" + self.locality.string)
+            print("PLZ + Ort: " + self.locality.string)
         
         for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
-            print("Telefonnummer:" + self.phonenumber.text)
+            print("Telefonnummer: " + self.phonenumber.text)
             
-                   
+            
+            
+        
         
         #get all the review containers from current page
         review_containers = soup.find_all('div', class_= 'review-container')
@@ -76,6 +80,7 @@ class Web_scraping:
                 #pass it to the function where single data is scraped
                 self.get_single_review_data(href)
         
+        
         #create a new_url for each page of the reviews
         for index in range (10,pages*10, 10):
             
@@ -84,7 +89,12 @@ class Web_scraping:
             #print(new_url)
             #pass the new_url to the loop_trough_review_pages function
             self.loop_through_review_pages(new_url)
-       
+
+        
+        ##numberReviews = soup.find('p', {'class':'pagination-details'})
+        
+    
+         
      
      
         
@@ -121,68 +131,28 @@ class Web_scraping:
         soup = BeautifulSoup(plain_text2, "html.parser")
         
         #Lists to store scraped data in
+      
+        self.username = soup.find('span', {'class': 'expand_inline scrname'}).text
+        print('Username: ' + self.username)
         
-        usernames = []
-        noReviews = []
-        titles = []
-        content = []
-        ratings = []
-        
-        self.titles = soup.find('div', {'id': 'PAGEHEADING'}).text
-        titles.append(self.titles)
-        #print('Titel:' + self.title.text)
-        
-        self.content = soup.find('p', {'class': 'partial_entry'}).text
-        content.append(self.content)
-        
-        self.usernames = soup.find('span', {'class': 'expand_inline scrname'}).text
-        usernames.append(self.usernames)
-        
-        self.noReviews = soup.find('div', {'class:': 'memberBadgingNoText'})
-        noReviews.append(self.noReviews)
-        
-        self.rating = soup.find('span', 'alt')
-        #print(self.rating)
-        
-        print(usernames)
-        self.threadParse(self.usernames)
-        #print(noReviews)
-        print(titles)
-        print(content)
-        print(review_url)
-       
-       
-       #print(first_link)
-        #titel = soup.find('p', {'class': 'entry'})
-       
-        '''
-        @author: JohannaSickendiek
-       
-        '''
-       #Get the whole text of the review
-        #for self.item_name in soup.find('p'):
-        #    print(self.item_name.string)
+        for self.numberOfReviews in soup.findAll('span', {'class': 'badgetext'})[0]:
+            print("Number of reviews: " + self.numberOfReviews.string)
             
-        #self.item_name = soup.find('p')
-        #print(self.item_name.string)
-        
-        #for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
-        #    print(self.item_name.string)
-        #self.item_name = soup.findAll('script', {'type': 'application/ld+json'})
-        #for dict in self.item_name:
-           # print(dict["reviewBody"])
+            
+        for self.numberOfLikes in soup.findAll('span', {'class': 'badgetext'})[1]:
+            print("Number of likes: " + self.numberOfLikes.string)
+             
+        self.item_name = soup.find('script', {'type': 'application/ld+json'})
+        json_string = str(self.item_name.string)
+        obj = json.loads(json_string)
+        self.title = obj["name"]
+        print ("Titel: " + self.title)
+        self.review = obj["reviewBody"]
+        print ("Bewertung: " + self.review)
+            
+        self.points = soup.find('div', {'class':'rating'})
+        print ("Rating: "+ self.points.span.span['alt'].split()[0])
 
-
-        #1. Moeglichkeit
-        #for self.item_name in soup.find('p', {'class': 'partial_entry'}):
-        #    print(self.item_name.string)
-        #self.item_name = soup.find('p', {'class': 'partial_entry'})
-        #print(self.item_name.string)
-        
-        # 2. Moeglichkeit
-        #table = soup.findAll('div',attrs={"class":"partial_entry"})
-        #for review in table:
-        #    print(review.find('p').text)
         
         #Get URL from review pictures
         for link in soup.findAll('img', {'class': 'centeredImg'}):
