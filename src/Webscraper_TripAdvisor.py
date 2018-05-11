@@ -72,6 +72,8 @@ class Web_scraping:
         pageNumbers = soup.find_all('a', class_= 'pageNum')
         pages = len(pageNumbers)
         
+        counter = 1
+        
         #Extract data from single containers   
         for container in review_containers:
                 
@@ -79,6 +81,9 @@ class Web_scraping:
                 href = "https://www.tripadvisor.de" + str(link.get('href'))
                 #pass it to the function where single data is scraped
                 self.get_single_review_data(href)
+                counter = counter + 1
+                
+        
         
         
         #create a new_url for each page of the reviews
@@ -92,10 +97,8 @@ class Web_scraping:
 
         
         ##numberReviews = soup.find('p', {'class':'pagination-details'})
-        
-    
          
-     
+        print ("Es wurden " + str(counter) + " textuelle von " + self.rating_amount.string + " Bewertungen abgegeben!")
      
         
            
