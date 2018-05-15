@@ -1,1 +1,20 @@
-{"PICTURES": {"1": {"fruit": "orange", "price": 25}, "2": {"fruit": "orange", "price": 25}}, "_default": {}, "RESTAURANTS": {"1": {"locality": "Harome YO62 5JP, ", "address": "Owmen Field Lane", "rating_amount": "786", "price_level": "\u20ac\u20ac\u20ac\u20ac", "name": "Star Inn"}}, "REVIEWS": {"1": {"fruit": "orange", "price": 25}, "2": {"fruit": "orange", "price": 25}}, "USERS": {"1": {"fruit": "orange", "price": 25}, "2": {"fruit": "orange", "price": 25}}}
+{
+    "RESTAURANTS": {
+        "1": {
+            "STRASSE": "The Craft Workshops Main Street",
+            "PREIS_LEVEL": "\u20ac\u20ac - \u20ac\u20ac\u20ac",
+            "TELEFONNUMMER": "+44 1751 417444",
+            "ID": 1,
+            "KUECHE": "Cafe\u0301, britisch, fu\u0308r Vegetarier geeignet",
+            "ANZAHL_BEWERTUNGEN": "132",
+            "POPULARITAET": "Nr. 1 von 3 Restaurants in Hutton le Hole",
+            "PLZ_ORT": "Hutton le Hole, North York Moors National Park YO62 6UA, ",
+            "PUNKTESKALA": "5",
+            "RESTAURANTNAME": "The Forge Tea Room"
+        }
+    },
+    "PICTURES": {},
+    "_default": {},
+    "USERS": {},
+    "REVIEWS": {}
+}
