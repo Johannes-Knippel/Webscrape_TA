@@ -9,6 +9,8 @@ import json
 
 from tkinter import *
 from tkinter import messagebox
+import tkinter as tk
+import tkinter as ttk
 
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
@@ -173,6 +175,11 @@ class Web_scraping:
     
     TinyDB - Database. Scraped Data from get_single_data() function will be parsed to a Database saved in .json-Format.
     '''
+
+    def endProgram(self):
+        exit()
+
+
     #TinyDB
     def parse_to_tinydb_rest(self):
         
@@ -189,20 +196,22 @@ class Web_scraping:
         except:
             print("Error opening file")    
         
-        
+        #################################bis hier 19.04.18###############
+        # Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
+        # Implementieren dieser IDs per auto increment funkkion.
         
         #define the data to insert into database including an auto increment ID for each Table  
-        
+
         #HANDLE RESTAURANTS
         #check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
-        if tableRestaurants.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
+        if tableRestaurants.contains((where('RESTAURANTNAME') == self.name.string) & (where('PLZ_ORT') == self.locality.string)): 
             #pop up a message box
-            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
+            msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
             popup = tk.Tk()
             popup.wm_title("!")
             label = ttk.Label(popup, text=msg)
             label.pack(side="top", fill="x", pady=10)
-            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+            B1 = ttk.Button(popup, text="Okay und Beenden", command = self.endProgram)
             B1.pack()
             popup.mainloop()
         # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
@@ -216,9 +225,7 @@ class Web_scraping:
             dataRestaurants = {'ID':self.idRestaurant, 'RESTAURANTNAME':self.name2, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity2, 'PREIS_LEVEL':self.price_level2, 'KUECHE':self.cuisine2, 'STRASSE':self.address2, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
             tableRestaurants.insert(dataRestaurants) 
         
-        #################################bis hier 19.04.18###############
-        # Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
-        # Implementieren dieser IDs per auto increment funkkion.
+        
                   
         print(tableRestaurants.all())
         ft = Query()
