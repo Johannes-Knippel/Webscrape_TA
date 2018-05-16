@@ -156,11 +156,15 @@ class Web_scraping:
         self.points = soup.find('div', {'class':'rating'})
         print ("Rating: "+ self.points.span.span['alt'].split()[0])
 
+        print("URL: " + review_url)
         
         #Get URL from review pictures
-        for link in soup.findAll('img', {'class': 'centeredImg'}):
-            self.src = link.get('src')
-            print("source of picture: " + self.src)
+        if (soup.find('div', {'class': 'photoContainer'})):
+            for link in soup.findAll('img', {'class': 'centeredImg'}):
+                self.src = link.get('src')
+                print("source of picture: " + self.src)
+        else:
+            print("no pictures found!")
  
     
     
