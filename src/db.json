@@ -1,32 +1,2101 @@
 {
-    "REVIEWS": {},
-    "USERS": {},
-    "_default": {},
-    "RESTAURANTS": {
+    "PICTURES": {
         "1": {
-            "RESTAURANTNAME": "The Forge Tea Room",
-            "KUECHE": "Cafe\u0301, britisch, fu\u0308r Vegetarier geeignet",
-            "PUNKTESKALA": "5",
-            "TELEFONNUMMER": "+44 1751 417444",
-            "PREIS_LEVEL": "\u20ac\u20ac - \u20ac\u20ac\u20ac",
-            "ID": 1,
-            "ANZAHL_BEWERTUNGEN": "132",
-            "STRASSE": "The Craft Workshops Main Street",
-            "POPULARITAET": "Nr. 1 von 3 Restaurants in Hutton le Hole",
-            "PLZ_ORT": "Hutton le Hole, North York Moors National Park YO62 6UA, "
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/cc/43/0c/photo0jpg.jpg",
+            "REV_ID": 1
+        },
+        "10": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/32/b3/80/photo3jpg.jpg",
+            "REV_ID": 24
+        },
+        "11": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/32/b3/7d/photo0jpg.jpg",
+            "REV_ID": 26
+        },
+        "12": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/32/b3/7f/photo2jpg.jpg",
+            "REV_ID": 28
+        },
+        "13": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/1e/9c/1a/photo0jpg.jpg",
+            "REV_ID": 31
+        },
+        "14": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/fe/ac/38/das-gab-es-zu-trinken.jpg",
+            "REV_ID": 43
+        },
+        "15": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/fe/ac/2f/zum-aperitif.jpg",
+            "REV_ID": 44
+        },
+        "16": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/fd/4d/c7/photo0jpg.jpg",
+            "REV_ID": 45
+        },
+        "17": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/d3/55/ba/photo0jpg.jpg",
+            "REV_ID": 53
+        },
+        "18": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/d2/ea/5c/photo1jpg.jpg",
+            "REV_ID": 54
+        },
+        "19": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/d2/ea/5b/photo0jpg.jpg",
+            "REV_ID": 55
         },
         "2": {
-            "TELEFONNUMMER": "+44 1751 417444",
-            "PLZ_ORT": "Hutton le Hole, North York Moors National Park YO62 6UA, ",
-            "PREIS_LEVEL": "\u20ac\u20ac - \u20ac\u20ac\u20ac",
-            "KUECHE": "Cafe\u0301, britisch, fu\u0308r Vegetarier geeignet",
-            "ID": 1,
-            "ANZAHL_BEWERTUNGEN": "132",
-            "RESTAURANTNAME": "The Forge Tea Room",
-            "STRASSE": "The Craft Workshops Main Street",
-            "POPULARITAET": "Nr. 1 von 3 Restaurants in Hutton le Hole",
-            "PUNKTESKALA": "5"
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/b5/76/81/photo0jpg.jpg",
+            "REV_ID": 6
+        },
+        "20": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/d2/ea/5e/photo3jpg.jpg",
+            "REV_ID": 56
+        },
+        "21": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/d2/ea/5d/photo2jpg.jpg",
+            "REV_ID": 57
+        },
+        "22": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/ac/da/3f/20180101-202605-largejpg.jpg",
+            "REV_ID": 71
+        },
+        "23": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/ac/da/3e/20180101-203146-largejpg.jpg",
+            "REV_ID": 72
+        },
+        "24": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/a4/23/93/ochsenfetzen.jpg",
+            "REV_ID": 73
+        },
+        "25": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/a1/b1/02/rinderfilet-mit-truffeln.jpg",
+            "REV_ID": 74
+        },
+        "26": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/7a/6d/25/photo0jpg.jpg",
+            "REV_ID": 80
+        },
+        "27": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/64/07/5d/photo0jpg.jpg",
+            "REV_ID": 88
+        },
+        "28": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/46/e7/dc/photo0jpg.jpg",
+            "REV_ID": 94
+        },
+        "29": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/11/0d/31/5a/photo0jpg.jpg",
+            "REV_ID": 108
+        },
+        "3": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-f/12/95/06/e6/img-20180408-185011-867.jpg",
+            "REV_ID": 9
+        },
+        "30": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/10/f8/0c/07/img-20171014-203038-largejpg.jpg",
+            "REV_ID": 117
+        },
+        "31": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/10/f7/56/b4/photo0jpg.jpg",
+            "REV_ID": 118
+        },
+        "32": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/10/ef/7f/5c/photo1jpg.jpg",
+            "REV_ID": 119
+        },
+        "4": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-f/12/95/06/e5/img-20180408-193424-962.jpg",
+            "REV_ID": 13
+        },
+        "5": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/4b/f2/31/witzig-eau-del-sel.jpg",
+            "REV_ID": 18
+        },
+        "6": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/4b/f2/3d/sensationell-wiener-schnitzel.jpg",
+            "REV_ID": 19
+        },
+        "7": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/3c/bd/c4/suppe-zum-menu.jpg",
+            "REV_ID": 21
+        },
+        "8": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/3c/bd/53/menu.jpg",
+            "REV_ID": 22
+        },
+        "9": {
+            "QUELLE": "https://media-cdn.tripadvisor.com/media/photo-l/12/3c/be/42/hauptgang-menu-lamm.jpg",
+            "REV_ID": 23
         }
     },
-    "PICTURES": {}
+    "RESTAURANTS": {
+        "1": {
+            "ANZAHL_BEWERTUNGEN": "842",
+            "KUECHE": "deutsch, europa\u0308isch, Speiselokal",
+            "PLZ_ORT": "80539 M\u00fcnchen, Bayern, ",
+            "POPULARITAET": "Nr. 2 von 3.058 Restaurants in Mu\u0308nchen",
+            "PREIS_LEVEL": "\u20ac\u20ac\u20ac\u20ac",
+            "PUNKTESKALA": "4,5",
+            "RESTAURANTNAME": "Schwarzreiter Tagesbar & Restaurant",
+            "R_ID": 1,
+            "STRASSE": "Maximilianstra\u00dfe 17",
+            "TELEFONNUMMER": "+49 89 21252125"
+        }
+    },
+    "REVIEWS": {
+        "1": {
+            "BEWERTUNG": "Sa\\u00dfen \\u00fcber eine halbe Stunde mit der Getr\\u00e4nkekarte, ohne Bedienung!\\nDies ist uns dort schon mehrfach passiert!",
+            "RATING": "1",
+            "REV_ID": 1,
+            "R_ID": 1,
+            "TITEL": "Schlechter Service",
+            "U_ID": 1
+        },
+        "2": {
+            "BEWERTUNG": "Fabelhafter Aufenthalt. Spei\\u00df, Drank und Location absolute Weltklasse. \\nDanke an Chef Andrej Grunert der sich stets um unser Wohlbefinden sorgt.\\nSo macht man das! ",
+            "RATING": "5",
+            "REV_ID": 2,
+            "R_ID": 1,
+            "TITEL": "Immer noch die 1",
+            "U_ID": 2
+        },
+        "3": {
+            "BEWERTUNG": "Wir waren gestern zu viert im Schwarzreiter am Feiertags um die Mittagszeit essen. Das Essen sowie die Weinkarte war ausgezeichnet, hierzu haben wir auch hervorragende Empfehlungen erhalten. Der Service ist jung, unkompliziert und wahnsinnig nett. Man sitzt au\\u00dferdem auch im sch\\u00f6nen Ambiente im Restaurant und f\\u00fchlt sich sehr wohl.",
+            "RATING": "5",
+            "REV_ID": 3,
+            "R_ID": 1,
+            "TITEL": "Familien-Essen am Feiertag",
+            "U_ID": 3
+        },
+        "4": {
+            "BEWERTUNG": "Meine Frau und ich hatten ein hervorragendes Dinner zu unserem Jahrestag. Selten so einen motivierten, fachlich kompetenten und herzlichen Service erlebt. Wir kommen bald wieder.",
+            "RATING": "5",
+            "REV_ID": 4,
+            "R_ID": 1,
+            "TITEL": "Jahrestag",
+            "U_ID": 4
+        },
+        "5": {
+            "BEWERTUNG": "Meine Frau und ich durften ein wunderbares Geburtstagsdinner hier genie\\u00dfen. Sehr lecker, eine raffinierte Speisekarte von guter Exklusivit\\u00e4t und wunderbar freundliches, motiviertes Personal. Wir haben uns sehr wohl gef\\u00fchlt.",
+            "RATING": "5",
+            "REV_ID": 5,
+            "R_ID": 1,
+            "TITEL": "Geburtstagsfeier ",
+            "U_ID": 5
+        },
+        "6": {
+            "BEWERTUNG": "Wir hatten ein nettes Mittagessen und haben das Treiben auf der Prachtstra\\u00dfe genossen. Der Service war freundlich, das Tartar hervorragend und der Rose s\\u00fcffig. Einzig die etwas zu kleinen Bistrotische machen das Essen etwas kompliziert, sind aber dem schmalen Gehweg geschuldet. Wir kommen wieder.",
+            "RATING": "5",
+            "REV_ID": 6,
+            "R_ID": 1,
+            "TITEL": "Gutes Essen in Toplage",
+            "U_ID": 6
+        },
+        "7": {
+            "BEWERTUNG": "Herzlichen Dank f\\u00fcr einen unvergesslichen Abend. Toller und sehr herzlicher Service. Besonders hervorheben m\\u00f6chten wir Herrn Gr\\u00fcnder.Tolle Empfehlungen und sehr kreative Weinkarte. Bis zum n\\u00e4chsten Mal",
+            "RATING": "5",
+            "REV_ID": 7,
+            "R_ID": 1,
+            "TITEL": "Goumet",
+            "U_ID": 7
+        },
+        "8": {
+            "BEWERTUNG": "Ambiente, Essen, Getr\\u00e4nke, Service und Personal, alles top ;-) Es war ein toller Abend im Schwarzreiter, welches ich nur weiter empfehlen kann!",
+            "RATING": "5",
+            "REV_ID": 8,
+            "R_ID": 1,
+            "TITEL": "*Tolles Abendessen mit Freundin*",
+            "U_ID": 8
+        },
+        "9": {
+            "BEWERTUNG": "Toller Abend! Vielen Dank an den Service! Wir kommen gern und ganz bald wieder! Tolle Weinauswahl Und super Drinks",
+            "RATING": "5",
+            "REV_ID": 9,
+            "R_ID": 1,
+            "TITEL": "Terrasse",
+            "U_ID": 9
+        },
+        "10": {
+            "BEWERTUNG": "Heute war ich mit zwei Freunden im Schwarzreiter. Zuerst mussten wir kurz warten bis ein Tisch auf der Terrasse frei wurde doch als Entsch\\u00e4digung gabs ein Glas ros\\u00e8 Champagner und Kuchen aufs Haus:) die Kellner, die uns bedient habe ( Ansga und Yannik) waren super freundlich, nett und man hat sich sofort willkommen gef\\u00fchlt. Sehr empfehlenswert, vorallem wenn\\u2019s drau\\u00dfen warm ist und man ein Platz auf der Terrasse bekommt! Wir kommen auf jeden Fall wieder! Bester Service auf der Maximilianstra\\u00dfe! ",
+            "RATING": "5",
+            "REV_ID": 10,
+            "R_ID": 1,
+            "TITEL": "Schwarzreiter",
+            "U_ID": 10
+        },
+        "11": {
+            "BEWERTUNG": "Der service ist sehr gut und freundliche und alle sehr aufmerksam. Die Lage ist sehr sch\\u00f6ne und erst recht super, wenn man drau\\u00dfen sitzen kann! \\r\\nDas Schnitzel ist hier die Spezialit\\u00e4t und sollte man auf jeden Fall essen, wenn man hier zu Besuch ist.",
+            "RATING": "5",
+            "REV_ID": 11,
+            "R_ID": 1,
+            "TITEL": "Sch\\u00f6ne Atmosph\\u00e4re",
+            "U_ID": 11
+        },
+        "12": {
+            "BEWERTUNG": "Sehr freundliches, aufmerksames und zuvorkommendes Personal.\\nEinladendes Ambiente und hervorragender Service. Gro\\u00dfe und gute Auswahl, sowie entsprechende Beratung.\\nNur zu empfehlen, auch f\\u00fcr eine kurze Mittagspause.",
+            "RATING": "5",
+            "REV_ID": 12,
+            "R_ID": 1,
+            "TITEL": "Sehr einladende Atmosph\\u00e4re",
+            "U_ID": 12
+        },
+        "13": {
+            "BEWERTUNG": "Super Essen, leckeres Tatar als Vorspeise und das beste wiener Schnitzel das ich je gegessen habe. Ich m\\u00f6chte an dieser Stelle auch den Top Service von Melissa in der Schwarzreiter Tagesbar hervorheben, sehr zuvorkommend, die kulinarischen W\\u00fcnsche wurden einem mehr als erf\\u00fcllt. Den Service von Yannik muss man ebenfalls als extrem freundlich deklarieren, hierf\\u00fcr an beide nochmals ein spezielles Lob. Der Service der beiden hat den Abend sehr besonders werden lassen. Das Essen ist hier uneingeschr\\u00e4nkt zu empfehlen, das Tatar eines der besten die ich je gegessen habe. ",
+            "RATING": "5",
+            "REV_ID": 13,
+            "R_ID": 1,
+            "TITEL": "Exzellentes Essen und exzellenter Service",
+            "U_ID": 13
+        },
+        "14": {
+            "BEWERTUNG": "In angenehmer Atmosph\\u00e4re das Wochenende, bei sehr freundlichem Service von Lisa und Ruben bei guten Cocktails ausklingen lassen! Besonders zu empfehlen die t\\u00e4gliche happy hour",
+            "RATING": "4",
+            "REV_ID": 14,
+            "R_ID": 1,
+            "TITEL": "Guter Ort f\\u00fcr einen Ausklang",
+            "U_ID": 14
+        },
+        "15": {
+            "BEWERTUNG": "Das Restaurant ist definitiv einen Besuch wert. Die G\\u00e4nge (4 G\\u00e4nge Men\\u00fc mit Weinbegleitung) waren hervorragend aufeinander abgestimmt und visuell ebenso. Das Personal war - trotz seiner Jugendlichkeit - zuvorkommend und beeindruckend qualifiziert. Das Interieur Design hat einen Touch von &quot;billig&quot;. Die Bilder auf der Website vermitteln einen besseren Eindruck. Die hervorragende K\\u00fcche macht das wieder wett. Hier werden bayrische K\\u00fcche, Feinschmecker Art und Internationalit\\u00e4t gekonnt verwoben. Yes - would definitely go again. Das Restaurant/ Die Bar geh\\u00f6rt zum Kempinski. ",
+            "RATING": "5",
+            "REV_ID": 15,
+            "R_ID": 1,
+            "TITEL": "Excellente Speisen",
+            "U_ID": 15
+        },
+        "16": {
+            "BEWERTUNG": "Alle Mitarbeiter waren bester Laune, die Bedienung h\\u00e4tte nicht besser sein k\\u00f6nnen! Ein sehr kompetenter Junger Mann, der von seinem Fach viel Ahnung hat! Die Gerichte waren mit Liebe angerichtet und der Geschmack war super! Weiter so! \\nWas ich \\u00fcbrigens sehr sch\\u00f6n fande, nach dem Essen ich glaube es war gegen 21:30 hat ein DJ f\\u00fcr eine angenehme Loungeatmosph\\u00e4re gesorgt. \\n",
+            "RATING": "5",
+            "REV_ID": 16,
+            "R_ID": 1,
+            "TITEL": "1A Service mit k\\u00f6stlichem essen ",
+            "U_ID": 16
+        },
+        "17": {
+            "BEWERTUNG": "Der Service war spitze, man merkt hier einfach, dass Profis am Werk sind! Das Essen kann ich nur empfehlen, besonders die Rinderlende ! ",
+            "RATING": "5",
+            "REV_ID": 17,
+            "R_ID": 1,
+            "TITEL": "Tip top ",
+            "U_ID": 17
+        },
+        "18": {
+            "BEWERTUNG": "Ich war vor einigen Tagen in der Tagesbar zum Essen und war sehr zufrieden. Die Kartoffelsuppe war lecker und auch die Schlutzkrapfen waren sehr gut auch die Weinempfehlung (Silvaner) war treffend. Der Service von Herrn Liomin war sehr aufmerksam und zuvorkommend. Ich komme gerne wieder, wenn ich das n\\u00e4chste Mal in M\\u00fcnchen bin.",
+            "RATING": "5",
+            "REV_ID": 18,
+            "R_ID": 1,
+            "TITEL": "Gutes Essen, guter Service!",
+            "U_ID": 18
+        },
+        "19": {
+            "BEWERTUNG": "Immer wieder sch\\u00f6n hier!\\nEgal ob essen oder nur trinken es passt einfach.\\nMuss man mal gemacht haben .  ",
+            "RATING": "5",
+            "REV_ID": 19,
+            "R_ID": 1,
+            "TITEL": "Immer gut!",
+            "U_ID": 19
+        },
+        "20": {
+            "BEWERTUNG": "Neulich endlich wieder im SR gelandet. Auch ohne Reservierung kein Thema, von einer sehr freundlichen und zuvorkommenden Organisatorin (Frau Lucia) herzlich empfangen worden!\\r\\n\\r\\nWir haben nach kurzer Zeit an der netten Bar einen sch\\u00f6nen Tisch in dem an franz\\u00f6sischen Bistro Stil in Paris erinnernden Restaurant bekommen. Service, Essen und Weinauswahl wie immer mit das beste, was die Stadt derzeit zu bieten hat.\\r\\n\\r\\nKommen bald wieder!",
+            "RATING": "5",
+            "REV_ID": 20,
+            "R_ID": 1,
+            "TITEL": "Toller Service und super Essen",
+            "U_ID": 20
+        },
+        "21": {
+            "BEWERTUNG": "Wir waren Samstag Abend in der Tagesbar. Empfangsdame etwas chaotisch aber sehr herzlich. Toller Tisch mit Ausblick auf die Maximilianstrasse. Drinks super lecker. Service souver\\u00e4n, sehr kompetent (Weinempfehlung war super) und ausgesprochen nett.\\r\\nVorspeisen (Tatar &amp; Saibling) waren hervorragend. Hauptgang Ochsenlende und Seezunge an der Gr\\u00e4te gegrillt waren von h\\u00f6chster Qualit\\u00e4t und auf den Punkt gebraten.\\r\\nGro\\u00dfes Lob an das gesamte Team.\\r\\nWir kommen wieder.",
+            "RATING": "5",
+            "REV_ID": 21,
+            "R_ID": 1,
+            "TITEL": "Toller Abend",
+            "U_ID": 21
+        },
+        "22": {
+            "BEWERTUNG": "Im hinterem Bereich befindet sich die Sterne K\\u00fcche, vorne die Tagesbar. Dort habe ich ein sensationell gutes Wiener Schnitzel gegessen. F\\u00fcr gerade mal 26 Euro im Vergleich zum Fr\\u00fchst\\u00fcck (geh\\u00f6rt zum Hotel Vier Jahreszeiten Kempinski M\\u00fcnchen) f\\u00fcr 42 Euro sogar ein richtiges Schn\\u00e4ppchen. Als Besonderheit gibt es auch hier den Kaviar Service des Hotels Vier Jahreszeiten.",
+            "RATING": "5",
+            "REV_ID": 22,
+            "R_ID": 1,
+            "TITEL": "Sensationelles Wiener Schnitzel",
+            "U_ID": 22
+        },
+        "23": {
+            "BEWERTUNG": "Wir waren zum ersten Mal im Schwarzreiter und es hat uns super gefallen. Die Auswahl an Drinks in der Tagesbar war sehr gut und der Service war ebenfalls spitze. Nach den Drinks und Snacks haben wir aus der Speisekarte bestellt und das Essen wurde nach kurzer Zeit serviert. Es hat uns sehr gut geschmeckt und man hat gemerkt, dass hochqualitative Zutaten ausgew\\u00e4hlt werden. Alles in allem f\\u00fchlt man sich als Gast sehr gut aufgehoben und m\\u00f6chte gern wieder kommen.",
+            "RATING": "5",
+            "REV_ID": 23,
+            "R_ID": 1,
+            "TITEL": "Ausgezeichnet!",
+            "U_ID": 23
+        },
+        "24": {
+            "BEWERTUNG": "Sind spontan vorbeigekommen, ohne Reservierung. Wollten eigentlich nur einen Apperitif nehmen.......Haben einen Platz an der Bar bekommen und hier einen extrem sch\\u00f6nen Abend verbracht.",
+            "RATING": "5",
+            "REV_ID": 24,
+            "R_ID": 1,
+            "TITEL": "Sehr sehr gut",
+            "U_ID": 24
+        },
+        "25": {
+            "BEWERTUNG": "Wir hatten hier das 5 Gang Menu, wir konnten die Speisen zwischen zwei Menus ohne Probleme austauschen und so perfekt auf unseren Geschmack anpassen.\\r\\nDie Bedienng war freundlich und kompetent.\\r\\nEs gab mehrere Gr\\u00fc\\u00dfe aus der K\\u00fcche zus\\u00e4tzlich zum Menu, uns hat alles sehr\\r\\ngut geschmeckt.\\r\\nEine klare Empfehlung von mir, ausgefallene geschmackvolle Gerichte",
+            "RATING": "5",
+            "REV_ID": 25,
+            "R_ID": 1,
+            "TITEL": "@ Wir kommen gerne wieder - ausgezeichnetes  Menu @",
+            "U_ID": 25
+        },
+        "26": {
+            "BEWERTUNG": "Absolut empfehlenswert! K\\u00fcche, Service und Ambiente 1a! Sowohl die Tagesbar mit exzellenten Drinks und Snacks als auch das mit 1* bewertete Restaurant sind w\\u00e4rmstens zu empfehlen! Bis bald auf ein neues im Schwarzreiter!",
+            "RATING": "5",
+            "REV_ID": 26,
+            "R_ID": 1,
+            "TITEL": "Sehr gut!",
+            "U_ID": 26
+        },
+        "27": {
+            "BEWERTUNG": "Reservierung f\\u00fcr die Tagesbar ging nicht durch, wir wurden aber an der Bar mit erstklassigen Cocktails vertr\\u00f6stet und bekamen dann einen ruhigen Tisch bevor wir die Drinks hatten! Gro\\u00dfartiges Essen, guter Service und nette Unterhaltung mit dem Personal. Immer wieder gerne.",
+            "RATING": "5",
+            "REV_ID": 27,
+            "R_ID": 1,
+            "TITEL": "Toller Abend",
+            "U_ID": 27
+        },
+        "28": {
+            "BEWERTUNG": "Wir haben das \\u201evolle Programm\\u201c genossen: einen k\\u00f6stlichen Drink in der holzget\\u00e4felten Bar mit phantastischem Blick auf die n\\u00e4chtliche Maximilianstra\\u00dfe und ein feines Men\\u00fc im Restaurant. Zwei Kellner verw\\u00f6hnten uns mit einer f\\u00fcr ihr jugendliches Alter bemerkenswerten Professionalit\\u00e4t.\\n\\nNymphenburger Porzellan auf dem Tisch und an den W\\u00e4nden - edel.\\n\\nLeider gab es auch zwei Minuspunkte:\\ndie k\\u00fchle Temperatur im Restaurant verursachte den ganzen Abend lang ein Fr\\u00f6steln (Strickjacke oder Pelz waren leider  \\nnicht dabei).\\n\\nObwohl wir online reserviert hatten, wurden wir per Mail u n d per Telefon an den Termin \\u201eerinnert\\u201c, d.h. genervt. \\n\\n\\u00dcbrigens: das Schwarzeiter befindet sich im Hotel \\u201eVier Jahreszeiten\\u201c.",
+            "RATING": "5",
+            "REV_ID": 28,
+            "R_ID": 1,
+            "TITEL": "sehr sch\\u00f6n",
+            "U_ID": 28
+        },
+        "29": {
+            "BEWERTUNG": "Ich war Freitag Abend mit zwei Freundinnen in der Schwarzreiter Tagesbar beim Essen und es war wirklich toll. Wir wurden sehr nett von der Hostess und dem Restaurantmanager empfangen und der Service war sehr freundlich. Highlight waren das Schnitzel und das Tartar. Ich werde auf jeden Fall wieder kommen!!",
+            "RATING": "5",
+            "REV_ID": 29,
+            "R_ID": 1,
+            "TITEL": "Toller Abend mit Freundinnen",
+            "U_ID": 29
+        },
+        "30": {
+            "BEWERTUNG": "Wir waren gestern -mal wieder- zum Abschluss unseres Stadtbummels im Schwarzreiter. Wie immer tolle Cocktails, super Service und sch\\u00f6ne Atmosph\\u00e4re. Der n\\u00e4chste Besuch kommt bestimmt.",
+            "RATING": "5",
+            "REV_ID": 30,
+            "R_ID": 1,
+            "TITEL": "Tolle Cocktails in sch\\u00f6ner Atmosph\\u00e4re",
+            "U_ID": 30
+        },
+        "31": {
+            "BEWERTUNG": "Leckerer Mittagstisch, erstklassiger Service, sch\\u00f6nes Ambiente und eine tolle Aussicht.\\r\\nWas will man mehr... ich komme sicher wieder.",
+            "RATING": "5",
+            "REV_ID": 31,
+            "R_ID": 1,
+            "TITEL": "Mittagstisch",
+            "U_ID": 31
+        },
+        "32": {
+            "BEWERTUNG": "Wir waren zu dritt w\\u00e4hrend unseres M\\u00fcnchen Aufenthalts zum Abendessen im Schwarzreiter.\\nEs war ein gro\\u00dfartiger Abend. Der Service war tip top, jeder der Mitarbeiter war h\\u00f6chst zuvorkommend und freundlich. Die Weinempfehlung des Restaurantleiters war besonders gut. \\nAuch das Essen war von der Vorspeise zum Dessert erste Klasse.  Besonders das Beef Tartar. F\\u00fcr einen besonderen Abend nur zu empfehlen! Gerne beim n\\u00e4chsten M\\u00fcnchen Besuch wieder",
+            "RATING": "5",
+            "REV_ID": 32,
+            "R_ID": 1,
+            "TITEL": "toller Abend ",
+            "U_ID": 32
+        },
+        "33": {
+            "BEWERTUNG": "Ich war am letzten Abend mit Freunden im Schwarzreiter essen und wir alle waren absolut zufrieden. Von der Begr\\u00fc\\u00dfung, \\u00fcbers Amuse bis hin zum Dessert war alles tip top. das Personal war freundlich, stets um unsere Zufriedenheit bem\\u00fcht und hatte tolle Essensempfehlungen f\\u00fcr uns bereit. da m\\u00fcssen wir besonders Flor und Ansgar hervorheben. Auch die Weinkarte hat so einige Schmankerl zu bieten und die Weinempfehlungen des Restaurantleiters sowie des jungen Kellners waren super. Alles in allem ein super Abend und wir sind definitiv nicht zum letzten Mal hier gewesen\\n",
+            "RATING": "5",
+            "REV_ID": 33,
+            "R_ID": 1,
+            "TITEL": "Entspannter Abend",
+            "U_ID": 33
+        },
+        "34": {
+            "BEWERTUNG": "Ein absolut zu empfehlende Location. Die Guest Relation Managerin war so aufmerksam und nett und wir werden alleine deshalb sicherlich wieder kommen.",
+            "RATING": "5",
+            "REV_ID": 34,
+            "R_ID": 1,
+            "TITEL": "Die Bar",
+            "U_ID": 34
+        },
+        "35": {
+            "BEWERTUNG": "Wie waren sehr zufrieden.\\nUnsere Bedienung Frau Arend war stets freundlich und zuvorkommend!\\nZus\\u00e4tzlich ist der kompetente Oberkellner Herr Bauer sehr positiv zu erw\\u00e4hnen!\\nDas Schnitzel war WELTKLASSE! \\nDanke !",
+            "RATING": "5",
+            "REV_ID": 35,
+            "R_ID": 1,
+            "TITEL": "Tip Top!",
+            "U_ID": 35
+        },
+        "36": {
+            "BEWERTUNG": "Sehr sch\\u00f6ne Laden, super sch\\u00f6n eingerichtet! Getr\\u00e4nke, Essen.. alles super! Bis auf der Bartender...der Vorg\\u00e4nger war sehr gut, aber der Herr ...der gerade da ist, der geh\\u00f6rt nicht hier. Es ist schade so ein toller Laden mit einem einzigen kaputt zu machen! ",
+            "RATING": "3",
+            "REV_ID": 36,
+            "R_ID": 1,
+            "TITEL": "Alles gut bis auf.......",
+            "U_ID": 36
+        },
+        "37": {
+            "BEWERTUNG": "Wir wollten nicht \\u20ac 200 oder mehr f\\u00fcr eines der M\\u00fcnchner Sternelokale ausgeben, also haben wir im Fine Dining Bereich (nicht der Bar) reserviert.  Eine sehr angenehme Atmosph\\u00e4re mit gro\\u00dfz\\u00fcgiger Einrichtung des Raums.  Einwandfreier, aufmerksamer und informierter Service.  Wir hatten zwei verschiedene 5 Gang Men\\u00fcs, die durch Brot, zwei Appetitanreger/Gr\\u00fc\\u00dfe aus der K\\u00fcche und einen Zwischengang erg\\u00e4nzt wurden.   Alle G\\u00e4nge waren handwerklich einwandfrei und lecker, vielleicht etwas &quot;rustikaler&quot; als in der Sternegastronomie mit ein bi\\u00dfchen weniger Chichi, vorrangig mit lokalen Zutaten.  Und man hat &quot;etwas mehr&quot; auf dem Teller als in den anderen Sternelokalen.  Das Preisleistungsverh\\u00e4ltnis war mit rd. 100\\u20ac/Men\\u00fc absolut fair.  Wir kommen wieder!",
+            "RATING": "5",
+            "REV_ID": 37,
+            "R_ID": 1,
+            "TITEL": "Fine Dining",
+            "U_ID": 37
+        },
+        "38": {
+            "BEWERTUNG": "Wir waren hier zu zweit und haben drei G\\u00e4nge mit sehr gutem Wein dazu bestellt. Die K\\u00fcrbissuppe war sehr lecker und reichhaltig, Forelle und Bratwursttrio mundgerecht, lecker und dabei trotzdem erfrischend unkonventionell, der Nachtisch, das Schokosouffl\\u00e9 mit Zimteis ein Traum. Sehr freundlicher, zuvorkommender, aufmerksamer und dabei nicht aufdringlicher, sympathischer Service sowie sch\\u00f6nes und warmes Ambiente mit Holzvert\\u00e4felung und Blick auf die Maximiliansstra\\u00dfe. Die etwas h\\u00f6heren Preise sind, was die Gesamtqualit\\u00e4t angeht, auf jeden Fall gerechtfertigt, hier kommt man gerne wieder! ",
+            "RATING": "5",
+            "REV_ID": 38,
+            "R_ID": 1,
+            "TITEL": "Hier passt alles - die Preise sind gerechtfertigt! ",
+            "U_ID": 38
+        },
+        "39": {
+            "BEWERTUNG": "Nettes Ambiente und zuvorkommender Service. Wir hatten das Rindertartar und Kaiserschmarrn bestellt. Das Tartar war ausgezeichnet, der Kaiserschmarrn leider eine Entt\\u00e4uschung und den gehobenen Preis von 11 \\u20ac definitiv nicht Wert.",
+            "RATING": "3",
+            "REV_ID": 39,
+            "R_ID": 1,
+            "TITEL": "Durchwachsene Qualit\\u00e4t",
+            "U_ID": 39
+        },
+        "40": {
+            "BEWERTUNG": "Seit wir 1x im Schwarzreiter waren, geh\\u00f6rt es zu unseren absoluten Lieblingsrestaurants. Wir lieben die Atmosph\\u00e4re, das gute Essen und das zuvorkommende Personal. Ein Drink an der wundersch\\u00f6nen Marmor-Bar? Genial!\\r\\nEin leckeres Abendessen mit Freunden? Jederzeit! Ein Mittagessen mit Gesch\\u00e4ftspartnern? Geht hier am Besten! Im Schwarzreiter stimmt wirklich Alles :-)",
+            "RATING": "5",
+            "REV_ID": 40,
+            "R_ID": 1,
+            "TITEL": "Lieblingsrestaurant",
+            "U_ID": 40
+        },
+        "41": {
+            "BEWERTUNG": "Tolles Restaurant, netter zuvorkommender Service, unglaubliche Weinbegleitung, gro\\u00dfartige K\\u00fcche, sch\\u00f6nes Ambiente, einfach stimmig!",
+            "RATING": "5",
+            "REV_ID": 41,
+            "R_ID": 1,
+            "TITEL": "Lecker und sehr raffiniert! Tolle \\u00fcberraschende Weinbegleitung, sympathischer Service, zauberhafter Abend!",
+            "U_ID": 41
+        },
+        "42": {
+            "BEWERTUNG": "Leckeres Essen, tolles Ambiente, super nettes Personal, was will man mehr. Preislich ist es kein Schn\\u00e4ppchen doch f\\u00fcr das Gebotene ist es das alle Mal wert.",
+            "RATING": "5",
+            "REV_ID": 42,
+            "R_ID": 1,
+            "TITEL": "F\\u00fcr Gourmets",
+            "U_ID": 42
+        },
+        "43": {
+            "BEWERTUNG": "Tolle Drinks, tolle Atmosph\\u00e4re, sch\\u00f6ne Einrichtung. Service sehr gut, besonders Lucia! Besonders zu empfehlen sind die Espresso Martini!",
+            "RATING": "5",
+            "REV_ID": 43,
+            "R_ID": 1,
+            "TITEL": "Lieblingsbar ",
+            "U_ID": 43
+        },
+        "44": {
+            "BEWERTUNG": "Sehr leckeres Essen zum Dinner gehabt. Zuvorkommender Service. Extrem kompetenter und freundlicher Service. Besonders der Junge Mann, der mich den Abend bedient hat war bemerkenswert freundlich und angenehm. Gerne wieder.",
+            "RATING": "5",
+            "REV_ID": 44,
+            "R_ID": 1,
+            "TITEL": "Dinner",
+            "U_ID": 44
+        },
+        "45": {
+            "BEWERTUNG": "Bin spontan vorbei gekommen und habe nicht nur von der Happy Hour profitiert sondern von dem besten Caipirinha in M\\u00fcnchen. Danke Luca f\\u00fcr den super service! \\nWir kommen gerne wieder. :)",
+            "RATING": "5",
+            "REV_ID": 45,
+            "R_ID": 1,
+            "TITEL": "Die beste caipi in town",
+            "U_ID": 45
+        },
+        "46": {
+            "BEWERTUNG": "Wir sind im Herbst 2017 nach dem Samstagsshoppping per Zufall ins Schwarzreiter, die unaufgesetzte freundliche Art der Mitarbeiter, der unaufdringliche aber sehr aufmerksame und nette Service, gepaart mit der hohen Qualit\\u00e4t der Drinks haben uns dort sehr wohl f\\u00fchlen lassen, seit dem gehen wir regelm\\u00e4\\u00dfig ins Schwarzreiter und k\\u00f6nnen auch die tolle K\\u00fcche sehr empfehlen - ja, Schwarzreiter macht Spass, mit und ohne DJ - eine tolle Bereicherung f\\u00fcr M\\u00fcnchen\\'s Innenstadt. We love it!",
+            "RATING": "5",
+            "REV_ID": 46,
+            "R_ID": 1,
+            "TITEL": "Eine gro\\u00dfartige Bereicherung f\\u00fcr M\\u00fcnchen\\'s Innenstadt",
+            "U_ID": 46
+        },
+        "47": {
+            "BEWERTUNG": "Wir hatten gestern Nachmittag wieder mal eine Veranstaltung im Restaurant Schwarzreiter und wahren wie immer mit dem Service als auch mit den gereichten Speisen mehr als zufrieden.\\r\\nMan kann sich hier einfach drauf verlassen das alles passt und das einem jeder Wunsch f\\u00f6rmlich von den Lippen abgelesen wird.\\r\\n\\r\\nGro\\u00dfes Kompliment ans gesamte Team und auch auf diesem Wege nochmal herzlichen Dank f\\u00fcr alles!\\r\\nWir kommen definitiv wieder!!!",
+            "RATING": "5",
+            "REV_ID": 47,
+            "R_ID": 1,
+            "TITEL": "Alles war perfekt!",
+            "U_ID": 47
+        },
+        "48": {
+            "BEWERTUNG": "Top Cocktails und sehr freundliche Bedienung. Der Munich Mule war super!\\n\\nKomme auf jeden Fall bald mal wieder!",
+            "RATING": "5",
+            "REV_ID": 48,
+            "R_ID": 1,
+            "TITEL": "Top!",
+            "U_ID": 48
+        },
+        "49": {
+            "BEWERTUNG": "Ich bin sehr oft im Schwarzreiter, privat als auch beruflich und kann das Restaurant nur aufs W\\u00e4rmste empfehlen.\\nDie Qualit\\u00e4t der jungen, bayerischen K\\u00fcche, sowie die exzelente Weinauswahl des Someliers und die Drinks an der Bar, in dieser prominenten Lage, suchen in M\\u00fcnchen seinesgleichen, und das alles zu moderaten Preisen.\\nAm Wochenende spielen angesagte m\\u00fcnchner DJ\\u2019s groovigen Barsound und Deephouse und unterstreichen das edle Ambiente. Jederzeit ein Besuch wert! ",
+            "RATING": "5",
+            "REV_ID": 49,
+            "R_ID": 1,
+            "TITEL": "The place to be.",
+            "U_ID": 49
+        },
+        "50": {
+            "BEWERTUNG": "Tolles Ambiente, leckeres Essen und super nettes Personal. Unser Pl\\u00e4tzchen zum Entspannen nach einem Shopping Samstag. Gutes Preis-/Leistungsverh\\u00e4ltnis.",
+            "RATING": "5",
+            "REV_ID": 50,
+            "R_ID": 1,
+            "TITEL": "Immer wieder gerne!",
+            "U_ID": 50
+        },
+        "51": {
+            "BEWERTUNG": "Gewohnt exzellenter Service, super Essen und tolle Cocktails! \\nDie Mitarbeiter schaffen es immer wieder Ihren G\\u00e4sten einen unvergesslichen Abend zu zaubern! Wir kommen gerne jederzeit wieder und freuen uns schon auf den n\\u00e4chsten Besuch!",
+            "RATING": "5",
+            "REV_ID": 51,
+            "R_ID": 1,
+            "TITEL": "Super Abend in der Schwarzreiter Tagesbar",
+            "U_ID": 51
+        },
+        "52": {
+            "BEWERTUNG": "Die zuvorkommenden Barkeeper im Schwarzreiter haben uns kreative Drinks gezaubert, die keinen Wunsch unerf\\u00fcllt gelassen haben! Danke f\\u00fcr das Geschmackserlebnis und den sch\\u00f6nen Abend!",
+            "RATING": "5",
+            "REV_ID": 52,
+            "R_ID": 1,
+            "TITEL": "Super Drinks!",
+            "U_ID": 52
+        },
+        "53": {
+            "BEWERTUNG": "Es lohnt sich sehr den k\\u00f6stlichen Drinks im Schwarzenreiter seine Aufmerksameit zu schenken! \\r\\nLeckere, ausgefallende und kreative Drinks lie\\u00dfen unseren Abend zu einem kleinen Highlight werden.  \\r\\nDanke an die Barkeeper!",
+            "RATING": "5",
+            "REV_ID": 53,
+            "R_ID": 1,
+            "TITEL": "Vorz\\u00fcgliche Drinks und sch\\u00f6ner Abend",
+            "U_ID": 53
+        },
+        "54": {
+            "BEWERTUNG": "Zur\\u00fccklehnen und einfach Mal vom Barkeeper Alex \\u00fcberraschen lassen!\\nDie Drinks waren allesamt wahnsinnig gut",
+            "RATING": "5",
+            "REV_ID": 54,
+            "R_ID": 1,
+            "TITEL": "Beste Drinks bei Alex",
+            "U_ID": 54
+        },
+        "55": {
+            "BEWERTUNG": "Im Kempinski Hotel Vier Jahreszeiten in der angesagte M\\u00fcnchener Maximilianstrasse a\\u00dfen wir zu Mittag: Eine Pfannkuchen-Suppe und panierte Skrei-Nuggers mit Remouladensauce und Kartoffel-Gurken-Salat. Die Suppe war ordentlich,, aber nicht au\\u00dfergew\\u00f6hnlich, reichlich und voller Fritatten. Die Fisch-Nuggets waren eine herbe Entt\\u00e4uschung: Durch die zu dicke, aber nicht knusprige  Panade war der Fische zur Geschmacklosigkeit weich geworden, die Remoulade hatte kaum Eigengeschmack. ebenso der Salat. Ordentlich mit \\u00fcberwiegend Rhabarber war die Schorle, ebenso war der Kaffee. Der Service war untadelig. Der Gesamtpreis von 45 Euro pro Person war  f\\u00fcr Das Gebotene zu hoch.",
+            "RATING": "3",
+            "REV_ID": 55,
+            "R_ID": 1,
+            "TITEL": "+Renomme und Lage teuer bezahlt",
+            "U_ID": 55
+        },
+        "56": {
+            "BEWERTUNG": "Toller Abend mit gutem Essen! Sehr netter und aufmerksamer Service! Ein Dankesch\\u00f6n und Gr\\u00fc\\u00dfe an Lucia!",
+            "RATING": "5",
+            "REV_ID": 56,
+            "R_ID": 1,
+            "TITEL": "Toller Abend",
+            "U_ID": 56
+        },
+        "57": {
+            "BEWERTUNG": "Tolles Ambiente, nettes Personal, freundlich und zuvorkommend! Ein toller Tag klingt aus....\\nDie Cocktails waren sehr lecker :)",
+            "RATING": "5",
+            "REV_ID": 57,
+            "R_ID": 1,
+            "TITEL": "Immer wieder gerne !",
+            "U_ID": 57
+        },
+        "58": {
+            "BEWERTUNG": "Nach dem shoppen waren wir Essen in der Schwarzreiter Tagesbar. Ich war des \\u00f6fteren zum Abendessen im Restaurant, dies war jedoch mein erstes Mal in der Tagesbar. \\n\\nZum Restaurant: \\nModerne, deutsche/regionale K\\u00fcche neu interpretiert. Das Essen ist immer \\u00fcberraschend/kreativ angerichtet und geschmacklich ausgezeichnet. Endg\\u00fcltig verliebt habe ich mich in das Restaurant als es sauere Zipfel auf der Karte gab. Diese wurden optisch komplett neu interpretiert und waren geschmacklich genau so wie ich sie von meiner Mutter kenne. Der Service ist ausgezeichnet und geht auf alle w\\u00fcnsche ein. Reine Perfektion.\\n\\nZur Tagesbar:  \\nSuper Fleischqualit\\u00e4t, klasse Portionen, einfach eine runde Sache. Hervorheben m\\u00f6chte ich zus\\u00e4tzlich noch den ausgezeichneten Service. Sehr freundlich, entgegenkommend und aufmerksam. ",
+            "RATING": "5",
+            "REV_ID": 58,
+            "R_ID": 1,
+            "TITEL": "Immer wieder einen Besuch wert ",
+            "U_ID": 58
+        },
+        "59": {
+            "BEWERTUNG": "Gem\\u00fctlich und mit tollen Flair,\\nSchon am Einlass wurde ich freundlich von der durchaus attraktiven Hostess herzlich und sehr willkommen empfangen. Am Tisch gab es eine kleine Auswahl von Negroni &amp; Tatar, besser geht es kaum. Unsere Bedienung Lisa hat uns keinen Wunsch offen gelassen. Vielen Dank &amp; bis ganz bald ",
+            "RATING": "5",
+            "REV_ID": 59,
+            "R_ID": 1,
+            "TITEL": "Danke f\\u00fcr einen tollen Abend ",
+            "U_ID": 59
+        },
+        "60": {
+            "BEWERTUNG": "Die Auswahl an Cocktails ist der Hammer, die combo zwischen kleinen H\\u00e4ppchen &amp; Drinks passen auf den Punkt. Vielen Dank f\\u00fcr den sch\\u00f6nen Abend, auch an unsere freundliche Bedienung ",
+            "RATING": "5",
+            "REV_ID": 60,
+            "R_ID": 1,
+            "TITEL": "Super Ambiente, top Service ",
+            "U_ID": 60
+        },
+        "61": {
+            "BEWERTUNG": "Gestandene Bar im Herzen M\\u00fcnchens mit gestandenem Barkeeper. Tolle Location und super Drinks. Sehr empfehlenswert!",
+            "RATING": "5",
+            "REV_ID": 61,
+            "R_ID": 1,
+            "TITEL": "Bester Barkeeper",
+            "U_ID": 61
+        },
+        "62": {
+            "BEWERTUNG": "Eine Wohlf\\u00fchllocation. Der Service ist sehr freundlich, aufmerksam und kompetent. Sowohl das Essen als auch die Drinks sind wirklich sehr lecker und die Qualit\\u00e4t ausgezeichnet. Immer einen Besuch wert.",
+            "RATING": "5",
+            "REV_ID": 62,
+            "R_ID": 1,
+            "TITEL": "Sehr zu empfehlen",
+            "U_ID": 62
+        },
+        "63": {
+            "BEWERTUNG": "Wir waren Samstag Abend in der Tagesbar und haben dort zuerst Cocktails bestellt. Der Bartender Alexej hat uns fantastische Himbeer Margaritas gemixt. Zum Essen hatten wir einen Salat mit hausgebeiztem Lachs sowie 2 Wiener Schnitzel. Es war alles sehr gut mit vor allem super freundlichem und sehr zuvor kommendem Service. Wir kommen wieder.\\n",
+            "RATING": "5",
+            "REV_ID": 63,
+            "R_ID": 1,
+            "TITEL": "Spontaner Besuch",
+            "U_ID": 63
+        },
+        "64": {
+            "BEWERTUNG": "Das Restaurant bietet einen exzellenten Service gepaart mit einer jungen und sehr geschmackvollen K\\u00fcche. Gestern Abend war das Lokal gut Besucht und die Wartezeit auf unser Essen wurde mit frischem Brot und Obazda gef\\u00fcllt. \\nDie Lage und die Einrichtung sind sehr stilvoll gew\\u00e4hlt. \\nDas Preis-Leistungs-Verh\\u00e4ltnis ist f\\u00fcr M\\u00fcnchner Verh\\u00e4ltnisse sehr Gut.\\nF\\u00fcr einen sch\\u00f6nen Abend ohne Einschr\\u00e4nkungen weiter zu empfehlen.",
+            "RATING": "5",
+            "REV_ID": 64,
+            "R_ID": 1,
+            "TITEL": "Angenehmer Abend in der Maximilianstra\\u00dfe ",
+            "U_ID": 64
+        },
+        "65": {
+            "BEWERTUNG": "Ein fantastischer Freitagabend im Schwarzeiter hat mit leckere Cocktails angefangen, die der Bartender uns empfohlen hat. Das Essen war ausgezeichnet, Alpenlachs gebeizt als Vorspeise und Seezunge als Hauptgang. \\nSehr tolles Ambient, freundliches Personal und charmante Empfang. Und zum Schluss noch coole Musik mit Dj. Einfach perfekt. Gerne wieder! ",
+            "RATING": "5",
+            "REV_ID": 65,
+            "R_ID": 1,
+            "TITEL": "Top Location im Herzen M\\u00fcnchens",
+            "U_ID": 65
+        },
+        "66": {
+            "BEWERTUNG": "Wir mit unserer Familie zum Essen gegangen, zuerst wurden die Getr\\u00e4nke gebracht leider war mein Glas nicht sauber. Wurde nach meiner  Reklamation schnell ein neues gebracht musste das selber auff\\u00fcllen, bei einem luxuri\\u00f6sen Restaurant ein gro\\u00dfes Nachteil.\\nAuf das Essen zu kommen kleine Portionen hat jedem gefallen, der Preis ist auch sehr hoch.Ob Preis Leistungsverh\\u00e4ltnis gerechtfertigt ist mu\\u00df jeder selber entscheiden.",
+            "RATING": "3",
+            "REV_ID": 66,
+            "R_ID": 1,
+            "TITEL": "Es passt",
+            "U_ID": 66
+        },
+        "67": {
+            "BEWERTUNG": "Top Essen auch f\\u00fcr Veganer sehr zu empfehlen sowie ein super Service von Christoph und die besten Cocktails der Stadt!!\\nJeder Zeit gerne wieder ",
+            "RATING": "5",
+            "REV_ID": 67,
+            "R_ID": 1,
+            "TITEL": "TOP TOP TOP ",
+            "U_ID": 67
+        },
+        "68": {
+            "BEWERTUNG": "Wir entschieden uns spontan f\\u00fcr ein Abendessen in der Schwarzreiter Tagesbar. Am Eingang wurden wir \\u00e4u\\u00dferst freundlich empfangen und zu einem sch\\u00f6nen Fenstertisch gef\\u00fchrt. Als Vorspeise bestellten wir das Rindertatar zum teilen, dieses wurde dann sehr sch\\u00f6n auf zwei seperate Brettchen angerichtet, anstatt einen zweiten Teller zu servieren. Sehr aufmerkam!! Das Wienerschnitzel zum Hauptgang war ein Highlight und auf jeden Fall etwas f\\u00fcr den gro\\u00dfen Hunger. \\r\\nEin gro\\u00dfer Dank geht an das \\u00fcberaus freundliche Serviceteam, das uns den ganzen Abend \\u00fcber mit Kompetenz und Aufmerksamkeit zur Seite stand. \\r\\nAb 21:00 Uhr spielte ein DJ entspannte Loungemusik und sorgte hiermit f\\u00fcr eine lockere Samstag-Abend-Bar-Atmosph\\u00e4re. Ein letzter Drink an der Bar rundete diesen perfekten Abend schlie\\u00dflich ab.",
+            "RATING": "5",
+            "REV_ID": 68,
+            "R_ID": 1,
+            "TITEL": "Ausgezeichnetes Essen, sehr aufmerksamer Service, absolutes Wohlf\\u00fchl-Ambiente",
+            "U_ID": 68
+        },
+        "69": {
+            "BEWERTUNG": "\\u00dcberragende Cocktails und beispielloser Service. Kann ich nur weiter empfehlen. Wurden mit einer Cocktail Empfehlung bestens beraten. ",
+            "RATING": "5",
+            "REV_ID": 69,
+            "R_ID": 1,
+            "TITEL": "Schwarzreiter Bar",
+            "U_ID": 69
+        },
+        "70": {
+            "BEWERTUNG": "Hervorragender Service, besonders erw\\u00e4hnenswert war der junge Kellner Simon, der uns mit einer Cocktailberatung und ein paar Snacks den Abend vers\\u00fc\\u00dft hat! Sehr empfehlenswert!",
+            "RATING": "5",
+            "REV_ID": 70,
+            "R_ID": 1,
+            "TITEL": "Baraufenthalt Schwarzreiter",
+            "U_ID": 70
+        },
+        "71": {
+            "BEWERTUNG": "Super Service und perfekte Beratung der Drink Auswahl durch den Auszubildenden simon super bar TOP!!!",
+            "RATING": "5",
+            "REV_ID": 71,
+            "R_ID": 1,
+            "TITEL": "Bar Aufenthalt Schwarzreiter",
+            "U_ID": 71
+        },
+        "72": {
+            "BEWERTUNG": "Der bartender war sehr nett. Super Auswahl von Getr\\u00e4nke und gute music. Die Suppe hat geil geschmeckt!! ",
+            "RATING": "5",
+            "REV_ID": 72,
+            "R_ID": 1,
+            "TITEL": "Geil ",
+            "U_ID": 72
+        },
+        "73": {
+            "BEWERTUNG": "Super leckere Getr\\u00e4nke! Der Abend war sehr gelungen! Bester Barkeeper, beste Cocktails. N\\u00e4chste Woche wieder",
+            "RATING": "5",
+            "REV_ID": 73,
+            "R_ID": 1,
+            "TITEL": "Super Barkeeper",
+            "U_ID": 73
+        },
+        "74": {
+            "BEWERTUNG": "es war super lecker und der service war auch mega. nur das essen hat einen ticken zu lange gedauert,. aber das macht nichts weil die qualit\\u00e4t mehr als \\u00fcberzeugt!",
+            "RATING": "5",
+            "REV_ID": 74,
+            "R_ID": 1,
+            "TITEL": "ein traum",
+            "U_ID": 74
+        },
+        "75": {
+            "BEWERTUNG": "Wir wollten das Jahr mit Sternen beginnen und reservierten im neu dekoriertem Restaurant zu dritt : 1 Hund, 2 Menschen.\\nAm 01.01.2018 war dann das Sternenlokal dicht, einzig der vordere Bereich und die &quot;Tagesbar&quot; waren auf.\\nUnser lieber Vierbeiner durfte nicht einmal in den richtigen Restaurationsbereich.\\nDies alles wurde uns bei der Best\\u00e4tigung nicht mitgeteilt, Luxushotel ? Kempinski ?\\nDer \\u00e4usserst zuvorkommende und professionnelle Herr Lehmann hat jedoch daf\\u00fcr gesorgt, da\\u00df  wir uns auch abends in der Tagesbar wohf\\u00fchlten, kein Drama, aber nicht der erwartete Abend.\\nDie K\\u00fcchentechnik ist perfekt, klassische Zubereitung; die parierte Seezunge alte Schule, wunderbar; leider aus Aufzucht. und die schmecken einfach nicht nach viel und haben eine matschige Konsistenz. Da lob ich mir den Dorsch. (ebenfalls auf der Karte; auf die unterschiedliche Herkunft wird NICHT hingewiesen)\\nWegen der Qualit\\u00e4t der Seezunge w\\u00fcrde ich den 3ten am 1. Januar 2018 geschlossenen Teil dieser westlichen Ecke des Erdgeschosses des 4Jahredzeiten nicht aufsuchen, kann einem michelin *Stern auf keinen Fall gerecht werden, trotz top Bedienung und top Berufsk\\u00f6nnen in der K\\u00fcche",
+            "RATING": "3",
+            "REV_ID": 75,
+            "R_ID": 1,
+            "TITEL": "Wechselbad der Gef\\u00fchle",
+            "U_ID": 75
+        },
+        "76": {
+            "BEWERTUNG": "Wir verbrachten einen sehr sch\\u00f6nen Abend im Restaurant. Der Service ist unaufdringlich, sehr professionell. Das Essen war fein, wir waren zufrieden. Nur das Dessert erf\\u00fcllte nicht unsere Erwartung. Die Weinauswahl k\\u00f6nnte f\\u00fcr diese Restaurantklasse noch besser sein. ",
+            "RATING": "4",
+            "REV_ID": 76,
+            "R_ID": 1,
+            "TITEL": "Sch\\u00f6ner Abend",
+            "U_ID": 76
+        },
+        "77": {
+            "BEWERTUNG": "Daily Dish hei\\u00dft hier der Business Lunch - und ist durchweg zu empfehlen. Wir hatten diesmal Ochsenfetzen mit Rosenkohl und Tagliatelle, fein gew\\u00fcrzt und gut abgeschmeckt. Da\\u00df beim  Beilagensalat das Dressing nicht nach gusto gew\\u00e4hlt werden kann - uns ist es immer noch zu s\\u00fc\\u00df, was allerdings am Balsamico liegen kann - ist f\\u00fcr uns ein kleiner Minuspunkt. Daf\\u00fcr punktet das schmackhafte dunkle Brot,  was mit normaler Salzbutter statt Creme noch besser gewesen w\\u00e4re. Der kleine Kaffee hinterher rundet das leichte Men\\u00fc ab, Wir kommen gerne wieder.",
+            "RATING": "4",
+            "REV_ID": 77,
+            "R_ID": 1,
+            "TITEL": "Business lunch",
+            "U_ID": 77
+        },
+        "78": {
+            "BEWERTUNG": "Bis auf das Rinderfilet mit Tr\\u00fcffeln (gut aber nicht aussergew\\u00f6hnlich) hatte ich nicht das Gef\\u00fchl, mich in einem 1-Sterne-Gummi-Lokal zu befinden.Der ger\\u00e4ucherte war Saibling ganz gut, die K\\u00fcrbissuppe gibt es so in vielen anderen (g\\u00fcnstigeren)  Lokalen auch. Dasselbe gilt ebenso f\\u00fcr die Nachspeise.  Leider konnte ich nur auf die Schnelle den (durchschnittlichen) Apfelstrudel verkosten, nachdem der eigentlich vorab georderte  Kaiserschmarrn schlichtweg vergessen worden war. Nicht ohne, dass uns die (nette, aber \\u00fcberforderte) Bedienung dieses Vers\\u00e4umnis beharrlich in die Schuhe schieben wollte (mehrfach: &quot;nein, Sie haben das gar nicht bestellt&quot;). Der Service hat also  wirklich definitiv Luft nach oben\\r\\nEs war aber auch nur die Tagesbar, vielleicht spielt  das Abendrestaurant in einer anderen Liga.\\r\\nVermutlich ist f\\u00fcr die Tagesbar auch  nicht der K\\u00fcchenchef Anton Pozeg verantwortlich?\\r\\nImmerhin eine wirklich gute Weinkarte, gerade was die  offenen Weine anbelangt (sehr originell: Zorah Karasi, ein samtig-kr\\u00e4ftiger Roter aus Armenien).",
+            "RATING": "3",
+            "REV_ID": 78,
+            "R_ID": 1,
+            "TITEL": "Tagesbar jedenfalls nicht auf Sterne-Niveau",
+            "U_ID": 78
+        },
+        "79": {
+            "BEWERTUNG": "Zweiter Weihnachtsfeiertag im Schwarzreiter. Keine Spur von Erm\\u00fcdung in K\\u00fcche und Service wie h\\u00e4ufig anderswo.\\r\\nAiusgezeichnete s\\u00e4mige K\\u00fcrbiscremesuppe mit Kernen und \\u00d6l, dann Ente (Weihnachten!) Brust und Keule (frisch, nicht aufgew\\u00e4rmt) mit 2 Kl\\u00f6\\u00dfen und Blaukraut in herrlicher So\\u00dfe. Dazu passend frisch gezapftes Bier und fr\\u00e4nkische Scheurebe.\\r\\nEin \\u00e4u\\u00dferst aufmerksamer, junger Service: besonders erw\\u00e4hnenswert Simon, der  nicht nur mich vorz\\u00fcglich umsorgte, sondern am Nebentisch ausl\\u00e4ndische G\\u00e4ste in perfektem Englisch in die Besonderheiten der Bayerischen K\\u00fcche einweihte.\\r\\nEin wunderbarer Ausklang der Feiertage!",
+            "RATING": "5",
+            "REV_ID": 79,
+            "R_ID": 1,
+            "TITEL": "Rundum top!",
+            "U_ID": 79
+        },
+        "80": {
+            "BEWERTUNG": "Unser Abendessen im &quot;Schwarzreiter&quot; war eine total und rundum gute Erfahrung.\\nWir w\\u00e4hlten etwas typisch bayerisches mit bayerischem Bier und einem Kaiserschmarrn als Dessert. Das sich im Verlaufe des Abends ergebende Gespr\\u00e4ch mit dem Betriebsleiter und gleichzeitigem Kellner war zur\\u00fcckhaltend und unaufdringlich seitens des Mitarbeiters gef\\u00fchrt. Wir sprachen \\u00fcber die Hintergr\\u00fcnde der Sternebenotung durch den Guide Michelin, nach das &quot;Schwarzreiter&quot; seit Neuestem ebenfalls \\u00fcber einen solchen Stern verf\\u00fcgt.\\nEin bereichernder Abend bei leckerer K\\u00fcche.",
+            "RATING": "4",
+            "REV_ID": 80,
+            "R_ID": 1,
+            "TITEL": "angenehmes Ambiente und gute K\\u00fcche",
+            "U_ID": 80
+        },
+        "81": {
+            "BEWERTUNG": "die K\\u00fcche ist sehr gut. Recht teuere Weine. Atmosph\\u00e4re im Restaurant etwas unterk\\u00fchlt.\\r\\nService sehr aufmerksam.",
+            "RATING": "4",
+            "REV_ID": 81,
+            "R_ID": 1,
+            "TITEL": "sehr gute K\\u00fcche",
+            "U_ID": 81
+        },
+        "82": {
+            "BEWERTUNG": "F\\u00fcr ein schnelles und sehr gutes Buisines Essen hervorragend geeignet! Sehr angenehme Atmosh\\u00e4re und aufmerksames Personal!",
+            "RATING": "5",
+            "REV_ID": 82,
+            "R_ID": 1,
+            "TITEL": "F\\u00fcr ein schnelles und sehr gutes Buisines Essen hervorragend geeignet!",
+            "U_ID": 82
+        },
+        "83": {
+            "BEWERTUNG": "Vielen lieben Dank an Alexej, den wundervollen Barkeeper der Schwarzreiter Bar. \\n\\nIch komme gerne wieder!",
+            "RATING": "5",
+            "REV_ID": 83,
+            "R_ID": 1,
+            "TITEL": "Great bartenders are born, not made.",
+            "U_ID": 83
+        },
+        "84": {
+            "BEWERTUNG": "Alex ist der beste Barkeeper! \\nDie Schwarzreiter Tagesbar ist ein absoluter Geheimtipp, die Cocktails sind sensationell, vor allem der legend\\u00e4re Monaco Royal! In tollem Ambiente mit Blick auf die Maximilianstrasse. Personal super nett und zuvorkommend. Ich komme wieder!",
+            "RATING": "5",
+            "REV_ID": 84,
+            "R_ID": 1,
+            "TITEL": "Bester Barkeeper",
+            "U_ID": 84
+        },
+        "85": {
+            "BEWERTUNG": "Ich war bereits im Sommer schon auf der Tagesbar-Terasse und war sehr begeistert! \\nUnd auch heute bekamen wir wieder besten Service und ein ausgezeichnetes Essen. Die Tr\\u00fcffel Tagliatelle sind ein absoluter Traum! \\nKomme sehr gerne wieder ins Schwarzreiter!",
+            "RATING": "5",
+            "REV_ID": 85,
+            "R_ID": 1,
+            "TITEL": "Immer wieder gerne! ",
+            "U_ID": 85
+        },
+        "86": {
+            "BEWERTUNG": "Ich komme immer wieder gerne in die Schwarzreiter-Tagesbar. Es gibt wenige Bars, die mir so sehr gefallen, wie diese. Gesch\\u00e4ftsf\\u00fchrer Andrej Grunert und sein Team sind einfach klasse. Man wird hervorragend betreut. Das Essen ist in jeder Hinsicht empfehlenswert, insbesondere Schmankerl wie das Wiener Schnitzel oder der Kaiserschmarrn.",
+            "RATING": "5",
+            "REV_ID": 86,
+            "R_ID": 1,
+            "TITEL": "Immer wieder sch\\u00f6n",
+            "U_ID": 86
+        },
+        "87": {
+            "BEWERTUNG": "Lange nicht mehr da gewesen, jedoch direkt wieder das angetroffen was ich in Erinnerung behalten hatte. Cooles Personal, perfektes gastronomisches Angebot und ein wahres Erlebnis! \\nSeit neustem ein Michelin Stern.\\nDas ist kein Restaurant- das ist Entertainment, Lifestyle und Spa\\u00df pur. ",
+            "RATING": "5",
+            "REV_ID": 87,
+            "R_ID": 1,
+            "TITEL": "Alles beim Alten ",
+            "U_ID": 87
+        },
+        "88": {
+            "BEWERTUNG": "Wir hatten einen sehr sch\\u00f6nen Abend in der Tagesbar: super Essen, sehr gute Cocktails und perfekter Service! Der Stern ist mehr als verdient!",
+            "RATING": "5",
+            "REV_ID": 88,
+            "R_ID": 1,
+            "TITEL": "Romantischer Abend zu zweit ",
+            "U_ID": 88
+        },
+        "89": {
+            "BEWERTUNG": "Waren zu dritt im Schwarzreiter,\\nDas bietet mehr als nur einen Stern.\\nService sehr locker \\nDas Dessert hat noch eine Schippe drauf gelegt\\nDaniel huembs nimm dich dich acht der n\\u00e4chste patessier des Jahres ist im Schwarzreiter.\\nDanke kommen gerne wieder \\n",
+            "RATING": "5",
+            "REV_ID": 89,
+            "R_ID": 1,
+            "TITEL": "Der Stern ist mehr als verdient!!!",
+            "U_ID": 89
+        },
+        "90": {
+            "BEWERTUNG": "Super Abend. Sehr freundliches Personal. Tolle Getr\\u00e4nke. Wir haben unseren Abend an der Bar sehr genossen.\\nVielen Dank ",
+            "RATING": "5",
+            "REV_ID": 90,
+            "R_ID": 1,
+            "TITEL": "Fantastisch!!!",
+            "U_ID": 90
+        },
+        "91": {
+            "BEWERTUNG": "Wir wahren zu viert zum Gesch\\u00e4ftsessen im Restaurant Schwarzreiter. Nach einer Flasche Champagner und dem Herrengedeck (Kaviar, Auster und Vodka) entschieden wir uns f\\u00fcr das 6-G\\u00e4nge Men\\u00fc mit Weinbegleitung. Das Essen war vorz\\u00fcglich, der Service sehr bem\\u00fcht und freundlich und die zeitliche Abfolge der G\\u00e4nge genau nach unseren Vorstellung. Getr\\u00fcbt wurde der Besuch durch die hektische und gestresste Sommelier. \\nDiese liess die Liebe und Hingabe f\\u00fcr die tollen Weine komplett vermissen. \\nDie Weine wurden nicht mit Ruhe eingeschenkt sondern grossteils so in das Glas hinein gesch\\u00fcttet, so dass eine Blasenbildung im Glas entstand oder Wein aus dem Glas wieder heraus spritzte. Das Einschenken erfolgte auch immer wiedet quer \\u00fcber den Tisch. Erkl\\u00e4rungen neben Namen und Winzer fanden nur sporadisch statt....und dann meist nur auf Nachfrage. Wir sprachen die Dame gezielt darauf an, dass etwas mehr Zeit bei den Erkl\\u00e4rungen und weniger Hektik sowie hin und wieder ein L\\u00e4cheln unseren Aufenthalt angenehmer machen w\\u00fcrde. Anstatt unsere Beobachtung und Wahrnehmung  anzunehmen, kam leider eine nicht nachvollziehbare Erkl\\u00e4rung: Heute seien eben viele G\\u00e4ste mit Weinbegleitung und da ist es halt stressig.  \\nEine Ver\\u00e4nderung konnten wir leider bei der Sommelier nicht feststellen, allerdings hat das Servicepersonal super reagiert. Von sich aus \\u00fcbernahmen sie die Rolle und informierten uns zu den Weinen und warum sie zu den Gerichten ausgew\\u00e4hlt wurden. Dies haben wir den selbstverst\\u00e4ndlich honoriert und direkt Feedback gegeben.  Auch an dieser Stelle nochmals vielen Dank an die K\\u00fcche und das Servicepersonal. Kompliment f\\u00fcr die hervorragende Leistung!\\nWir kommen bald wieder.",
+            "RATING": "4",
+            "REV_ID": 91,
+            "R_ID": 1,
+            "TITEL": "Bayerisch - neu interpretiert",
+            "U_ID": 91
+        },
+        "92": {
+            "BEWERTUNG": "Zun\\u00e4chst wollten wir nach einem sehr guten Termin einen sch\\u00f6nen Drink in der Schwarzreiter Tagesbar zu uns nehmen. Wir haben uns hierzu an die aus unserer Sicht einzigartig und von den Materialien her wundersch\\u00f6n gestalteten Bar gesetzt und kamen mit dem einmaligen Barkeeper Alex ins Gespr\\u00e4ch. \\nEr fragte uns, ob wir gerne etwas essen wollen. Eigentlich hatten wir nicht vor zu essen. Nach einmaliger Beratung von seitens dem zuvorkommenden Barkeeper haben wir uns zun\\u00e4chst den Alpenlachs bestellt.\\nDer Lachs war ein Fest f\\u00fcr die Augen und ein Feuerwerk f\\u00fcr unseren Gaumen. Unser Gaumen hat sich \\u00fcberschlagen vor Freude. \\nSp\\u00e4ter haben wir uns noch das Schokoladentarte bestellen lassen. Dieses Tarte war so zart, es hat mit uns gesprochen wie ein Gedicht. \\nDas Essen und die Drinks waren f\\u00fcr uns wie ein Konzert der Superlative weltweit! \\nHier muss man gewesen sein und Alex macht den Gast zum Kaiser! \\nWer im Schwarzreiter nicht war, war nicht in M\\u00fcnchen . ",
+            "RATING": "5",
+            "REV_ID": 92,
+            "R_ID": 1,
+            "TITEL": "Wundervoll wie ein Feuerwerk ",
+            "U_ID": 92
+        },
+        "93": {
+            "BEWERTUNG": "Tageszeit des Besuchs: Donnerstag Abend gegen 21:30h\\r\\nEmpfang: Super freundlich\\r\\nTischauswahl: perfekt - direkt am Fenster \\r\\nService: so etwas haben wir schon lange nicht mehr erlebt. Dies von der ersten Minute bis zum Verlassen des Restaurants und des Hotels einfach nur perfekt, auf einer Skala von 1-10 bekommt Herr Alexander Bauer eine 12!!! das war mehr als Spitzenklasse. \\r\\nGetr\\u00e4nke: Chardonnay &amp; Silvaner - wir konnten aber auch andere offene Weine probieren, um den f\\u00fcr uns besten Wein auszuw\\u00e4hlen. \\r\\nEssen: \\r\\n- Tatar vom Ochs: gigantisch\\r\\n- Winterkabeljau auf Risotto: noch gigantischer\\r\\n- Brot mit Aufstrich (gecremter Obatzer): super lecker\\r\\nEspresso: perfekt...\\r\\nSumme: 95,00 Euro - zzgl einem guten Trinkgeld, welches wir gerne gegeben haben. \\r\\nWir kommen wieder...",
+            "RATING": "5",
+            "REV_ID": 93,
+            "R_ID": 1,
+            "TITEL": "Das war einfach nur perfekt - super essen und super service - wir kommen wieder...",
+            "U_ID": 93
+        },
+        "94": {
+            "BEWERTUNG": "Qualit\\u00e4t des Essens, Effizienz und zur\\u00fcckhaltende Freundlichkeit des Service (immer im richtigen Augenblick pr\\u00e4sent), Innenarchitektur (&quot;Hotelrestaurant&quot; man merkt \\u00fcberhaupt nicht) - alles auf hohem Niveau.",
+            "RATING": "5",
+            "REV_ID": 94,
+            "R_ID": 1,
+            "TITEL": "Auf hohem Niveau",
+            "U_ID": 94
+        },
+        "95": {
+            "BEWERTUNG": "Die Tagesbar ist w\\u00e4hrend unserem Aufenthaltes zu unserem Wohnzimmer geworden. Lockere Atmosph\\u00e4re, ausgefallene Cocktail-Karte und freundliches Personal waren sehr einladend. Unser Highlight w\\u00e4hrend des Besuchs war die Hostess / Guest Relation Lucia, die keine G\\u00e4stew\\u00fcnsche offen l\\u00e4sst.\\r\\nIm Fine Dining Restaurant haben wir zwei Men\\u00fcs probiert und jeder Gang hat uns sehr \\u00fcberzeugt. Regionale Speisen &amp; Kreationen auf Sterneniveau werden wir lange in Erinnerung behalten. Wir haben gleich gedacht, dass der Michelin-Stern auf sich nicht lange l\\u00e4sst ;-)",
+            "RATING": "5",
+            "REV_ID": 95,
+            "R_ID": 1,
+            "TITEL": "Locker, lokal und trotzdem gehoben",
+            "U_ID": 95
+        },
+        "96": {
+            "BEWERTUNG": "Waren gestern mit Freunden beim Schwarzreiter.\\nWar wie immer ein au\\u00dferordentlicher Abend.\\nWir k\\u00f6nnen immer nur schw\\u00e4rmen, da alles aber auch wirklich alles perfekt ist.\\nHerzlichen Dank an den besten Service, den es in M\\u00fcnchen beim Wettbewerb leider nicht gibt.\\nHerzlichen Dank an die hervorragende K\\u00fcche, die uns kulinarisch auf h\\u00f6chstem Niveau verw\\u00f6hnt.\\n\\nGr\\u00fc\\u00dfe an die Teamleitung, Ihr habt ein super Team zusammengestellt und das ist Euer Verdienst.\\n\\nWir freuen uns auf unseren n\\u00e4chsten Besuch im Schwarzreiter, der mit Sicherheit nicht lang auf sich warten l\\u00e4sst. \\n\\nLiebe und freundschaftliche Gr\\u00fc\\u00dfe \\n\\nR. Lange und E. Ullrich\\ud83d\\udc90\\ud83e\\udd42\\ud83c\\udf64\\ud83c\\udf7e\\ud83d\\udc90\\ud83d\\udc4d\\ud83d\\udc4d\\ud83d\\udc4d\\ud83d\\udc4d",
+            "RATING": "5",
+            "REV_ID": 96,
+            "R_ID": 1,
+            "TITEL": "Ein Abend, an dem wie immer alles top war.",
+            "U_ID": 96
+        },
+        "97": {
+            "BEWERTUNG": "Wir hatten einen wirklich sehr, sehr sch\\u00f6nen Abend im Schwarzreiter. Das Men\\u00fc war der Hammer, alles war perfekt aufeinander abgestimmt. \\u00dcberragend war auch die Weinbegleitung- zu jedem Gang ein wunderbarer Wein!  \\nDas Highlight war dann neben dem Hauptgang das Dessert. \\nWir kommen definitiv wieder!",
+            "RATING": "5",
+            "REV_ID": 97,
+            "R_ID": 1,
+            "TITEL": "Hervorragendes Men\\u00fc",
+            "U_ID": 97
+        },
+        "98": {
+            "BEWERTUNG": "Waren in M\\u00fcnchen unterwegs und sind, schon etwas sp\\u00e4ter am Abend, noch in die genannte Bar. Abgesehen von einem traumhaft freundlichen und zuvorkommenden Service waren die Whisky Cocktails des Barkeepers unschlagbar. Ideal abgestimmt auf unsere unterschiedlichen Geschm\\u00e4cker. Sehr zu empfehlen!",
+            "RATING": "5",
+            "REV_ID": 98,
+            "R_ID": 1,
+            "TITEL": "Grandiose Whisky Cocktails",
+            "U_ID": 98
+        },
+        "99": {
+            "BEWERTUNG": "Eines der besten Restaurants in M\\u00fcnchen \\u00fcberhaupt, Service ist zuvorkommend, Ambiente ist einfach Spitzenklasse und die Speisen sind himmlisch. Das Tr\\u00fcffelrisotto ist berauschend und macht s\\u00fcchtig. Die Tr\\u00fcffelpasta ist auch ein Genuss.\\r\\n\\r\\n Alles in Allem einfach toll, toll, toll.\\r\\n\\r\\nVielen Dank liebes Team f\\u00fcr das tolle Erlebnis!",
+            "RATING": "5",
+            "REV_ID": 99,
+            "R_ID": 1,
+            "TITEL": "Risotto macht s\\u00fcchtig/\\u00dcberragendes Restaurant",
+            "U_ID": 99
+        },
+        "100": {
+            "BEWERTUNG": "Vielen Dank f\\u00fcr einen entspannten Nachmittag! Gro\\u00dfen Dank auch an den aufmerksamen und zuvorkommenden Service von Ansgar! Sch\\u00f6n zu erleben wie Service professionell, entspannt, zuvorkommend und dabei l\\u00e4ssig zelebriert wird. Weiter so, gerne bald wieder!!",
+            "RATING": "5",
+            "REV_ID": 100,
+            "R_ID": 1,
+            "TITEL": "Ein verregneter Samstag",
+            "U_ID": 100
+        },
+        "101": {
+            "BEWERTUNG": "Wir waren gestern Abend in der Tagesbar und hatten einen richtig tollen Abend. Klare Empfehlung f\\u00fcr s\\u00fcffige Cocktails und leckeres Essen. \\n\\nDie Cocktails waren super, selten in M\\u00fcnchen so gute bekommen. Das Essen war traumhaft, das Wiener Schnitzel klassisch gut und das Rinderfilet war auf den Punkt gebraten.\\n\\nAbgerundet wurde der Abend durch einen tollen Service. Wir haben uns bei Lisa und ihrem Team rundum wohl gef\\u00fchlt. Ihre offene, sympathische und professionelle Art hat den Abend rundum gelungen gemacht. \\n\\nWeiter so, wir kommen gerne (und hoffentlich bald) wieder! ",
+            "RATING": "5",
+            "REV_ID": 101,
+            "R_ID": 1,
+            "TITEL": "Toller Abend in einer super Location",
+            "U_ID": 101
+        },
+        "102": {
+            "BEWERTUNG": "Ein fantastischer Abend mit meiner Freundin in der Tagesbar. Ein toller Bartender mit kreativen Ideen bei der Cocktailauswahl und einem sehr aufmerksamen Serviceteam. Wir kommen wieder!!! Vielen Dank",
+            "RATING": "5",
+            "REV_ID": 102,
+            "R_ID": 1,
+            "TITEL": "Fantastischer Abend",
+            "U_ID": 102
+        },
+        "103": {
+            "BEWERTUNG": "Herrlicher Platz auf der maximilianstrasse, um die Abendsonne und einen sehr sehr guten Cocktail zu genie\\u00dfen!",
+            "RATING": "5",
+            "REV_ID": 103,
+            "R_ID": 1,
+            "TITEL": "Herrlich in der Abendsonne",
+            "U_ID": 103
+        },
+        "104": {
+            "BEWERTUNG": "Wir waren zu zweit im Fine-Dinning Restaurant, das wechselnde 4-6 G\\u00e4nge-Men\\u00fcs anbietet. \\nEin raffiniertes Amouse \\u00fcberraschte und sowie die 4fache Brotauswahl mit Mandel\\u00f6l, Butter und ger\\u00f6steten Mandeln.\\nDas 6-G\\u00e4nge-Men\\u00fc zu \\u20ac112,- p.P.\\nl\\u00e4sst keine W\\u00fcnsche offen und ist vom Preisniveau absolut angemessen. Das Glas Champagner Ros\\u00e9 zu \\u20ac17,- ist ebenfalls f\\u00fcr so ein Haus angemessen bezahlbar. Die Cocktails sind sehr zu empfehlen, wie mir meine bessere H\\u00e4lfte bekannt gab. \\nBei Speisen und Getr\\u00e4nke also Geschmacksexplosion garantiert. \\n\\nDer Service: dezent, aufmerksam und sehr freundlich. Besonders ist uns die Sommelier aufgefallen, die uns excellent beraten hat.\\n1x wurde vers\\u00e4umt Besteck f\\u00fcr den n\\u00e4chsten Gang vorzulegen, was der Kellner charmant entschuldigte.\\n\\nSehr angenehmes Ambiente mit umwerfender, kreativen K\\u00fcche und erstklassigen Service die mit ihrem geschulten Auge den Aufenthalt zu etwas sehr besonderem machen.\\n\\nSterneverd\\u00e4chtig!\\n\\nWir kommen zu besonderen Anl\\u00e4ssen unbedingt wieder. ",
+            "RATING": "5",
+            "REV_ID": 104,
+            "R_ID": 1,
+            "TITEL": "Excellente K\\u00fcche, unglaubliche Weinauswahl, erstklassiger Service",
+            "U_ID": 104
+        },
+        "105": {
+            "BEWERTUNG": "Wir wollten vor dem Theater etwas Sch\\u00f6nes Essen. Wir hatten reserviert und wurden freundliche empfangen und zum Platz gebracht. Die Cocktails zum Aperitif waren extrem lecker. Sehr st\\u00f6rend empfanden wir die sehr laute und auch ungew\\u00f6hnliche Musik. Die Speisen waren unserer Meinung nun nicht so eczellent wie erwartet. Die Weinempfehlung dazu auch nicht so sehr nach unserem Geschmack. Schade, aber vielleicht hatten wir einfach nur zu hohe Erwarteten ",
+            "RATING": "3",
+            "REV_ID": 105,
+            "R_ID": 1,
+            "TITEL": "Erwartungen wurden nicht erf\\u00fcllt",
+            "U_ID": 105
+        },
+        "106": {
+            "BEWERTUNG": "Eine wunderbare Tagesbar mit vorz\\u00fcglichen Speisen, angemessenen Preisen und einem Service, der dem Vier Jahreszeiten auch gerecht wird.",
+            "RATING": "4",
+            "REV_ID": 106,
+            "R_ID": 1,
+            "TITEL": "Tolle Tagesbar",
+            "U_ID": 106
+        },
+        "107": {
+            "BEWERTUNG": "Super gute Cocktails die in Kombination mit dem hervorragenden Service immer f\\u00fcr einen gelungen Abend sorgen ",
+            "RATING": "5",
+            "REV_ID": 107,
+            "R_ID": 1,
+            "TITEL": "Super Ambiente super Cocktails",
+            "U_ID": 107
+        },
+        "108": {
+            "BEWERTUNG": "Die Nr. 1 auf TripAdvisor und auch zu recht! Super Getr\\u00e4nke und auch toller Service!\\nDas Ambiente ist sehr sch\\u00f6n mit direktem Blick auf die Maximilianstra\\u00dfe ",
+            "RATING": "5",
+            "REV_ID": 108,
+            "R_ID": 1,
+            "TITEL": "Super Bar!",
+            "U_ID": 108
+        },
+        "109": {
+            "BEWERTUNG": "Die Bar ist echt klasse! \\r\\nHabe heute den Gin Spritz probiert, es hat mir gut geschmeckt und bin von dem lockeren dennoch kompetenten Service begeistert.",
+            "RATING": "5",
+            "REV_ID": 109,
+            "R_ID": 1,
+            "TITEL": "Au\\u00dfergew\\u00f6hnlich!",
+            "U_ID": 109
+        },
+        "110": {
+            "BEWERTUNG": "Ich war mit ein paar Freunden auf ein paar Drinks im Schwarzreiter und fand es sehr angenehm. Sehr nettes Personal. Besonders gut hat uns Lisa beraten sehr nett und freundlich, ihre Getr\\u00e4nke Empfehlungen haben genau unseren Geschmack getroffen. Die Atmosph\\u00e4re war sehr locker und nicht so steif wie wir es erwartet hatten. Wir kommen gerne wieder!",
+            "RATING": "5",
+            "REV_ID": 110,
+            "R_ID": 1,
+            "TITEL": "Angenehme Atmosph\\u00e4re",
+            "U_ID": 110
+        },
+        "111": {
+            "BEWERTUNG": "Die perfekte Location... \\ud83d\\udc4c\\ud83c\\udffb wir haben am Nachmittag noch das warme Wetter drau\\u00dfen genossen und waren am Abend zum Essen im Lokal.... super lecker und super gem\\u00fctlich zu sitzen, auch am sp\\u00e4teren Abend an der Bar, mit den besten Cocktails!! \\ud83d\\ude0d\\nSehr nettes und aufmerksames Personal.... wir kommen gerne wieder!! ",
+            "RATING": "5",
+            "REV_ID": 111,
+            "R_ID": 1,
+            "TITEL": "Super Essen &amp; die besten Cocktails\\ud83c\\udf79",
+            "U_ID": 111
+        },
+        "112": {
+            "BEWERTUNG": "Tolles Restaurant! Wir sind sehr zufrieden mit dem Service. Essen sehr hochwertig und das Ambiente sehr gem\\u00fctlich. Wir kommen immer wieder gerne!!!!! Vielen Dank ",
+            "RATING": "5",
+            "REV_ID": 112,
+            "R_ID": 1,
+            "TITEL": "Alles super",
+            "U_ID": 112
+        },
+        "113": {
+            "BEWERTUNG": "Wir hatten einen sehr netten Abend an der Bar, waren begeistert von der Getr\\u00e4nkeauswahl, der Atmosph\\u00e4re und dem Service. Vielen Dank auch an den netten Barkeeper, der uns tolle Weine empfohlen hat. \\r\\nUnser Abend im Schwarzreiter war sehr sch\\u00f6n!",
+            "RATING": "5",
+            "REV_ID": 113,
+            "R_ID": 1,
+            "TITEL": "toller Service - tolles Personal",
+            "U_ID": 113
+        },
+        "114": {
+            "BEWERTUNG": "Zuerst sehr freundlich empfangen. Lokal sieht auch sch\\u00f6n aus. Wir haben ein Vierg\\u00e4ngemenue bestellt. Nach \\u00fcber einer Stunde Wartezeit kommt dann der erste Gang. Auf mein Nachfragen, was den los sei, wurde mitgeteilt, in der K\\u00fcche sei ein Problem. Wieder langes Warten auf den zweiten Gang. Bei zwei Personen an unserem Tisch war das Essen kalt. Es fragte auch niemand w\\u00e4hrend dem Essen, ob es schmeckt oder nicht. Mein Hinweis, beim Abr\\u00e4umen der Teller, wurde vom Servicepersonal einfach \\u00fcberh\\u00f6rt. Auch unser Essen war zwar Ok, aber sicher nicht spitzenm\\u00e4ssig. Nach dem dritten Gang haben wir uns vorzeitig verabschiedet. W\\u00e4hrend (!) dem Zahlprozess kam dann noch ein Angebot f\\u00fcr ein Kaffee. Schon etwas gar sp\\u00e4t und kleinlich. Nach diesem Debakel und ruinierten Abend den vollen Preis zu verlangen, ist sicher grenzwertig. Beim Rausgehen hat sich wenigstens der Chef de Service noch verabschiedet und um eine zweite Chance gebeten. Bei diesem Restaurant stimmt Preis und Leistung definitiv nicht. ",
+            "RATING": "2",
+            "REV_ID": 114,
+            "R_ID": 1,
+            "TITEL": "Eine grosse Entt\\u00e4uschung!",
+            "U_ID": 114
+        },
+        "115": {
+            "BEWERTUNG": "Wer aufmerksamen Service, freundliches und kompetentes (!) Barpersonal und Cocktails und Longdrinks auf h\\u00f6chstem Niveau sch\\u00e4tzt, ist im Schwarzreiter f\\u00fcr einen Abend mit Freunden in besten H\\u00e4nden.",
+            "RATING": "5",
+            "REV_ID": 115,
+            "R_ID": 1,
+            "TITEL": "Cocktails und Longdrinks auf h\\u00f6chstem Niveau",
+            "U_ID": 115
+        },
+        "116": {
+            "BEWERTUNG": "F\\u00fcr nen fancy Cocktailabend ein idealer Ort mit Top Service, ausgezeichneten Cocktails von Barkeeper-Mastermind Alexej! Zur Happy Hour auch durchaus erschwinglich. Bestimmt nicht der letzte Besuch! C U Soon!",
+            "RATING": "4",
+            "REV_ID": 116,
+            "R_ID": 1,
+            "TITEL": "Stilvolles Ambiente - fantastische Cocktails",
+            "U_ID": 116
+        },
+        "117": {
+            "BEWERTUNG": "Der Service von Lisa und Pilar hat ein einfaches &amp; entspanntes Kaffe trinken am Nachmittag auf der Terasse zu einem noch sch\\u00f6neren Erlebniss gemacht. Danke M\\u00e4dels ! &lt;3",
+            "RATING": "5",
+            "REV_ID": 117,
+            "R_ID": 1,
+            "TITEL": "Herrvoragender  Service",
+            "U_ID": 117
+        },
+        "118": {
+            "BEWERTUNG": "Ich war mit meiner Freundin vergangene Woche im Schwarzreiter zu Mittag ! Nicht nur die perfekte Lage sondern auch das komplette Service Team war f\\u00fcnf Sterne ! Der Service war sehr aufmerksam, h\\u00f6flich und zuvorkommend. Keine lange Wartezeiten auf Getr\\u00e4nke/Speisen. Top Qualit\\u00e4t der Speisen. War mit Sicherheit nicht der letzte Besuch !\\n",
+            "RATING": "5",
+            "REV_ID": 118,
+            "R_ID": 1,
+            "TITEL": "Perfekte Lage ,Top Service ",
+            "U_ID": 118
+        },
+        "119": {
+            "BEWERTUNG": "Ich war jetzt schon \\u00f6fters da und bin jedes Mal aufs Neue begeistert vom Schwarzreiter.\\nDas Personal ist sehr freundlich und aufmerksam und ging auf alle individuellen W\\u00fcnsche ein. Dazu ist das Essen hervorragend und das zu sehr leistungsgerechten Preisen. \\nIm Schwarzreiter genie\\u00dfe ich jeden Besuch, auch aufgrund des wundervollen Ambientes und f\\u00fchle mich sehr wohl und gut bedient.\\nF\\u00fcr mich ist der Schwarzreiter eines der gesetzten To-Do\\u2019s wenn man in M\\u00fcnchen ist. ",
+            "RATING": "5",
+            "REV_ID": 119,
+            "R_ID": 1,
+            "TITEL": "Nummer 1 in M\\u00fcnchen!",
+            "U_ID": 119
+        },
+        "120": {
+            "BEWERTUNG": "Wir waren im Restaurant, essen kann man aber auch in der Bar (andere Karte, was vorbei getragen wurde, sah auch sehr gut aus, trubelig). Aperitif zun\\u00e4chst an der Bartheke - sehr gute Drinks, kompetenter Barkeeper. Dann Umzug ins Restaurant - stylisch? Geschmacksache, uns hat es gut gefallen. Viel Platz, sowohl zwischen als auch an den Tischen. Das Essen (6-Gang-Men\\u00fc + diverse Kleinigkeiten) sehr gut bis hervorragend, seinen Preis wert. Sch\\u00f6ne, umfangreiche Weinkarte. Aufmerksamer, stets pr\\u00e4senter, unaufdringlicher Service. Eigentlich eine klare Top-Bewertung ... eigentlich... wenn da nicht die Weinpreise w\\u00e4ren. Wusste nicht, ob ich weinen oder dar\\u00fcber lachen soll. Die Preise sind teilweise so absurd kalkuliert, na ja... wir haben trotzdem (mehr als genug) Wein getrunken. Klar, man muss keinen Wein trinken, w\\u00fcrde aber das tolle Essen \\u00e4rmer machen. Trotzdem eine klare Empfehlung. Trotzdem kommen wir wieder. Trotzdem ein toller Abend im Schwarzreiter. Haben die Weinkalkulatoren dann wohl doch alles richtig gemacht???",
+            "RATING": "4",
+            "REV_ID": 120,
+            "R_ID": 1,
+            "TITEL": "Bayrische K\\u00fcche neu gedacht - sehr gut!",
+            "U_ID": 120
+        },
+        "121": {
+            "BEWERTUNG": "Erklassiger Service... Fabelhaftes Men\\u00fc...\\nGelungene \\u00dcberraschung..\\nJederzeit wieder.. Super Team, die auf die W\\u00fcnsche der G\\u00e4ste eingehen und alles m\\u00f6glich machen.. Andr\\u00e9 Gruhnert hat sich wiedermal \\u00fcbertroffen.. Vielen Dank\\n... Gebe es auch an meine international Kundschaft weiter... SENSATIONELL... ",
+            "RATING": "5",
+            "REV_ID": 121,
+            "R_ID": 1,
+            "TITEL": "Geburtstagsfeier",
+            "U_ID": 121
+        },
+        "122": {
+            "BEWERTUNG": "Mein Besuch in der Schwarzreiter Tagesbar war ein voller Erfolg. \\nIch konnte mir in wunderbarer Atmosph\\u00e4re das &quot;erste&quot; Spiel des FC Bayern unter Jupp Heynckes ansehen. Super essen und coole Drinks gab es auch noch dazu.\\n\\nWirklich sehr zu empfehlen als Alternative zu jeder Sportsbar. Hier wird jeden Samstag Bundesliga gezeigt.\\n\\n",
+            "RATING": "5",
+            "REV_ID": 122,
+            "R_ID": 1,
+            "TITEL": "Sport ",
+            "U_ID": 122
+        },
+        "123": {
+            "BEWERTUNG": "Kann es sehr empfehlen!! War jetzt schon \\u00f6fter da und genie\\u00dfe es jedes Mal auf neue dieses Restaurant zubetretten. Alles ist einfach perfekt hochklassige Getr\\u00e4nke, Essen und Service. Wer diesen Laden nicht m\\u00f6gen kann, nein nicht lieben kann, der hat einfach keine Ahnung. Aber jeder soll sich selber \\u00fcberzeugen, also einfach mal hingehen es lohnt sich wirklich!",
+            "RATING": "5",
+            "REV_ID": 123,
+            "R_ID": 1,
+            "TITEL": "Einfach Perfekt!",
+            "U_ID": 123
+        },
+        "124": {
+            "BEWERTUNG": "Bester  Barkeeper. Geiles Passionsfrucht bais\\u00e9 komm auf jeden fall wieder. Location ist traumhaft, gibt geiles champagnersorb\\u00e9!! Im Anzug kommen!",
+            "RATING": "5",
+            "REV_ID": 124,
+            "R_ID": 1,
+            "TITEL": "Geile Bar",
+            "U_ID": 124
+        },
+        "125": {
+            "BEWERTUNG": "W\\u00fcrde nur wegen dem Barkeeper nochmal kommen - happy hour lohnt sich - Tolles Ambiente - immer wieder gerne ! \\n",
+            "RATING": "5",
+            "REV_ID": 125,
+            "R_ID": 1,
+            "TITEL": "Bester Barkeeper ",
+            "U_ID": 125
+        },
+        "126": {
+            "BEWERTUNG": "Im Schwarzreiter gibt es nicht nur das mit Abstand beste Wiener Schnitzel der Stadt!\\nDas Serviceteam um Andrej Grunert liest einem f\\u00f6rmlich jeden Wunsch von den Lippen ab. In der Tagesbar gibt es k\\u00f6stliche \\u00e1 la Carte Gerichte, au\\u00dferdem kann man sich mit kreativen Cocktails von der Bar so richtig verw\\u00f6hnen lassen. Auch Liebhaber von Seafood (Austern, Kaviar, Lobsterbox, Clubsandwich Maximilianstra\\u00dfe...) kommen hier voll auf ihre Kosten.\\n\\nTop Restaurant in top Lage! Immer einen Besuch wert!",
+            "RATING": "5",
+            "REV_ID": 126,
+            "R_ID": 1,
+            "TITEL": "Top Service im Herzen der Stadt",
+            "U_ID": 126
+        },
+        "127": {
+            "BEWERTUNG": "Sehr sch\\u00f6n Restaurant\\\\Bar. Geschmacklich alles absolut hervorragend und freundliche Bedienung. Preise eher etwas hoch. Jedoch stimmt die Qualit\\u00e4t. Gerne wieder.",
+            "RATING": "5",
+            "REV_ID": 127,
+            "R_ID": 1,
+            "TITEL": "Ausgezeichnet !!!!",
+            "U_ID": 127
+        },
+        "128": {
+            "BEWERTUNG": "Seit Neugestaltung, Renovierung und Umbenennung bin ich st\\u00e4ndiger Gast im Restaurant und in der Bar Schwarzreiter. Ich bin so h\\u00e4ufig dort, dass ich das Restaurant Schwarzreiter gerne als mein zweites Esszimmer bezeichne. V\\u00f6llig egal, ob ich mit der Familie einen Brunch genie\\u00dfe, mit Gesch\\u00e4ftsfreunden zu Mittag speise, abends ein Gourmet Dinner genie\\u00dfe oder mit meinen Black Rider-Stammtischfreunden an der Bar zusammensitze, stets bleibt kein Wunsch offen. K\\u00fcche und Getr\\u00e4nke sind stets exquisit und das Team betreut auf das Beste. Man kann Generaldirektor Axel Ludwig und seinem Team nur gratulieren und das Schwarzreiter ohne Einschr\\u00e4nkungen empfehlen.",
+            "RATING": "5",
+            "REV_ID": 128,
+            "R_ID": 1,
+            "TITEL": "Mein zweites Esszimmer",
+            "U_ID": 128
+        },
+        "129": {
+            "BEWERTUNG": "Sehr angehme Atmosph\\u00e4re, sehr netter Service und hervorragende Gerichte! Wir haben den Feiertag Nachmittag im Schwarzreiter sehr genossen! Vielen Dank!",
+            "RATING": "5",
+            "REV_ID": 129,
+            "R_ID": 1,
+            "TITEL": "Sehr empfehlenswert!",
+            "U_ID": 129
+        },
+        "130": {
+            "BEWERTUNG": "Die Tagesbar bietet bei sehr guten und freundlichen Service eine sehr gute K\\u00fcche\\r\\nin einem sch\\u00f6nen Ambiente. Ich komme gerne wieder.",
+            "RATING": "5",
+            "REV_ID": 130,
+            "R_ID": 1,
+            "TITEL": "Mittagessen",
+            "U_ID": 130
+        }
+    },
+    "USERS": {
+        "1": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 1,
+            "U_ID": 1
+        },
+        "10": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Jule Z",
+            "REV_ID": 10,
+            "U_ID": 10
+        },
+        "100": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "4",
+            "BENUTZERNAME": "surfista123",
+            "REV_ID": 100,
+            "U_ID": 100
+        },
+        "101": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Thomas M",
+            "REV_ID": 101,
+            "U_ID": 101
+        },
+        "102": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Mandaringirl89",
+            "REV_ID": 102,
+            "U_ID": 102
+        },
+        "103": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Verena R",
+            "REV_ID": 103,
+            "U_ID": 103
+        },
+        "104": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "4",
+            "BENUTZERNAME": "Anika B",
+            "REV_ID": 104,
+            "U_ID": 104
+        },
+        "105": {
+            "ANZAHL_LIKES": "11",
+            "ANZAHL_REVIEWS": "7",
+            "BENUTZERNAME": "Jacky358",
+            "REV_ID": 105,
+            "U_ID": 105
+        },
+        "106": {
+            "ANZAHL_LIKES": "108",
+            "ANZAHL_REVIEWS": "146",
+            "BENUTZERNAME": "SchimmerlosMonaco",
+            "REV_ID": 106,
+            "U_ID": 106
+        },
+        "107": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Fritzi H",
+            "REV_ID": 107,
+            "U_ID": 107
+        },
+        "108": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Lukas S",
+            "REV_ID": 108,
+            "U_ID": 108
+        },
+        "109": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 109,
+            "U_ID": 109
+        },
+        "11": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Cityblogger123",
+            "REV_ID": 11,
+            "U_ID": 11
+        },
+        "110": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Moritz W",
+            "REV_ID": 110,
+            "U_ID": 110
+        },
+        "111": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "kathiga",
+            "REV_ID": 111,
+            "U_ID": 111
+        },
+        "112": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Julia P",
+            "REV_ID": 112,
+            "U_ID": 112
+        },
+        "113": {
+            "ANZAHL_LIKES": "50",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "adriennesophie",
+            "REV_ID": 113,
+            "U_ID": 113
+        },
+        "114": {
+            "ANZAHL_LIKES": "45",
+            "ANZAHL_REVIEWS": "50",
+            "BENUTZERNAME": "Armin Z",
+            "REV_ID": 114,
+            "U_ID": 114
+        },
+        "115": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "frannerl",
+            "REV_ID": 115,
+            "U_ID": 115
+        },
+        "116": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Mareisn L",
+            "REV_ID": 116,
+            "U_ID": 116
+        },
+        "117": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Bi_J07",
+            "REV_ID": 117,
+            "U_ID": 117
+        },
+        "118": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "LukasKBauer",
+            "REV_ID": 118,
+            "U_ID": 118
+        },
+        "119": {
+            "ANZAHL_LIKES": "16",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Noah G",
+            "REV_ID": 119,
+            "U_ID": 119
+        },
+        "12": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Wiebke B",
+            "REV_ID": 12,
+            "U_ID": 12
+        },
+        "120": {
+            "ANZAHL_LIKES": "21",
+            "ANZAHL_REVIEWS": "16",
+            "BENUTZERNAME": "tripfagema",
+            "REV_ID": 120,
+            "U_ID": 120
+        },
+        "121": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Stadtdriver",
+            "REV_ID": 121,
+            "U_ID": 121
+        },
+        "122": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "constantindroemer",
+            "REV_ID": 122,
+            "U_ID": 122
+        },
+        "123": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Omid N",
+            "REV_ID": 123,
+            "U_ID": 123
+        },
+        "124": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Raoul A",
+            "REV_ID": 124,
+            "U_ID": 124
+        },
+        "125": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Babek K",
+            "REV_ID": 125,
+            "U_ID": 125
+        },
+        "126": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Michael H",
+            "REV_ID": 126,
+            "U_ID": 126
+        },
+        "127": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "6",
+            "BENUTZERNAME": "camilaaman",
+            "REV_ID": 127,
+            "U_ID": 127
+        },
+        "128": {
+            "ANZAHL_LIKES": "18",
+            "ANZAHL_REVIEWS": "34",
+            "BENUTZERNAME": "Alexander E",
+            "REV_ID": 128,
+            "U_ID": 128
+        },
+        "129": {
+            "ANZAHL_LIKES": "58",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Andreas L",
+            "REV_ID": 129,
+            "U_ID": 129
+        },
+        "13": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Julian N",
+            "REV_ID": 13,
+            "U_ID": 13
+        },
+        "130": {
+            "ANZAHL_LIKES": "68",
+            "ANZAHL_REVIEWS": "58",
+            "BENUTZERNAME": "Alexander Maxim... B",
+            "REV_ID": 130,
+            "U_ID": 130
+        },
+        "14": {
+            "ANZAHL_LIKES": "15",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "LeoMoeb",
+            "REV_ID": 14,
+            "U_ID": 14
+        },
+        "15": {
+            "ANZAHL_LIKES": "6",
+            "ANZAHL_REVIEWS": "15",
+            "BENUTZERNAME": "Fritz J",
+            "REV_ID": 15,
+            "U_ID": 15
+        },
+        "16": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "5",
+            "BENUTZERNAME": "Mone H",
+            "REV_ID": 16,
+            "U_ID": 16
+        },
+        "17": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 17,
+            "U_ID": 17
+        },
+        "18": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "A-judina",
+            "REV_ID": 18,
+            "U_ID": 18
+        },
+        "19": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "J\u00f6rg M",
+            "REV_ID": 19,
+            "U_ID": 19
+        },
+        "2": {
+            "ANZAHL_LIKES": "32",
+            "ANZAHL_REVIEWS": "38",
+            "BENUTZERNAME": "Lucas Peter E",
+            "REV_ID": 2,
+            "U_ID": 2
+        },
+        "20": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "7",
+            "BENUTZERNAME": "michele_muc2017",
+            "REV_ID": 20,
+            "U_ID": 20
+        },
+        "21": {
+            "ANZAHL_LIKES": "73",
+            "ANZAHL_REVIEWS": "349",
+            "BENUTZERNAME": "LaenderAbenteuerer",
+            "REV_ID": 21,
+            "U_ID": 21
+        },
+        "22": {
+            "ANZAHL_LIKES": "9",
+            "ANZAHL_REVIEWS": "14",
+            "BENUTZERNAME": "FR500",
+            "REV_ID": 22,
+            "U_ID": 22
+        },
+        "23": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Eli\u0161ka S",
+            "REV_ID": 23,
+            "U_ID": 23
+        },
+        "24": {
+            "ANZAHL_LIKES": "45",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Thomas F",
+            "REV_ID": 24,
+            "U_ID": 24
+        },
+        "25": {
+            "ANZAHL_LIKES": "25",
+            "ANZAHL_REVIEWS": "45",
+            "BENUTZERNAME": "Dagmar F",
+            "REV_ID": 25,
+            "U_ID": 25
+        },
+        "26": {
+            "ANZAHL_LIKES": "5",
+            "ANZAHL_REVIEWS": "17",
+            "BENUTZERNAME": "muenchnermichel",
+            "REV_ID": 26,
+            "U_ID": 26
+        },
+        "27": {
+            "ANZAHL_LIKES": "189",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Alex R",
+            "REV_ID": 27,
+            "U_ID": 27
+        },
+        "28": {
+            "ANZAHL_LIKES": "123",
+            "ANZAHL_REVIEWS": "189",
+            "BENUTZERNAME": "Some O",
+            "REV_ID": 28,
+            "U_ID": 28
+        },
+        "29": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "annaharra03",
+            "REV_ID": 29,
+            "U_ID": 29
+        },
+        "3": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Karina I",
+            "REV_ID": 3,
+            "U_ID": 3
+        },
+        "30": {
+            "ANZAHL_LIKES": "58",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Thomas M",
+            "REV_ID": 30,
+            "U_ID": 30
+        },
+        "31": {
+            "ANZAHL_LIKES": "68",
+            "ANZAHL_REVIEWS": "58",
+            "BENUTZERNAME": "Alexander Maxim... B",
+            "REV_ID": 31,
+            "U_ID": 31
+        },
+        "32": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Caro L",
+            "REV_ID": 32,
+            "U_ID": 32
+        },
+        "33": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Hao Hao Y",
+            "REV_ID": 33,
+            "U_ID": 33
+        },
+        "34": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Olaf M",
+            "REV_ID": 34,
+            "U_ID": 34
+        },
+        "35": {
+            "ANZAHL_LIKES": "18",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "mariusmutschinski",
+            "REV_ID": 35,
+            "U_ID": 35
+        },
+        "36": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "7",
+            "BENUTZERNAME": "Leckerfood",
+            "REV_ID": 36,
+            "U_ID": 36
+        },
+        "37": {
+            "ANZAHL_LIKES": "25",
+            "ANZAHL_REVIEWS": "54",
+            "BENUTZERNAME": "Andreas M",
+            "REV_ID": 37,
+            "U_ID": 37
+        },
+        "38": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "14",
+            "BENUTZERNAME": "Christian S",
+            "REV_ID": 38,
+            "U_ID": 38
+        },
+        "39": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "5",
+            "BENUTZERNAME": "Traveller3112xy",
+            "REV_ID": 39,
+            "U_ID": 39
+        },
+        "4": {
+            "ANZAHL_LIKES": "113",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Eli F",
+            "REV_ID": 4,
+            "U_ID": 4
+        },
+        "40": {
+            "ANZAHL_LIKES": "9",
+            "ANZAHL_REVIEWS": "10",
+            "BENUTZERNAME": "dresscodeshopping",
+            "REV_ID": 40,
+            "U_ID": 40
+        },
+        "41": {
+            "ANZAHL_LIKES": "191",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Flatmate",
+            "REV_ID": 41,
+            "U_ID": 41
+        },
+        "42": {
+            "ANZAHL_LIKES": "134",
+            "ANZAHL_REVIEWS": "191",
+            "BENUTZERNAME": "carlo_3112",
+            "REV_ID": 42,
+            "U_ID": 42
+        },
+        "43": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Charlotte V",
+            "REV_ID": 43,
+            "U_ID": 43
+        },
+        "44": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Patrick H",
+            "REV_ID": 44,
+            "U_ID": 44
+        },
+        "45": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Svitlana P",
+            "REV_ID": 45,
+            "U_ID": 45
+        },
+        "46": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Carolin D",
+            "REV_ID": 46,
+            "U_ID": 46
+        },
+        "47": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Philipp K",
+            "REV_ID": 47,
+            "U_ID": 47
+        },
+        "48": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Matthias S",
+            "REV_ID": 48,
+            "U_ID": 48
+        },
+        "49": {
+            "ANZAHL_LIKES": "10",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "SuatG",
+            "REV_ID": 49,
+            "U_ID": 49
+        },
+        "5": {
+            "ANZAHL_LIKES": "33",
+            "ANZAHL_REVIEWS": "113",
+            "BENUTZERNAME": "PetraundChristian",
+            "REV_ID": 5,
+            "U_ID": 5
+        },
+        "50": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "11",
+            "BENUTZERNAME": "Regine K",
+            "REV_ID": 50,
+            "U_ID": 50
+        },
+        "51": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "genussmensch1234",
+            "REV_ID": 51,
+            "U_ID": 51
+        },
+        "52": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "malilamorri",
+            "REV_ID": 52,
+            "U_ID": 52
+        },
+        "53": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "LaVida089",
+            "REV_ID": 53,
+            "U_ID": 53
+        },
+        "54": {
+            "ANZAHL_LIKES": "183",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 54,
+            "U_ID": 54
+        },
+        "55": {
+            "ANZAHL_LIKES": "149",
+            "ANZAHL_REVIEWS": "183",
+            "BENUTZERNAME": "Genussmensch",
+            "REV_ID": 55,
+            "U_ID": 55
+        },
+        "56": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "ankima",
+            "REV_ID": 56,
+            "U_ID": 56
+        },
+        "57": {
+            "ANZAHL_LIKES": "21",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 57,
+            "U_ID": 57
+        },
+        "58": {
+            "ANZAHL_LIKES": "8",
+            "ANZAHL_REVIEWS": "21",
+            "BENUTZERNAME": "Stormycarmen",
+            "REV_ID": 58,
+            "U_ID": 58
+        },
+        "59": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Florian1987Demant",
+            "REV_ID": 59,
+            "U_ID": 59
+        },
+        "6": {
+            "ANZAHL_LIKES": "33",
+            "ANZAHL_REVIEWS": "106",
+            "BENUTZERNAME": "ms67berlin",
+            "REV_ID": 6,
+            "U_ID": 6
+        },
+        "60": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Andre G",
+            "REV_ID": 60,
+            "U_ID": 60
+        },
+        "61": {
+            "ANZAHL_LIKES": "10",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "chrijoe",
+            "REV_ID": 61,
+            "U_ID": 61
+        },
+        "62": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "10",
+            "BENUTZERNAME": "Semira H",
+            "REV_ID": 62,
+            "U_ID": 62
+        },
+        "63": {
+            "ANZAHL_LIKES": "7",
+            "ANZAHL_REVIEWS": "8",
+            "BENUTZERNAME": "ArneS770",
+            "REV_ID": 63,
+            "U_ID": 63
+        },
+        "64": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "KarimMuc",
+            "REV_ID": 64,
+            "U_ID": 64
+        },
+        "65": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "4",
+            "BENUTZERNAME": "Pablo Z",
+            "REV_ID": 65,
+            "U_ID": 65
+        },
+        "66": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "33",
+            "BENUTZERNAME": "Feysoo s",
+            "REV_ID": 66,
+            "U_ID": 66
+        },
+        "67": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Ein TripAdvisor-Mitglied",
+            "REV_ID": 67,
+            "U_ID": 67
+        },
+        "68": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "enricoriccardo",
+            "REV_ID": 68,
+            "U_ID": 68
+        },
+        "69": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Domi S",
+            "REV_ID": 69,
+            "U_ID": 69
+        },
+        "7": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "beermerchandising",
+            "REV_ID": 7,
+            "U_ID": 7
+        },
+        "70": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Lenni I",
+            "REV_ID": 70,
+            "U_ID": 70
+        },
+        "71": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Luis F",
+            "REV_ID": 71,
+            "U_ID": 71
+        },
+        "72": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Brendan S",
+            "REV_ID": 72,
+            "U_ID": 72
+        },
+        "73": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Lisa S",
+            "REV_ID": 73,
+            "U_ID": 73
+        },
+        "74": {
+            "ANZAHL_LIKES": "365",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "svenkolb",
+            "REV_ID": 74,
+            "U_ID": 74
+        },
+        "75": {
+            "ANZAHL_LIKES": "241",
+            "ANZAHL_REVIEWS": "365",
+            "BENUTZERNAME": "Trank_und_Speis",
+            "REV_ID": 75,
+            "U_ID": 75
+        },
+        "76": {
+            "ANZAHL_LIKES": "29",
+            "ANZAHL_REVIEWS": "27",
+            "BENUTZERNAME": "Vienna05",
+            "REV_ID": 76,
+            "U_ID": 76
+        },
+        "77": {
+            "ANZAHL_LIKES": "134",
+            "ANZAHL_REVIEWS": "194",
+            "BENUTZERNAME": "bribro2013",
+            "REV_ID": 77,
+            "U_ID": 77
+        },
+        "78": {
+            "ANZAHL_LIKES": "91",
+            "ANZAHL_REVIEWS": "93",
+            "BENUTZERNAME": "Lukdio",
+            "REV_ID": 78,
+            "U_ID": 78
+        },
+        "79": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "6",
+            "BENUTZERNAME": "maxi1942",
+            "REV_ID": 79,
+            "U_ID": 79
+        },
+        "8": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Vero Nika W",
+            "REV_ID": 8,
+            "U_ID": 8
+        },
+        "80": {
+            "ANZAHL_LIKES": "168",
+            "ANZAHL_REVIEWS": "320",
+            "BENUTZERNAME": "Heinz B",
+            "REV_ID": 80,
+            "U_ID": 80
+        },
+        "81": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "7",
+            "BENUTZERNAME": "CHLuc",
+            "REV_ID": 81,
+            "U_ID": 81
+        },
+        "82": {
+            "ANZAHL_LIKES": "7",
+            "ANZAHL_REVIEWS": "20",
+            "BENUTZERNAME": "wolfram1473",
+            "REV_ID": 82,
+            "U_ID": 82
+        },
+        "83": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Gerdi M",
+            "REV_ID": 83,
+            "U_ID": 83
+        },
+        "84": {
+            "ANZAHL_LIKES": "9",
+            "ANZAHL_REVIEWS": "23",
+            "BENUTZERNAME": "Johanna J",
+            "REV_ID": 84,
+            "U_ID": 84
+        },
+        "85": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "sisimeier",
+            "REV_ID": 85,
+            "U_ID": 85
+        },
+        "86": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "KieferLM",
+            "REV_ID": 86,
+            "U_ID": 86
+        },
+        "87": {
+            "ANZAHL_LIKES": "32",
+            "ANZAHL_REVIEWS": "38",
+            "BENUTZERNAME": "Lucas Peter E",
+            "REV_ID": 87,
+            "U_ID": 87
+        },
+        "88": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Simon K",
+            "REV_ID": 88,
+            "U_ID": 88
+        },
+        "89": {
+            "ANZAHL_LIKES": "3",
+            "ANZAHL_REVIEWS": "2",
+            "BENUTZERNAME": "Onicap_10",
+            "REV_ID": 89,
+            "U_ID": 89
+        },
+        "9": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "Catalea C",
+            "REV_ID": 9,
+            "U_ID": 9
+        },
+        "90": {
+            "ANZAHL_LIKES": "26",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "lknarf",
+            "REV_ID": 90,
+            "U_ID": 90
+        },
+        "91": {
+            "ANZAHL_LIKES": "11",
+            "ANZAHL_REVIEWS": "26",
+            "BENUTZERNAME": "Toelzer_Peter",
+            "REV_ID": 91,
+            "U_ID": 91
+        },
+        "92": {
+            "ANZAHL_LIKES": "66",
+            "ANZAHL_REVIEWS": "1",
+            "BENUTZERNAME": "rehbein1000",
+            "REV_ID": 92,
+            "U_ID": 92
+        },
+        "93": {
+            "ANZAHL_LIKES": "46",
+            "ANZAHL_REVIEWS": "66",
+            "BENUTZERNAME": "Harald P",
+            "REV_ID": 93,
+            "U_ID": 93
+        },
+        "94": {
+            "ANZAHL_LIKES": "14",
+            "ANZAHL_REVIEWS": "11",
+            "BENUTZERNAME": "gkirmuc",
+            "REV_ID": 94,
+            "U_ID": 94
+        },
+        "95": {
+            "ANZAHL_LIKES": "4",
+            "ANZAHL_REVIEWS": "22",
+            "BENUTZERNAME": "Natalia H",
+            "REV_ID": 95,
+            "U_ID": 95
+        },
+        "96": {
+            "ANZAHL_LIKES": "2",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "Eckart U",
+            "REV_ID": 96,
+            "U_ID": 96
+        },
+        "97": {
+            "ANZAHL_LIKES": "1",
+            "ANZAHL_REVIEWS": "5",
+            "BENUTZERNAME": "kroneichi",
+            "REV_ID": 97,
+            "U_ID": 97
+        },
+        "98": {
+            "ANZAHL_LIKES": "33",
+            "ANZAHL_REVIEWS": "3",
+            "BENUTZERNAME": "barcadiman",
+            "REV_ID": 98,
+            "U_ID": 98
+        },
+        "99": {
+            "ANZAHL_LIKES": "42",
+            "ANZAHL_REVIEWS": "33",
+            "BENUTZERNAME": "dima2206",
+            "REV_ID": 99,
+            "U_ID": 99
+        }
+    },
+    "_default": {}
 }
