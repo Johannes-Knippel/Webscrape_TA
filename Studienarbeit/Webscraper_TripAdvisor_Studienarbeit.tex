@@ -149,14 +149,110 @@
 	%\newpage
 	\pagenumbering{arabic}
 	\setstretch{1.5}
-	\chapter{Blablabla}\label{bla}
+	\chapter{Problemstellung}\label{probstellung}
+	
+		1.	Problemstellung (1 Seite maximal)
+		a.	Manuell sehr lange dauert
+		b.	Relevanz 
+	
+		\section{Relevanz}
+		
+			Gute frage das wei0 ich selber nicht was ich hier genau schreiben soll vorallem so schnell schreiben is ja überhaupt nicht mein und äh ding und ja ding also genau woißt scho ge
+	
+	
+
+	\chapter{Grundlagen}\label{grlagen}
+		
+		\section{Was ist WebCrawling?}
+		
+			\subsection{Definition, Erläuterung etc.}
+		
+			\subsection{Wie funktioniert es? (Allgemeine Beschreibung)}
+		
+		\section{Tripadvisor}
+		
+			\subsection{Was ist das für eine Webseite? Kurze Beschreibung}
+			
+		\section{Was sind strukturierte und unstrukturierte Daten?}
+	
+	
+	
+
+	\chapter{Anforderungen}	
+	
+		\section{Tabelle: Daten TripAdvisor (Welche Daten holen wir uns? Hotel und Restaurants?) details}
+		
+		\section{Nicht funktionale Anforderungen: Benutzerfreundlichkeit etc.}
+			bliblablablablubulskjfvba
+			öajsvaölfkvpaijsdv
+			\\
+			öjydfpvoijaf
+			v\\jdofhvöankfv
+			aposdfjhvpuaohöjvhb
+			
+			
+			
+			
+	\chapter{Implementierung}
+	
+		\section{Konfiguration}
+		
+			\subsection{Welche Version von Python}
+			
+			\subsection{Welche Pakete wurden importiert und warum}
+			
+		\section{Warum BeautifulSoup}
+		
+		\section{WebCrawler (Wie findet man die Daten auf der Webseite und wie holen wir sie uns.)}
+		
+			\subsection{RestaurantDaten}
+			
+			\subsection{Bewertungsdaten}
+			
+		\section{Datenhaltung}
+		
+			\subsection{Welche Datenbank wurde gewählt?	}
+			
+				\subsubsection{Definition der Datenbankanforderungen}
+				
+				\subsubsection{Vergleich: SQLLite und TinyDB}
+			
+			\subsection{Daten bereinigen}
+			
+			\subsection{Datenbankstruktur}
+			
+				\subsubsection{Tabellen mit Spalten}
+				
+				\subsubsection{Zeichnung Zusammenhang?}
+				
+		\section{Benutzeroberfläche}
+		
+			\subsection{Wie die Umsetzung etc.}
+			
+			\subsection{Lösung mit URL}
+	
+	
+
+	\chapter{Wurden Anforderungen erfüllt?}		
+	
+		\section{Ergebnisse}
+		
+	
+
+	\chapter{Fazit und Ausblick}
+	
+		\section{Unsere Erfahrungen/Probleme (evtl. API)}
+
+		\section{Wie sind wir damit klargekommen}
+
+
+ 
 		
 		Programmiersprache: Python
 		hihii
 				
 			\begin{lstlisting} [caption={Registerprogrammierung der Expander}\label{code-i2c-1}, captionpos=b, style=Arduino]
 			# -*- coding: utf-8 -*-
-			
 			import requests
 			import os
 			import unicodedata
@@ -164,17 +260,12 @@
 			import threading
 			from tkinter import *
 			from tkinter import messagebox
-			
 			from bs4 import BeautifulSoup
 			from setuptools.package_index import HREF
 			from tinydb import TinyDB,Query,where
 			
 			
-			
-			
-			
 			class Web_scraping:
-			
 			'''
 			Created on 17.04.2018
 			
@@ -214,411 +305,102 @@
 			for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
 			print("Telefonnummer:" + self.phonenumber.text)
 			
-			
-			
-			#get all the review containers from current page
-			review_containers = soup.find_all('div', class_= 'review-container')
-			reviewsPerPage = len(review_containers)
-			#print (reviewsPerPage)
-			
-			#get the pageNumbers for all reviews per restaurant
-			pageNumbers = soup.find_all('a', class_= 'pageNum')
-			pages = len(pageNumbers)
-			
-			#Extract data from single containers   
-			for container in review_containers:
-			
-			for link in container.find_all('a', href=True):
-			href = "https://www.tripadvisor.de" + str(link.get('href'))
-			#pass it to the function where single data is scraped
-			self.get_single_review_data(href)
-			
-			#create a new_url for each page of the reviews
-			for index in range (10,pages*10, 10):
-			
-			data = url.split("Reviews-")
-			new_url = data[0]+"Reviews-or"+str(index)+'-'+data[1]
-			#print(new_url)
-			#pass the new_url to the loop_trough_review_pages function
-			self.loop_through_review_pages(new_url)
-			
-			
-			
-			
-			
-			#loop through the restaurant reviews
-			def loop_through_review_pages(self, loop_url):
-			
-			source_code = requests.get(loop_url)
-			plain_text = source_code.text
-			soup = BeautifulSoup(plain_text, "html.parser")
-			
-			#get all review containers but on the nuw_url
-			review_containers = soup.find_all('div', class_= 'review-container')
-			reviewsPerPage = len(review_containers)
-			
-			#search trough all reviews on the page
-			for container in review_containers:
-			
-			for link in container.find_all('a', href=True):
-			href = "https://www.tripadvisor.de" + str(link.get('href'))
-			#pass it to the function where single data is scraped
-			self.get_single_review_data(href)
-			
-			
-			
-			
-			
-			
-			
-			def get_single_review_data(self,review_url):
-			
-			source_code2 = requests.get(review_url)
-			plain_text2 = source_code2.text
-			soup = BeautifulSoup(plain_text2, "html.parser")
-			
-			#Lists to store scraped data in
-			
-			usernames = []
-			noReviews = []
-			titles = []
-			content = []
-			ratings = []
-			
-			self.titles = soup.find('div', {'id': 'PAGEHEADING'}).text
-			titles.append(self.titles)
-			#print('Titel:' + self.title.text)
-			
-			self.content = soup.find('p', {'class': 'partial_entry'}).text
-			content.append(self.content)
-			
-			self.usernames = soup.find('span', {'class': 'expand_inline scrname'}).text
-			usernames.append(self.usernames)
-			
-			self.noReviews = soup.find('div', {'class:': 'memberBadgingNoText'})
-			noReviews.append(self.noReviews)
-			
-			self.rating = soup.find('span', 'alt')
-			#print(self.rating)
-			
-			print(usernames)
-			self.threadParse(self.usernames)
-			#print(noReviews)
-			print(titles)
-			print(content)
-			print(review_url)
-			
-			
-			#print(first_link)
-			#titel = soup.find('p', {'class': 'entry'})
-			
-			'''
-			@author: JohannaSickendiek
-			
-			'''
-			#Get the whole text of the review
-			#for self.item_name in soup.find('p'):
-			#    print(self.item_name.string)
-			
-			#self.item_name = soup.find('p')
-			#print(self.item_name.string)
-			
-			#for self.item_name in soup.findAll('script', {'type': 'application/ld+json'}):
-			#    print(self.item_name.string)
-			#self.item_name = soup.findAll('script', {'type': 'application/ld+json'})
-			#for dict in self.item_name:
-			# print(dict["reviewBody"])
-			
-			
-			#1. Moeglichkeit
-			#for self.item_name in soup.find('p', {'class': 'partial_entry'}):
-			#    print(self.item_name.string)
-			#self.item_name = soup.find('p', {'class': 'partial_entry'})
-			#print(self.item_name.string)
-			
-			# 2. Moeglichkeit
-			#table = soup.findAll('div',attrs={"class":"partial_entry"})
-			#for review in table:
-			#    print(review.find('p').text)
-			
-			#Get URL from review pictures
-			for link in soup.findAll('img', {'class': 'centeredImg'}):
-			self.src = link.get('src')
-			print("source of picture: " + self.src)
-			
-			
-			
-			
-			def helloCallBack(self, string):
-			self.txt.insert(END, string + '\n')
-			
-			def threadParse(self, string2):
-			threading.Thread(target=self.helloCallBack(string2)).start()
-			
-			
-			'''
-			Created on 18.04.2018
-			
-			@author: JohannesKnippel
-			
-			TinyDB - Database. Scraped Data from get_single_data() function will be parsed to a Database saved in .json-Format.
-			'''
-			#TinyDB
-			def parse_to_tinydb(self):
-			
-			cwd = os.getcwd()
-			try:
-			#create the database or use the existing one
-			db = TinyDB('db.json')
-			#create the tables inside the database
-			tableReviews = db.table('REVIEWS')
-			tableUsers = db.table('USERS')
-			tablePictures = db.table('PICTURES')
-			tableRestaurants = db.table('RESTAURANTS')
-			
-			except:
-			print("Error opening file")    
-			
-			
-			
-			#define the data to insert into database including an auto increment ID for each Table  
-			
-			
-			#HANDLE REVIEWS
-			#check if there already exists an entry in the REVIEWSs-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
-			#        if tableReviews.contains((where('++') == self.name.string) & (where('address') == self.address.string)): 
-			#            #pop up a message box
-			#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
-			#            popup = tk.Tk()
-			#            popup.wm_title("!")
-			#            label = ttk.Label(popup, text=msg)
-			#            label.pack(side="top", fill="x", pady=10)
-			#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
-			#            B1.pack()
-			#            popup.mainloop()
-			# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
-			#        else:
-			#            idReview =   
-			#            dataReviews = {'fruit':'orange', 'price':25}
-			#            tableReviews.insert(dataReviews)
-			
-			
-			
-			#HANDLE USERS
-			#check if there already exists an entry in the USERS-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
-			#        if tableUsers.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
-			#            #pop up a message box
-			#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
-			#            popup = tk.Tk()
-			#            popup.wm_title("!")
-			#            label = ttk.Label(popup, text=msg)
-			#            label.pack(side="top", fill="x", pady=10)
-			#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
-			#            B1.pack()
-			#            popup.mainloop()
-			# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
-			#        else:
-			#            idUser = 
-			#            dataUsers = {'fruit':'orange', 'price':25}  
-			#            tableUsers.insert(dataUsers)
-			
-			
-			
-			#HANDLE PICTURES
-			#check if there already exists an entry in the PICTURES-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
-			#        if tablePictures.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
-			#            #pop up a message box
-			#            msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
-			#            popup = tk.Tk()
-			#            popup.wm_title("!")
-			#            label = ttk.Label(popup, text=msg)
-			#            label.pack(side="top", fill="x", pady=10)
-			#            B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
-			#            B1.pack()
-			#            popup.mainloop()
-			# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
-			#        else:
-			#            idPicture =   
-			#            dataPictures = {'fruit':'orange', 'price':25} 
-			#            tableRestaurants.insert(dataRestaurants)
-			
-			
-			
-			#HANDLE RESTAURANTS
-			#check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
-			if tableRestaurants.contains((where('name') == self.name.string) & (where('address') == self.address.string)): 
-			#pop up a message box
-			msg = "Dieses Hotel hast du bereits gesucht und ist in der Dtaenbak hinterlegt!"
-			popup = tk.Tk()
-			popup.wm_title("!")
-			label = ttk.Label(popup, text=msg)
-			label.pack(side="top", fill="x", pady=10)
-			B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
-			B1.pack()
-			popup.mainloop()
-			# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
-			else:
-			self.popularity2 = unicodedata.normalize("NFKD", self.popularity.text)
-			self.idRestaurant = 1  
-			dataRestaurants = {'id':self.idRestaurant, 'name':self.name.string, 'rating_amount':self.rating_amount.string, 'popularity':self.popularity2,'price_level':self.price_level.string, 'cuisine':self.cuisine.text, 'contact_details':self.contact_details.text, 'address':self.address.string, 'locality':self.locality.string, 'phonenumber':self.phonenumber.text}
-			tableRestaurants.insert(dataRestaurants) 
-			
-			#################################bis hier 19.04.18###############
-			# Idee: 4 tabellen mit drei IDs: Hotel_ID, User_ID, Review_ID
-			# Implementieren dieser IDs per auto increment funktion.
-			
-			
-			
-			
-			print(tableRestaurants.all())
-			ft = Query()
-			suche = tableRestaurants.search(ft.name == self.name.string)
-			print(suche)         
-			
-			
-			'''
-			@author: Skanny Morandi
-			
-			opens a GUI that validates a given url-string and starts the scraping on button click
-			'''
-			
-			def start_GUI(self):
-			
-			roots = Tk()
-			roots.title('Tripadvisor Scraper')
-			instruction = Label(roots, text='Please provide Restaurant-Url\n')
-			instruction.grid(row=0, column=0, sticky=E)
-			
-			restaurant_label = Label(roots, text='Restaurant-URL ')
-			restaurant_label.grid(row=1, column=0,
-			sticky=W)
-			
-			restaurant_entry = Entry(roots, width=150)
-			
-			restaurant_entry.grid(row=1, column=1)
-			
-			
-			def check_url():
-			base_restaurant_url_= "https://www.tripadvisor.de/Restaurant_Review"
-			url_to_check = restaurant_entry.get()
-			if  (not validators.url(url_to_check)) or \
-			(base_restaurant_url_ not in url_to_check):
-			
-			messagebox.showwarning("Warning", "This seems not to be valid Tripadvisor restaurant URL")
-			
-			else:
-			messagebox.showinfo("Vaildation successful", "Url seems to be valid")
-			
-			
-			check_url_Button= Button(roots, text='Validate Url', command=check_url)
-			
-			def go_scrape():
-			self.get_single_data(restaurant_entry.get())
-			
-			scrape_button = Button(roots, text='Go Scrape', command=go_scrape)
-			
-			check_url_Button.grid(columnspan=3, sticky=W)
-			scrape_button.grid(columnspan=5, sticky=W)
-			
-			#adding Scraped Data as a Logfile displaying in a textbox
-			self.txt = Text(roots, width=24, height=10)
-			self.txt.grid(row=4, column=1)
-			
-			
-			roots.mainloop()
-			
-			
-			
-			if __name__ == "__main__":
-			ws = Web_scraping()
-			ws.start_GUI()
-			#ws.parse_to_tinydb()
-			
-			#url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"
-			
-			
-			     
+						     
 			\end{lstlisting}
-
-		
-		
-		
-		
-		
-		
-		
-	\chapter{Blubber}\label{bluber}	
 	
-		Programmiersprache: C	
-		usahdfiheaöoi
-				
-			
-
-		
-
-		
-			
-		
 	
 	
 	
 %						    	Hinzufügen relevanter Verzeichnisse
-\clearpage
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-\listoffigures
-\clearpage
-%Erneute Bennenung für das Verzeichnis 
-\addcontentsline{toc}{chapter}{Programmcodeverzeichnis}
-\renewcommand{\lstlistingname}{Programmcodeverzeichnis}
-\lstlistoflistings
-\renewcommand{\lstlistlistingname}{\lstlistingname}
-
-\chapter*{Abkürzungsverzeichnis}
-\vspace{1.0cm}
-\begin{acronym}[SEPSEP]
-	\acro{oem}[OEM]{Original Equipment Manufacturer}
-	\acro{bob}[BOB]{Breakout-Box}
-	\acro{can}[CAN]{Controller Area Network}
-	\acro{lin}[LIN]{Local Interconnect Network}
-	\acro{obd}[OBD]{On-Board-Diagnose}	
-	\acro{sda}[SDA]{Serial Data Line}
-	\acro{scl}[SCL]{Serial Clock Line}
-	\acro{gui}[GUI]{Graphical User Interface}
-	\acro{pdf}[PDF]{Portable Document Format}
-	%\acro{SD}[SD]{Secure Digital Memory Card}
-	%\acro{pc}[PC]{Personal Computer}
-	%\acro{USB}[USB]{Universal Serial Bus}
-\end{acronym}
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-
-\chapter*{Formelverzeichnis}
-\vspace{1.0cm}
-\begin{center}
-	\begin{tabularx}{\textwidth}{lXlXlXl}
-		
-		(\ref{formel2}, \ref{formel3})	& & R$_{CL}$ & & [$\Omega$]	& & Strombegrenzungswiderstand\\
-		
-		(\ref{formel4})	& & R$_{CS}$ & & [$\Omega$]	& & Strommesswiderstand\\
-		
-		(\ref{formel5} - \ref{formel9})	& & A\textit{x}\_v & & & & Binär-Konjunktion\\
-		
-	\end{tabularx}
-\end{center}
-\addcontentsline{toc}{chapter}{Formelverzeichnis}
-
-
-\clearpage
-\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-\begin{thebibliography}{9} 
-	\vspace{1.0cm}
-	%Internetrecherche 
+%   									Abbildungsverzeichnis
+	\clearpage
+	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+	\listoffigures
 	
-	\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
-		
-	\bibitem{bib-hss-pic} Abbildung \ref{pic-hss} - High-Side-Switch\\ Texas Instruments: Datasheet TPS1H100-Q1 40-V, 100-m$\Omega$ Single-Channel Smart High-Side Power Switch; \newline \url{http://www.ti.com/lit/ds/symlink/tps1h100-q1.pdf}, Seite 32 (Figure 45), aufgerufen am \today
-
 	
-\end{thebibliography}
+	
+%   									Programmcodeverzeichnis	
+	\clearpage
+	%Erneute Bennenung für das Verzeichnis 
+	\addcontentsline{toc}{chapter}{Programmcodeverzeichnis}
+	\renewcommand{\lstlistingname}{Programmcodeverzeichnis}
+	\lstlistoflistings
+	\renewcommand{\lstlistlistingname}{\lstlistingname}
+	
+	
+	
+%   									Abkürzungsverzeichnis	
+	\chapter*{Abkürzungsverzeichnis}
+		\vspace{1.0cm}
+		\begin{acronym}[SEPSEP]
+			\acro{oem}[OEM]{Original Equipment Manufacturer}
+			\acro{bob}[BOB]{Breakout-Box}
+			\acro{can}[CAN]{Controller Area Network}
+			\acro{lin}[LIN]{Local Interconnect Network}
+			\acro{obd}[OBD]{On-Board-Diagnose}	
+			\acro{sda}[SDA]{Serial Data Line}
+			\acro{scl}[SCL]{Serial Clock Line}
+			\acro{gui}[GUI]{Graphical User Interface}
+			\acro{pdf}[PDF]{Portable Document Format}
+			%\acro{SD}[SD]{Secure Digital Memory Card}
+			%\acro{pc}[PC]{Personal Computer}
+			%\acro{USB}[USB]{Universal Serial Bus}
+		\end{acronym}
+		\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	
+	
+	
+%   									Formelverzeichnis	
+	\chapter*{Formelverzeichnis}
+		\vspace{1.0cm}
+		\begin{center}
+			\begin{tabularx}{\textwidth}{lXlXlXl}
+				
+				(\ref{formel2}, \ref{formel3})	& & R$_{CL}$ & & [$\Omega$]	& & Strombegrenzungswiderstand\\
+				
+				(\ref{formel4})	& & R$_{CS}$ & & [$\Omega$]	& & Strommesswiderstand\\
+				
+				(\ref{formel5} - \ref{formel9})	& & A\textit{x}\_v & & & & Binär-Konjunktion\\
+				
+			\end{tabularx}
+		\end{center}
+		\addcontentsline{toc}{chapter}{Formelverzeichnis}
+	
+	
+	
+%   									Literaturverzeichnis	
+	\clearpage
+	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	\begin{thebibliography}{9} 
+		\vspace{1.0cm}
+		%Internetrecherche 
+		
+		\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
+			
+		\bibitem{bib-hss-pic} Abbildung \ref{pic-hss} - High-Side-Switch\\ Texas Instruments: Datasheet TPS1H100-Q1 40-V, 100-m$\Omega$ Single-Channel Smart High-Side Power Switch; \newline \url{http://www.ti.com/lit/ds/symlink/tps1h100-q1.pdf}, Seite 32 (Figure 45), aufgerufen am \today	
+	\end{thebibliography}
+	
+	
+	
+%   									Selbstständigkeitserklärung
+	\newpage
+	\setstretch{1.5}
+	\chapter*{Eidesstattliche Erklärung}
+		%\vspace{1.5\textheight}
+		Hiermit erklären wir, Johannes Knippel, Anja Wolf, Johanna Sickendiek und Skanny, dass wir die vorliegende Arbeit mit dem Titel \textit{Auslesen und Abspeichern von unstrukturierten Daten am Beispiel von Tripadvisor} selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet haben.
+		\vspace{15mm}
+		\\
+		\\
+		\begin{flushleft}
+			\begin{tabular}[H]{ll}
+				
+				München, den \parbox{5,5cm}{\today}  	& 	\parbox{6cm}{\hrule\medskip \textit{Unterschrift}}\\[2cm]
+													  	& 	\parbox{6cm}{\hrule\medskip \textit{Unterschrift}}\\[2cm]
+													  	& 	\parbox{6cm}{\hrule\medskip \textit{Unterschrift}}\\[2cm]
+													  	& 	\parbox{6cm}{\hrule\medskip \textit{Unterschrift}}\\[2cm]
+			\end{tabular}
+		\end{flushleft}
+		\addcontentsline{toc}{chapter}{Eidesstattliche Erklärung}
 
 
 \end{document}
