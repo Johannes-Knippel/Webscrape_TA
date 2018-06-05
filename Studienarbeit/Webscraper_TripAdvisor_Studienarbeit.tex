@@ -563,16 +563,62 @@
 	
 	
 %						    	Hinzufügen relevanter Verzeichnisse
+\clearpage
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+\clearpage
+%Erneute Bennenung für das Verzeichnis 
+\addcontentsline{toc}{chapter}{Programmcodeverzeichnis}
+\renewcommand{\lstlistingname}{Programmcodeverzeichnis}
+\lstlistoflistings
+\renewcommand{\lstlistlistingname}{\lstlistingname}
 
-	\chapter*{Abkürzungsverzeichnis}
+\chapter*{Abkürzungsverzeichnis}
+\vspace{1.0cm}
+\begin{acronym}[SEPSEP]
+	\acro{oem}[OEM]{Original Equipment Manufacturer}
+	\acro{bob}[BOB]{Breakout-Box}
+	\acro{can}[CAN]{Controller Area Network}
+	\acro{lin}[LIN]{Local Interconnect Network}
+	\acro{obd}[OBD]{On-Board-Diagnose}	
+	\acro{sda}[SDA]{Serial Data Line}
+	\acro{scl}[SCL]{Serial Clock Line}
+	\acro{gui}[GUI]{Graphical User Interface}
+	\acro{pdf}[PDF]{Portable Document Format}
+	%\acro{SD}[SD]{Secure Digital Memory Card}
+	%\acro{pc}[PC]{Personal Computer}
+	%\acro{USB}[USB]{Universal Serial Bus}
+\end{acronym}
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+
+\chapter*{Formelverzeichnis}
+\vspace{1.0cm}
+\begin{center}
+	\begin{tabularx}{\textwidth}{lXlXlXl}
+		
+		(\ref{formel2}, \ref{formel3})	& & R$_{CL}$ & & [$\Omega$]	& & Strombegrenzungswiderstand\\
+		
+		(\ref{formel4})	& & R$_{CS}$ & & [$\Omega$]	& & Strommesswiderstand\\
+		
+		(\ref{formel5} - \ref{formel9})	& & A\textit{x}\_v & & & & Binär-Konjunktion\\
+		
+	\end{tabularx}
+\end{center}
+\addcontentsline{toc}{chapter}{Formelverzeichnis}
+
+
+\clearpage
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\begin{thebibliography}{9} 
 	\vspace{1.0cm}
-	\begin{acronym}[SEPSEP]
-	  	\acro{SD}[SD]{Secure Digital Memory Card}
-	  	\acro{pc}[PC]{Personal Computer}
-	  	%\acro{USB}[USB]{Universal Serial Bus}
-	\end{acronym}
-	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	%Internetrecherche 
+	
+	\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
+		
+	\bibitem{bib-hss-pic} Abbildung \ref{pic-hss} - High-Side-Switch\\ Texas Instruments: Datasheet TPS1H100-Q1 40-V, 100-m$\Omega$ Single-Channel Smart High-Side Power Switch; \newline \url{http://www.ti.com/lit/ds/symlink/tps1h100-q1.pdf}, Seite 32 (Figure 45), aufgerufen am \today
 
+	
+\end{thebibliography}
 
 
 \end{document}
