@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# coding=utf-8
 
 import requests
 import os
@@ -44,8 +45,9 @@ class Web_scraping:
         for self.popularity in soup.find_all('span', {'class': 'header_popularity popIndexValidation'}):
             print("Popularitaet: " + self.popularity.text)
         
-        for self.price_level in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
-            print("Preis_Level: " + self.price_level.string)
+        for self.price_level1 in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
+            self.price_level = unicodedata.normalize('NFD', self.price_level1.string)
+            print("Preis_Level: " + self.price_level)
         
         for self.cuisine in soup.find_all('span', {'class': 'header_links rating_and_popularity'}):
             print('Kueche: ' + self.cuisine.text)
@@ -168,10 +170,22 @@ class Web_scraping:
         print ("Rating: "+ self.points.span.span['alt'].split()[0])
 
         #Get URL from review pictures
+<<<<<<< HEAD
+        for link in soup.findAll('div', {'id': 'taplc_location_reviews_list_sur_callout_0'}):
+            if link.find('div', {'class': 'inlinePhotosWrapper'}):
+                for pic in link.findAll('img', {'class': 'centeredImg'}):
+                    self.src = pic.get('src')
+                    print("Quelle Bild " + self.src)
+            else:
+                print("No pictures have been uploaded for this review!")
+            
+        
+=======
+        self.src = 'leer'
         for link in soup.findAll('img', {'class': 'centeredImg'}):
             self.src = link.get('src')
             print("Quelle Bild " + self.src)
-        
+>>>>>>> ebd356585b0d6575a0c40a5d741bbe8843206d16
         #load all relevant review, User, Picture data into database (table: REVIEWS, USERS, PICTURES)
         self.parse_to_tinydb_us_rev_pic()
     
@@ -234,12 +248,7 @@ class Web_scraping:
             popup.mainloop()
         # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
         else:
-            self.name2 = unicodedata.normalize("NFKD", self.name.string)
-            self.popularity2 = unicodedata.normalize("NFKD", self.popularity.text)
-            self.cuisine2 = unicodedata.normalize("NFD", self.cuisine.text)
-            self.address2 = unicodedata.normalize("NFKD", self.address.string)
-            self.price_level2 = unicodedata.normalize("NFKC", self.price_level.string) 
-            dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name2, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity2, 'PREIS_LEVEL':self.price_level2, 'KUECHE':self.cuisine2, 'STRASSE':self.address2, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
+            dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name.string, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity.text, 'PREIS_LEVEL':self.price_level, 'KUECHE':self.cuisine.text, 'STRASSE':self.address.string, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
             tableRestaurants.insert(dataRestaurants) 
 
 
@@ -314,8 +323,8 @@ class Web_scraping:
         else:
             dataReviews = {'R_ID':self.idRestaurant, 'U_ID':self.idUser, 'REV_ID':self.idReview, 'TITEL':self.title, 'BEWERTUNG':self.review, 'RATING':self.points.span.span['alt'].split()[0]}
             tableReviews.insert(dataReviews)
-            
-               
+
+
         #HANDLE PICTURES
         #check if there already exists an entry in the PICTURES-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
         if tablePictures.contains((where('QUELLE') == self.src)): 
