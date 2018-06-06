@@ -170,10 +170,13 @@ class Web_scraping:
         print ("Rating: "+ self.points.span.span['alt'].split()[0])
 
         #Get URL from review pictures
-        self.src = 'leer'
-        for link in soup.findAll('img', {'class': 'centeredImg'}):
-            self.src = link.get('src')
-            print("Quelle Bild " + self.src)
+        for link in soup.findAll('div', {'id': 'taplc_location_reviews_list_sur_callout_0'}):
+            if link.find('div', {'class': 'inlinePhotosWrapper'}):
+                for pic in link.findAll('img', {'class': 'centeredImg'}):
+                    self.src = pic.get('src')
+                    print("Quelle Bild " + self.src)
+            else:
+                print("No pictures have been uploaded for this review!")
         #load all relevant review, User, Picture data into database (table: REVIEWS, USERS, PICTURES)
         self.parse_to_tinydb_us_rev_pic()
     
