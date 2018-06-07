@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# coding=utf-8
+
 
 import requests
 import os
@@ -30,6 +30,7 @@ class Web_scraping:
     '''
     def get_single_data(self,url):
         source_code = requests.get(url)
+        source_code.encoding = 'utf-16BE'
         plain_text = source_code.text
         soup = BeautifulSoup(plain_text, "html.parser")
         
