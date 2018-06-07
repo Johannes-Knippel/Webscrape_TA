@@ -151,17 +151,11 @@
 	\setstretch{1.5}
 	\chapter{Problemstellung}\label{probstellung}
 	
-		
-		Im Rahmen eines Forschungsprojektes an der Hochschule München sollen teilweise strukturierte Daten von Webseiten gewonnen werden. 
+		Für nahezu Jedermann bietet das WWW im Vergleich zu damaligen Zeiten ungeahnte Möglichkeiten der Recherche und Themenfindung. Noch nie waren so viele Informationen öffentlich einsehbar wie heute. Meist sind jedoch die gewünschten Inhalte an vielen unterschiedlichen Orten im Web verteilt, auf unterschiedlichste Weisen formatiert oder aufgrund schlechter Informationsarchitektur nur mit größerem Aufwand zu erreichen. Grundsätzlich kann die Fülle an Ergebnissen überfordern und nicht immer sind alle relevanten Inhalte über gängige Suchmaschinen auffindbar. Das bedeutet dann oft die mühsame Suche nach den relevanten Informationen in nicht immer nutzerfreundlich gestalteten Datenbanken. Bei so gut wie allen Recherchearbeiten besteht die Aufgabe heutzutage darin, die sprichwörtliche „Nadel im Heuhaufen“ zu finden. In vielen Fällen wünscht man sich einen gewissen Grad an Automatisierung. Daher soll im Rahmen eines Forschungsprojektes an der Hochschule München ein Tool entworfen werden, das Informationen und Inhalte von Webseiten automatisiert gewinnt. 
 		\\
-		Für nahezu Jedermann bietet das WWW im Vergleich zu damaligen Zeiten ungeahnte Möglichkeiten der Recherche und Themenfindung. Noch nie waren so viele Informationen öffentlich einsehbar wie heute. Meist sind jedoch die gewünschten Inhalte an vielen unterschiedlichen Orten im Web verteilt, auf unterschiedlichste Weisen formatiert oder aufgrund schlechter Informationsarchitektur nur mit größerem Aufwand zu erreichen. Grundsätzlich kann die Fülle an Rechercheergebnissen geradewegs überfordern und nicht immer sind alle relevanten Inhalte über gängige Suchmaschinen auffindbar.
+		Programmiertechnisch bedient man sich hierfür meistens vorhandener Schnittstellen, die die jeweiligen Quellen zur Verfügung stellen. Neben anwendungsspezifischen APIs sind dies zum Beispiel RSS- oder AtomFeeds, die in eigene Datenbanken geladen und von dort aus weiterverarbeitet werden können. \cite{bib-atomfeed} Die Informationen liegen in diesen Fällen also bereits in einem strukturierten Format vor und enthalten wenig bis gar keinen überflüssigen Inhalt.
 		\\
-		Das bedeutet dann oft die mühsame Suche nach den relevanten Informationen in nicht immer nutzerfreundlich gestalteten Datenbanken.
-		\\
-		Bei so gut wie allen Recherchearbeiten besteht die Aufgabe heutzutage vielfach darin, die sprichwörtliche „Nadel im Heuhaufen“ zu finden.
-		In vielen Fällen wünscht man sich deswegen einen gewissen Grad an Automatisierung. Viele Dokumentationsabteilungen verfügen deshalb inzwischen über eine Reihe von Werkzeugen, die ungeordnete Informationsströme im Web kanalisieren, filtern und in einem nutzerfreundlicheren Format ausgeben können. Programmiertechnisch bedient man sich hierfür häufig vorhandener Schnittstellen, die die jeweiligen Quellen zur Verfügung stellen. Neben anwendungsspezifischen APIs sind dies zum Beispiel RSS- oder AtomFeeds, die in eigene Datenbanken geladen und von dort aus weiterverarbeitet werden können. Die Informationen liegen in diesen Fällen also bereits in einem strukturierten Format vor und enthalten wenig bis gar keinen überflüssigen Inhalt.
-		\\
-		Hingegen wenn keine der genannten Schnittstellen angeboten werden, bleibt die ständige Beobachtung dieser Inhalte schwierig. Sofern es sich bei den Quellen um einfach strukturierte HTML-Seiten handelt, kann man sich mit verschiedenen Tools weiterhelfen. Gerade bei öffentlichen Datenbanken, deren Inhalte über Webformulare abgefragt werden („Deep Web“), ist dies jedoch meistens nicht möglich. Hier können Webscraper weiterhelfen, die das automatisierte „Auslesen“ von bestimmten strukturierten	oder semi-strukturierten Inhalten aus öffentlich zugänglichen Webseiten ermöglichen. 
+		Hingegen wenn keine der genannten Schnittstellen angeboten werden, bleibt die ständige Beobachtung dieser Inhalte schwierig. Sofern es sich bei den Quellen um einfach strukturierte HTML-Seiten handelt, kann man sich mit verschiedenen Tools weiterhelfen. Gerade bei öffentlichen Datenbanken, deren Inhalte über Webformulare abgefragt werden („Deep Web“), ist dies jedoch meistens nicht möglich. \cite{bib-deepweb} Hier können Webscraper weiterhelfen, die das automatisierte „Auslesen“ von bestimmten strukturierten	oder semi-strukturierten Inhalten aus öffentlich zugänglichen Webseiten ermöglichen. 
 		\\
 		\newline
 		Diese Studienarbeit beleuchtet am Beispiel von TripAdvisor wie ein solcher Webscraper implementiert werden kann. Des Weiteren umfasst diese Studienarbeit das automatisierte Abspeichern der gewonnenen Daten in einer strukturierten Datenbank.
@@ -169,7 +163,7 @@
 		%Gewonnene Daten können so Aufschluss über Verhaltensweisen, Interessen und auch mögliche Kaufanregungen geben.
 	
 	
-	
+
 
 	\chapter{Grundlagen}\label{grlagen}
 		
@@ -193,6 +187,7 @@
 		\section{Tabelle: Daten TripAdvisor (Welche Daten holen wir uns? Hotel und Restaurants?) details}
 		
 		\section{Nicht funktionale Anforderungen: Benutzerfreundlichkeit etc.}
+			
 			bliblablablablubulskjfvba
 			öajsvaölfkvpaijsdv
 			\\
@@ -220,20 +215,65 @@
 			\subsection{Bewertungsdaten}
 			
 		\section{Datenhaltung}
-			Die gewonnen Daten müssen nach der "Gewinnung" strukturiert abgelegt werden, um weitere Analysen ohne großen Mehraufwand durchführen zu können. 
+		%Einfach suche der Daten
+			Eine Anforderung an das System besteht auch darin die gewonnenen Daten in einer Datenbank ablegen zu können. Zunächst wurden vom Product Owner die nötigen Ansprüche an die Datenbank bereitgestellt, nach der sich dann aus zwei Datenbanktypen eine vorteilhaftere herauskristallisieren konnte. 
+			\\
+			Da die gewonnen Rohdaten sich noch meist in einem encodierten Zustand befinden, müssen diese zunächst einen Bereinigungsprozess durchlaufen bevor sie leserlich in der Datenbank abgelegt werden können. Nicht nur das einfach Lesen der Daten sondern auch die Suche nach bestimmten Rechercheergebnissen soll möglichst intuitiv für den Nutzer ablaufen. Die Datenbankstruktur wurde daher Zusammen mit dem Auftraggeber abgestimmt und daraufhin die Architektur implementiert.
 		
-			\subsection{Welche Datenbank wurde gewählt?	}
-				Gewählt wurde tinyDB, da
+			\subsection{Definition der Datenbankanforderungen}
 			
-				\subsubsection{Definition der Datenbankanforderungen}
-					Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel
+				Die vom Abnehmer vordefinierten Anforderungen an die Datenbank sind wie folgt:
+				
+				%Stichpunkte DB-Anforderungen															
+				\begin{itemize}
+					\item Integritätssicherung\\
+					\begin{small}
+						Daten werden auf Korrektheit (bereits während der Eingabe) überprüft und Fehlmanipulationen  verhindert 
+					\end{small}
+					
+					\item Redundanzarmut\\
+					\begin{small}
+						es gibt keine ungeordnete Mehrfachspeicherung von Datenwerten
+					\end{small}
+								
+					\item Datenunabhängigkeit\\
+					\begin{small}
+						die Datenbank kann ohne Server verwaltet und weiterentwickelt werden
+					\end{small} 
+					
+					\item zentrale Kontrolle\\
+					\begin{small}
+						ein Administrator ist in der Lage, das gesamte System von einem Rechner aus zu verwalten
+					\end{small}
+				\end{itemize}
+				
 				
 				\subsubsection{Vergleich: SQLLite und TinyDB}
-					Wieso tinyDB? SQLite zu zu trivial?:D
-			
+				
+					Im Folgenden werden zwei NoSQOL Datenbanktypen miteinander verglichen, die dem Entwicklerteam als am sinnvollsten erschienen.
+					\\
+					
+					\underline{\textbf{TinyDB:}}
+					\newline TinyDB ist eine leichtgewichtige dokumentenorientierte Datenbank, die für eine einfache Bedienung optimiert ist. Dabei ist sie in reinem Python geschrieben und hat keine externen Abhängigkeiten. Das Ziel sind kleine Apps, die von einer SQL-DB oder einem externen Datenbankserver entkoppelt funktionieren.
+					\\
+					
+					\underline{\textbf{SQLite:}}
+					\newline SQLite ist eine gemeinfreie Programmbibliothek, die ein relationales Datenbanksystem enthält. Sie unterstützt einen Großteil der im SQL-92-Standard festgelegten SQL-Sprachbefehle. Die SQLite-Bibliothek lässt sich direkt in entsprechende Anwendungen integrieren, sodass keine weitere Server-Software benötigt wird. Dies ist der entscheidende Unterschied zu anderen Datenbanksystemen. Durch das Einbinden der Bibliothek wird die Anwendung um Datenbankfunktionen erweitert, ohne auf externe Softwarepakete angewiesen zu sein.
+					\\
+					\newline Der wesentliche Vorteil von TinyDB liegt darin, dass diese Datenbank bereits in Python geschrieben ist und sich somit ideal in unseren Source-Code integrieren lässt. Es entstehen dabei keine Inkonsistenzen oder fehlerhafte Bibliotheksaufrufe. Ein weiteres Plus ist die Möglichkeit das Dateiformat JSON als Datenbank zu verwenden. Diese kann im Vergleich zur SQLite Datei in sehr vielen Anwendungen eingebunden und benutzt werden. Zudem ist man zu der Entscheidung gekommen, dass das Programmieren in SQL-Sprache in einem Python-Code zu Verwirrungen und unnötigen Skill-Anforderungen beiträgt, was bei SQLite der Fall ist.
+					\\
+					Für das Projekt wurde sich einstimmig für die Verwendung von TinyDB als Datenbanksystem entschieden.
+
+
 			\subsection{Daten bereinigen}
+				
+				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich mit in der Regel nur einem Byte Speicherbedarf für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
+				
+				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden.
 			
 			\subsection{Datenbankstruktur}
+				
+				Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel wurden eingesetzt
 			
 				\subsubsection{Tabellen mit Spalten}
 				
@@ -247,11 +287,13 @@
 	
 	
 
+
 	\chapter{Wurden Anforderungen erfüllt?}		
 	
 		\section{Ergebnisse}
 		
 	
+
 
 	\chapter{Fazit und Ausblick}
 	
@@ -364,24 +406,6 @@
 	
 	
 	
-%   									Formelverzeichnis	
-	\chapter*{Formelverzeichnis}
-		\vspace{1.0cm}
-		\begin{center}
-			\begin{tabularx}{\textwidth}{lXlXlXl}
-				
-				(\ref{formel2}, \ref{formel3})	& & R$_{CL}$ & & [$\Omega$]	& & Strombegrenzungswiderstand\\
-				
-				(\ref{formel4})	& & R$_{CS}$ & & [$\Omega$]	& & Strommesswiderstand\\
-				
-				(\ref{formel5} - \ref{formel9})	& & A\textit{x}\_v & & & & Binär-Konjunktion\\
-				
-			\end{tabularx}
-		\end{center}
-		\addcontentsline{toc}{chapter}{Formelverzeichnis}
-	
-	
-	
 %   									Literaturverzeichnis	
 	\clearpage
 	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
@@ -389,9 +413,14 @@
 		\vspace{1.0cm}
 		%Internetrecherche 
 		
-		\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
-			
-		\bibitem{bib-hss-pic} Abbildung \ref{pic-hss} - High-Side-Switch\\ Texas Instruments: Datasheet TPS1H100-Q1 40-V, 100-m$\Omega$ Single-Channel Smart High-Side Power Switch; \newline \url{http://www.ti.com/lit/ds/symlink/tps1h100-q1.pdf}, Seite 32 (Figure 45), aufgerufen am \today	
+		\bibitem{bib-atomfeed} Atom Feed\\ Ryte Wiki: Atom Feed, \newline \url{https://de.ryte.com/wiki/Atom_Feed}, aufgerufen am \today
+					
+		\bibitem{bib-deepweb} Deep Web\\ Advidera: Deep Web, \newline \url{https://www.advidera.com/glossar/deep-web}, aufgerufen am \today	
+		
+		\bibitem{bib-utf8} Kodierung in UTF-8\\ UTF-8, \newline \url{https://de.wikipedia.org/wiki/UTF-8}, aufgerufen am \today
+		
+		%Buchrecherche
+		%\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
 	\end{thebibliography}
 	
 	
