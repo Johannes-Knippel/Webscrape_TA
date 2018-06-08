@@ -166,53 +166,217 @@
 
 
 	\chapter{Grundlagen}\label{grlagen}
-		
+	
 		\section{Was ist WebCrawling?}
-		
+	
 			\subsection{Definition, Erläuterung etc.}
-		
+	
 			\subsection{Wie funktioniert es? (Allgemeine Beschreibung)}
-		
-		\section{Tripadvisor}
-		
-			\subsection{Was ist das für eine Webseite? Kurze Beschreibung}
+	
+			\subsection{Datenstrukturen}
 			
-		\section{Was sind strukturierte und unstrukturierte Daten?}
+				Sowohl der Kontext von Daten, als auch ihre Eigenschaften führen zur Strukturierung dieser in verschiedene Datenarten. Kontextinformationen machen genauere Angaben zu Prozessen in denen die Daten benötigt werden. Eigenschaften hingegen unterscheiden Daten nach Format, Inhalt, Stabilität, Verarbeitung oder Struktur.\\
+				Besonders relevant für dieses Projekt ist folglich letzteres – die Struktur von Daten. Hier unterscheidet man grundsätzlich zwischen drei verschiedenen Fällen, strukturierten, semistrukturierten und unstrukturierten Daten.
+				\\
+				Bei strukturierten Daten sind Metadaten, d.h. strukturgebende Informationen zu Daten vorhanden. Diese können u.a. Auskunft zu Format, erlaubten Werten oder semantischer Bedeutung geben. Ein klassisches Beispiel für strukturierte Daten sind alle möglichen Formen von Datenbanken. Hier müssen zunächst das Schema der Datenbank und deren einzelnen Tabellen festgelegt werden bevor Daten in die definierten Felder einfügt werden können. Somit ist eine einfache Analyse dieser zu einem späteren Zeitpunkt sichergestellt.
+				\\
+				Bei semistrukturierte Daten sind einzelne Bestandteile strukturiert, es mangelt jedoch an einer eindeutigen strukturierten Gesamtheit. Die Daten sind keinem objektorientierten oder relationalem Datenbankschema untergeordnet.
+				\\
+				Bei unstrukturierten Daten wird keinem eindeutigen Schema gefolgt, nur einer reinen Bitfolge. Das bedeutet jedoch nicht, dass die Daten gar keine Struktur aufweisen. Diese ist jedoch nicht direkt bzw. eindeutig für den Nutzer erkennbar. Neben Multimedia Daten (Bilder, Musik) finden sich unstrukturierten Daten auch meist in Emails, auf Internetseiten oder in Text-Dokumenten \cite{bib-daten}.
+				\\
+				\\
+				Web Crawling bzw. Web Scraping fokussiert sich daher auf die Transformation von unstrukturierten Daten im Web zu Daten mit strukturgebenden Metadaten. Die gewünschten Informationen werden dabei als unstrukturierte Rohdaten extrahiert und in einer leicht lesbaren und skalierbaren, d.h. strukturierten Form in Listen, Tabellen oder Datenbanken gespeichert (vgl. Abbildung \ref{pic-webcrawler}). Vorteilhaft ist, dass Web Scraping selektiv arbeitet, d.h. lediglich die Daten transformiert für die man sich im Vorfeld entschieden hat. Dies erleichtert eine Analyse der Daten erheblich. Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln um diese weiter zu verarbeiten.
+				
+				\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/Webcrawler.png}
+					\end{minipage}
+					\centering
+					\caption[Funktionsweise eines Webcrawlers]{Funktionsweise eines Webcrawlers}
+					\label{pic-webcrawler}
+				\end{figure}
+	
+		\section{Tripadvisor}
+	
+			\subsection{Was ist das für eine Webseite? Kurze Beschreibung}
 	
 	
 	
-
+	
 	\chapter{Anforderungen}	
 	
 		\section{Tabelle: Daten TripAdvisor (Welche Daten holen wir uns? Hotel und Restaurants?) details}
-		
+	
 		\section{Nicht funktionale Anforderungen: Benutzerfreundlichkeit etc.}
-			
-			bliblablablablubulskjfvba
-			öajsvaölfkvpaijsdv
-			\\
-			öjydfpvoijaf
-			v\\jdofhvöankfv
-			aposdfjhvpuaohöjvhb
-			
-			
-			
-			
+	
+		bliblablablablubulskjfvba
+		öajsvaölfkvpaijsdv
+		\\
+		öjydfpvoijaf
+		v\\jdofhvöankfv
+		aposdfjhvpuaohöjvhb
+	
+	
+	
 	\chapter{Implementierung}
 	
 		\section{Konfiguration}
-		
+	
 			\subsection{Welche Version von Python}
-			
+	
 			\subsection{Welche Pakete wurden importiert und warum}
-			
-		\section{Warum BeautifulSoup}
-				
-		\section{WebCrawler (Wie findet man die Daten auf der Webseite und wie holen wir sie uns.)}
+	
+		\section{BeautifulSoup}
 		
-			\subsection{RestaurantDaten}
+			Für die Programmierung des Webcrawlers um Daten von auf TripAdvisor gelisteten Hotels und Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
+			\\
+			\newline
+			Hierbei handelt es sich um eine Library für XML und HTML parsing, die zunächst als zusätzliches Paket installiert werden muss. Beim Parsen werden XML oder HTML Dateien analysiert und auf ihre einzelnen Bestandteile geprüft. So können jegliche Informationen aus diesen Dateien gesucht bzw. extrahiert werden, vorausgesetzt es sind entsprechende Tags bzw. Attributnamen vorhanden. Ohne diese kann nicht gesucht werden \cite{bib-webpython}. Diese Einfachheit und gleichzeitig große Effizienz sind der westenliche Vorteil, warum das Projekt-Team sich für die Library BeautifulSoup und deren Methoden entschieden hat.
+			\\
+			\newline
+			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Hotels bzw. Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Website an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
+			\\ 
+			\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{initbs4}, captionpos=b, style=Arduino]
+			def get_single_data(self,url):
+			source_code = requests.get(url)
+			plain_text = source_code.text
+			soup = BeautifulSoup(plain_text, "html.parser")
+			\end{lstlisting}
 			
-			\subsection{Bewertungsdaten}
+			Dieses transformiert den komplexen HTML-Code in einen ebenfalls komplexen Baum mit Python Objekten. Die HTML-Tags korrespondieren mit den neuen Tag Objekten des BeautifulSoup Objects \cite{bib-bs4}. Am folgenden Beispiel kann die Struktur eines solchen beispielhaft veranschaulicht werden.
+			
+			
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}[b]{0.9\textwidth}
+					\includegraphics[width=\textwidth]{Bilder/HTMLcode.png}
+				\end{minipage}
+				\centering
+				\caption[HTML Code bs4]{Baum mit Python Objekten \cite{bib-webpython}}
+				\label{pic-HTMLcode}
+			\end{figure}
+			
+			Natürlich enthält dieser normalerweise eine weitaus größere Anzahl an Vererbungen, d.h. ineinander verschachtelten Tags, und ist daher komplizierter zu lesen. Jedoch wird anhand dieses Beispiels bereits deutlich, wie die im folgenden beschriebenen Methoden der BeautifulSoup Library damit arbeiten können.
+			\\
+			\newline
+			Sobald das BeautifulSoup Object vorliegt, können die vorhandenen Methoden der bs4 Library genutzt werden. In folgender Tabelle sind die beiden bekanntesten und auch im Programm-Code am meisten genutzten Methoden aufgelistet \cite{bib-bs4}.
+		
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}[b]{0.9\textwidth}
+					\includegraphics[width=\textwidth]{Bilder/SoupMethoden.png}
+				\end{minipage}
+				\centering
+				\caption[Methoden bs4]{Such-Methoden der Python Library BeautifulSoup \cite{bib-bs4}}
+				\label{pic-SoupMethoden}
+			\end{figure}
+			
+			Im folgenden Kapitel werden diese genutzt um den Webcrawler für TripAdvisor erfolgreich zu implementieren.
+	
+	
+		\section{Implementierung WebCrawler}
+	
+	
+			\subsection{Initialisierung BeautifulSoup}
+			
+				Zunächst wird die URL des gewünschte Restaurants oder Hotels, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Webcrawlers beginnen. 
+	
+			\subsection{Extraktion Allgemeiner Daten}			
+				Zunächst sollen die in Kapitel 3 definierten allgemeinen Daten eines Restaurants bzw. Hotels extrahiert werden. Zu diesen gehören Name, Kontaktdetails, Küche, Preis-Level, Popularität, Anzahl an Bewertungen sowie die durchschnittlichen Bewertung. Dies soll in der neu definierten Methode \textit{get\_single\_data()}  mit den bereits beschriebene Suchfunktionen (Kapitel 4.2) umgesetzt werden.
+				\\ 
+				Die Unkompliziertheit von BeautifulSoup wird auch hier wieder deutlich. Mit \textit{find()} und \textit{find\_all()} kann nach jedem gewünschten Tag im Source Code gesucht und dessen Inhalt ausgegeben werden. So kann nach Strings, Blockelementen (z.B. <div>-Tag, Tabellen, Listen oder Überschriften), Inline-Elementen (z.B. <span>-Tag, Links oder Bilder) und weiteren Tags sowie deren Klassennamen gesucht werden \cite{bib-bs4}.
+				Um diese zu bestimmen, ist es notwendig den übergebenen HTML-Code der URL genauer zu betrachten. Dies ist z.B. im Browser Chrome mit Rechtsklick „Quellcode anzeigen“ möglich. Um direkt auf ein gewünschtes Element im Quellcode zu springen, kann Rechtsklick „Element untersuchen“ genutzt werden. Diese Developer Tool-Ansicht ist deutlich strukturierter als den gesamten Text anzeigen zu lassen und erleichtert die Suche nach den gewünschten Tags um ein Vielfaches.
+				\\
+				\newline
+				Der Programmcode 4.2 zeigt einige der Elemente und Klassen die gewählt wurden, um die gewünschten Informationen zu extrahieren.
+				Um den Namen des Restaurants oder Hotels zu finden wird beispielsweise nach dem Tag \textit{<h1>} und dem class-Namen \textit{‘heading-title‘} gesucht. Dieser Tag steht üblicherweise für Überschriften und kommt meist nur einmal vor. Daher ist die Suche hier relativ simpel. Hingegen wird für die Durchschnittliche Bewertung des Restaurants oder Hotels nach einem \textit{<div>}-Tag mit class-Namen \textit{‘rs rating‘} gesucht. Da es sich dabei jedoch nur um die parent-class des gesuchten Tags handelt wird hier noch mit den Anhängen .div.span erweitert und tiefer in das BeautifulSoup Object „gezoomt“ um die children dieser Klasse zu erhalten. Mit der ID \textit{‘content‘} werden letztendlich die durchschnittliche Bewertung gefunden und in der Variable overallPoints gespeichert.
+				\\
+				\begin{lstlisting} [caption={Extraktion Allgemeiner Daten Object}\label{exallgdat}, captionpos=b, style=Arduino]
+				for self.name in soup.find('h1', {'class': 'heading_title'}):
+				print("Name:" + self.name.string)
+				
+				for self.rating_amount in soup.find('span', {'property': 'count'}):
+				print("Anzahl Bewertungen:" + self.rating_amount.string)
+				
+				for self.cuisine in soup.find_all('span', {'class': 'header_links rating_and_popularity'}):
+				print('Kueche:' + self.cuisine.text)
+				\end{lstlisting}
+				
+				BeautifulSoup parsed so den gesamten HTML-Code nach den definierten Tag‘s und gibt je nach Methode das erste bzw. alle gefundenen Ergebnisse der Suche aus. Beispielsweise wird beim Namen nur nach einem Ergebnis gesucht, da hier mehrere Ergebnisse schlichtweg nicht sinnvoll wären. Bei der Art der Küche hingegen wird die Methode \textit{find\_all()} genutzt, da hier auch mehrere Ergebnissen gefunden werden können (vgl. Programmcode 4.2). Alle Ergebnisse werden wiederum in neu definierten Variablen als einfache Strings bzw. bei mehreren Ergebnissen in Listen gespeichert.
+	
+	
+			\subsection{Bewertungslink aller Bewertungen auslesen}
+			
+				Neben allgemeinen Daten zu Restaurant bzw. Hotel sollen außerdem noch Informationen zu allen Bewertungen inkl. angehängter Bilder und Daten zu deren Verfassern extrahiert und gespeichert werden. Dafür wird zunächst die URL jeder Bewertung generiert werden, um die Informationen von hier auszulesen. Da sich die Bewertungen meist nicht nur über eine, sondern eine Vielzahl an Seiten erstrecken wurde dies mit einer Verschachtelten for-Schleife gelöst.
+				\\
+				\newline
+				Zunächst wurde eine for Schleife definiert, die alle verfügbaren Seiten eines Hotels oder Restaurants auf TripAdvisor durchläuft (vgl. Programmcode 4.3). Dafür wird die maximale Anzahl an Seiten mit \textit{find\_all()} gesucht und eine neue URL für jede der Seiten generiert. Diese unterschieden sich lediglich anhand eines Indexes (in 10er Schritten). Daher wird dieser für jeden Schleifendurchlauf, d.h. für jede Seite um 10 erhöht und mit der vorher gesplitteten URL neu zusammengesetzt. 
+				\\
+				\begin{lstlisting} [caption={For-Schleife über alle verfügbaren Bewertungsseiten}\label{forpages}, captionpos=b, style=Arduino]
+				#create a new_url for each page of the reviews
+				for index in range (10,pages*10, 10):
+				
+				data = url.split("Reviews-")
+				new_url = data[0]+"Reviews-or"+str(index)+'-'+data[1]
+				#pass the new_url to the loop_trough_review_pages function
+				self.loop_through_review_pages(new_url)
+				\end{lstlisting}
+				
+				Die neu generierte URL wird jedes Mal an die Methode \textit{loop\_through\_review\_pages()} übergeben.
+				\\
+				\\
+				Mit dem ersten Aufruf von \textit{find\_all()} in dieser Mehtode wird zunächst nach dem \textit{<div>}-Tag mit class-Namen \textit{‘review container‘} gesucht (vgl. Programmcode 4.4). 
+				\\
+				\begin{lstlisting} [caption={Methode loop\_through\_review\_pages}\label{forcontainers}, captionpos=b, style=Arduino]
+				def loop_through_review_pages(self, loop_url):
+				source_code = requests.get(loop_url)
+				plain_text = source_code.text
+				soup = BeautifulSoup(plain_text, "html.parser")
+				
+				#get all review containers but on the nuw_url
+				review_containers = soup.find_all('div', class_= 'review-container')
+				reviewsPerPage = len(review_containers)
+				
+				#search trough all reviews on the page
+				for container in review_containers:
+				
+				for link in container.find_all('a', href=True):
+				href = "https://www.tripadvisor.de" + str(link.get('href'))
+				#pass it to the function where single data is scraped
+				self.get_single_review_data(href)
+				\end{lstlisting}
+				Bei einem solchen container handelt es sich um einen Block im HTML-Code, der alle Informationen einer einzigen Bewertung umfasst und diese sozusagen „einrahmt“. Für jede einzelne Bewertung wird dieser daher wiederholt (vgl. Abbildung \ref{pic-reviewcontainer}). Da die Methode \textit{find\_all()} genutzt wurde, wird deshalb in der Variable \textit{review\_containers} nun eine Liste mit allen ausgelesenen containern gespeichert.
+				\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/reviewcontainer.png}
+					\end{minipage}
+					\centering
+					\caption[Review Container]{Wiederholung der ‘review container' \cite{bib-reviewcontainer}}
+					\label{pic-reviewcontainer}
+				\end{figure}
+				Mit dem erneuten Aufruf der Methode \textit{find\_all()} wird in einem container nach einem Link (\textit{<a>}-Tag) gesucht und gleichzeitig href auf \textit{‘True}‘ gesetzt. So stellt man sicher, dass nur Links mit href-Attribut ausgegeben werden. Bei diesem Link handelt es sich um den Teil der URL, der an die reguläre TripAdvisor Website angehängt werden muss, um die Bewertungsseite aufrufen zu können.
+				\\
+				Da jedoch nicht nur Informationen zur ersten gefunden Bewertung pro Seite, sondern zu allen Bewertungen extrahiert werden sollen, ist die Suchfunktion in eine weitere for-Schleife eingebunden. Diese loopt durch die vorher gespeicherte Liste \textit{review\_container}. So wird nicht nur der erste review container nach der Bewertungsseiten URL durchsucht sondern alle. Die Methode \textit{loop\_through\_review\_pages()} in Kombination mit der for Schleife über alle Bewertungsseiten ermöglicht nun die Bewertungslinks jeder einzelnen Bewertung auszulesen.
+				\\
+				\newline
+				Diese neu ausgelesene URL wird jedes Mal an die Methode \textit{get\_single\_review\_data()} übergeben. Mit dieser können alle in Kapitel 3 definierten Daten zu den Bewertungen exrahiert werden.
+	
+	
+	
+			\subsection{Extraktion Bewertungensdaten}
+			
+				Auch hier muss zunächst wieder ein BeautifulSoup Object initalisiert werden, diesmal aber mit dem gespeicherten HTML-Code einer einzelnen Bewertungsseite (vgl. Programmcode 4.5).
+				\\
+				\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{forpages}, captionpos=b, style=Arduino]
+				def get_single_review_data(self,review_url):     
+				source_code2 = requests.get(review_url)
+				plain_text2 = source_code2.text
+				soup = BeautifulSoup(plain_text2, "html.parser")
+				\end{lstlisting}
+	
+	
 			
 		\section{Datenhaltung}
 		%Einfach suche der Daten
@@ -252,11 +416,9 @@
 				
 					Im Folgenden werden zwei NoSQOL Datenbanktypen miteinander verglichen, die dem Entwicklerteam als am sinnvollsten erschienen.
 					\\
-					
 					\underline{\textbf{TinyDB:}}
 					\newline TinyDB ist eine leichtgewichtige dokumentenorientierte Datenbank, die für eine einfache Bedienung optimiert ist. Dabei ist sie in reinem Python geschrieben und hat keine externen Abhängigkeiten. Das Ziel sind kleine Apps, die von einer SQL-DB oder einem externen Datenbankserver entkoppelt funktionieren.
-					\\
-					
+					\\					
 					\underline{\textbf{SQLite:}}
 					\newline SQLite ist eine gemeinfreie Programmbibliothek, die ein relationales Datenbanksystem enthält. Sie unterstützt einen Großteil der im SQL-92-Standard festgelegten SQL-Sprachbefehle. Die SQLite-Bibliothek lässt sich direkt in entsprechende Anwendungen integrieren, sodass keine weitere Server-Software benötigt wird. Dies ist der entscheidende Unterschied zu anderen Datenbanksystemen. Durch das Einbinden der Bibliothek wird die Anwendung um Datenbankfunktionen erweitert, ohne auf externe Softwarepakete angewiesen zu sein.
 					\\
@@ -422,6 +584,14 @@
 		\bibitem{bib-deepweb} Deep Web\\ Advidera: Deep Web, \newline \url{https://www.advidera.com/glossar/deep-web}, aufgerufen am \today	
 		
 		\bibitem{bib-utf8} Kodierung in UTF-8\\ UTF-8, \newline \url{https://de.wikipedia.org/wiki/UTF-8}, aufgerufen am \today
+		
+		\bibitem{bib-daten} Definition von Datenarten zur konsistenten Kommunikation im Unternehmen\\ Piro A., Gebauer M. Hrsg: \glqq Vieweg und Teubner in Daten- und Informationsqualität.\grqq, S.143 - 156
+		
+		\bibitem{bib-webpython} Web scraping with Python: collecting data from the modern web\\ Mitchel, R. Hrsg: \O'Reilly Media, Inc.
+		
+		\bibitem{bib-bs4} Beautiful Soup Documentation, \newline \url{http://www.crummy.com/software/BeautifulSoup/bs4/doc/} aufgerufen am \today
+		
+		\bibitem{bib-reviewcontainer} Screenshot Review Container,\newline \url{https://www.tripadvisor.de/Restaurant_Review-g504000-d720608-Reviews-Star_Inn-Harome_North_Yorkshire_England.html}, aufgerufen am \today
 		
 		%Buchrecherche
 		%\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
