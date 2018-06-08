@@ -22,7 +22,7 @@
 %Zusätzliche Option[H] bei Bildern - Hier und und sonst nirgends!
 \usepackage{float}
 %Adjust the page margins asymmetrical, Need to be before subfig
-\usepackage[left=3.5cm, right=2.5cm, top=3cm, bottom=3cm, a4paper, portrait]{geometry}
+\usepackage[left=3cm, right=2.5cm, top=3cm, bottom=3cm, a4paper, portrait]{geometry}
 %Kopf- und Fußzeilen
 \usepackage{fancyhdr}
 %für Fußnote (linksbündig)
@@ -97,11 +97,11 @@
 	tabsize=3,
 	frame=lines,
 	numbers=left,
-	numberstyle=\tiny,
+	numberstyle=\scriptsize,
 	numbersep=5pt,
 	breaklines=true,
 	showstringspaces=false,
-	basicstyle=\tiny,
+	basicstyle=\scriptsize,
 	%identifierstyle=\color{magenta},
 	keywordstyle=\color[rgb]{0.8,0.4,0},
 	commentstyle=\color[rgb]{0.9,0.3,0.9,},
@@ -207,7 +207,7 @@
 			\subsection{Welche Pakete wurden importiert und warum}
 			
 		\section{Warum BeautifulSoup}
-		
+				
 		\section{WebCrawler (Wie findet man die Daten auf der Webseite und wie holen wir sie uns.)}
 		
 			\subsection{RestaurantDaten}
@@ -260,24 +260,30 @@
 					\underline{\textbf{SQLite:}}
 					\newline SQLite ist eine gemeinfreie Programmbibliothek, die ein relationales Datenbanksystem enthält. Sie unterstützt einen Großteil der im SQL-92-Standard festgelegten SQL-Sprachbefehle. Die SQLite-Bibliothek lässt sich direkt in entsprechende Anwendungen integrieren, sodass keine weitere Server-Software benötigt wird. Dies ist der entscheidende Unterschied zu anderen Datenbanksystemen. Durch das Einbinden der Bibliothek wird die Anwendung um Datenbankfunktionen erweitert, ohne auf externe Softwarepakete angewiesen zu sein.
 					\\
-					\newline Der wesentliche Vorteil von TinyDB liegt darin, dass diese Datenbank bereits in Python geschrieben ist und sich somit ideal in unseren Source-Code integrieren lässt. Es entstehen dabei keine Inkonsistenzen oder fehlerhafte Bibliotheksaufrufe. Ein weiteres Plus ist die Möglichkeit das Dateiformat JSON als Datenbank zu verwenden. Diese kann im Vergleich zur SQLite Datei in sehr vielen Anwendungen eingebunden und benutzt werden. Zudem ist man zu der Entscheidung gekommen, dass das Programmieren in SQL-Sprache in einem Python-Code zu Verwirrungen und unnötigen Skill-Anforderungen beiträgt, was bei SQLite der Fall ist.
+					\newline Der wesentliche Vorteil von TinyDB liegt darin, dass diese Datenbank bereits in Python geschrieben ist und sich somit ideal in unseren Source-Code integrieren lässt. Es entstehen dabei keine Inkonsistenzen oder fehlerhafte Bibliotheksaufrufe. Ein weiteres Plus ist die Möglichkeit das Dateiformat JSON als Datenbank zu verwenden. Dieses kann im Vergleich zur SQLite Datei in sehr vielen Anwendungen eingebunden und benutzt werden. Fortwährend ist man zu der Entscheidung gekommen, dass das Programmieren in SQL-Sprache in einem Python-Code zu Verwirrungen und unnötigen Programmier-Anforderungen beiträgt, was bei SQLite der Fall ist.
 					\\
 					Für das Projekt wurde sich einstimmig für die Verwendung von TinyDB als Datenbanksystem entschieden.
-
-
-			\subsection{Daten bereinigen}
+					
+							
+			\subsection{Datenbankstruktur}
+			
+				%Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel
+				Die extrahierten Daten können in grob vier Cluster eingeteilt werden, dabei bildet der erste Cluster die allgemeinen Daten des Restaurants, wie dessen Namen und Adresse. Den zweiten und dritten Cluster kann zusammenfassend als Benutzerdatenbank und Bewertungstext sehen. Der vierte Cluster bildet die Tabelle in der die Bilder abgespeichert werden, die zu einem jeweiligen Kommentar hinterlegt wurden.
 				
-				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich mit in der Regel nur einem Byte Speicherbedarf für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
+				\subsubsection{Tabellen mit Spalten}
+			
+				\subsubsection{Zeichnung Zusammenhang?}
+
+
+			\subsection{Daten bereinigen und integrieren}
+				
+				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich, mit in der Regel nur einem Byte Speicherbedarf, für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
 				
 				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden.
 			
-			\subsection{Datenbankstruktur}
-				
-				Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel wurden eingesetzt
 			
-				\subsubsection{Tabellen mit Spalten}
 				
-				\subsubsection{Zeichnung Zusammenhang?}
+				
 				
 		\section{Benutzeroberfläche}
 		
@@ -324,9 +330,7 @@
 			class Web_scraping:
 			'''
 			Created on 17.04.2018
-			
 			@author: anjawolf
-			
 			get_single_data: Data will be scraped from the Tripadvisors Website and stored in variables.
 			'''
 			def get_single_data(self,url):
@@ -430,7 +434,7 @@
 	\setstretch{1.5}
 	\chapter*{Eidesstattliche Erklärung}
 		%\vspace{1.5\textheight}
-		Hiermit erklären wir, Johannes Knippel, Anja Wolf, Johanna Sickendiek und Skanny, dass wir die vorliegende Arbeit mit dem Titel \textit{Auslesen und Abspeichern von unstrukturierten Daten am Beispiel von Tripadvisor} selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet haben.
+		Hiermit erklären wir, Johannes Knippel, Anja Wolf, Johanna Sickendiek und Skanny, dass wir die vorliegende Arbeit mit dem Titel \textit{Extraktion unstrukturierter Daten und Integration in eine Datenbank am Beispiel TripAdvisor} selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet haben.
 		\vspace{15mm}
 		\\
 		\\
