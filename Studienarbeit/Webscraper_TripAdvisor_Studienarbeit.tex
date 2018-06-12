@@ -61,6 +61,8 @@
 \usepackage{color,soul}
 %Unterstützung für textumflossenes Bild 
 \usepackage{wrapfig}
+%Tabellen Linien
+\usepackage{booktabs}
 
 
 %//%%%%%%%%%%%%%%%%%% END LOAD PACKAGES %%%%%%%%%%%%%%%%%%%%
@@ -161,47 +163,103 @@
 		Diese Studienarbeit beleuchtet am Beispiel von TripAdvisor wie ein solcher Webscraper implementiert werden kann. Des Weiteren umfasst diese Studienarbeit das automatisierte Abspeichern der gewonnenen Daten in einer strukturierten Datenbank.
 		
 		%Gewonnene Daten können so Aufschluss über Verhaltensweisen, Interessen und auch mögliche Kaufanregungen geben.
-	
-	
-
+		
 
 	\chapter{Grundlagen}\label{grlagen}
 	
-		\section{Was ist WebCrawling?}
+		Das folgende Kapitel geht auf grundlegende Datenstrukturen ein, beleuchtet das Thema Web Scraping, dessen Funktionsweise und Verwendung sowie die Beschreibung des Reiseinformationsportals TripAdvisor. 
 	
-			\subsection{Definition, Erläuterung etc.}
-	
-			\subsection{Wie funktioniert es? (Allgemeine Beschreibung)}
-	
-			\subsection{Datenstrukturen}
+		\section{Datenstrukturen}
 			
-				Sowohl der Kontext von Daten, als auch ihre Eigenschaften führen zur Strukturierung dieser in verschiedene Datenarten. Kontextinformationen machen genauere Angaben zu Prozessen in denen die Daten benötigt werden. Eigenschaften hingegen unterscheiden Daten nach Format, Inhalt, Stabilität, Verarbeitung oder Struktur.\\
-				Besonders relevant für dieses Projekt ist folglich letzteres – die Struktur von Daten. Hier unterscheidet man grundsätzlich zwischen drei verschiedenen Fällen, strukturierten, semistrukturierten und unstrukturierten Daten.
-				\\
-				Bei strukturierten Daten sind Metadaten, d.h. strukturgebende Informationen zu Daten vorhanden. Diese können u.a. Auskunft zu Format, erlaubten Werten oder semantischer Bedeutung geben. Ein klassisches Beispiel für strukturierte Daten sind alle möglichen Formen von Datenbanken. Hier müssen zunächst das Schema der Datenbank und deren einzelnen Tabellen festgelegt werden bevor Daten in die definierten Felder einfügt werden können. Somit ist eine einfache Analyse dieser zu einem späteren Zeitpunkt sichergestellt.
-				\\
-				Bei semistrukturierte Daten sind einzelne Bestandteile strukturiert, es mangelt jedoch an einer eindeutigen strukturierten Gesamtheit. Die Daten sind keinem objektorientierten oder relationalem Datenbankschema untergeordnet.
-				\\
-				Bei unstrukturierten Daten wird keinem eindeutigen Schema gefolgt, nur einer reinen Bitfolge. Das bedeutet jedoch nicht, dass die Daten gar keine Struktur aufweisen. Diese ist jedoch nicht direkt bzw. eindeutig für den Nutzer erkennbar. Neben Multimedia Daten (Bilder, Musik) finden sich unstrukturierten Daten auch meist in Emails, auf Internetseiten oder in Text-Dokumenten \cite{bib-daten}.
-				\\
-				\\
-				Web Crawling bzw. Web Scraping fokussiert sich daher auf die Transformation von unstrukturierten Daten im Web zu Daten mit strukturgebenden Metadaten. Die gewünschten Informationen werden dabei als unstrukturierte Rohdaten extrahiert und in einer leicht lesbaren und skalierbaren, d.h. strukturierten Form in Listen, Tabellen oder Datenbanken gespeichert (vgl. Abbildung \ref{pic-webcrawler}). Vorteilhaft ist, dass Web Scraping selektiv arbeitet, d.h. lediglich die Daten transformiert für die man sich im Vorfeld entschieden hat. Dies erleichtert eine Analyse der Daten erheblich. Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln um diese weiter zu verarbeiten.
+			Sowohl der Kontext von Daten, als auch ihre Eigenschaften führen zur Strukturierung dieser in verschiedene Datenarten. Kontextinformationen machen genauere Angaben zu Prozessen in denen die Daten benötigt werden. Eigenschaften hingegen unterscheiden Daten nach Format, Inhalt, Stabilität, Verarbeitung oder Struktur.
+			\\
+			Besonders relevant für dieses Projekt ist folglich letzteres – die Struktur von Daten. Hier unterscheidet man grundsätzlich zwischen drei verschiedenen Fällen, strukturierten, semistrukturierten und unstrukturierten Daten.
+			\\
+			Bei strukturierten Daten sind Metadaten, d.h. strukturgebende Informationen zu Daten vorhanden. Diese können u.a. Auskunft zu Format, erlaubten Werten oder semantischer Bedeutung geben. Ein klassisches Beispiel für strukturierte Daten sind alle möglichen Formen von Datenbanken. Hier müssen zunächst das Schema der Datenbank und deren einzelnen Tabellen festgelegt werden bevor Daten in die definierten Felder einfügt werden können. Somit ist eine einfache Analyse dieser zu einem späteren Zeitpunkt sichergestellt.
+			\\
+			Bei semistrukturierte Daten sind einzelne Bestandteile strukturiert, es mangelt jedoch an einer eindeutigen strukturierten Gesamtheit. Die Daten sind keinem objektorientierten oder relationalem Datenbankschema untergeordnet.
+			\\
+			Bei unstrukturierten Daten wird keinem eindeutigen Schema gefolgt, nur einer reinen Bitfolge. Das bedeutet jedoch nicht, dass die Daten gar keine Struktur aufweisen. Diese ist jedoch nicht direkt bzw. eindeutig für den Nutzer erkennbar. Neben Multimedia Daten (Bilder, Musik) finden sich unstrukturierten Daten auch meist in Emails, auf Internetseiten oder in Text-Dokumenten \cite{bib-daten}.
+			\\
+			\\
+			Web Crawling bzw. Web Scraping fokussiert sich daher auf die Transformation von unstrukturierten Daten im Web zu Daten mit strukturgebenden Metadaten. Die gewünschten Informationen werden dabei als unstrukturierte Rohdaten extrahiert und in einer leicht lesbaren und skalierbaren, d.h. strukturierten Form in Listen, Tabellen oder Datenbanken gespeichert (vgl. Abbildung \ref{pic-webcrawler}). Vorteilhaft ist, dass Web Scraping selektiv arbeitet, d.h. lediglich die Daten transformiert für die man sich im Vorfeld entschieden hat. Dies erleichtert eine Analyse der Daten erheblich. Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln um diese weiter zu verarbeiten.
 				
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}[b]{0.9\textwidth}
+					\includegraphics[width=\textwidth]{Bilder/Webcrawler.png}
+				\end{minipage}
+				\centering
+				\caption[Funktionsweise eines Webcrawlers]{Funktionsweise eines Webcrawlers}
+				\label{pic-webcrawler}
+			\end{figure}
+			
+			bzw: Mithilfe von Web Scraping werden unstrukturierte Daten im Web zu Daten mit strukturgebenden Metadaten transformiert. Was genau Web Scraping bedeutet und wie es funktioniert, wird im nächsten Abschnitt näher erläutert.
+			
+			
+		\section{Web Scraping}
+		
+			Mit Web Scraping – auch “Web Harvesting”, “Web data mining” oder “Web data extraction“ genannt – wird das automatisierte herunterladen, analysieren und organisieren von Daten mehrerer Webseiten bezeichnet. Der Vorteil ist, dass aus einer Menge von unstrukturierten Informationen nur die benötigten Daten einer Webseite gezielt extrahiert und strukturiert abgespeichert werden. 
+			\\			
+			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren "Screen Scraping" bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. 
+			%TODO Was ist das für eine Quellenangabe?
+			(vgl.: Practical Web Scraping, Seite 3)
+			
+			
+			\subsection{Funktionsweise}
+			
+				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – heruntergeladen. Dieser HTML-Code kann von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Die meisten Webseiten unterliegen einer Datenbank zugrunde, aus der sie die Inhalte lesen und verschiedene Seiten mit ähnlichen Vorlagen erstellen. Somit sind die Seiten meist gleich aufgebaut und unterscheiden sich nur von dem Inhalt her. 
+				\\
+				Die benötigten Informationen werden mithilfe der Developer Tool-Ansicht einer Webseite eindeutig identifiziert, beispielsweise über einen eindeutigen Klassennamen oder einer ID. Dabei sind die Daten auf manchen Webseiten teilweise nicht in dem Format wie sie benötigt werden und müssen daher zuerst bereinigt werden. Beispielsweise werden die durchschnittliche Anzahl an Sternen der Bewertungen eines Restaurants auf TripAdvisor (vgl. Abbildung \ref{pic-anzSterne}) als Bild dargestellt und nicht als Zeichenkette. \cite{bib-anzSterne}
+				
+				\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/BeispielAnzahlSterne.png}
+					\end{minipage}
+					\centering
+					\caption[Beispiel unbereinigte Daten]{Beispiel unbereinigte Daten}
+					\label{pic-anzSterne}
+				\end{figure}
+				
+				Sobald alle Daten extrahiert und angepasst wurden, werden diese noch abgespeichert. Diese Sicherung kann in Form von XML, JSON, CSV oder in einer Datenbank erfolgen. Somit ist eine weitere Verarbeitung der Daten möglich. \cite{bib-anzSterne}
+				
+				%TODO Wieso kommt das Bild hier nochmal vor? vgl Kap (Datenstrukturen)
 				\begin{figure}[H]
 					\centering
 					\begin{minipage}[b]{0.9\textwidth}
 						\includegraphics[width=\textwidth]{Bilder/Webcrawler.png}
 					\end{minipage}
 					\centering
-					\caption[Funktionsweise eines Webcrawlers]{Funktionsweise eines Webcrawlers}
-					\label{pic-webcrawler}
+					\caption[Funktionsweise eines Web Scrapers]{Funktionsweise eines Web Scrapers}
+					\label{pic-webscraper2}
 				\end{figure}
-	
+			
+			
+			\subsection{Verwendung}
+			
+				Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-anzSterne}
+				\\				
+				In der folgenden Studienarbeit wurden die Informationen der Seite „TripAdvisor.de“ analysiert. Dieses Unternehmen wird im folgenden Kapitel näher betrachtet.
+			
+				
 		\section{Tripadvisor}
 	
-			\subsection{Was ist das für eine Webseite? Kurze Beschreibung}
-	
-	
+			TripAdvisor ist eines der bekanntesten Bewertungsportale in der Touristik- und Hotelbranche.
+			Auf dieser Webseite können User über 7,5 Millionen Restaurants, Unterkünfte, Airlines und Erlebnissen bewerten und vergleichen. Diese Bewertungen können sie zusätzlich mit Bildern veranschaulichen. Somit wird den Reisenden die Planung ihrer Reise vereinfacht, da sie mithilfe von echten Bewertungen einen authentischen Eindruck erhalten. 
+			Zusätzlich bietet die Webseite im Bereich „Unterkünfte“ die Möglichkeit an, Zimmerpreise zu prüfen und diese direkt zu dem Betrag zu buchen. Mit insgesamt über 630 Millionen Bewertungen und Erfahrungsberichten der Reisenden und einem jährlichen Umsatz von mehr als 1,5 Milliarden Euro im Jahr 2017 \cite{bib-statista} ist TripAdvisor die weltweit größte Touristikwebseite. Sie ist auf 49 Märkten vertreten. \cite{bib-taMedia}
+			
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}[b]{0.9\textwidth}
+					\includegraphics[width=\textwidth]{Bilder/LogoTripadvisor.png}
+				\end{minipage}
+				\centering
+				\caption[TripAdvisor Logo]{TripAdvisor Logo}
+				\label{pic-taLogo}
+			\end{figure}
+			
+			Jedoch ist diesen Bewertungsportalen nicht immer Glauben zu schenken. Mittlerweile gibt es Dienstleister, die für gute Bewertungen bezahlt werden. Denn TripAdvisor überprüft nur stichpunktartig, ob der Verfasser der Bewertung sich auch wirklich dort aufgehalten hat. \cite{bib-taSued}
 	
 	
 	\chapter{Anforderungen}	
@@ -220,12 +278,25 @@
 	
 	
 	\chapter{Implementierung}
+		
+		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung WebCrawler' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Soukapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
 	
 		\section{Konfiguration}
-	
-			\subsection{Welche Version von Python}
-	
-			\subsection{Welche Pakete wurden importiert und warum}
+		
+			Das folgende Kapitel beschreibt die notwendige Konfiguration des Web Scrapers. Zunächst wurde als Entwicklungsumgebung die aktuellste Version von Eclipse (Version 4.7.*) sowie als Programmiersprache die neueste Version von Python und PIP zur Verwaltung von Paketen installiert. Es wurde bewusst nicht die Version 2.7 verwendet, da ab 3.0 Pakete, wie JSON und urllib, schon vorinstalliert sind. Es wurde Python gewählt, da dies die bekannteste Sprache für Web Scraper ist und Frameworks, wie Scrapy, Beautifulsoup, etc. in Python geschrieben sind. 
+			
+			Um Python für Eclipse zu nutzen, wurde das Plugin PyDev in Eclipse installiert. Daraufhin muss der Python-Interpreter konfiguriert werden. Diese Einstellung wird unter Window > Preferences vorgenommen. \cite{bib-pipEnv}
+			Für den Web Scraper wurden zunächst zwei wichtige Pakete mithilfe von PIP installiert: 
+			
+			\begin{itemize}
+				\item	Requests 
+				
+				\item	Beautifulsoup
+			\end{itemize}
+		
+			Um die URL zu öffnen und den HTML Code der Webseite herunterzuladen, wird das Paket „Requests“ benötigt. Um diesen Code zu analysieren und die Daten zu extrahieren, wurde das Framework „Beautifulsoup“ installiert. \cite{bib-scrapeHero} 
+			Warum sich in dieser Studienarbeit für dieses Framework entschieden wurde, wird im nächsten Abschnitt näher erläutert. 
+
 	
 		\section{BeautifulSoup}
 		
@@ -245,7 +316,6 @@
 			\end{lstlisting}
 			
 			Dieses transformiert den komplexen HTML-Code in einen ebenfalls komplexen Baum mit Python Objekten. Die HTML-Tags korrespondieren mit den neuen Tag Objekten des BeautifulSoup Objects \cite{bib-bs4}. Am folgenden Beispiel kann die Struktur eines solchen beispielhaft veranschaulicht werden.
-			
 			
 			\begin{figure}[H]
 				\centering
@@ -276,6 +346,8 @@
 	
 	
 		\section{Implementierung WebCrawler}
+			
+			Im folgenden wird die Implementierung des Webcrawlers anhand von konkreten Code-Beispielen im Detail beschrieben. Besonders wird dabei auf die einfache und intuitive Verwendung der Bibliothek 'BeatifulSoup' eingegangen.
 	
 	
 			\subsection{Initialisierung BeautifulSoup}
@@ -346,7 +418,9 @@
 				#pass it to the function where single data is scraped
 				self.get_single_review_data(href)
 				\end{lstlisting}
+				
 				Bei einem solchen container handelt es sich um einen Block im HTML-Code, der alle Informationen einer einzigen Bewertung umfasst und diese sozusagen „einrahmt“. Für jede einzelne Bewertung wird dieser daher wiederholt (vgl. Abbildung \ref{pic-reviewcontainer}). Da die Methode \textit{find\_all()} genutzt wurde, wird deshalb in der Variable \textit{review\_containers} nun eine Liste mit allen ausgelesenen containern gespeichert.
+				
 				\begin{figure}[H]
 					\centering
 					\begin{minipage}[b]{0.9\textwidth}
@@ -356,6 +430,7 @@
 					\caption[Review Container]{Wiederholung der ‘review container' \cite{bib-reviewcontainer}}
 					\label{pic-reviewcontainer}
 				\end{figure}
+			
 				Mit dem erneuten Aufruf der Methode \textit{find\_all()} wird in einem container nach einem Link (\textit{<a>}-Tag) gesucht und gleichzeitig href auf \textit{‘True}‘ gesetzt. So stellt man sicher, dass nur Links mit href-Attribut ausgegeben werden. Bei diesem Link handelt es sich um den Teil der URL, der an die reguläre TripAdvisor Website angehängt werden muss, um die Bewertungsseite aufrufen zu können.
 				\\
 				Da jedoch nicht nur Informationen zur ersten gefunden Bewertung pro Seite, sondern zu allen Bewertungen extrahiert werden sollen, ist die Suchfunktion in eine weitere for-Schleife eingebunden. Diese loopt durch die vorher gespeicherte Liste \textit{review\_container}. So wird nicht nur der erste review container nach der Bewertungsseiten URL durchsucht sondern alle. Die Methode \textit{loop\_through\_review\_pages()} in Kombination mit der for-Schleife über alle Bewertungsseiten ermöglicht nun die Bewertungslinks jeder einzelnen Bewertung auszulesen.
@@ -387,7 +462,6 @@
 			\subsection{Definition der Datenbankanforderungen}
 			
 				Die vom Abnehmer vordefinierten Anforderungen an die Datenbank sind wie folgt:
-				
 				%Stichpunkte DB-Anforderungen															
 				\begin{itemize}
 					\item Integritätssicherung\\
@@ -434,19 +508,127 @@
 				%Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel
 				Die extrahierten Daten können in grob vier Cluster eingeteilt werden, dabei bildet der erste Cluster die allgemeinen Daten des Restaurants, wie dessen Namen und Adresse. Den zweiten und dritten Cluster kann zusammenfassend als Benutzerdatenbank und Bewertungstext sehen. Der vierte Cluster bildet die Tabelle in der die Bilder abgespeichert werden, die zu einem jeweiligen Kommentar hinterlegt wurden.
 				
-				\subsubsection{Tabellen mit Spalten}
-			
-				\subsubsection{Zeichnung Zusammenhang?}
+				\subsubsection{Tabellen mit Spalten}\label{db_structure}
+				
+					Für die bessere Übersicht wurden in der Datenbank vier Tabellen angelegt, die wie folgt in ihre jeweiligen Spalten zerlegt sind:
+					
+					Cluster eins, Restaurant-Daten:
+					
+					\begin{table}[htbp]
+						\centering
+						\begin{tabular}{ccccc}
+							\toprule
+							\tiny \bf R\_ID & \tiny \bf RESTAURANTNAME & \tiny \bf PUNKTESKALA & \tiny \bf ANZAHL\_BEWERTUNGEN & \tiny \bf POPULARITAET\\
+							\midrule
+							\tiny atoincrement ID des Restaurants & \tiny Name des Restaurants & \tiny Gesamtbewertung & \tiny Anzahl abgegebener Bewertungen & \tiny Beliebtheitsgrad\\
+							\bottomrule
+						\end{tabular}
+						\caption[Restaurant Tabelle Teil 1]{Tabelle der Restaurant-Daten Teil 1}
+						\label{tab_rest1}
+					\end{table}
+				
+					Fortsetzung:
+					
+					\begin{table}[htbp]
+						\centering
+						\begin{tabular}{ccccc}
+							\toprule
+							\tiny \bf PREIS\_LEVEL & \tiny \bf KUECHE & \tiny \bf STRASSE & \tiny \bf PLZ\_ORT & \tiny \bf TELEFONNUMMER\\
+							\midrule
+							\tiny Preislevel zw. 1 und 4 & \tiny Küchennationalität & \tiny Straßenname & \tiny Postleitzahl und Ort & \tiny Festnetznummer\\
+							\bottomrule
+						\end{tabular}
+						\caption[Restaurant Tabelle Teil2]{Tabelle der Restaurant-Daten Teil 2}
+						\label{tab_rest2}
+					\end{table}
+				
+
+					Der zweite Cluster enthält sämtliche Daten von Benutzern, die eine Bewertung zum Restaurant abgegeben haben. Dieser teilt sich in folgende Tabellenstruktur auf:
+				 	
+				 	\begin{table}[htbp]
+				 		\centering
+				 		\begin{tabular}{cccc}
+				 			\toprule
+				 			\tiny \bf U\_ID & \tiny \bf REV\_ID & \tiny \bf BENUTZERNAME & \tiny \bf ANZAHL\_REVIEWS \\
+				 			\midrule
+				 			\tiny autoincrement ID des Users & \tiny autoincrement ID des Bewertungstextes & \tiny Benutzername & \tiny Anzahl der abgegebenen Bewertungen \\
+				 			\bottomrule
+				 		\end{tabular}
+				 		\caption[Benutzer Tabelle]{Tabelle der Benutzer-Daten}
+				 		\label{tab_user}
+				 	\end{table}
+			 	
+			 		Cluster drei enthält den Bewertungstext und die dazugehörigen Attribute wie Titel und Rating:
+			 		
+			 		\begin{table}[H]
+			 			\centering
+			 			\begin{tabular}{cccccc}
+			 				\toprule
+			 				\tiny \bf R\_ID & \tiny \bf U\_ID & \tiny \bf REV\_ID & \tiny \bf TITEL & \tiny \bf BEWERTUNG & \tiny \bf RATING\\
+			 				\midrule
+			 				\tiny autoincrement ID des Restaurants & \tiny autoincrement ID des Benutzers & \tiny autoincrement ID der Bewertung & \tiny Titel & \tiny Bewertungstext & \tiny Rating des Textes\\
+			 				\bottomrule
+			 			\end{tabular}
+			 			\caption[Bewertungs Tabelle]{Tabelle der Bewertungs-Daten}
+			 			\label{tab_rev}
+			 		\end{table}
+				 	
+				 	Der vierte Cluster enthält die direkten Links zu den hinterlegten Kommentar-Bildern:
+				 	
+				 	\begin{table}[H]
+				 		\centering
+				 		\begin{tabular}{cc}
+				 			\toprule
+				 			\tiny \bf REV\_ID & \tiny \bf QUELLE\\
+				 			\midrule
+				 			\tiny autoincrement ID der Bewertung & \tiny Link des Bildes\\
+				 			\bottomrule
+				 		\end{tabular}
+				 		\caption[Bilder Tabelle]{Tabelle der Kommentar-Bilder}
+				 		\label{tab_pics}
+				 	\end{table}
+			 	
+			 	
+				\subsubsection{Zeichnung und Zusammenhang}
+				
+					Die Datenbank kann im angelegten Schema, wie es in Kapitel \ref{db_structure} beschrieben ist, über die autoincrement ID's der jeweiligen Tabellen durchsucht und verknüpft werden. Beim Anlegen der autoincrement ID's wurde darauf geachtet, dass keine ID mehrfach vorkommt. So kann dem Anwender eine verwechslungsfreie Suche garantiert werden.\\
+					Ein Bewertungstext, der zu einem bestimmten Restaurant abgegeben wurde, kann beispielsweise mit folgendem Python-Code aufgerufen werden:
+					\\
+					\begin{lstlisting} [caption={Datenbanksuche: Reviews passend zum Restaurant}\label{dab_search}, captionpos=b, style=Arduino]
+					result = db.search((where('RESTAURANTS')['R_ID']) == (where('REVIEWS')['R_ID']))
+					print(result)
+					\end{lstlisting}
+					
 
 
 			\subsection{Daten bereinigen und integrieren}
 				
 				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich, mit in der Regel nur einem Byte Speicherbedarf, für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
-				
-				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden.
-			
-			
-				
+				\\
+				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden. Zunächst wird eine Datenbankabfrage gestartet, bei der überprüft wird, ob der neu-gefundene Eintrag bereits in der Datenbank existiert. Ist dies der Fall wird ein Pop-Up-Fenster geöffnet, das beispielsweise bei der Restaurantabfrage einen Beenden-Button enthält, sodass nicht alle Daten zum Restaurant erneut eingefügt werden. Wird ein doppelter Eintrag hingegen bei einer Bewertung gefunden, kann das Pop-Up-Fenster einfach weg geklickt werden und das Programm läuft weiter. (vgl. Programmcode 4.7, Zeilen 3-12)
+				\\
+				Ist kein Eintrag vorhanden, werden die Daten zunächst in einem Array gespeichert und dann in der Datenbank abgelegt. Zuvor findet noch eine Decodierung der Rohdaten statt (vgl. Programmcode 4.7, Zeile 15).
+				\\			
+				\begin{lstlisting} [caption={Rohdaten decodieren und in Datenbank integrieren}\label{integration}, captionpos=b, style=Arduino]
+				#HANDLE RESTAURANTS
+				#check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
+				if tableRestaurants.contains((where('RESTAURANTNAME') == self.name.string) & (where('PLZ_ORT') == self.locality.string)): 
+					#pop up a message box
+					msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
+					popup = tk.Tk()
+					popup.wm_title("!")
+					label = ttk.Label(popup, text=msg)
+					label.pack(side="top", fill="x", pady=10)
+					B1 = ttk.Button(popup, text="Okay und Beenden", command = self.endProgram)
+					B1.pack()
+					popup.mainloop()
+				# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
+				else:
+					self.popularity2 = unicodedata.normalize('NFD', self.pupularity.text)
+					print("Preis_Level: " + self.price_level)
+					dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name.string, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity2, 'PREIS_LEVEL':self.price_level, 'KUECHE':self.cuisine.text, 'STRASSE':self.address.string, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
+					tableRestaurants.insert(dataRestaurants)
+				\end{lstlisting}
 				
 				
 		\section{Benutzeroberfläche}
@@ -471,66 +653,6 @@
 
 		\section{Wie sind wir damit klargekommen}
 
-
- 
-		
-		Programmiersprache: Python
-		hihii
-				
-			\begin{lstlisting} [caption={Registerprogrammierung der Expander}\label{code-i2c-1}, captionpos=b, style=Arduino]
-			# -*- coding: utf-8 -*-
-			import requests
-			import os
-			import unicodedata
-			import validators
-			import threading
-			from tkinter import *
-			from tkinter import messagebox
-			from bs4 import BeautifulSoup
-			from setuptools.package_index import HREF
-			from tinydb import TinyDB,Query,where
-			
-			
-			class Web_scraping:
-			'''
-			Created on 17.04.2018
-			@author: anjawolf
-			get_single_data: Data will be scraped from the Tripadvisors Website and stored in variables.
-			'''
-			def get_single_data(self,url):
-			source_code = requests.get(url)
-			plain_text = source_code.text
-			soup = BeautifulSoup(plain_text, "html.parser")
-			
-			for self.name in soup.find('h1', {'class': 'heading_title'}):
-			print("Name:" + self.name.string)
-			
-			for self.rating_amount in soup.find('span', {'property': 'count'}):
-			print("Anzahl Bewertungen:" + self.rating_amount.string)
-			
-			for self.popularity in soup.find_all('span', {'class': 'header_popularity popIndexValidation'}):
-			print("Popularitaet:" + self.popularity.text)
-			
-			for self.price_level in soup.find('span', {'class': 'header_tags rating_and_popularity'}):
-			print("Preis Level:" + self.price_level.string)
-			
-			for self.cuisine in soup.find_all('span', {'class': 'header_links rating_and_popularity'}):
-			print('Kueche:' + self.cuisine.text)
-			
-			for self.contact_details in soup.find('div', {'class': 'blRow'}):
-			print('Kontaktdaten:' + self.contact_details.text)
-			
-			for self.address in soup.find('span', {'class': 'street-address'}):
-			print("Strasse:" + self.address.string)
-			
-			for self.locality in soup.find('span', {'class': 'locality'}):
-			print("PLZ:" + self.locality.string)
-			
-			for self.phonenumber in soup.find_all('div', {'class': 'blEntry phone'}):
-			print("Telefonnummer:" + self.phonenumber.text)
-			
-						     
-			\end{lstlisting}
 	
 	
 	
@@ -597,7 +719,19 @@
 		
 		\bibitem{bib-bs4} Beautiful Soup Documentation, \newline \url{http://www.crummy.com/software/BeautifulSoup/bs4/doc/} aufgerufen am \today
 		
-		\bibitem{bib-reviewcontainer} Screenshot Review Container,\newline \url{https://www.tripadvisor.de/Restaurant_Review-g504000-d720608-Reviews-Star_Inn-Harome_North_Yorkshire_England.html}, aufgerufen am \today
+		\bibitem{bib-reviewcontainer} Screenshot Review Container,\newline \url{https://bit.ly/2JC9HAo}, aufgerufen am \today
+		
+		\bibitem{bib-anzSterne} Screenshot unbereinigte Daten,\newline \url{https://bit.ly/2y48lgB}, aufgerufen am \today
+		
+		\bibitem{bib-statista} Umsatz von Tripadvisor weltweit,\newline \url{https://de.statista.com/statistik/daten/studie/543148/umfrage/umsatz-von-tripadvisor-weltweit-nach-quartalen/}, aufgerufen am \today
+		
+		\bibitem{bib-taMedia} Tripadvisor Mediacenter,\newline \url{https://tripadvisor.mediaroom.com/DE-about-us}, aufgerufen am \today
+		
+		\bibitem{bib-taSued} Süddeutsche Zeitung,\newline Bei Kundenbewertungen wird gelogen, was das Zeug hält \newline \url{https://bit.ly/2w1oZqQ}, aufgerufen am \today
+		
+		\bibitem{bib-pipEnv} Python Pipenv \& Virtual Environments,\newline \url{https://bit.ly/2sPKwnw}, aufgerufen am \today
+		
+		\bibitem{bib-scrapeHero} ScrapeHero,\newline Beginners guide to Web Scraping: Part 2 – Build a web scraper for Reddit using Python and BeautifulSoup \newline \url{https://bit.ly/2JHoVnT}, aufgerufen am \today
 		
 		%Buchrecherche
 		%\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
