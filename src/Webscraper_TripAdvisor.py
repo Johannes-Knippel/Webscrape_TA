@@ -7,12 +7,10 @@ import unicodedata
 import validators
 import threading
 import json
-
 from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
 import tkinter as ttk
-
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query,where
@@ -30,7 +28,7 @@ class Web_scraping:
     '''
     def get_single_data(self,url):
         source_code = requests.get(url)
-        source_code.encoding = 'utf-16BE'
+        source_code.decoding = ('utf-16BE')
         plain_text = source_code.text
         soup = BeautifulSoup(plain_text, "html.parser")
         
@@ -221,7 +219,7 @@ class Web_scraping:
                     # print ("next")
                     x = 1
                 else:
-                    print ("jetzt wird neues Restaurant mit RestaurantID : " + str(self.idRestaurant) + " eingefügt")
+                    print ("jetzt wird ein neues Restaurant mit RestaurantID : " + str(self.idRestaurant) + " eingefügt")
                     break
         else:
             self.idRestaurant = 1
@@ -240,8 +238,10 @@ class Web_scraping:
             popup.mainloop()
         # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
         else:
+            #self.popularity2 = unicodedata.normalize('NFD', self.pupularity.text)
+            print("Preis_Level: " + self.price_level)
             dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name.string, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity.text, 'PREIS_LEVEL':self.price_level, 'KUECHE':self.cuisine.text, 'STRASSE':self.address.string, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
-            tableRestaurants.insert(dataRestaurants) 
+            tableRestaurants.insert_multiple([dataRestaurants]) 
 
 
 
@@ -342,12 +342,9 @@ class Web_scraping:
         roots.title('Tripadvisor Scraper')
         instruction = Label(roots, text='Please provide Restaurant-Url\n')
         instruction.grid(row=0, column=0, sticky=E)
-
         restaurant_label = Label(roots, text='Restaurant-URL ')
         restaurant_label.grid(row=1, column=0, sticky=W)
-
         restaurant_entry = Entry(roots, width=150)
-
         restaurant_entry.grid(row=1, column=1)
 
         def check_url():
@@ -357,7 +354,6 @@ class Web_scraping:
                 (base_restaurant_url_ not in url_to_check):
 
                 messagebox.showwarning("Warning", "This seems not to be valid Tripadvisor restaurant URL")
-
             else:
                 messagebox.showinfo("Vaildation successful", "Url seems to be valid")
 
@@ -367,12 +363,9 @@ class Web_scraping:
             self.get_single_data(restaurant_entry.get())
 
         scrape_button = Button(roots, text='Go Scrape', command=go_scrape)
-
         check_url_Button.grid(columnspan=3, sticky=W)
         scrape_button.grid(columnspan=5, sticky=W)
-    
         roots.mainloop()
-
 
 
 '''
