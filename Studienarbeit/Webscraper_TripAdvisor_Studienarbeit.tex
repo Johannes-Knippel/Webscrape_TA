@@ -181,34 +181,21 @@
 			\\
 			Bei unstrukturierten Daten wird keinem eindeutigen Schema gefolgt, nur einer reinen Bitfolge. Das bedeutet jedoch nicht, dass die Daten gar keine Struktur aufweisen. Diese ist jedoch nicht direkt bzw. eindeutig für den Nutzer erkennbar. Neben Multimedia Daten (Bilder, Musik) finden sich unstrukturierten Daten auch meist in Emails, auf Internetseiten oder in Text-Dokumenten \cite{bib-daten}.
 			\\
-			\\
-			Web Crawling bzw. Web Scraping fokussiert sich daher auf die Transformation von unstrukturierten Daten im Web zu Daten mit strukturgebenden Metadaten. Die gewünschten Informationen werden dabei als unstrukturierte Rohdaten extrahiert und in einer leicht lesbaren und skalierbaren, d.h. strukturierten Form in Listen, Tabellen oder Datenbanken gespeichert (vgl. Abbildung \ref{pic-webcrawler}). Vorteilhaft ist, dass Web Scraping selektiv arbeitet, d.h. lediglich die Daten transformiert für die man sich im Vorfeld entschieden hat. Dies erleichtert eine Analyse der Daten erheblich. Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln um diese weiter zu verarbeiten.
-				
-			\begin{figure}[H]
-				\centering
-				\begin{minipage}[b]{0.9\textwidth}
-					\includegraphics[width=\textwidth]{Bilder/Webcrawler.png}
-				\end{minipage}
-				\centering
-				\caption[Funktionsweise eines Webcrawlers]{Funktionsweise eines Webcrawlers}
-				\label{pic-webcrawler}
-			\end{figure}
-			
-			bzw: Mithilfe von Web Scraping werden unstrukturierte Daten im Web zu Daten mit strukturgebenden Metadaten transformiert. Was genau Web Scraping bedeutet und wie es funktioniert, wird im nächsten Abschnitt näher erläutert.
+			Mithilfe von Web Scraping werden unstrukturierte Daten im Web zu Daten mit strukturgebenden Metadaten transformiert. Was genau Web Scraping bedeutet und wie es funktioniert, wird im nächsten Abschnitt näher erläutert.
 			
 			
 		\section{Web Scraping}
 		
-			Mit Web Scraping – auch “Web Harvesting”, “Web data mining” oder “Web data extraction“ genannt – wird das automatisierte herunterladen, analysieren und organisieren von Daten mehrerer Webseiten bezeichnet. Der Vorteil ist, dass aus einer Menge von unstrukturierten Informationen nur die benötigten Daten einer Webseite gezielt extrahiert und strukturiert abgespeichert werden. 
+			Mit Web Scraping – auch “Web Harvesting”, “Web data mining” oder “Web data extraction“ genannt – wird das automatisierte herunterladen, analysieren und organisieren von Daten mehrerer Webseiten bezeichnet. Der Vorteil ist, dass aus einer Menge von unstrukturierten Informationen nur die benötigten Daten einer Webseite gezielt extrahiert und strukturiert abgespeichert werden. \cite{bib-webscraping}
 			\\			
-			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren "Screen Scraping" bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. 
-			%TODO Was ist das für eine Quellenangabe?
-			(vgl.: Practical Web Scraping, Seite 3)
+			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren Screen Scraping bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. \cite{bib-webscraping}
+			\\
+			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur die Daten einer ausgewählten Webseite in eine Datenbank transformiert. \cite{bib-webcrawling}
 			
 			
 			\subsection{Funktionsweise}
 			
-				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – heruntergeladen. Dieser HTML-Code kann von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Die meisten Webseiten unterliegen einer Datenbank zugrunde, aus der sie die Inhalte lesen und verschiedene Seiten mit ähnlichen Vorlagen erstellen. Somit sind die Seiten meist gleich aufgebaut und unterscheiden sich nur von dem Inhalt her. 
+				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – heruntergeladen. Dieser HTML-Code kann von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Die meisten Webseiten unterliegen einer Datenbank zugrunde, aus der sie die Inhalte lesen und daraus die verschiedene Webseiten mit ähnlichen Vorlagen erstellen. Somit sind die Seiten meist gleich aufgebaut und unterscheiden sich nur von dem Inhalt her. HTML Parser konvertieren HTML in eine baumartige Struktur, die mit Hilfe von semi-strukturierten Abfragesprachen wie XPaths oder CSS Selectors programmatisch navigiert werden kann. \cite{bib-anzSterne}
 				\\
 				Die benötigten Informationen werden mithilfe der Developer Tool-Ansicht einer Webseite eindeutig identifiziert, beispielsweise über einen eindeutigen Klassennamen oder einer ID. Dabei sind die Daten auf manchen Webseiten teilweise nicht in dem Format wie sie benötigt werden und müssen daher zuerst bereinigt werden. Beispielsweise werden die durchschnittliche Anzahl an Sternen der Bewertungen eines Restaurants auf TripAdvisor (vgl. Abbildung \ref{pic-anzSterne}) als Bild dargestellt und nicht als Zeichenkette. \cite{bib-anzSterne}
 				
@@ -222,12 +209,12 @@
 					\label{pic-anzSterne}
 				\end{figure}
 				
-				Sobald alle Daten extrahiert und angepasst wurden, werden diese noch abgespeichert. Diese Sicherung kann in Form von XML, JSON, CSV oder in einer Datenbank erfolgen. Somit ist eine weitere Verarbeitung der Daten möglich. \cite{bib-anzSterne}
+				Sobald alle Daten extrahiert und angepasst wurden, werden diese noch abgespeichert. Diese Sicherung kann in Form von XML, JSON, CSV oder in einer Datenbank erfolgen. (vgl. Abbildung \ref{pic-webscraper2}) Somit ist eine weitere Verarbeitung der Daten möglich. \cite{bib-anzSterne}
 				
 				%TODO Wieso kommt das Bild hier nochmal vor? vgl Kap (Datenstrukturen)
 				\begin{figure}[H]
 					\centering
-					\begin{minipage}[b]{0.9\textwidth}
+					\begin{minipage}[b]{0.6\textwidth}
 						\includegraphics[width=\textwidth]{Bilder/Webcrawler.png}
 					\end{minipage}
 					\centering
@@ -238,7 +225,7 @@
 			
 			\subsection{Verwendung}
 			
-				Aktuelle Softwares und Tools sind in der Lage, komplette Websites in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-anzSterne}
+				Aktuelle Softwares und Tools sind in der Lage, komplette Webseiten in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-anzSterne}
 				\\				
 				In der folgenden Studienarbeit wurden die Informationen der Seite „TripAdvisor.de“ analysiert. Dieses Unternehmen wird im folgenden Kapitel näher betrachtet.
 			
@@ -247,11 +234,11 @@
 	
 			TripAdvisor ist eines der bekanntesten Bewertungsportale in der Touristik- und Hotelbranche.
 			Auf dieser Webseite können User über 7,5 Millionen Restaurants, Unterkünfte, Airlines und Erlebnissen bewerten und vergleichen. Diese Bewertungen können sie zusätzlich mit Bildern veranschaulichen. Somit wird den Reisenden die Planung ihrer Reise vereinfacht, da sie mithilfe von echten Bewertungen einen authentischen Eindruck erhalten. 
-			Zusätzlich bietet die Webseite im Bereich „Unterkünfte“ die Möglichkeit an, Zimmerpreise zu prüfen und diese direkt zu dem Betrag zu buchen. Mit insgesamt über 630 Millionen Bewertungen und Erfahrungsberichten der Reisenden und einem jährlichen Umsatz von mehr als 1,5 Milliarden Euro im Jahr 2017 \cite{bib-statista} ist TripAdvisor die weltweit größte Touristikwebseite. Sie ist auf 49 Märkten vertreten. \cite{bib-taMedia}
+			Zusätzlich bietet die Webseite im Bereich „Unterkünfte“ die Möglichkeit an, Zimmerpreise zu prüfen und diese direkt zu buchen. Mit insgesamt über 630 Millionen Bewertungen und Erfahrungsberichten der Reisenden und einem jährlichen Umsatz von mehr als 1,5 Milliarden Euro im Jahr 2017 \cite{bib-statista} ist TripAdvisor die weltweit größte Touristikwebseite. Sie ist auf 49 Märkten vertreten. \cite{bib-taMedia}
 			
 			\begin{figure}[H]
 				\centering
-				\begin{minipage}[b]{0.9\textwidth}
+				\begin{minipage}[b]{0.4\textwidth}
 					\includegraphics[width=\textwidth]{Bilder/LogoTripadvisor.png}
 				\end{minipage}
 				\centering
@@ -264,7 +251,9 @@
 	
 	\chapter{Anforderungen}	
 	
-		\section{Tabelle: Daten TripAdvisor (Welche Daten holen wir uns? Hotel und Restaurants?) details}
+		\section{Tabelle: Daten TripAdvisor}
+		
+		(Welche Daten holen wir uns? Hotel und Restaurants?) details
 	
 		\section{Nicht funktionale Anforderungen: Benutzerfreundlichkeit etc.}
 	
@@ -283,31 +272,22 @@
 	
 		\section{Konfiguration}
 		
-			Das folgende Kapitel beschreibt die notwendige Konfiguration des Web Scrapers. Zunächst wurde als Entwicklungsumgebung die aktuellste Version von Eclipse (Version 4.7.*) sowie als Programmiersprache die neueste Version von Python und PIP zur Verwaltung von Paketen installiert. Es wurde bewusst nicht die Version 2.7 verwendet, da ab 3.0 Pakete, wie JSON und urllib, schon vorinstalliert sind. Es wurde Python gewählt, da dies die bekannteste Sprache für Web Scraper ist und Frameworks, wie Scrapy, Beautifulsoup, etc. in Python geschrieben sind. 
-			
-			Um Python für Eclipse zu nutzen, wurde das Plugin PyDev in Eclipse installiert. Daraufhin muss der Python-Interpreter konfiguriert werden. Diese Einstellung wird unter Window > Preferences vorgenommen. \cite{bib-pipEnv}
-			Für den Web Scraper wurden zunächst zwei wichtige Pakete mithilfe von PIP installiert: 
-			
-			\begin{itemize}
-				\item	Requests 
-				
-				\item	Beautifulsoup
-			\end{itemize}
-		
+			Zunächst wurde als Entwicklungsumgebung die aktuellste Version von Eclipse (Version 4.7.*) sowie als Programmiersprache die neueste Version von Python und PIP zur Verwaltung von Paketen installiert. Es wurde bewusst nicht die Version 2.7 verwendet, da ab der Version 3.0 Pakete, wie JSON und urllib, schon vorinstalliert sind. Es wurde Python gewählt, da dies die bekannteste Sprache für Web Scraper ist und Frameworks, wie Scrapy, Beautifulsoup, etc. in Python geschrieben sind. 
+			\newline
+			Um Python für Eclipse zu nutzen, wurde das Plugin „PyDev“ in Eclipse installiert. Daraufhin muss der Python-Interpreter konfiguriert werden. Diese Einstellung wird unter Window > Preferences vorgenommen. \cite{bib-pipEnv}
+			\newline
+			Für den Web Scraper wurden zunächst zwei wichtige Pakete mithilfe von PIP installiert: Requests und Beautifulsoup.
 			Um die URL zu öffnen und den HTML Code der Webseite herunterzuladen, wird das Paket „Requests“ benötigt. Um diesen Code zu analysieren und die Daten zu extrahieren, wurde das Framework „Beautifulsoup“ installiert. \cite{bib-scrapeHero} 
 			Warum sich in dieser Studienarbeit für dieses Framework entschieden wurde, wird im nächsten Abschnitt näher erläutert. 
 
 	
 		\section{BeautifulSoup}
 		
-			Für die Programmierung des Webcrawlers um Daten von auf TripAdvisor gelisteten Hotels und Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
-			\\
+			Für die Programmierung des Web Scrapers, um Daten von auf TripAdvisor gelisteten Hotels und Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
 			\newline
 			Hierbei handelt es sich um eine Library für XML und HTML parsing, die zunächst als zusätzliches Paket installiert werden muss. Beim Parsen werden XML oder HTML Dateien analysiert und auf ihre einzelnen Bestandteile geprüft. So können jegliche Informationen aus diesen Dateien gesucht bzw. extrahiert werden, vorausgesetzt es sind entsprechende Tags bzw. Attributnamen vorhanden. Ohne diese kann nicht gesucht werden \cite{bib-webpython}. Diese Einfachheit und gleichzeitig große Effizienz sind der westenliche Vorteil, warum das Projekt-Team sich für die Library BeautifulSoup und deren Methoden entschieden hat.
-			\\
 			\newline
 			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Hotels bzw. Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Website an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
-			\\ 
 			\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{initbs4}, captionpos=b, style=Arduino]
 			def get_single_data(self,url):
 			source_code = requests.get(url)
@@ -328,7 +308,6 @@
 			\end{figure}
 			
 			Natürlich enthält dieser normalerweise eine weitaus größere Anzahl an Vererbungen, d.h. ineinander verschachtelten Tags, und ist daher komplizierter zu lesen. Jedoch wird anhand dieses Beispiels bereits deutlich, wie die im folgenden beschriebenen Methoden der BeautifulSoup Library damit arbeiten können.
-			\\
 			\newline
 			Sobald das BeautifulSoup Object vorliegt, können die vorhandenen Methoden der bs4 Library genutzt werden. In folgender Tabelle sind die beiden bekanntesten und auch im Programm-Code am meisten genutzten Methoden aufgelistet \cite{bib-bs4}.
 		
@@ -359,7 +338,6 @@
 				\\ 
 				Die Unkompliziertheit von BeautifulSoup wird auch hier wieder deutlich. Mit \textit{find()} und \textit{find\_all()} kann nach jedem gewünschten Tag im Source Code gesucht und dessen Inhalt ausgegeben werden. So kann nach Strings, Blockelementen (z.B. <div>-Tag, Tabellen, Listen oder Überschriften), Inline-Elementen (z.B. <span>-Tag, Links oder Bilder) und weiteren Tags sowie deren Klassennamen gesucht werden \cite{bib-bs4}.
 				Um diese zu bestimmen, ist es notwendig den übergebenen HTML-Code der URL genauer zu betrachten. Dies ist z.B. im Browser Chrome mit Rechtsklick „Quellcode anzeigen“ möglich. Um direkt auf ein gewünschtes Element im Quellcode zu springen, kann Rechtsklick „Element untersuchen“ genutzt werden. Diese Developer Tool-Ansicht ist deutlich strukturierter als den gesamten Text anzeigen zu lassen und erleichtert die Suche nach den gewünschten Tags um ein Vielfaches.
-				\\
 				\newline
 				Der Programmcode 4.2 zeigt einige der Elemente und Klassen die gewählt wurden, um die gewünschten Informationen zu extrahieren.
 				Um den Namen des Restaurants oder Hotels zu finden wird beispielsweise nach dem Tag \textit{<h1>} und dem class-Namen \textit{‘heading-title‘} gesucht. Dieser Tag steht üblicherweise für Überschriften und kommt meist nur einmal vor. Daher ist die Suche hier relativ simpel. Hingegen wird für die Durchschnittliche Bewertung des Restaurants oder Hotels nach einem \textit{<div>}-Tag mit class-Namen \textit{‘rs rating‘} gesucht. Da es sich dabei jedoch nur um die parent-class des gesuchten Tags handelt wird hier noch mit den Anhängen .div.span erweitert und tiefer in das BeautifulSoup Object „gezoomt“ um die children dieser Klasse zu erhalten. Mit der ID \textit{‘content‘} werden letztendlich die durchschnittliche Bewertung gefunden und in der Variable overallPoints gespeichert.
@@ -381,7 +359,6 @@
 			\subsection{Bewertungslink aller Bewertungen auslesen}
 			
 				Neben allgemeinen Daten zu Restaurant bzw. Hotel sollen außerdem noch Informationen zu allen Bewertungen inkl. angehängter Bilder und Daten zu deren Verfassern extrahiert und gespeichert werden. Dafür wird zunächst die URL jeder Bewertung generiert werden, um die Informationen von hier auszulesen. Da sich die Bewertungen meist nicht nur über eine, sondern eine Vielzahl an Seiten erstrecken wurde dies mit einer Verschachtelten for-Schleife gelöst.
-				\\
 				\newline
 				Zunächst wurde eine for Schleife definiert, die alle verfügbaren Seiten eines Hotels oder Restaurants auf TripAdvisor durchläuft (vgl. Programmcode 4.3). Dafür wird die maximale Anzahl an Seiten mit \textit{find\_all()} gesucht und eine neue URL für jede der Seiten generiert. Diese unterschieden sich lediglich anhand eines Indexes (in 10er Schritten). Daher wird dieser für jeden Schleifendurchlauf, d.h. für jede Seite um 10 erhöht und mit der vorher gesplitteten URL neu zusammengesetzt. 
 				\\
@@ -396,7 +373,6 @@
 				\end{lstlisting}
 				
 				Die neu generierte URL wird jedes Mal an die Methode \textit{loop\_through\_review\_pages()} übergeben.
-				\\
 				\\
 				Mit dem ersten Aufruf von \textit{find\_all()} in dieser Mehtode wird zunächst nach dem \textit{<div>}-Tag mit class-Namen \textit{‘review container‘} gesucht (vgl. Programmcode 4.4). 
 				\\
@@ -434,7 +410,6 @@
 				Mit dem erneuten Aufruf der Methode \textit{find\_all()} wird in einem container nach einem Link (\textit{<a>}-Tag) gesucht und gleichzeitig href auf \textit{‘True}‘ gesetzt. So stellt man sicher, dass nur Links mit href-Attribut ausgegeben werden. Bei diesem Link handelt es sich um den Teil der URL, der an die reguläre TripAdvisor Website angehängt werden muss, um die Bewertungsseite aufrufen zu können.
 				\\
 				Da jedoch nicht nur Informationen zur ersten gefunden Bewertung pro Seite, sondern zu allen Bewertungen extrahiert werden sollen, ist die Suchfunktion in eine weitere for-Schleife eingebunden. Diese loopt durch die vorher gespeicherte Liste \textit{review\_container}. So wird nicht nur der erste review container nach der Bewertungsseiten URL durchsucht sondern alle. Die Methode \textit{loop\_through\_review\_pages()} in Kombination mit der for-Schleife über alle Bewertungsseiten ermöglicht nun die Bewertungslinks jeder einzelnen Bewertung auszulesen.
-				\\
 				\newline
 				Diese neu ausgelesene URL wird bei jedem Durchlauf an die Methode \textit{get\_single\_review\_data()} übergeben. Mit dieser können alle in Kapitel 3 definierten Daten zu den Bewertungen extrahiert werden.
 	
@@ -442,7 +417,9 @@
 	
 			\subsection{Extraktion Bewertungensdaten}
 			
-				Auch hier muss zunächst wieder ein BeautifulSoup Object initalisiert werden, diesmal aber mit dem gespeicherten HTML-Code einer einzelnen Bewertungsseite (vgl. Programmcode 4.5).
+				Die Daten der einzelnen Bewertungen werden mithilfe der oben genannten Methode 
+				\textit{get\_single\_review\_data()} extrahiert. Dazu gehören wie in Kapitel 3 beschrieben: der Verfasser, seine Anzahl an Bewertungen und Likes, der Titel und der Text sowie die URL der Bilder einer Bewertung, falls dieser welche hochgeladen hat. 
+				Zunächst wird wieder ein BeautifulSoup Object initalisiert, jedoch diesmal mit dem gespeicherten HTML-Code einer einzelnen Bewertungsseite (vgl. Programmcode 4.5).
 				\\
 				\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{forpages}, captionpos=b, style=Arduino]
 				def get_single_review_data(self,review_url):     
@@ -450,8 +427,43 @@
 				plain_text2 = source_code2.text
 				soup = BeautifulSoup(plain_text2, "html.parser")
 				\end{lstlisting}
-	
-	
+				
+				Die allgemeine Schwierigkeit an der Extraktion der Bewertungsdaten lag daran, dass auf der Webseite jeder einzelnen Bewertung zusätzlich noch die folgenden vier Bewertungen angezeigt werden. Dadurch, dass jede Bewertung den gleichen Aufbau an Klassen besitzt, war es nicht möglich nur nach dem Klassennamen zu suchen, da sonst beispielsweise die Überschriften aller Bewertungen ausgegeben worden wären. 
+				Da der Name des Verfassers der Bewertung an erster Stelle im Quellcode angezeigt wird, kann dieses Element lediglich mithilfe der Methode 	\textit{find()} und dem Klassennamen ausgegeben werden. 
+				Die Elemente „Anzahl an Bewertungen“ sowie „Anzahl an Likes“ besitzen jedoch denselben Klassennamen. Daher wurde in diesem Fall die Methode \textit{findAll()} benutzt, allerdings mit der Kombination, dass nur ein bestimmtes Element ausgegeben werden soll (vgl. Programmcode 4.6)
+				\newpage
+				\begin{lstlisting} [caption={Anzahl an Bewertungen und Likes des Verfassers}\label{forpages}, captionpos=b, style=Arduino]
+				for self.numberOfReviews in soup.findAll('span', {'class': 'badgetext'})[0]:
+				print("Anzahl Reviews: " + self.numberOfReviews.string)
+				
+				for self.numberOfLikes in soup.findAll('span', {'class': 'badgetext'})[1]:
+				print("Anzahl Likes: " + self.numberOfLikes.string)
+				\end{lstlisting}
+				
+				Somit wird für die Anzahl an Bewertungen der Text des ersten gefundenen Klassennamens ausgegeben, für die Anzahl an Likes der Text des zweiten Klassennamens. 
+				Um den Titel sowie den Text der Bewertung zu extrahieren, wurde das JSON des heruntergeladenen HTML-Codes wieder in ein JSON-Format geparst (vgl. Programmcode 4.7). Denn die Problematik hierbei war, dass wenn die Bewertung in einer anderen Sprache verfasst worden ist, die Überschrift und der Text der Bewertung automatisch ins Deutsche übersetzt worden sind. Dadurch erkennt das System die übersetzte Überschrift sowie den Text anhand des Klassennamens nicht.
+				\\
+				\begin{lstlisting} [caption={Transformation in ein JSON-Format}\label{forpages}, captionpos=b, style=Arduino]
+				self.item_name = soup.find('script', {'type': 'application/ld+json'})
+				json_string = str(self.item_name.string)
+				obj = json.loads(json_string)
+				\end{lstlisting}
+				
+				Mithilfe dieses JSONs wurde zusätzlich auch die Anzahl an vergebenen Punkten herausgelesen.  
+				Zusätzlich war die Anforderung, die URL der Bilder einer Bewertung abzuspeichern. Hierbei war die Schwierigkeit, dass auch Bewertungen ohne Bilder existieren. Des Weiteren können auch noch die anderen angezeigten Bewertungen Bilder enthalten. Dadurch war es nicht möglich nur nach der Klasse inlinePhotosWrapper zu suchen. Somit hätte das System auch die URLs der anderen Bewertungsbilder ausgegeben.  
+				Daher sucht der Web Scraper zunächst, nach einer ID, die nur die gewünschte Bewertung besitzt. Daraufhin überprüft das System, ob es innerhalb dieser ID eine Klasse \textit{inlinePhotosWrapper} existiert, also ob der Verfasser der Bewertung Bilder hochgeladen hat. Ist dies der Fall, werden die URLs der Bilder in der Datenbank abgespeichert. Falls nicht, wird eine textuelle Nachricht ausgegeben, dass für diese Bewertung keine Bilder hochgeladen wurden.
+				\\
+				\begin{lstlisting} [caption={Extraktion der URL der Bewertungsbilder}\label{forpages}, captionpos=b, style=Arduino]
+				for link in soup.findAll('div', {'id': 'taplc_location_reviews_list_sur_callout_0'}):
+				if link.find('div', {'class': 'inlinePhotosWrapper'}):
+				for pic in link.findAll('img', {'class': 'centeredImg'}):
+				self.src = pic.get('src')
+				print("Quelle Bild " + self.src)
+				else:
+				print("No pictures have been uploaded for this review!")
+				\end{lstlisting}
+				
+				Alle Ergebnisse werden wiederum in neu definierten Variablen als einfache Strings bzw. bei mehreren Ergebnissen in Listen gespeichert. 
 			
 		\section{Datenhaltung}
 		%Einfach suche der Daten
@@ -711,9 +723,13 @@
 		
 		\bibitem{bib-tinydb} TinyDB\\ Project Description TinyDB, \newline \url{https://pypi.org/project/tinydb/}, aufgerufen am \today
 		
-		\bibitem{bib-sqlite} SQLite\\ About SQLite, \newline \url{https://www.sqlite.org/about.html9}, aufgerufen am \today
+		\bibitem{bib-sqlite} SQLite\\ About SQLite, \newline \url{https://www.sqlite.org/about.html}, aufgerufen am \today
 		
 		\bibitem{bib-daten} Definition von Datenarten zur konsistenten Kommunikation im Unternehmen\\ Piro A., Gebauer M. Hrsg: \glqq Vieweg und Teubner in Daten- und Informationsqualität.\grqq, S.143 - 156
+		
+		\bibitem{bib-webscraping} Practical Web Scraping for Data Science: best practices and examples with Python\\ vanden Broucke S., Baesens B. Hrsg: \O Apress Media LLC: Welmoed Spahr.\grqq
+		
+		\bibitem{bib-webcrawling} ProWebScraping\\ Web Scraping Vs Web Crawling, \newline \url{http://prowebscraping.com/web-scraping-vs-web-crawling/}, aufgerufen am \today
 		
 		\bibitem{bib-webpython} Web scraping with Python: collecting data from the modern web\\ Mitchel, R. Hrsg: \O'Reilly Media, Inc.
 		
@@ -744,7 +760,7 @@
 	\setstretch{1.5}
 	\chapter*{Eidesstattliche Erklärung}
 		%\vspace{1.5\textheight}
-		Hiermit erklären wir, Johannes Knippel, Anja Wolf, Johanna Sickendiek und Skanny, dass wir die vorliegende Arbeit mit dem Titel \textit{Extraktion unstrukturierter Daten und Integration in eine Datenbank am Beispiel TripAdvisor} selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet haben.
+		Hiermit erklären wir, Johannes Knippel, Anja Wolf, Johanna Sickendiek und Skanny Morandi, dass wir die vorliegende Arbeit mit dem Titel \textit{Extraktion unstrukturierter Daten und Integration in eine Datenbank am Beispiel TripAdvisor} selbstständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen oder Hilfsmittel benützt sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet haben.
 		\vspace{15mm}
 		\\
 		\\
