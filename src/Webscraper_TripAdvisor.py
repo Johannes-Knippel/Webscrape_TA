@@ -331,13 +331,15 @@ class Web_scraping:
 
 
 
-        
+
     '''
     @author: Skanny Morandi
    
     opens a GUI that validates a given url-string and starts the scraping on button click
     '''
     def start_GUI(self):
+
+
 
         roots = tk.Tk()
         roots.title('Tripadvisor Scraper')
@@ -346,7 +348,7 @@ class Web_scraping:
 
         restaurant_label = tk.Label(roots, text='Restaurant-URL ')
         restaurant_label.grid(row=1, column=0, sticky=tk.W)
-        restaurant_entry = tk.Entry(roots, width=150)
+        restaurant_entry = tk.Entry(roots, width=100)
         restaurant_entry.grid(row=1, column=1, sticky=tk.W)
         restaurant_name_label = tk.Label(roots, text='Restaurant Name')
         restaurant_name_label.grid(row=2, column=0, sticky=tk.W)
@@ -356,26 +358,23 @@ class Web_scraping:
         restaurant_rating_label.grid(row=4, column=0, sticky=tk.W)
 
 
+
+
+
+
+
         #256 * 155
-        canvas = tk.Canvas(roots, width=1020, height=610, bg='black')
-        canvas.grid(row=5, column=1)
+        #canvas = tk.Canvas(roots, width=1020, height=610, bg='black')
+        #canvas.grid(row=5, column=1)
 
-        preview_im = Image.open("mimu.jpg")
-        preview_image = ImageTk.PhotoImage(preview_im)
-        canvas.create_image(0,0, anchor=tk.NW, image=preview_image)
-        canvas.update()
-        #preview_label = Label(roots, image=preview_image)
-        #preview_label.pack()
+        #preview_im = Image.open("mimu.jpg")
+        #preview_image = ImageTk.PhotoImage(preview_im)
+        #canvas.create_image(0,0, anchor=tk.NW, image=preview_image)
+        #canvas.update()
 
 
 
-
-        #img = ImageTk.PhotoImage(Image.open("mimu.jpg"))
-        #panel = Label(roots, image=img)
-        #panel.pack(side="bottom", fill="both", expand="yes")
-
-
-        def check_url():
+        def preview_restaurant():
             base_restaurant_url_= "https://www.tripadvisor.de/Restaurant_Review"
             url_to_check = restaurant_entry.get()
             if  (not validators.url(url_to_check)) or \
@@ -383,11 +382,35 @@ class Web_scraping:
 
                 messagebox.showwarning("Warning", "This seems not to be valid Tripadvisor restaurant URL")
             else:
-                messagebox.showinfo("Vaildation successful", "Url seems to be valid")
+                source_code = requests.get(url_to_check)
+                source_code.decoding = ('utf-16BE')
+                plain_text = source_code.text
+                soup = BeautifulSoup(plain_text, "html.parser")
 
-        preview_button = tk.Button(roots, text='Preview', command=check_url)
+                prev_restuarant_name = soup.find('h1', {'class': 'heading_title'}).string
+
+                prev_restaurant_rating = soup.find('div', {'class': 'rs rating'}).div.span['content']
+
+                prev_restaurant_city = soup.find('span', {'class': 'locality'}).string[:-2]
+                print(prev_restaurant_city)
+                print(prev_restaurant_rating)
+
+
+
+
+
+                prev_restaurant_name_label = tk.Label(roots, text=prev_restuarant_name)
+                prev_restaurant_name_label.grid(row=2, column=1, sticky=tk.W)
+                prev_restaurant_city_label = tk.Label(roots, text=prev_restaurant_city)
+                prev_restaurant_city_label.grid(row=3, column=1, sticky=tk.W)
+                prev_restaurant_rating_label = tk.Label(roots, text=prev_restaurant_rating)
+                prev_restaurant_rating_label.grid(row=4, column=1, sticky=tk.W)
+
+                roots.pack_slaves()
+
+
+        preview_button = tk.Button(roots, text='Preview', command=preview_restaurant)
         preview_button.grid(columnspan=3, sticky=tk.W)
-
         def go_scrape():
             self.get_single_data(restaurant_entry.get())
 
@@ -406,7 +429,7 @@ if __name__ == "__main__":
     ws = Web_scraping()
     ws.start_GUI()
     #example URL:
-    #url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"
-
+    # https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html
+    # https://www.tripadvisor.de/Restaurant_Review-g187309-d2656918-Reviews-Savanna-Munich_Upper_Bavaria_Bavaria.html
 
 
