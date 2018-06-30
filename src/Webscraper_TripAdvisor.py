@@ -391,7 +391,7 @@ class Web_scraping:
         def go_scrape():
             self.get_single_data(restaurant_entry.get())
 
-        scrape_button = tk.Button(roots, text='Go Scrape', command=go_scrape)
+        scrape_button = tk.Button(roots, text='Start Scraping', command=go_scrape)
 
         scrape_button.grid(columnspan=5, sticky=tk.W)
         roots.mainloop()
