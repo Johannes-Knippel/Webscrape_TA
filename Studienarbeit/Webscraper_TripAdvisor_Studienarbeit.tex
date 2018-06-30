@@ -188,16 +188,16 @@
 		
 			Mit Web Scraping – auch “Web Harvesting”, “Web data mining” oder “Web data extraction“ genannt – wird das automatisierte herunterladen, analysieren und organisieren von Daten mehrerer Webseiten bezeichnet. Der Vorteil ist, dass aus einer Menge von unstrukturierten Informationen nur die benötigten Daten einer Webseite gezielt extrahiert und strukturiert abgespeichert werden. \cite{bib-webscraping}
 			\\			
-			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren Screen Scraping bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. \cite{bib-webscraping}
+			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren „Screen Scraping“ bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. \cite{bib-webscraping}
 			\\
-			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur die Daten einer ausgewählten Webseite in eine Datenbank transformiert. \cite{bib-webcrawling}
+			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur bestimmte Informaionen einer begrenzten Auswahl von Webseiten sucht. Diese werden daraufhin in ein strukturiertes Format gebracht. \cite{bib-articlewebscraping}
 			
 			
 			\subsection{Funktionsweise}
 			
-				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – heruntergeladen. Dieser HTML-Code kann von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Die meisten Webseiten unterliegen einer Datenbank zugrunde, aus der sie die Inhalte lesen und daraus die verschiedene Webseiten mit ähnlichen Vorlagen erstellen. Somit sind die Seiten meist gleich aufgebaut und unterscheiden sich nur von dem Inhalt her. HTML Parser konvertieren HTML in eine baumartige Struktur, die mit Hilfe von semi-strukturierten Abfragesprachen wie XPaths oder CSS Selectors programmatisch navigiert werden kann. \cite{bib-anzSterne}
+				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – eingelesen. Dieser HTML-Code kann mithilfe von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Sie konvertieren den HTML-Code in eine baumartige Struktur.  \cite{bib-scrapehero}
 				\\
-				Die benötigten Informationen werden mithilfe der Developer Tool-Ansicht einer Webseite eindeutig identifiziert, beispielsweise über einen eindeutigen Klassennamen oder einer ID. Dabei sind die Daten auf manchen Webseiten teilweise nicht in dem Format wie sie benötigt werden und müssen daher zuerst bereinigt werden. Beispielsweise werden die durchschnittliche Anzahl an Sternen der Bewertungen eines Restaurants auf TripAdvisor (vgl. Abbildung \ref{pic-anzSterne}) als Bild dargestellt und nicht als Zeichenkette. \cite{bib-anzSterne}
+				Zur Extraktion der Daten ist es wichtig, dass sie eindeutig erkennbar sind. Die benötigten Informationen können beispielsweise mithilfe der Developer Tool-Ansicht einer Webseite untersucht werden und somit beispielsweise über einen eindeutigen Klassennamen oder einer ID identifiziert werden. Dabei sind die Daten auf vielen Webseiten nicht in dem benötigten Format und müssen zuerst bereinigt werden. Beispielsweise wird die durchschnittliche Anzahl an Sternen der Bewertungen eines Restaurants auf TripAdvisor (vgl. Abbildung \ref{pic-anzSterne}) als Bild dargestellt und nicht als Zeichenkette. \cite{bib-scrapehero}
 				
 				\begin{figure}[H]
 					\centering
@@ -205,11 +205,11 @@
 						\includegraphics[width=\textwidth]{Bilder/BeispielAnzahlSterne.png}
 					\end{minipage}
 					\centering
-					\caption[Beispiel unbereinigte Daten]{Beispiel unbereinigte Daten}
+					\caption[Beispiel unbereinigte Daten]{Beispiel unbereinigte Daten} \cite{bib-anzSterne}
 					\label{pic-anzSterne}
 				\end{figure}
-				
-				Sobald alle Daten extrahiert und angepasst wurden, werden diese noch abgespeichert. Diese Sicherung kann in Form von XML, JSON, CSV oder in einer Datenbank erfolgen. (vgl. Abbildung \ref{pic-webscraper2}) Somit ist eine weitere Verarbeitung der Daten möglich. \cite{bib-anzSterne}
+							
+				Sobald alle Daten extrahiert und angepasst wurden, werden diese in einer dem Zweck angemessenen Form gespeichert. Diese Sicherung kann in Form von XML, JSON, CSV oder in einer Datenbank erfolgen. (vgl. Abbildung \ref{pic-webscraper2}) Somit ist eine weitere Verarbeitung der Daten möglich. \cite{bib-scrapehero}
 				
 				%TODO Wieso kommt das Bild hier nochmal vor? vgl Kap (Datenstrukturen)
 				\begin{figure}[H]
@@ -225,7 +225,7 @@
 			
 			\subsection{Verwendung}
 			
-				Aktuelle Softwares und Tools sind in der Lage, komplette Webseiten in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-anzSterne}
+				Aktuelle Softwares und Tools sind in der Lage, komplette Webseiten in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-scrapehero}
 				\\				
 				In der folgenden Studienarbeit wurden die Informationen der Seite „TripAdvisor.de“ analysiert. Dieses Unternehmen wird im folgenden Kapitel näher betrachtet.
 			
@@ -242,7 +242,7 @@
 					\includegraphics[width=\textwidth]{Bilder/LogoTripadvisor.png}
 				\end{minipage}
 				\centering
-				\caption[TripAdvisor Logo]{TripAdvisor Logo}
+				\caption[TripAdvisor Logo]{TripAdvisor Logo} \cite{bib-tripadvisorLogo}
 				\label{pic-taLogo}
 			\end{figure}
 			
@@ -441,7 +441,7 @@
 				\end{lstlisting}
 				
 				Somit wird für die Anzahl an Bewertungen der Text des ersten gefundenen Klassennamens ausgegeben, für die Anzahl an Likes der Text des zweiten Klassennamens. 
-				Um den Titel sowie den Text der Bewertung zu extrahieren, wurde das JSON des heruntergeladenen HTML-Codes wieder in ein JSON-Format geparst (vgl. Programmcode 4.7). Denn die Problematik hierbei war, dass wenn die Bewertung in einer anderen Sprache verfasst worden ist, die Überschrift und der Text der Bewertung automatisch ins Deutsche übersetzt worden sind. Dadurch erkennt das System die übersetzte Überschrift sowie den Text anhand des Klassennamens nicht.
+				Um den Titel sowie den Text der Bewertung zu extrahieren, wurde das JSON des heruntergeladenen HTML-Codes wieder in ein JSON-Format geparst (vgl. Programmcode 4.7). Denn die Problematik hierbei war, dass wenn die Bewertung in einer anderen Sprache verfasst worden ist, die Überschrift und der Text der Bewertung automatisch ins Deutsche übersetzt worden sind. Dadurch erkennt das System die übersetzte Überschrift sowie den Text anhand des Klassennamens nicht. Mithilfe dieses JSONs wurde zusätzlich die Anzahl an vergebenen Punkten herausgelesen.  
 				\\
 				\begin{lstlisting} [caption={Transformation in ein JSON-Format}\label{forpages}, captionpos=b, style=Arduino]
 				self.item_name = soup.find('script', {'type': 'application/ld+json'})
@@ -449,9 +449,9 @@
 				obj = json.loads(json_string)
 				\end{lstlisting}
 				
-				Mithilfe dieses JSONs wurde zusätzlich auch die Anzahl an vergebenen Punkten herausgelesen.  
-				Zusätzlich war die Anforderung, die URL der Bilder einer Bewertung abzuspeichern. Hierbei war die Schwierigkeit, dass auch Bewertungen ohne Bilder existieren. Des Weiteren können auch noch die anderen angezeigten Bewertungen Bilder enthalten. Dadurch war es nicht möglich nur nach der Klasse inlinePhotosWrapper zu suchen. Somit hätte das System auch die URLs der anderen Bewertungsbilder ausgegeben.  
-				Daher sucht der Web Scraper zunächst, nach einer ID, die nur die gewünschte Bewertung besitzt. Daraufhin überprüft das System, ob es innerhalb dieser ID eine Klasse \textit{inlinePhotosWrapper} existiert, also ob der Verfasser der Bewertung Bilder hochgeladen hat. Ist dies der Fall, werden die URLs der Bilder in der Datenbank abgespeichert. Falls nicht, wird eine textuelle Nachricht ausgegeben, dass für diese Bewertung keine Bilder hochgeladen wurden.
+				
+				Des Weiteren war die Anforderung, die URL der Bilder einer Bewertung abzuspeichern. Hierbei war die Schwierigkeit, dass auch Bewertungen ohne Bilder existieren. Des Weiteren können auch die anderen angezeigten Bewertungen auf der Webseite Bilder enthalten. Dadurch war es nicht möglich nur nach der Klasse \textit{inlinePhotosWrapper} zu suchen. Somit hätte das System auch die URLs der anderen Bewertungsbilder ausgegeben.  
+				Daher sucht der Web Scraper zunächst, nach einer ID, die nur die gewünschte Bewertung besitzt. Daraufhin überprüft das System, ob es innerhalb dieser ID eine Klasse \textit{inlinePhotosWrapper} existiert, also ob der Verfasser der Bewertung Bilder hochgeladen hat. Ist dies der Fall, werden die URLs der Bilder in der Datenbank abgespeichert. Andernfalls wird eine textuelle Nachricht ausgegeben, dass für diese Bewertung keine Bilder hochgeladen wurden.
 				\\
 				\begin{lstlisting} [caption={Extraktion der URL der Bewertungsbilder}\label{forpages}, captionpos=b, style=Arduino]
 				for link in soup.findAll('div', {'id': 'taplc_location_reviews_list_sur_callout_0'}):
@@ -688,23 +688,23 @@
 	
 	
 %   									Abkürzungsverzeichnis	
-	\chapter*{Abkürzungsverzeichnis}
-		\vspace{1.0cm}
-		\begin{acronym}[SEPSEP]
-			\acro{oem}[OEM]{Original Equipment Manufacturer}
-			\acro{bob}[BOB]{Breakout-Box}
-			\acro{can}[CAN]{Controller Area Network}
-			\acro{lin}[LIN]{Local Interconnect Network}
-			\acro{obd}[OBD]{On-Board-Diagnose}	
-			\acro{sda}[SDA]{Serial Data Line}
-			\acro{scl}[SCL]{Serial Clock Line}
-			\acro{gui}[GUI]{Graphical User Interface}
-			\acro{pdf}[PDF]{Portable Document Format}
+%	\chapter*{Abkürzungsverzeichnis}
+%		\vspace{1.0cm}
+%		\begin{acronym}[SEPSEP]
+%			\acro{oem}[OEM]{Original Equipment Manufacturer}
+%			\acro{bob}[BOB]{Breakout-Box}
+%			\acro{can}[CAN]{Controller Area Network}
+%			\acro{lin}[LIN]{Local Interconnect Network}
+%			\acro{obd}[OBD]{On-Board-Diagnose}	
+%			\acro{sda}[SDA]{Serial Data Line}
+%			\acro{scl}[SCL]{Serial Clock Line}
+%			\acro{gui}[GUI]{Graphical User Interface}
+%			\acro{pdf}[PDF]{Portable Document Format}
 			%\acro{SD}[SD]{Secure Digital Memory Card}
 			%\acro{pc}[PC]{Personal Computer}
 			%\acro{USB}[USB]{Universal Serial Bus}
-		\end{acronym}
-		\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+%		\end{acronym}
+%		\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 	
 	
 	
@@ -727,23 +727,33 @@
 		
 		\bibitem{bib-daten} Definition von Datenarten zur konsistenten Kommunikation im Unternehmen\\ Piro A., Gebauer M. Hrsg: \glqq Vieweg und Teubner in Daten- und Informationsqualität.\grqq, S.143 - 156
 		
+		%7
 		\bibitem{bib-webscraping} Practical Web Scraping for Data Science: best practices and examples with Python\\ vanden Broucke S., Baesens B. Hrsg: \O Apress Media LLC: Welmoed Spahr.\grqq
 		
-		\bibitem{bib-webcrawling} ProWebScraping\\ Web Scraping Vs Web Crawling, \newline \url{http://prowebscraping.com/web-scraping-vs-web-crawling/}, aufgerufen am \today
+		%8
+		\bibitem{bib-articlewebscraping} Jan Seipel\\ Webscraping als Methode der Informationsbeschaffung, \newline \url{http://www.vfm-online.de/weblog/wp-content/uploads/2014/01/info7-2016-2\_S15-17.pdf}, aufgerufen am \today
+		
+		%9
+		\bibitem{bib-scrapehero} ScrapeHero\\What is web scraping – Part 1 – Beginner’s guide,\newline \url{https://www.scrapehero.com/a-beginners-guide-to-web-scraping-part-1-the-basics/}, aufgerufen am \today
+		
+		%10
+		\bibitem{bib-anzSterne} Screenshot unbereinigte Daten,\newline \url{https://www.tripadvisor.de/Restaurant\_Review-g187309-d742684-
+		Reviews-Hofbraeuhaus-Munich\_Upper\_Bavaria\_Bavaria.html}, aufgerufen am \today
+		
+		%11
+		\bibitem{bib-statista} Umsatz von Tripadvisor weltweit,\newline \url{https://de.statista.com/statistik/daten/studie/543148/umfrage/umsatz-von-tripadvisor-weltweit-nach-quartalen/}, aufgerufen am \today
+		
+		\bibitem{bib-taMedia} Tripadvisor Mediacenter,\newline \url{https://tripadvisor.mediaroom.com/DE-about-us}, aufgerufen am \today
+		
+		\bibitem{bib-tripadvisorLogo} Our Logos: TripAdvisor Media Group Logos,\newline \url{https://tripadvisor.mediaroom.com/our-brand}, aufgerufen am \today
+		
+		\bibitem{bib-taSued} Süddeutsche Zeitung,\newline Bei Kundenbewertungen wird gelogen, was das Zeug hält \newline \url{https://bit.ly/2w1oZqQ}, aufgerufen am \today
 		
 		\bibitem{bib-webpython} Web scraping with Python: collecting data from the modern web\\ Mitchel, R. Hrsg: \O'Reilly Media, Inc.
 		
 		\bibitem{bib-bs4} Beautiful Soup Documentation, \newline \url{http://www.crummy.com/software/BeautifulSoup/bs4/doc/} aufgerufen am \today
 		
 		\bibitem{bib-reviewcontainer} Screenshot Review Container,\newline \url{https://bit.ly/2JC9HAo}, aufgerufen am \today
-		
-		\bibitem{bib-anzSterne} Screenshot unbereinigte Daten,\newline \url{https://bit.ly/2y48lgB}, aufgerufen am \today
-		
-		\bibitem{bib-statista} Umsatz von Tripadvisor weltweit,\newline \url{https://de.statista.com/statistik/daten/studie/543148/umfrage/umsatz-von-tripadvisor-weltweit-nach-quartalen/}, aufgerufen am \today
-		
-		\bibitem{bib-taMedia} Tripadvisor Mediacenter,\newline \url{https://tripadvisor.mediaroom.com/DE-about-us}, aufgerufen am \today
-		
-		\bibitem{bib-taSued} Süddeutsche Zeitung,\newline Bei Kundenbewertungen wird gelogen, was das Zeug hält \newline \url{https://bit.ly/2w1oZqQ}, aufgerufen am \today
 		
 		\bibitem{bib-pipEnv} Python Pipenv \& Virtual Environments,\newline \url{https://bit.ly/2sPKwnw}, aufgerufen am \today
 		
