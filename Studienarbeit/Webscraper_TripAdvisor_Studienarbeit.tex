@@ -251,24 +251,58 @@
 	
 	\chapter{Anforderungen}	
 	
-		\section{Tabelle: Daten TripAdvisor}
+	    Der Anwender der Software soll in der Lage sein, sich ein auf dem Reiseportal „Tripadvisor“ (tripadvisor.com) verzeichnetes Restaurant auszusuchen und aus dieser Repräsentanz des Restaurants hinterlegte Informationen, insbesondere über Bewertungen von Usern des Portals, zu extrahieren. Diese Informationen sollen strukturiert auf einer beliebigen Datenbank persistiert und vom Anwender einsehbar sein.
+	    \\
+	    \\
+       Im Folgenden werden die Anforderungen eingeteilt in funktionale und nicht–funktionale Anforderungen und werden näher erläutert.
+
+       \begin{figure}[H]
+				\centering
+				\begin{minipage}[b]{1.0\textwidth}
+					\includegraphics[width=\textwidth]{Bilder/TabAnforderungen.png}
+				\end{minipage}
+				\centering
+				\caption[Anforderungsübersicht an das zu erstellende Programm]{Anforderungsübersicht an das zu erstellende Programm} 
+				\label{TabAnforderungen}
+			\end{figure}
+	
+		\section{Funktionale Anforderungen}
+
+		\begin{description}
+		\item[Zu erfassende Daten] Die zu extrahierenden Daten können in 2 Kategorien eingeteilt werden. Die 1. Kategorie besteht in Informationen zum konkreten Restaurant. So wie Name, Adresse, durchschnittliche Bewertungspunktzahl und weitere, wie aufgeführt in Tabelle \ref{TabAnforderungen}.  \\ 
+        Die 2. Kategorie besteht aus den Bewertungen, die User auf dem Portal für dieses konkrete Restaurant abgegeben haben. Hier bestehen die Informationen von Interesse laut Anforderung aus dem Titel der Bewertung, dem Text der Bewertung, der abgegebenen Punktzahl sowie insbesondere der mit der Bewertung mitgesendeten Bilder. Von diesen wird laut Anforderung lediglich verlangt die auf die jeweiligen Bilder verweisenden URLs als Datenpunkt zu erfassen und nicht die Bildinformation selbst.
+
+	
+        \item[Datenbank Anforderungen]
+        Nach der Extraktion von tripadvisor sollen die erfassten Daten persistiert werden um zu einem späteren Zeitpunkt für weitere Zwecke ohne großen Aufwand wieder verfügbar zu sein. Dies soll durch Eintragung in einer Datenbank realisiert werden. Weitere Anforderungen an diese Datenbank bestehen in: 
+        \begin{itemize}
+        \item Integritätssicherung – die Gewährleistung der Korrektheit der Datensätze auf der Datenbank durch entsprechende Prüfmaßnahmen bei Manipulation bzw. Eintragung von Datensätzen	    \\
+        \item Redundanzarmut – Minimierung von doppelt geführten Datenpunkten oder -sätzen, sofern die Doppelung keine Mehrinformation beinhaltet \\
+        \item Datenunabhängigkeit – das bearbeiten oder verwalten der in der Datenbank geführten Daten soll möglich sein ohne weitere Serverinfrastruktur o.ä. \\
+        \item Zentrale Kontrolle – ein Administrator soll in der Lage sein, die gesamte Datenbank zu verwalten
+        \\
+        \end{itemize}
+        \item[Ausführbarkeit des Anwenders] Der Empfänger bzw. Anwender der Software soll in der Lage sein die Programmfunktionalität zu starten und zu Beenden ohne weitere Abhängigkeiten. Als Voraussetzung wird hier angenommen, dass der Anwender über einen für den Stand der Zeit durchschnittlichen Rechner verfügt, auf dem es möglich ist ein Programm in der Kommandozeile des jeweiligen Betriebssystems auszuführen.
+        \\
+        \item[Eingabe einer Restaurant-URL] Der Anwender soll in der Lage sein dem Programm einen Parameter zu übergeben, der das Restaurant, dessen Daten extrahiert werden sollen, identifiziert. Im vorliegenden Kontext soll dies über die Eingabe der Tripadvisor-URL des betreffenden Restaurants erfolgen.
+        \end{description}
+
+	\section{Nicht funktionale Anforderungen}
+	
+		Usability – Benutzerfreundlichkeit\\
+        In Hinsicht darauf, dass die Anwender der Software nicht ausschließlich IT-affine Personen sein werden, soll die Ausführung der Software über eine einfach zu verstehende Graphische Benutzeroberfläche (GUI) erfolgen. 
+        \\
+        Die Eingabe der URL soll über ein Textfeld in der GUI gewährleistet werden. Bevor der Vorgang der Datenextraktion für das Restaurant und alle seine Bewertungen gestartet wird, soll es möglich sein über einen Button eine Validierung der angegebenen URL durchzuführen. Diese überprüft, ob die URL, zumindest Ihrer Form nach, eine gültige Tripadvisor-Restaurant-URL ist, und sicherstellen, dass das Programm nicht aus dem Grund fehlschlägt, dass die angegebene URL nicht die eines Tripadvisor-Restaurants ist.
+        \\
+        Anschließend an die Validierung sollen die Basisinformationen Name, PLZ und Ort sowie durchschnittliche Bewertung des mit der URL verbundenen Restaurants angezeigt werden. So kann sich der Anwender vor Starten des bis zu mehreren Minuten langen Vorgangs versichern, dass er auch wirklich die URL des gewünschten Restaurants angegeben hat.
+        \\
+        Letztendlich soll es möglich sein durch einen Button die Extraktion und Persistierung der Daten zu starten. Vor Starten des eigentlichen Vorgangs soll eine Prüfung erfolgen, ob das gewählte Restaurant bereits extrahiert wurde. Falls ja wird der Anwender entsprechend informiert und der Vorgang wird abgebrochen. 
+	
+	
+	
+	\chapter{Implementierung}\label{implementierung}
 		
-		(Welche Daten holen wir uns? Hotel und Restaurants?) details
-	
-		\section{Nicht funktionale Anforderungen: Benutzerfreundlichkeit etc.}
-	
-		bliblablablablubulskjfvba
-		öajsvaölfkvpaijsdv
-		\\
-		öjydfpvoijaf
-		v\\jdofhvöankfv
-		aposdfjhvpuaohöjvhb
-	
-	
-	
-	\chapter{Implementierung}
-		
-		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung WebCrawler' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Soukapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
+		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung WebCrawler' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Kapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
 	
 		\section{Konfiguration}
 		
@@ -465,7 +499,7 @@
 				
 				Alle Ergebnisse werden wiederum in neu definierten Variablen als einfache Strings bzw. bei mehreren Ergebnissen in Listen gespeichert. 
 			
-		\section{Datenhaltung}
+		\section{Datenhaltung}\label{datenhaltung}
 		%Einfach suche der Daten
 			Eine Anforderung an das System besteht auch darin die gewonnenen Daten in einer Datenbank ablegen zu können. Zunächst wurden vom Product Owner die nötigen Ansprüche an die Datenbank bereitgestellt, nach der sich dann aus zwei Datenbanktypen eine vorteilhaftere herauskristallisieren konnte. 
 			\\
@@ -643,18 +677,87 @@
 				\end{lstlisting}
 				
 				
-		\section{Benutzeroberfläche}
+		\section{Graphische Benutzeroberfläche - GUI}\label{GUI}
+		    Um der nicht-funktionalen Anforderung einer gewissen Usability über eine Graphische Benutzeroberfläche (GUI) nachzukommen wurde die Library „Tkinter“ genutzt. Tkinter ist ein integraler Bestandteil von Python3, ist „robust, schnell und plattformunabhänigig lauffähig“ \cite{bib-tkinterDocu}. Es bringt alle benötigten Elemente mit, wie Textfelder, Texteingabefelder und klickbare Buttons, die mit Programmfunktionalität verbunden werden können 
+
 		
-			\subsection{Wie die Umsetzung etc.}
+			\subsection{Konzept}
+			Abbildung \ref{pic-mock-up} zeigt ein Mock-up der geplanten graphischen Benutzeroberfläche. Die einzelnen Elemente und das erwartete Verhalten seien im Folgenden beschrieben: 
 			
-			\subsection{Lösung mit URL}
+				\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/mock-up.png}
+					\end{minipage}
+					\centering
+					\caption[Mock-Up der geplanten Benutzeroberfläche]{Mock-Up der geplanten Benutzeroberfläche}
+					\label{pic-mock-up}
+				\end{figure}
+            
+            \begin{itemize}
+            \item[(1)] URL-Eingabefeld	\\
+            In dieses Feld fügt der Anwender die URL des Restaurants ein, dessen Informationen von Interesse sind.
+            \item[(2)] Preview-Button\\
+            Durch Klick auf diesen Button wird zunächst geprüft ob im Eingabefeld eine valide Tripadvisor-Restaurant-URL eingegeben wurde. Falls nein, soll eine entsprechende Fehlermeldung dem Nutzer angezeigt werden. Falls ja, soll im mit (4) markierten Bereich die Informationen Restaurantname, Ort und Durchschnittsbewertung angezeigt werden.
+            \item[(3)]	Start Scraping-Button\\
+            Durch Klick auf diesen Button soll zunächst überprüft werden, ob das betreffende Restaurant bereits in der Datenbank erfasst wurde. Falls ja soll der Vorgang abgebrochen werden und der User erhält eine entsprechende Fehlermeldung. Falls nein wird die Extraktion und anschließende Persistierung in der Datenbank angestoßen. 
+            \end{itemize}
+			
+			\subsection{GUI – Umsetzung}
+			In Abbildung \ref{pic-GUI} ist die konkret implementierte GUI des im Rahmen dieser Arbeit erstellten Programms zu sehen. Sie wird bei Ausführung des Programms angezeigt. Das Layout des Mock-Ups konnte weitestgehend umgesetzt werden, das Verhalten wurde wie oben beschrieben umgesetzt. Im Folgenden soll nun die Implementierung der Funktionalitäten näher beschrieben werden.
+
+				\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/GUI.png}
+					\end{minipage}
+					\centering
+					\caption[Benutzeroberfläche des Tripadvisor Crawlers unter MacOS]{Benutzeroberfläche des Tripadvisor Crawlers unter MacOS}
+					\label{pic-GUI}
+				\end{figure}
+
+            
+            \begin{description}
+            \item[Funktionalität - URL-Validierung] Bei betätigen des Preview-Buttons wird der im Textfeld stehende String mit Hilfe der Library ``validators'' über RegEx darauf überprüft, ob er dem Format einer URL im Allgemeinen entspricht. Als nächsten Schritt wird der String darauf geprüft ob er mit\\ ``https://www.tripadvisor.de/Restaurant\_Review'' beginnt. Schlägt eine der beiden Prüfungen fehl wird ein Pop-Up mit entsprechender Fehlermeldung angezeigt. Ist die Prüfung erfolgreich erfolgt werden die Preview-Daten extrahiert
+            \item[Funktionalität - Preview] Hier wird ein Teilabschnitt des in Kapitel \ref{implementierung} beschriebenen Scraping Vorgangs über Beautiful-Soup durchgeführt, allerdings wird nicht der gesamte Vorgang durchgeführt sondern es werden aus dem Quellcode der URL lediglich Restaurantname, Ort und Postleitzahl sowie durchschnittliche Bewertungspunktzahl extrahiert und an entsprechender Stelle in der GUI angezeigt.
+            \item[Funktionalität – Start Scraping]Es erfolgt eine Prüfung ob es in der Datenbank einen Eintrag mit dem aus der URL-extrahierten Restaurantname und dessen Ort und Postleitzahl gibt. Falls ja wird ein Pop-up angezeigt mit entsprechender Nachricht und der Vorgang wird abgebrochen. Ist es noch nicht vorhanden wird die Extraktion der Restaurant- und Reviewdaten wie in Kapitel \ref{implementierung} angestoßen.
+
+
+
+
+            \end{description}
 	
 	
 
 
-	\chapter{Wurden Anforderungen erfüllt?}		
+	\chapter{Erfüllung der Anforderungen}
+
+		\begin{figure}[H]
+					\centering
+					\begin{minipage}[b]{0.9\textwidth}
+						\includegraphics[width=\textwidth]{Bilder/TabErfuellt.png}
+					\end{minipage}
+					\centering
+					\caption[Tabelle der erfüllten Anforderungen]{Tabelle der erfüllten Anforderungen}
+					\label{TabErfuellt}
+				\end{figure}		
 	
-		\section{Ergebnisse}
+		\section{Funktionale Anforderungen}
+
+		\begin{description}
+			\item[Zu erfassende Daten] alle angeforderten Daten der Restaurants sowie deren Bewertungen werden, wie im Detail in Kapitel \ref{implementierung} anschaulich erklärt, mit der Python Library „Beautiful Soup“ erfasst und zur weiteren Verarbeitung verfügbar gemacht
+
+			\item[Datenbank Anforderungen] Wie in Kapitel \ref{datenhaltung} beschrieben, haben sich die Ersteller der Arbeit für den mit Python gut vereinbaren und leichtgewichtigen Datenbank-Typen „TinyDB“ entschieden. Eben da wurde geschildert wie und in welcher Form die extrahierten Daten in einer JSON-Datei presistiert werden und die angestrebten Datenbank-Qualitätsmerkmale bewerkstelligt wurden.
+
+			\item[Ausführbarkeit des Anwenders] Der Anwender des Programms kann, gegeben, dass die Infrastruktur für die Laufbarkeit von Python-Code vorinstalliert ist, das Programm ausführen, über die Kommandozeile eines Terminals in Unix- oder Mac-Systemen oder die Dos-Eingabeaufforderung eines Windowssystems.
+
+			\item[Eingabe einer URL als Input-Parameter] Die Eingabe des Input-Parameters wurde über die in Kapitel \ref{GUI} behandelte GUI und dessen entsprechendes Texteingabefeld bewerkstelligt. So ist es dem User möglich dem Programm den Input-Parameter zu übergeben.
+
+		\end{description}
+
+		\section{Nicht-funktionale Anforderungen}
+		In Kapitel \ref{GUI} wurde die Implementierung und Konzeption der graphischen Benutzeroberfläche dokumentiert. Über sie ist es möglich die Funktionalitäten des erstellten Programms zu steuern. Der Anwender der Software kann in das dafür vorgesehene Textfeld die URL des zu extrahierenden Restaurants eingeben. Über den Button „Preview“ wird zunächst die Validierung der URL vorgenommen und anschließend werden in der GUI die drei Grundinformationen Name, Ort und Postleitzahl und Durchschnittsbewertung angezeigt. Bei Klick auf „Start Scraping“ wird zunächst geprüft ob das zu extrahierende Restaurant schon in der Datenbank vorhanden ist und beginnt, falls dies nicht der Fall ist, Restaurantdaten und die seiner Reviews zu extrahieren und in der Datenbank zu persistieren.
+
 		
 	
 
@@ -758,6 +861,10 @@
 		\bibitem{bib-pipEnv} Python Pipenv \& Virtual Environments,\newline \url{https://bit.ly/2sPKwnw}, aufgerufen am \today
 		
 		\bibitem{bib-scrapeHero} ScrapeHero,\newline Beginners guide to Web Scraping: Part 2 – Build a web scraper for Reddit using Python and BeautifulSoup \newline \url{https://bit.ly/2JHoVnT}, aufgerufen am \today
+		
+		\bibitem{bib-tkinterDocu} Tkinter, \newline
+		Graphical User Interfaces with Tk\\
+		\url{https://docs.python.org/3/library/tk.html}, aufgerufen am aufgerufen am 28.Juni 2018
 		
 		%Buchrecherche
 		%\bibitem{bib-handb} Kraftfahrzeugtechnik \\ Hans-Hermann Braess, Ulrich Seiffert Hrsg: \glqq Vieweg Handbuch Kraftfahrzeugtechnik\grqq, Springer-Vieweg-Verlag, S. 5, 7. Auflage 2013
