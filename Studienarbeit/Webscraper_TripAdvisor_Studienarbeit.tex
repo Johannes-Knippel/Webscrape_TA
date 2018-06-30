@@ -151,7 +151,7 @@
 	%\newpage
 	\pagenumbering{arabic}
 	\setstretch{1.5}
-	\chapter{Problemstellung}\label{probstellung}
+	\chapter[Problemstellung - Johannes Knippel]{Problemstellung}\label{probstellung}
 	
 		Für nahezu Jedermann bietet das WWW im Vergleich zu damaligen Zeiten ungeahnte Möglichkeiten der Recherche und Themenfindung. Noch nie waren so viele Informationen öffentlich einsehbar wie heute. Meist sind jedoch die gewünschten Inhalte an vielen unterschiedlichen Orten im Web verteilt, auf unterschiedlichste Weisen formatiert oder aufgrund schlechter Informationsarchitektur nur mit größerem Aufwand zu erreichen. Grundsätzlich kann die Fülle an Ergebnissen überfordern und nicht immer sind alle relevanten Inhalte über gängige Suchmaschinen auffindbar. Das bedeutet dann oft die mühsame Suche nach den relevanten Informationen in nicht immer nutzerfreundlich gestalteten Datenbanken. Bei so gut wie allen Recherchearbeiten besteht die Aufgabe heutzutage darin, die sprichwörtliche „Nadel im Heuhaufen“ zu finden. In vielen Fällen wünscht man sich einen gewissen Grad an Automatisierung. Daher soll im Rahmen eines Forschungsprojektes an der Hochschule München ein Tool entworfen werden, das Informationen und Inhalte von Webseiten automatisiert gewinnt. 
 		\\
@@ -165,7 +165,7 @@
 		%Gewonnene Daten können so Aufschluss über Verhaltensweisen, Interessen und auch mögliche Kaufanregungen geben.
 		
 
-	\chapter{Grundlagen}\label{grlagen}
+	\chapter[Grundlagen - Johanna Sickendiek]{Grundlagen}\label{grlagen}
 	
 		Das folgende Kapitel geht auf grundlegende Datenstrukturen ein, beleuchtet das Thema Web Scraping, dessen Funktionsweise und Verwendung sowie die Beschreibung des Reiseinformationsportals TripAdvisor. 
 	
@@ -199,7 +199,7 @@
 				\\
 				Zur Extraktion der Daten ist es wichtig, dass sie eindeutig erkennbar sind. Die benötigten Informationen können beispielsweise mithilfe der Developer Tool-Ansicht einer Webseite untersucht werden und somit beispielsweise über einen eindeutigen Klassennamen oder einer ID identifiziert werden. Dabei sind die Daten auf vielen Webseiten nicht in dem benötigten Format und müssen zuerst bereinigt werden. Beispielsweise wird die durchschnittliche Anzahl an Sternen der Bewertungen eines Restaurants auf TripAdvisor (vgl. Abbildung \ref{pic-anzSterne}) als Bild dargestellt und nicht als Zeichenkette. \cite{bib-scrapehero}
 				
-				\begin{figure}[H]
+				\begin{figure}[h]
 					\centering
 					\begin{minipage}[b]{0.9\textwidth}
 						\includegraphics[width=\textwidth]{Bilder/BeispielAnzahlSterne.png}
@@ -249,14 +249,14 @@
 			Jedoch ist diesen Bewertungsportalen nicht immer Glauben zu schenken. Mittlerweile gibt es Dienstleister, die für gute Bewertungen bezahlt werden. Denn TripAdvisor überprüft nur stichpunktartig, ob der Verfasser der Bewertung sich auch wirklich dort aufgehalten hat. \cite{bib-taSued}
 	
 	
-	\chapter{Anforderungen}	
+	\chapter[Anforderungen - Skanny Morandi]{Anforderungen}	
 	
 	    Der Anwender der Software soll in der Lage sein, sich ein auf dem Reiseportal „Tripadvisor“ (tripadvisor.com) verzeichnetes Restaurant auszusuchen und aus dieser Repräsentanz des Restaurants hinterlegte Informationen, insbesondere über Bewertungen von Usern des Portals, zu extrahieren. Diese Informationen sollen strukturiert auf einer beliebigen Datenbank persistiert und vom Anwender einsehbar sein.
 	    \\
 	    \\
        Im Folgenden werden die Anforderungen eingeteilt in funktionale und nicht–funktionale Anforderungen und werden näher erläutert.
 
-       \begin{figure}[H]
+       \begin{figure}[h]
 				\centering
 				\begin{minipage}[b]{1.0\textwidth}
 					\includegraphics[width=\textwidth]{Bilder/TabAnforderungen.png}
@@ -304,7 +304,7 @@
 		
 		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung WebCrawler' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Kapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
 	
-		\section{Konfiguration}
+		\section[Konfiguration - Anja Wolf]{Konfiguration}
 		
 			Zunächst wurde als Entwicklungsumgebung die aktuellste Version von Eclipse (Version 4.7.*) sowie als Programmiersprache die neueste Version von Python und PIP zur Verwaltung von Paketen installiert. Es wurde bewusst nicht die Version 2.7 verwendet, da ab der Version 3.0 Pakete, wie JSON und urllib, schon vorinstalliert sind. Es wurde Python gewählt, da dies die bekannteste Sprache für Web Scraper ist und Frameworks, wie Scrapy, Beautifulsoup, etc. in Python geschrieben sind. 
 			\newline
@@ -315,7 +315,7 @@
 			Warum sich in dieser Studienarbeit für dieses Framework entschieden wurde, wird im nächsten Abschnitt näher erläutert. 
 
 	
-		\section{BeautifulSoup}
+		\section[BeautifulSoup - Anja Wolf]{BeautifulSoup}
 		
 			Für die Programmierung des Web Scrapers, um Daten von auf TripAdvisor gelisteten Hotels und Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
 			\newline
@@ -358,7 +358,7 @@
 			Im folgenden Kapitel werden diese genutzt um den Webcrawler für TripAdvisor erfolgreich zu implementieren.
 	
 	
-		\section{Implementierung WebCrawler}
+		\section[Implementierung WebCrawler - Anja Wolf]{Implementierung WebCrawler}
 			
 			Im folgenden wird die Implementierung des Webcrawlers anhand von konkreten Code-Beispielen im Detail beschrieben. Besonders wird dabei auf die einfache und intuitive Verwendung der Bibliothek 'BeatifulSoup' eingegangen.
 	
@@ -499,7 +499,7 @@
 				
 				Alle Ergebnisse werden wiederum in neu definierten Variablen als einfache Strings bzw. bei mehreren Ergebnissen in Listen gespeichert. 
 			
-		\section{Datenhaltung}\label{datenhaltung}
+		\section[Datenhaltung - Johannes Knippel]{Datenhaltung}\label{datenhaltung}
 		%Einfach suche der Daten
 			Eine Anforderung an das System besteht auch darin die gewonnenen Daten in einer Datenbank ablegen zu können. Zunächst wurden vom Product Owner die nötigen Ansprüche an die Datenbank bereitgestellt, nach der sich dann aus zwei Datenbanktypen eine vorteilhaftere herauskristallisieren konnte. 
 			\\
@@ -532,7 +532,7 @@
 				\end{itemize}
 				
 				
-				\subsubsection{Vergleich: SQLLite und TinyDB}
+				\subsubsection[Vergleich: SQLLite und TinyDB - Johannes Knippel]{Vergleich: SQLLite und TinyDB}
 				
 					Im Folgenden werden zwei NoSQOL Datenbanktypen miteinander verglichen, die dem Entwicklerteam als am sinnvollsten erschienen.
 					\\
@@ -549,12 +549,12 @@
 					Für das Projekt wurde sich einstimmig für die Verwendung von TinyDB als Datenbanksystem entschieden.
 					
 							
-			\subsection{Datenbankstruktur}
+			\subsection[Datenbankstruktur - Johannes Knippel]{Datenbankstruktur}
 			
 				%Wie viele Tabellen, IDs, Verknüpfungen, Primärschlüssel
 				Die extrahierten Daten können in grob vier Cluster eingeteilt werden, dabei bildet der erste Cluster die allgemeinen Daten des Restaurants, wie dessen Namen und Adresse. Den zweiten und dritten Cluster kann zusammenfassend als Benutzerdatenbank und Bewertungstext sehen. Der vierte Cluster bildet die Tabelle in der die Bilder abgespeichert werden, die zu einem jeweiligen Kommentar hinterlegt wurden.
 				
-				\subsubsection{Tabellen mit Spalten}\label{db_structure}
+				\subsubsection[Tabellen mit Spalten - Johannes Knippel]{Tabellen mit Spalten}\label{db_structure}
 				
 					Für die bessere Übersicht wurden in der Datenbank vier Tabellen angelegt, die wie folgt in ihre jeweiligen Spalten zerlegt sind:
 					
@@ -635,7 +635,7 @@
 				 	\end{table}
 			 	
 			 	
-				\subsubsection{Zeichnung und Zusammenhang}
+				\subsubsection[Zeichnung und Zusammenhang - Johannes Knippel]{Zeichnung und Zusammenhang}
 				
 					Die Datenbank kann im angelegten Schema, wie es in Kapitel \ref{db_structure} beschrieben ist, über die autoincrement ID's der jeweiligen Tabellen durchsucht und verknüpft werden. Beim Anlegen der autoincrement ID's wurde darauf geachtet, dass keine ID mehrfach vorkommt. So kann dem Anwender eine verwechslungsfreie Suche garantiert werden.\\
 					Ein Bewertungstext, der zu einem bestimmten Restaurant abgegeben wurde, kann beispielsweise mit folgendem Python-Code aufgerufen werden:
@@ -647,7 +647,7 @@
 					
 
 
-			\subsection{Daten bereinigen und integrieren}
+			\subsection[Daten bereinigen und integrieren - Johannes Knippel]{Daten bereinigen und integrieren}
 				
 				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich, mit in der Regel nur einem Byte Speicherbedarf, für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
 				\\
@@ -677,14 +677,14 @@
 				\end{lstlisting}
 				
 				
-		\section{Graphische Benutzeroberfläche - GUI}\label{GUI}
+		\section[Graphische Benutzeroberfläche - GUI - Skanny Morandi]{Graphische Benutzeroberfläche - GUI}\label{GUI}
 		    Um der nicht-funktionalen Anforderung einer gewissen Usability über eine Graphische Benutzeroberfläche (GUI) nachzukommen wurde die Library „Tkinter“ genutzt. Tkinter ist ein integraler Bestandteil von Python3, ist „robust, schnell und plattformunabhänigig lauffähig“ \cite{bib-tkinterDocu}. Es bringt alle benötigten Elemente mit, wie Textfelder, Texteingabefelder und klickbare Buttons, die mit Programmfunktionalität verbunden werden können 
 
 		
-			\subsection{Konzept}
+			\subsection[Konzept - Skanny Morandi]{Konzept}
 			Abbildung \ref{pic-mock-up} zeigt ein Mock-up der geplanten graphischen Benutzeroberfläche. Die einzelnen Elemente und das erwartete Verhalten seien im Folgenden beschrieben: 
 			
-				\begin{figure}[H]
+				\begin{figure}[h]
 					\centering
 					\begin{minipage}[b]{0.9\textwidth}
 						\includegraphics[width=\textwidth]{Bilder/mock-up.png}
@@ -703,7 +703,7 @@
             Durch Klick auf diesen Button soll zunächst überprüft werden, ob das betreffende Restaurant bereits in der Datenbank erfasst wurde. Falls ja soll der Vorgang abgebrochen werden und der User erhält eine entsprechende Fehlermeldung. Falls nein wird die Extraktion und anschließende Persistierung in der Datenbank angestoßen. 
             \end{itemize}
 			
-			\subsection{GUI – Umsetzung}
+			\subsection[GUI - Umsetzung - Skanny Morandi]{GUI – Umsetzung}
 			In Abbildung \ref{pic-GUI} ist die konkret implementierte GUI des im Rahmen dieser Arbeit erstellten Programms zu sehen. Sie wird bei Ausführung des Programms angezeigt. Das Layout des Mock-Ups konnte weitestgehend umgesetzt werden, das Verhalten wurde wie oben beschrieben umgesetzt. Im Folgenden soll nun die Implementierung der Funktionalitäten näher beschrieben werden.
 
 				\begin{figure}[H]
@@ -742,7 +742,7 @@
 					\label{TabErfuellt}
 				\end{figure}		
 	
-		\section{Funktionale Anforderungen}
+		\section[Funktionale Anforderungen - Skanny Morandi]{Funktionale Anforderungen}
 
 		\begin{description}
 			\item[Zu erfassende Daten] alle angeforderten Daten der Restaurants sowie deren Bewertungen werden, wie im Detail in Kapitel \ref{implementierung} anschaulich erklärt, mit der Python Library „Beautiful Soup“ erfasst und zur weiteren Verarbeitung verfügbar gemacht
@@ -755,7 +755,7 @@
 
 		\end{description}
 
-		\section{Nicht-funktionale Anforderungen}
+		\section[Nicht-funktionale Anforderungen - Skanny Morandi]{Nicht-funktionale Anforderungen}
 		In Kapitel \ref{GUI} wurde die Implementierung und Konzeption der graphischen Benutzeroberfläche dokumentiert. Über sie ist es möglich die Funktionalitäten des erstellten Programms zu steuern. Der Anwender der Software kann in das dafür vorgesehene Textfeld die URL des zu extrahierenden Restaurants eingeben. Über den Button „Preview“ wird zunächst die Validierung der URL vorgenommen und anschließend werden in der GUI die drei Grundinformationen Name, Ort und Postleitzahl und Durchschnittsbewertung angezeigt. Bei Klick auf „Start Scraping“ wird zunächst geprüft ob das zu extrahierende Restaurant schon in der Datenbank vorhanden ist und beginnt, falls dies nicht der Fall ist, Restaurantdaten und die seiner Reviews zu extrahieren und in der Datenbank zu persistieren.
 
 		
@@ -764,9 +764,9 @@
 
 	\chapter{Fazit und Ausblick}
 	
-		\section{Unsere Erfahrungen/Probleme (evtl. API)}
+		\section[Unsere Erfahrungen/Probleme (evtl. API) - Anja Wolf]{Unsere Erfahrungen/Probleme (evtl. API)}
 
-		\section{Wie sind wir damit klargekommen}
+		\section[Wie sind wir damit klargekommen - Anja Wolf]{Wie sind wir damit klargekommen}
 
 	
 	
