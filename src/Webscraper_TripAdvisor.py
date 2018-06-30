@@ -7,13 +7,14 @@ import unicodedata
 import validators
 import threading
 import json
-from tkinter import *
+#from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
-import tkinter as ttk
+
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query,where
+from PIL import ImageTk, Image
 
 
 
@@ -231,9 +232,9 @@ class Web_scraping:
             msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
             popup = tk.Tk()
             popup.wm_title("!")
-            label = ttk.Label(popup, text=msg)
+            label = tk.Label(popup, text=msg)
             label.pack(side="top", fill="x", pady=10)
-            B1 = ttk.Button(popup, text="Okay und Beenden", command = self.endProgram)
+            B1 = tk.Button(popup, text="Okay und Beenden", command = self.endProgram)
             B1.pack()
             popup.mainloop()
         # if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
@@ -330,7 +331,7 @@ class Web_scraping:
 
 
 
-        
+
     '''
     @author: Skanny Morandi
    
@@ -338,16 +339,25 @@ class Web_scraping:
     '''
     def start_GUI(self):
 
-        roots = Tk()
-        roots.title('Tripadvisor Scraper')
-        instruction = Label(roots, text='Please provide Restaurant-Url\n')
-        instruction.grid(row=0, column=0, sticky=E)
-        restaurant_label = Label(roots, text='Restaurant-URL ')
-        restaurant_label.grid(row=1, column=0, sticky=W)
-        restaurant_entry = Entry(roots, width=150)
-        restaurant_entry.grid(row=1, column=1)
 
-        def check_url():
+        roots = tk.Tk()
+        roots.title('Tripadvisor Scraper')
+        instruction = tk.Label(roots, text='Please provide Restaurant-Url\n')
+        instruction.grid(row=0, column=0, sticky=tk.E)
+
+        restaurant_label = tk.Label(roots, text='Restaurant-URL ')
+        restaurant_label.grid(row=1, column=0, sticky=tk.W)
+        restaurant_entry = tk.Entry(roots, width=100)
+        restaurant_entry.grid(row=1, column=1, sticky=tk.W)
+        restaurant_name_label = tk.Label(roots, text='Restaurant Name')
+        restaurant_name_label.grid(row=2, column=0, sticky=tk.W)
+        restaurant_city_label = tk.Label(roots, text='City')
+        restaurant_city_label.grid(row=3, column=0, sticky=tk.W)
+        restaurant_rating_label = tk.Label(roots, text='Average Rating')
+        restaurant_rating_label.grid(row=4, column=0, sticky=tk.W)
+
+
+        def preview_restaurant():
             base_restaurant_url_= "https://www.tripadvisor.de/Restaurant_Review"
             url_to_check = restaurant_entry.get()
             if  (not validators.url(url_to_check)) or \
@@ -355,16 +365,35 @@ class Web_scraping:
 
                 messagebox.showwarning("Warning", "This seems not to be valid Tripadvisor restaurant URL")
             else:
-                messagebox.showinfo("Vaildation successful", "Url seems to be valid")
+                source_code = requests.get(url_to_check)
+                source_code.decoding = ('utf-16BE')
+                plain_text = source_code.text
+                soup = BeautifulSoup(plain_text, "html.parser")
 
-        check_url_Button= Button(roots, text='Validate Url', command=check_url)
+                prev_restuarant_name = soup.find('h1', {'class': 'heading_title'}).string
+
+                prev_restaurant_rating = soup.find('div', {'class': 'rs rating'}).div.span['content']
+
+                prev_restaurant_city = soup.find('span', {'class': 'locality'}).string[:-2]
+
+                prev_restaurant_name_label = tk.Label(roots, text=prev_restuarant_name)
+                prev_restaurant_name_label.grid(row=2, column=1, sticky=tk.W)
+                prev_restaurant_city_label = tk.Label(roots, text=prev_restaurant_city)
+                prev_restaurant_city_label.grid(row=3, column=1, sticky=tk.W)
+                prev_restaurant_rating_label = tk.Label(roots, text=prev_restaurant_rating)
+                prev_restaurant_rating_label.grid(row=4, column=1, sticky=tk.W)
+
+                roots.pack_slaves()
+
+        preview_button = tk.Button(roots, text='Preview', command=preview_restaurant)
+        preview_button.grid(columnspan=3, sticky=tk.W)
 
         def go_scrape():
             self.get_single_data(restaurant_entry.get())
 
-        scrape_button = Button(roots, text='Go Scrape', command=go_scrape)
-        check_url_Button.grid(columnspan=3, sticky=W)
-        scrape_button.grid(columnspan=5, sticky=W)
+        scrape_button = tk.Button(roots, text='Start Scraping', command=go_scrape)
+
+        scrape_button.grid(columnspan=5, sticky=tk.W)
         roots.mainloop()
 
 
@@ -377,7 +406,8 @@ if __name__ == "__main__":
     ws = Web_scraping()
     ws.start_GUI()
     #example URL:
-    #url = "https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html"
+    # https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html
+    # https://www.tripadvisor.de/Restaurant_Review-g187309-d2656918-Reviews-Savanna-Munich_Upper_Bavaria_Bavaria.html
 
 
 
