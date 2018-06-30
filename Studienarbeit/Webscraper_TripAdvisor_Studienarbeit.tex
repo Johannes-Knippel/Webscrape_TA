@@ -165,11 +165,11 @@
 		%Gewonnene Daten können so Aufschluss über Verhaltensweisen, Interessen und auch mögliche Kaufanregungen geben.
 		
 
-	\chapter[Grundlagen - Johanna Sickendiek]{Grundlagen}\label{grlagen}
+	\chapter{Grundlagen}\label{grlagen}
 	
 		Das folgende Kapitel geht auf grundlegende Datenstrukturen ein, beleuchtet das Thema Web Scraping, dessen Funktionsweise und Verwendung sowie die Beschreibung des Reiseinformationsportals TripAdvisor. 
 	
-		\section{Datenstrukturen}
+		\section[Datenstrukturen - Johanna Sickendiek]{Datenstrukturen}
 			
 			Sowohl der Kontext von Daten, als auch ihre Eigenschaften führen zur Strukturierung dieser in verschiedene Datenarten. Kontextinformationen machen genauere Angaben zu Prozessen in denen die Daten benötigt werden. Eigenschaften hingegen unterscheiden Daten nach Format, Inhalt, Stabilität, Verarbeitung oder Struktur.
 			\\
@@ -184,7 +184,7 @@
 			Mithilfe von Web Scraping werden unstrukturierte Daten im Web zu Daten mit strukturgebenden Metadaten transformiert. Was genau Web Scraping bedeutet und wie es funktioniert, wird im nächsten Abschnitt näher erläutert.
 			
 			
-		\section{Web Scraping}
+		\section[Web Scraping - Johanna Sickendiek]{Web Scraping}
 		
 			Mit Web Scraping – auch “Web Harvesting”, “Web data mining” oder “Web data extraction“ genannt – wird das automatisierte herunterladen, analysieren und organisieren von Daten mehrerer Webseiten bezeichnet. Der Vorteil ist, dass aus einer Menge von unstrukturierten Informationen nur die benötigten Daten einer Webseite gezielt extrahiert und strukturiert abgespeichert werden. \cite{bib-webscraping}
 			\\			
@@ -193,7 +193,7 @@
 			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur bestimmte Informaionen einer begrenzten Auswahl von Webseiten sucht. Diese werden daraufhin in ein strukturiertes Format gebracht. \cite{bib-articlewebscraping}
 			
 			
-			\subsection{Funktionsweise}
+			\subsection[Funktionsweise - Johanna Sickendiek]{Funktionsweise}
 			
 				Mithilfe von HTTP-Anfragen an eine ausgewählte URL wird der Inhalt einer Webseite – meist in Form von HTML – eingelesen. Dieser HTML-Code kann mithilfe von diversen Frameworks geparst werden, um die benötigten Daten zu erhalten. Die gängigste Technik, um diese Daten zu analysieren, ist mithilfe von HTML-Parsern. Sie konvertieren den HTML-Code in eine baumartige Struktur.  \cite{bib-scrapehero}
 				\\
@@ -223,14 +223,14 @@
 				\end{figure}
 			
 			
-			\subsection{Verwendung}
+			\subsection[Verwendung - Johanna Sickendiek]{Verwendung}
 			
 				Aktuelle Softwares und Tools sind in der Lage, komplette Webseiten in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-scrapehero}
 				\\				
 				In der folgenden Studienarbeit wurden die Informationen der Seite „TripAdvisor.de“ analysiert. Dieses Unternehmen wird im folgenden Kapitel näher betrachtet.
 			
 				
-		\section{Tripadvisor}
+		\section[TripAdvisor - Johanna Sickendiek]{Tripadvisor}
 	
 			TripAdvisor ist eines der bekanntesten Bewertungsportale in der Touristik- und Hotelbranche.
 			Auf dieser Webseite können User über 7,5 Millionen Restaurants, Unterkünfte, Airlines und Erlebnissen bewerten und vergleichen. Diese Bewertungen können sie zusätzlich mit Bildern veranschaulichen. Somit wird den Reisenden die Planung ihrer Reise vereinfacht, da sie mithilfe von echten Bewertungen einen authentischen Eindruck erhalten. 
@@ -249,7 +249,7 @@
 			Jedoch ist diesen Bewertungsportalen nicht immer Glauben zu schenken. Mittlerweile gibt es Dienstleister, die für gute Bewertungen bezahlt werden. Denn TripAdvisor überprüft nur stichpunktartig, ob der Verfasser der Bewertung sich auch wirklich dort aufgehalten hat. \cite{bib-taSued}
 	
 	
-	\chapter[Anforderungen - Skanny Morandi]{Anforderungen}	
+	\chapter{Anforderungen}	
 	
 	    Der Anwender der Software soll in der Lage sein, sich ein auf dem Reiseportal „Tripadvisor“ (tripadvisor.com) verzeichnetes Restaurant auszusuchen und aus dieser Repräsentanz des Restaurants hinterlegte Informationen, insbesondere über Bewertungen von Usern des Portals, zu extrahieren. Diese Informationen sollen strukturiert auf einer beliebigen Datenbank persistiert und vom Anwender einsehbar sein.
 	    \\
@@ -266,7 +266,7 @@
 				\label{TabAnforderungen}
 			\end{figure}
 	
-		\section{Funktionale Anforderungen}
+		\section[Funktionale Anforderungen - Skanny Morandi]{Funktionale Anforderungen}
 
 		\begin{description}
 		\item[Zu erfassende Daten] Die zu extrahierenden Daten können in 2 Kategorien eingeteilt werden. Die 1. Kategorie besteht in Informationen zum konkreten Restaurant. So wie Name, Adresse, durchschnittliche Bewertungspunktzahl und weitere, wie aufgeführt in Tabelle \ref{TabAnforderungen}.  \\ 
@@ -287,7 +287,7 @@
         \item[Eingabe einer Restaurant-URL] Der Anwender soll in der Lage sein dem Programm einen Parameter zu übergeben, der das Restaurant, dessen Daten extrahiert werden sollen, identifiziert. Im vorliegenden Kontext soll dies über die Eingabe der Tripadvisor-URL des betreffenden Restaurants erfolgen.
         \end{description}
 
-	\section{Nicht funktionale Anforderungen}
+	\section[Nicht funktionale Anforderungen - Skanny Morandi]{Nicht funktionale Anforderungen}
 	
 		Usability – Benutzerfreundlichkeit\\
         In Hinsicht darauf, dass die Anwender der Software nicht ausschließlich IT-affine Personen sein werden, soll die Ausführung der Software über eine einfach zu verstehende Graphische Benutzeroberfläche (GUI) erfolgen. 
@@ -363,11 +363,11 @@
 			Im folgenden wird die Implementierung des Webcrawlers anhand von konkreten Code-Beispielen im Detail beschrieben. Besonders wird dabei auf die einfache und intuitive Verwendung der Bibliothek 'BeatifulSoup' eingegangen.
 	
 	
-			\subsection{Initialisierung BeautifulSoup}
+			\subsection[Initialisierung BeautifulSoup - Anja Wolf]{Initialisierung BeautifulSoup}
 			
 				Zunächst wird die URL des gewünschte Restaurants oder Hotels, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Webcrawlers beginnen. 
 	
-			\subsection{Extraktion Allgemeiner Daten}			
+			\subsection[Extraktion Allgemeiner Daten - Anja Wolf]{Extraktion Allgemeiner Daten}			
 				Zunächst sollen die in Kapitel 3 definierten allgemeinen Daten eines Restaurants bzw. Hotels extrahiert werden. Zu diesen gehören Name, Kontaktdetails, Küche, Preis-Level, Popularität, Anzahl an Bewertungen sowie die durchschnittlichen Bewertung. Dies soll in der neu definierten Methode \textit{get\_single\_data()}  mit den bereits beschriebene Suchfunktionen (Kapitel 4.2) umgesetzt werden.
 				\\ 
 				Die Unkompliziertheit von BeautifulSoup wird auch hier wieder deutlich. Mit \textit{find()} und \textit{find\_all()} kann nach jedem gewünschten Tag im Source Code gesucht und dessen Inhalt ausgegeben werden. So kann nach Strings, Blockelementen (z.B. <div>-Tag, Tabellen, Listen oder Überschriften), Inline-Elementen (z.B. <span>-Tag, Links oder Bilder) und weiteren Tags sowie deren Klassennamen gesucht werden \cite{bib-bs4}.
@@ -390,7 +390,7 @@
 				BeautifulSoup parsed so den gesamten HTML-Code nach den definierten Tag‘s und gibt je nach Methode das erste bzw. alle gefundenen Ergebnisse der Suche aus. Beispielsweise wird beim Namen nur nach einem Ergebnis gesucht, da hier mehrere Ergebnisse schlichtweg nicht sinnvoll wären. Bei der Art der Küche hingegen wird die Methode \textit{find\_all()} genutzt, da hier auch mehrere Ergebnissen gefunden werden können (vgl. Programmcode 4.2). Alle Ergebnisse werden wiederum in neu definierten Variablen als einfache Strings bzw. bei mehreren Ergebnissen in Listen gespeichert.
 	
 	
-			\subsection{Bewertungslink aller Bewertungen auslesen}
+			\subsection[Bewertungslink aller Bewertungen auslesen - Anja Wolf]{Bewertungslink aller Bewertungen auslesen}
 			
 				Neben allgemeinen Daten zu Restaurant bzw. Hotel sollen außerdem noch Informationen zu allen Bewertungen inkl. angehängter Bilder und Daten zu deren Verfassern extrahiert und gespeichert werden. Dafür wird zunächst die URL jeder Bewertung generiert werden, um die Informationen von hier auszulesen. Da sich die Bewertungen meist nicht nur über eine, sondern eine Vielzahl an Seiten erstrecken wurde dies mit einer Verschachtelten for-Schleife gelöst.
 				\newline
@@ -449,7 +449,7 @@
 	
 	
 	
-			\subsection{Extraktion Bewertungensdaten}
+			\subsection[Extraktion Bewertungensdaten - Anja Wolf]{Extraktion Bewertungensdaten}
 			
 				Die Daten der einzelnen Bewertungen werden mithilfe der oben genannten Methode 
 				\textit{get\_single\_review\_data()} extrahiert. Dazu gehören wie in Kapitel 3 beschrieben: der Verfasser, seine Anzahl an Bewertungen und Likes, der Titel und der Text sowie die URL der Bilder einer Bewertung, falls dieser welche hochgeladen hat. 
@@ -505,7 +505,7 @@
 			\\
 			Da die gewonnen Rohdaten sich noch meist in einem encodierten Zustand befinden, müssen diese zunächst einen Bereinigungsprozess durchlaufen bevor sie leserlich in der Datenbank abgelegt werden können. Nicht nur das einfache Lesen der Daten sondern auch die Suche nach bestimmten Rechercheergebnissen soll möglichst intuitiv für den Nutzer ablaufen. Die Datenbankstruktur wurde daher Zusammen mit dem Auftraggeber abgestimmt und daraufhin die Architektur implementiert.
 		
-			\subsection{Definition der Datenbankanforderungen}
+			\subsection[Definition der Datenbankanforderungen - Johannes Knippel]{Definition der Datenbankanforderungen}
 			
 				Die vom Abnehmer vordefinierten Anforderungen an die Datenbank sind wie folgt:
 				%Stichpunkte DB-Anforderungen															
