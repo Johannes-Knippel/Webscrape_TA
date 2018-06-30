@@ -410,6 +410,10 @@
 				\\
 				Mit dem ersten Aufruf von \textit{find\_all()} in dieser Mehtode wird zunächst nach dem \textit{<div>}-Tag mit class-Namen \textit{‘review container‘} gesucht (vgl. Programmcode 4.4). 
 				\\
+				\\
+				Bei einem solchen container handelt es sich um einen Block im HTML-Code, der alle Informationen einer einzigen Bewertung umfasst und diese sozusagen „einrahmt“. Für jede einzelne Bewertung wird dieser daher wiederholt (vgl. Abbildung \ref{pic-reviewcontainer}). Da die Methode \textit{find\_all()} genutzt wurde, wird deshalb in der Variable \textit{review\_containers} nun eine Liste mit allen ausgelesenen containern gespeichert.
+				\\
+				
 				\begin{lstlisting} [caption={Methode loop\_through\_review\_pages}\label{forcontainers}, captionpos=b, style=Arduino]
 				def loop_through_review_pages(self, loop_url):
 				source_code = requests.get(loop_url)
@@ -429,9 +433,9 @@
 				self.get_single_review_data(href)
 				\end{lstlisting}
 				
-				Bei einem solchen container handelt es sich um einen Block im HTML-Code, der alle Informationen einer einzigen Bewertung umfasst und diese sozusagen „einrahmt“. Für jede einzelne Bewertung wird dieser daher wiederholt (vgl. Abbildung \ref{pic-reviewcontainer}). Da die Methode \textit{find\_all()} genutzt wurde, wird deshalb in der Variable \textit{review\_containers} nun eine Liste mit allen ausgelesenen containern gespeichert.
 				
-				\begin{figure}[H]
+				
+				\begin{figure}[b]
 					\centering
 					\begin{minipage}[b]{0.9\textwidth}
 						\includegraphics[width=\textwidth]{Bilder/reviewcontainer.png}
@@ -651,30 +655,32 @@
 				
 				Meist sind die Daten auf den Webseiten bereits kodiert im UTF-8 Muster hinterlegt. UTF-8 (Abk. für 8-Bit UCS Transformation Format, wobei UCS wiederum Universal Character Set abkürzt) ist die am weitesten verbreitete Kodierung für Unicode-Zeichen. Es ist in den ersten 128 Zeichen (Indizes 0–127) deckungsgleich mit ASCII und eignet sich, mit in der Regel nur einem Byte Speicherbedarf, für Zeichen vieler westlicher Sprachen besonders für die Kodierung englischsprachiger Texte. \cite{bib-utf8} Die bei TripAdvisor angewendete Kodierung ist in dem Fall auch UTF-8 und muss neu decodiert werden, um die deutschen Umlaute korrekt anzeigen zu können.
 				\\
-				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden. Zunächst wird eine Datenbankabfrage gestartet, bei der überprüft wird, ob der neu-gefundene Eintrag bereits in der Datenbank existiert. Ist dies der Fall wird ein Pop-Up-Fenster geöffnet, das beispielsweise bei der Restaurantabfrage einen Beenden-Button enthält, sodass nicht alle Daten zum Restaurant erneut eingefügt werden. Wird ein doppelter Eintrag hingegen bei einer Bewertung gefunden, kann das Pop-Up-Fenster einfach weg geklickt werden und das Programm läuft weiter. (vgl. Programmcode 4.7, Zeilen 3-12)
-				\\
-				Ist kein Eintrag vorhanden, werden die Daten zunächst in einem Array gespeichert und dann in der Datenbank abgelegt. Zuvor findet noch eine Decodierung der Rohdaten statt (vgl. Programmcode 4.7, Zeile 15).
-				\\			
 				\begin{lstlisting} [caption={Rohdaten decodieren und in Datenbank integrieren}\label{integration}, captionpos=b, style=Arduino]
 				#HANDLE RESTAURANTS
 				#check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
 				if tableRestaurants.contains((where('RESTAURANTNAME') == self.name.string) & (where('PLZ_ORT') == self.locality.string)): 
-					#pop up a message box
-					msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
-					popup = tk.Tk()
-					popup.wm_title("!")
-					label = ttk.Label(popup, text=msg)
-					label.pack(side="top", fill="x", pady=10)
-					B1 = ttk.Button(popup, text="Okay und Beenden", command = self.endProgram)
-					B1.pack()
-					popup.mainloop()
+				#pop up a message box
+				msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
+				popup = tk.Tk()
+				popup.wm_title("!")
+				label = ttk.Label(popup, text=msg)
+				label.pack(side="top", fill="x", pady=10)
+				B1 = ttk.Button(popup, text="Okay und Beenden", command = self.endProgram)
+				B1.pack()
+				popup.mainloop()
 				# if there is no such entry, parse the data into the corresponding table of the database and define the data to insert into database including an auto increment ID for each Table       
 				else:
-					self.popularity2 = unicodedata.normalize('NFD', self.pupularity.text)
-					print("Preis_Level: " + self.price_level)
-					dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name.string, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity2, 'PREIS_LEVEL':self.price_level, 'KUECHE':self.cuisine.text, 'STRASSE':self.address.string, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
-					tableRestaurants.insert(dataRestaurants)
+				self.popularity2 = unicodedata.normalize('NFD', self.pupularity.text)
+				print("Preis_Level: " + self.price_level)
+				dataRestaurants = {'R_ID':self.idRestaurant, 'RESTAURANTNAME':self.name.string, 'PUNKTESKALA':self.overallPoints.div.span['content'], 'ANZAHL_BEWERTUNGEN':self.rating_amount.string, 'POPULARITAET':self.popularity2, 'PREIS_LEVEL':self.price_level, 'KUECHE':self.cuisine.text, 'STRASSE':self.address.string, 'PLZ_ORT':self.locality.string, 'TELEFONNUMMER':self.phonenumber.text}
+				tableRestaurants.insert(dataRestaurants)
 				\end{lstlisting}
+				
+				Nachdem die Rohdaten in Variablen abgelegt wurden, können diese in einer neuen Methode für den Reinigungsprozess weiterverwendet werden. Zunächst wird eine Datenbankabfrage gestartet, bei der überprüft wird, ob der neu-gefundene Eintrag bereits in der Datenbank existiert. Ist dies der Fall wird ein Pop-Up-Fenster geöffnet, das beispielsweise bei der Restaurantabfrage einen Beenden-Button enthält, sodass nicht alle Daten zum Restaurant erneut eingefügt werden. Wird ein doppelter Eintrag hingegen bei einer Bewertung gefunden, kann das Pop-Up-Fenster einfach weg geklickt werden und das Programm läuft weiter. (vgl. Programmcode 4.7, Zeilen 3-12)
+				\\
+				Ist kein Eintrag vorhanden, werden die Daten zunächst in einem Array gespeichert und dann in der Datenbank abgelegt. Zuvor findet noch eine Decodierung der Rohdaten statt (vgl. Programmcode 4.7, Zeile 15).
+		
+			
 				
 				
 		\section[Graphische Benutzeroberfläche - GUI - Skanny Morandi]{Graphische Benutzeroberfläche - GUI}\label{GUI}
