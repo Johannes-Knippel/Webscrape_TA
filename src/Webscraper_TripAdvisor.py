@@ -340,7 +340,6 @@ class Web_scraping:
     def start_GUI(self):
 
 
-
         roots = tk.Tk()
         roots.title('Tripadvisor Scraper')
         instruction = tk.Label(roots, text='Please provide Restaurant-Url\n')
@@ -356,22 +355,6 @@ class Web_scraping:
         restaurant_city_label.grid(row=3, column=0, sticky=tk.W)
         restaurant_rating_label = tk.Label(roots, text='Average Rating')
         restaurant_rating_label.grid(row=4, column=0, sticky=tk.W)
-
-
-
-
-
-
-
-        #256 * 155
-        #canvas = tk.Canvas(roots, width=1020, height=610, bg='black')
-        #canvas.grid(row=5, column=1)
-
-        #preview_im = Image.open("mimu.jpg")
-        #preview_image = ImageTk.PhotoImage(preview_im)
-        #canvas.create_image(0,0, anchor=tk.NW, image=preview_image)
-        #canvas.update()
-
 
 
         def preview_restaurant():
@@ -392,12 +375,6 @@ class Web_scraping:
                 prev_restaurant_rating = soup.find('div', {'class': 'rs rating'}).div.span['content']
 
                 prev_restaurant_city = soup.find('span', {'class': 'locality'}).string[:-2]
-                print(prev_restaurant_city)
-                print(prev_restaurant_rating)
-
-
-
-
 
                 prev_restaurant_name_label = tk.Label(roots, text=prev_restuarant_name)
                 prev_restaurant_name_label.grid(row=2, column=1, sticky=tk.W)
@@ -408,9 +385,9 @@ class Web_scraping:
 
                 roots.pack_slaves()
 
-
         preview_button = tk.Button(roots, text='Preview', command=preview_restaurant)
         preview_button.grid(columnspan=3, sticky=tk.W)
+
         def go_scrape():
             self.get_single_data(restaurant_entry.get())
 
@@ -431,5 +408,6 @@ if __name__ == "__main__":
     #example URL:
     # https://www.tripadvisor.de/Restaurant_Review-g946452-d8757235-Reviews-The_Forge_Tea_Room-Hutton_le_Hole_North_York_Moors_National_Park_North_Yorkshire_.html
     # https://www.tripadvisor.de/Restaurant_Review-g187309-d2656918-Reviews-Savanna-Munich_Upper_Bavaria_Bavaria.html
+
 
 
