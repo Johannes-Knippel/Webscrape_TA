@@ -169,7 +169,7 @@
 	
 		Das folgende Kapitel geht auf grundlegende Datenstrukturen ein, beleuchtet das Thema Web Scraping, dessen Funktionsweise und Verwendung sowie die Beschreibung des Reiseinformationsportals TripAdvisor. 
 	
-		\section[Datenstrukturen - Johanna Sickendiek]{Datenstrukturen}
+		\section[Datenstrukturen - Anja Wolf]{Datenstrukturen}
 			
 			Sowohl der Kontext von Daten, als auch ihre Eigenschaften führen zur Strukturierung dieser in verschiedene Datenarten. Kontextinformationen machen genauere Angaben zu Prozessen in denen die Daten benötigt werden. Eigenschaften hingegen unterscheiden Daten nach Format, Inhalt, Stabilität, Verarbeitung oder Struktur.
 			\\
@@ -190,7 +190,7 @@
 			\\			
 			Der Begriff „Scraping“ (engl.: „abkratzen, schaben“) gibt es circa so lange wie das Internet selbst. Bevor Web Scraping populär wurde war das Verfahren „Screen Scraping“ bereits allgemein bekannt. Damit wird das Auslesen von Daten aus Darstellungen am Computer bezeichnet. Genau wie heute war man damals schon daran interessiert, große Textmengen zu extrahieren, um daraus nur die benötigten Daten für den späteren Gebrauch zu speichern. Da dieses Verfahren heutzutage meist nur noch für Webseiten benötigt wird, wurde der Begriff „Web Scraping“ etabliert. \cite{bib-webscraping}
 			\\
-			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur bestimmte Informaionen einer begrenzten Auswahl von Webseiten sucht. Diese werden daraufhin in ein strukturiertes Format gebracht. \cite{bib-articlewebscraping}
+			Oft wird auch als Synonym der Begriff „Web Crawling“ verwendet. Beide Verfahren untersuchen Daten aus dem Internet, jedoch ist Web Crawling ein Prozess, der eine große Anzahl von Webseiten nach bestimmten Informationen durchsucht. Ein Beispiel dafür sind Suchmaschinen, wie beispielsweise Google, die mithilfe von Crawlern präzise Suchergebnisse anzeigen können. Im Gegenzug dazu ist Web Scraper ein Prozess, der nur bestimmte Informationen einer begrenzten Auswahl von Webseiten sucht. Diese werden daraufhin in ein strukturiertes Format gebracht. \cite{bib-articlewebscraping}
 			
 			
 			\subsection[Funktionsweise - Johanna Sickendiek]{Funktionsweise}
@@ -222,7 +222,7 @@
 					\label{pic-webscraper2}
 				\end{figure}
 			
-			
+			\newpage
 			\subsection[Verwendung - Johanna Sickendiek]{Verwendung}
 			
 				Aktuelle Softwares und Tools sind in der Lage, komplette Webseiten in strukturierte Daten umzuwandeln, um diese weiter zu verarbeiten. Dies kann in vielerlei Hinsicht nützlich sein. Denn alle Vorgänge, die manuell im Internet erfolgen, können somit automatisiert werden. Beispielsweise können Tickets für ein Konzert gekauft werden, sobald diese verfügbar sind, oder einen Onlineshop regelmäßig überprüfen, ob der Preis für einen bestimmten Artikel gesunken ist. \cite{bib-scrapehero}
@@ -238,7 +238,7 @@
 			
 			\begin{figure}[H]
 				\centering
-				\begin{minipage}[b]{0.4\textwidth}
+				\begin{minipage}[b]{0.3\textwidth}
 					\includegraphics[width=\textwidth]{Bilder/LogoTripadvisor.png}
 				\end{minipage}
 				\centering
@@ -252,7 +252,6 @@
 	\chapter{Anforderungen}	
 	
 	    Der Anwender der Software soll in der Lage sein, sich ein auf dem Reiseportal „Tripadvisor“ (tripadvisor.com) verzeichnetes Restaurant auszusuchen und aus dieser Repräsentanz des Restaurants hinterlegte Informationen, insbesondere über Bewertungen von Usern des Portals, zu extrahieren. Diese Informationen sollen strukturiert auf einer beliebigen Datenbank persistiert und vom Anwender einsehbar sein.
-	    \\
 	    \\
        Im Folgenden werden die Anforderungen eingeteilt in funktionale und nicht–funktionale Anforderungen und werden näher erläutert.
 
@@ -276,14 +275,14 @@
         \item[Datenbank Anforderungen]
         Nach der Extraktion von tripadvisor sollen die erfassten Daten persistiert werden um zu einem späteren Zeitpunkt für weitere Zwecke ohne großen Aufwand wieder verfügbar zu sein. Dies soll durch Eintragung in einer Datenbank realisiert werden. Weitere Anforderungen an diese Datenbank bestehen in: 
         \begin{itemize}
-        \item Integritätssicherung – die Gewährleistung der Korrektheit der Datensätze auf der Datenbank durch entsprechende Prüfmaßnahmen bei Manipulation bzw. Eintragung von Datensätzen	    \\
-        \item Redundanzarmut – Minimierung von doppelt geführten Datenpunkten oder -sätzen, sofern die Doppelung keine Mehrinformation beinhaltet \\
-        \item Datenunabhängigkeit – das bearbeiten oder verwalten der in der Datenbank geführten Daten soll möglich sein ohne weitere Serverinfrastruktur o.ä. \\
+        \item Integritätssicherung – die Gewährleistung der Korrektheit der Datensätze auf der Datenbank durch entsprechende Prüfmaßnahmen bei Manipulation bzw. Eintragung von Datensätzen	   
+        \item Redundanzarmut – Minimierung von doppelt geführten Datenpunkten oder -sätzen, sofern die Doppelung keine Mehrinformation beinhaltet 
+        \item Datenunabhängigkeit – das bearbeiten oder verwalten der in der Datenbank geführten Daten soll möglich sein ohne weitere Serverinfrastruktur o.ä.\\
         \item Zentrale Kontrolle – ein Administrator soll in der Lage sein, die gesamte Datenbank zu verwalten
-        \\
+      
         \end{itemize}
         \item[Ausführbarkeit des Anwenders] Der Empfänger bzw. Anwender der Software soll in der Lage sein die Programmfunktionalität zu starten und zu Beenden ohne weitere Abhängigkeiten. Als Voraussetzung wird hier angenommen, dass der Anwender über einen für den Stand der Zeit durchschnittlichen Rechner verfügt, auf dem es möglich ist ein Programm in der Kommandozeile des jeweiligen Betriebssystems auszuführen.
-        \\
+       
         \item[Eingabe einer Restaurant-URL] Der Anwender soll in der Lage sein dem Programm einen Parameter zu übergeben, der das Restaurant, dessen Daten extrahiert werden sollen, identifiziert. Im vorliegenden Kontext soll dies über die Eingabe der Tripadvisor-URL des betreffenden Restaurants erfolgen.
         \end{description}
 
@@ -302,9 +301,9 @@
 	
 	\chapter{Implementierung}\label{implementierung}
 		
-		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung WebCrawler' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Kapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
+		Im folgenden Kapitel wird die voll umfängliche Implementierung des zu entwickelnden Web Scrapers beschrieben. Dabei wird zunächst auf die Konfiguration der Arbeitsumgebung eingegangen und die Hauptbibliothek von BeautifulSoup näher erläutert. Das Unterkapitel 'Implementierung Web Scraper' verdeutlicht anhand von Codebeispielen die Integration von Bibliotheken und die Extraktion der Rohdaten. Darauffolgend wird im Kapitel 'Datenhaltung' die Inklusion der Datenbank skizziert und im Abschluss die zum Programm entworfene Benutzeroberfläche erläutert.
 	
-		\section[Konfiguration - Anja Wolf]{Konfiguration}
+		\section[Konfiguration - Johanna Sickendiek]{Konfiguration}
 		
 			Zunächst wurde als Entwicklungsumgebung die aktuellste Version von Eclipse (Version 4.7.*) sowie als Programmiersprache die neueste Version von Python und PIP zur Verwaltung von Paketen installiert. Es wurde bewusst nicht die Version 2.7 verwendet, da ab der Version 3.0 Pakete, wie JSON und urllib, schon vorinstalliert sind. Es wurde Python gewählt, da dies die bekannteste Sprache für Web Scraper ist und Frameworks, wie Scrapy, Beautifulsoup, etc. in Python geschrieben sind. 
 			\newline
@@ -355,17 +354,17 @@
 				\label{pic-SoupMethoden}
 			\end{figure}
 			
-			Im folgenden Kapitel werden diese genutzt um den Webcrawler für TripAdvisor erfolgreich zu implementieren.
+			Im folgenden Kapitel werden diese genutzt um den Web Scraper für TripAdvisor erfolgreich zu implementieren.
 	
 	
-		\section[Implementierung WebCrawler - Anja Wolf]{Implementierung WebCrawler}
+		\section[Implementierung Web Scraper - Anja Wolf]{Implementierung Web Scraper}
 			
-			Im folgenden wird die Implementierung des Webcrawlers anhand von konkreten Code-Beispielen im Detail beschrieben. Besonders wird dabei auf die einfache und intuitive Verwendung der Bibliothek 'BeatifulSoup' eingegangen.
+			Im folgenden wird die Implementierung des Web Scrapers anhand von konkreten Code-Beispielen im Detail beschrieben. Besonders wird dabei auf die einfache und intuitive Verwendung der Bibliothek 'BeatifulSoup' eingegangen.
 	
 	
 			\subsection[Initialisierung BeautifulSoup - Anja Wolf]{Initialisierung BeautifulSoup}
 			
-				Zunächst wird die URL des gewünschte Restaurants oder Hotels, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Webcrawlers beginnen. 
+				Zunächst wird die URL des gewünschte Restaurants oder Hotels, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Web Scrapers beginnen. 
 	
 			\subsection[Extraktion Allgemeiner Daten - Anja Wolf]{Extraktion Allgemeiner Daten}			
 				Zunächst sollen die in Kapitel 3 definierten allgemeinen Daten eines Restaurants bzw. Hotels extrahiert werden. Zu diesen gehören Name, Kontaktdetails, Küche, Preis-Level, Popularität, Anzahl an Bewertungen sowie die durchschnittlichen Bewertung. Dies soll in der neu definierten Methode \textit{get\_single\_data()}  mit den bereits beschriebene Suchfunktionen (Kapitel 4.2) umgesetzt werden.
@@ -453,7 +452,7 @@
 	
 	
 	
-			\subsection[Extraktion Bewertungensdaten - Anja Wolf]{Extraktion Bewertungensdaten}
+			\subsection[Extraktion Bewertungensdaten - Johanna Sickendiek]{Extraktion Bewertungensdaten}
 			
 				Die Daten der einzelnen Bewertungen werden mithilfe der oben genannten Methode 
 				\textit{get\_single\_review\_data()} extrahiert. Dazu gehören wie in Kapitel 3 beschrieben: der Verfasser, seine Anzahl an Bewertungen und Likes, der Titel und der Text sowie die URL der Bilder einer Bewertung, falls dieser welche hochgeladen hat. 
@@ -718,7 +717,7 @@
 						\includegraphics[width=\textwidth]{Bilder/GUI.png}
 					\end{minipage}
 					\centering
-					\caption[Benutzeroberfläche des Tripadvisor Crawlers unter MacOS]{Benutzeroberfläche des Tripadvisor Crawlers unter MacOS}
+					\caption[Benutzeroberfläche des Tripadvisor Scrapers unter MacOS]{Benutzeroberfläche des Tripadvisor Scrapers unter MacOS}
 					\label{pic-GUI}
 				\end{figure}
 
@@ -843,20 +842,21 @@
 		\bibitem{bib-articlewebscraping} Jan Seipel\\ Webscraping als Methode der Informationsbeschaffung, \newline \url{http://www.vfm-online.de/weblog/wp-content/uploads/2014/01/info7-2016-2\_S15-17.pdf}, aufgerufen am \today
 		
 		%9
-		\bibitem{bib-scrapehero} ScrapeHero\\What is web scraping – Part 1 – Beginner’s guide,\newline \url{https://www.scrapehero.com/a-beginners-guide-to-web-scraping-part-1-the-basics/}, aufgerufen am \today
+		\bibitem{bib-scrapehero} ScrapeHero\\What is web scraping – Part 1 – Beginner’s guide, \url{https://www.scrapehero.com/a-beginners-guide-to-web-scraping-part-1-the-basics/}, aufgerufen am 10. Juni 2018
 		
 		%10
-		\bibitem{bib-anzSterne} Screenshot unbereinigte Daten,\newline \url{https://www.tripadvisor.de/Restaurant\_Review-g187309-d742684-
-		Reviews-Hofbraeuhaus-Munich\_Upper\_Bavaria\_Bavaria.html}, aufgerufen am \today
+		\bibitem{bib-anzSterne} TripAdvisor\\ 
+		Hofbräuhaus \url{https://www.tripadvisor.de/Restaurant_Review-g187309-d742684-
+		Reviews-Hofbraeuhaus-Munich_Upper_Bavaria_Bavaria.html}, aufgerufen am 9. Juni 2018
 		
 		%11
-		\bibitem{bib-statista} Umsatz von Tripadvisor weltweit,\newline \url{https://de.statista.com/statistik/daten/studie/543148/umfrage/umsatz-von-tripadvisor-weltweit-nach-quartalen/}, aufgerufen am \today
+		\bibitem{bib-statista} Umsatz von Tripadvisor weltweit,\newline \url{https://de.statista.com/statistik/daten/studie/543148/umfrage/umsatz-von-tripadvisor-weltweit-nach-quartalen/}, aufgerufen am 2. Juni 2018
 		
-		\bibitem{bib-taMedia} Tripadvisor Mediacenter,\newline \url{https://tripadvisor.mediaroom.com/DE-about-us}, aufgerufen am \today
+		\bibitem{bib-taMedia} Tripadvisor Mediacenter,\newline \url{https://tripadvisor.mediaroom.com/DE-about-us}, aufgerufen am 2. Juni 2018
 		
-		\bibitem{bib-tripadvisorLogo} Our Logos: TripAdvisor Media Group Logos,\newline \url{https://tripadvisor.mediaroom.com/our-brand}, aufgerufen am \today
+		\bibitem{bib-tripadvisorLogo} Our Logos: TripAdvisor Media Group Logos,\newline \url{https://tripadvisor.mediaroom.com/our-brand}, aufgerufen am 2. Juni 2018
 		
-		\bibitem{bib-taSued} Süddeutsche Zeitung,\newline Bei Kundenbewertungen wird gelogen, was das Zeug hält \newline \url{https://bit.ly/2w1oZqQ}, aufgerufen am \today
+		\bibitem{bib-taSued} Süddeutsche Zeitung,\newline Bei Kundenbewertungen wird gelogen, was das Zeug hält \newline \url{https://bit.ly/2w1oZqQ}, aufgerufen am 10. Juni 2018
 		
 		\bibitem{bib-webpython} Web scraping with Python: collecting data from the modern web\\ Mitchel, R. Hrsg: \O'Reilly Media, Inc.
 		
