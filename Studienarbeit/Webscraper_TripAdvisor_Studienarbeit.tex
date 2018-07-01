@@ -316,11 +316,11 @@
 	
 		\section[BeautifulSoup - Anja Wolf]{BeautifulSoup}
 		
-			Für die Programmierung des Web Scrapers, um Daten von auf TripAdvisor gelisteten Hotels und Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
+			Für die Programmierung des Web Scrapers, um Daten von auf TripAdvisor gelisteten Restaurants zu scrapen wurde die Python Library ‘BeautifulSoup‘ (\textit{bs4}) verwendet.
 			\newline
 			Hierbei handelt es sich um eine Library für XML und HTML parsing, die zunächst als zusätzliches Paket installiert werden muss. Beim Parsen werden XML oder HTML Dateien analysiert und auf ihre einzelnen Bestandteile geprüft. So können jegliche Informationen aus diesen Dateien gesucht bzw. extrahiert werden, vorausgesetzt es sind entsprechende Tags bzw. Attributnamen vorhanden. Ohne diese kann nicht gesucht werden \cite{bib-webpython}. Diese Einfachheit und gleichzeitig große Effizienz sind der westenliche Vorteil, warum das Projekt-Team sich für die Library BeautifulSoup und deren Methoden entschieden hat.
 			\newline
-			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Hotels bzw. Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Website an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
+			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Website an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
 			\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{initbs4}, captionpos=b, style=Arduino]
 			def get_single_data(self,url):
 			source_code = requests.get(url)
@@ -364,16 +364,16 @@
 	
 			\subsection[Initialisierung BeautifulSoup - Anja Wolf]{Initialisierung BeautifulSoup}
 			
-				Zunächst wird die URL des gewünschte Restaurants oder Hotels, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Web Scrapers beginnen. 
+				Zunächst wird die URL des gewünschte Restaurants, für welches Daten extrahiert werden sollen, an die Methode \textit{get\_single\_data()} übergeben. Diese requested zu Beginn die übergebene URL, speichert ihren Source Code und initialisiert ein BeautifulSoup Object (vgl. Kapitel 4.2). Jetzt kann die eigentliche Implementierung des Web Scrapers beginnen. 
 	
 			\subsection[Extraktion Allgemeiner Daten - Anja Wolf]{Extraktion Allgemeiner Daten}			
-				Zunächst sollen die in Kapitel 3 definierten allgemeinen Daten eines Restaurants bzw. Hotels extrahiert werden. Zu diesen gehören Name, Kontaktdetails, Küche, Preis-Level, Popularität, Anzahl an Bewertungen sowie die durchschnittlichen Bewertung. Dies soll in der neu definierten Methode \textit{get\_single\_data()}  mit den bereits beschriebene Suchfunktionen (Kapitel 4.2) umgesetzt werden.
+				Zunächst sollen die in Kapitel 3 definierten allgemeinen Daten eines Restaurants extrahiert werden. Zu diesen gehören Name, Kontaktdetails, Küche, Preis-Level, Popularität, Anzahl an Bewertungen sowie die durchschnittlichen Bewertung. Dies soll in der neu definierten Methode \textit{get\_single\_data()}  mit den bereits beschriebene Suchfunktionen (Kapitel 4.2) umgesetzt werden.
 				\\ 
 				Die Unkompliziertheit von BeautifulSoup wird auch hier wieder deutlich. Mit \textit{find()} und \textit{find\_all()} kann nach jedem gewünschten Tag im Source Code gesucht und dessen Inhalt ausgegeben werden. So kann nach Strings, Blockelementen (z.B. <div>-Tag, Tabellen, Listen oder Überschriften), Inline-Elementen (z.B. <span>-Tag, Links oder Bilder) und weiteren Tags sowie deren Klassennamen gesucht werden \cite{bib-bs4}.
 				Um diese zu bestimmen, ist es notwendig den übergebenen HTML-Code der URL genauer zu betrachten. Dies ist z.B. im Browser Chrome mit Rechtsklick „Quellcode anzeigen“ möglich. Um direkt auf ein gewünschtes Element im Quellcode zu springen, kann Rechtsklick „Element untersuchen“ genutzt werden. Diese Developer Tool-Ansicht ist deutlich strukturierter als den gesamten Text anzeigen zu lassen und erleichtert die Suche nach den gewünschten Tags um ein Vielfaches.
 				\newline
 				Der Programmcode 4.2 zeigt einige der Elemente und Klassen die gewählt wurden, um die gewünschten Informationen zu extrahieren.
-				Um den Namen des Restaurants oder Hotels zu finden wird beispielsweise nach dem Tag \textit{<h1>} und dem class-Namen \textit{‘heading-title‘} gesucht. Dieser Tag steht üblicherweise für Überschriften und kommt meist nur einmal vor. Daher ist die Suche hier relativ simpel. Hingegen wird für die Durchschnittliche Bewertung des Restaurants oder Hotels nach einem \textit{<div>}-Tag mit class-Namen \textit{‘rs rating‘} gesucht. Da es sich dabei jedoch nur um die parent-class des gesuchten Tags handelt wird hier noch mit den Anhängen .div.span erweitert und tiefer in das BeautifulSoup Object „gezoomt“ um die children dieser Klasse zu erhalten. Mit der ID \textit{‘content‘} werden letztendlich die durchschnittliche Bewertung gefunden und in der Variable overallPoints gespeichert.
+				Um den Namen des Restaurants zu finden wird beispielsweise nach dem Tag \textit{<h1>} und dem class-Namen \textit{‘heading-title‘} gesucht. Dieser Tag steht üblicherweise für Überschriften und kommt meist nur einmal vor. Daher ist die Suche hier relativ simpel. Hingegen wird für die Durchschnittliche Bewertung des Restaurants nach einem \textit{<div>}-Tag mit class-Namen \textit{‘rs rating‘} gesucht. Da es sich dabei jedoch nur um die parent-class des gesuchten Tags handelt wird hier noch mit den Anhängen .div.span erweitert und tiefer in das BeautifulSoup Object „gezoomt“ um die children dieser Klasse zu erhalten. Mit der ID \textit{‘content‘} werden letztendlich die durchschnittliche Bewertung gefunden und in der Variable overallPoints gespeichert.
 				\\
 				\begin{lstlisting} [caption={Extraktion Allgemeiner Daten Object}\label{exallgdat}, captionpos=b, style=Arduino]
 				for self.name in soup.find('h1', {'class': 'heading_title'}):
@@ -391,9 +391,9 @@
 	
 			\subsection[Bewertungslink aller Bewertungen auslesen - Anja Wolf]{Bewertungslink aller Bewertungen auslesen}
 			
-				Neben allgemeinen Daten zu Restaurant bzw. Hotel sollen außerdem noch Informationen zu allen Bewertungen inkl. angehängter Bilder und Daten zu deren Verfassern extrahiert und gespeichert werden. Dafür wird zunächst die URL jeder Bewertung generiert werden, um die Informationen von hier auszulesen. Da sich die Bewertungen meist nicht nur über eine, sondern eine Vielzahl an Seiten erstrecken wurde dies mit einer Verschachtelten for-Schleife gelöst.
+				Neben allgemeinen Daten zum Restaurant sollen außerdem noch Informationen zu allen Bewertungen inkl. angehängter Bilder und Daten zu deren Verfassern extrahiert und gespeichert werden. Dafür wird zunächst die URL jeder Bewertung generiert werden, um die Informationen von hier auszulesen. Da sich die Bewertungen meist nicht nur über eine, sondern eine Vielzahl an Seiten erstrecken wurde dies mit einer Verschachtelten for-Schleife gelöst.
 				\newline
-				Zunächst wurde eine for Schleife definiert, die alle verfügbaren Seiten eines Hotels oder Restaurants auf TripAdvisor durchläuft (vgl. Programmcode 4.3). Dafür wird die maximale Anzahl an Seiten mit \textit{find\_all()} gesucht und eine neue URL für jede der Seiten generiert. Diese unterschieden sich lediglich anhand eines Indexes (in 10er Schritten). Daher wird dieser für jeden Schleifendurchlauf, d.h. für jede Seite um 10 erhöht und mit der vorher gesplitteten URL neu zusammengesetzt. 
+				Zunächst wurde eine for Schleife definiert, die alle verfügbaren Seiten eines Restaurants auf TripAdvisor durchläuft (vgl. Programmcode 4.3). Dafür wird die maximale Anzahl an Seiten mit \textit{find\_all()} gesucht und eine neue URL für jede der Seiten generiert. Diese unterschieden sich lediglich anhand eines Indexes (in 10er Schritten). Daher wird dieser für jeden Schleifendurchlauf, d.h. für jede Seite um 10 erhöht und mit der vorher gesplitteten URL neu zusammengesetzt. 
 				\\
 				\begin{lstlisting} [caption={For-Schleife über alle verfügbaren Bewertungsseiten}\label{forpages}, captionpos=b, style=Arduino]
 				#create a new_url for each page of the reviews
@@ -633,7 +633,7 @@
 				 			\tiny autoincrement ID der Bewertung & \tiny Link des Bildes\\
 				 			\bottomrule
 				 		\end{tabular}
-				 		\caption[Bilder Tabelle]{Tabelle der Kommentar-Bilder}
+				 		\caption[Bilder Thotelabelle]{Tabelle der Kommentar-Bilder}
 				 		\label{tab_pics}
 				 	\end{table}
 			 	
@@ -750,7 +750,7 @@
 		\section[Funktionale Anforderungen - Skanny Morandi]{Funktionale Anforderungen}
 
 		\begin{description}
-			\item[Zu erfassende Daten] alle angeforderten Daten der Restaurants sowie deren Bewertungen werden, wie im Detail in Kapitel \ref{implementierung} anschaulich erklärt, mit der Python Library „Beautiful Soup“ erfasst und zur weiteren Verarbeitung verfügbar gemacht
+			\item[Zu erfassende Daten] alle angeforderten Daten der Restaurants sowie deren Bewertungen werden, wie im Detail in Kapitel \ref{implementierung} anschaulich erklärt, mit der Python Library „Beautiful Soup“ erfasst und zur weiteren Verarbeitung verfügbar gemacht.
 
 			\item[Datenbank Anforderungen] Wie in Kapitel \ref{datenhaltung} beschrieben, haben sich die Ersteller der Arbeit für den mit Python gut vereinbaren und leichtgewichtigen Datenbank-Typen „TinyDB“ entschieden. Eben da wurde geschildert wie und in welcher Form die extrahierten Daten in einer JSON-Datei presistiert werden und die angestrebten Datenbank-Qualitätsmerkmale bewerkstelligt wurden.
 
@@ -767,12 +767,13 @@
 	
 
 
-	\chapter{Fazit und Ausblick}
+	\chapter[Fazit und Ausblick - Anja Wolf]{Fazit und Ausblick}
 	
-		\section[Unsere Erfahrungen/Probleme (evtl. API) - Anja Wolf]{Unsere Erfahrungen/Probleme (evtl. API)}
-
-		\section[Wie sind wir damit klargekommen - Anja Wolf]{Wie sind wir damit klargekommen}
-
+		Zusammenfassend lässt sich sagen, dass die vom Projektteam aufgestellten Anforderungen an die Implementierung eines Webscrapers für die Website Tripadvisor erfüllt werden konnten.
+		\\
+		Lediglich bei der Eingabe des Anwenders wurde nach einer ersten Analyse der Website die Anforderung an das Programm nochmals überarbeitet und die einfache Eingabe einer URL als ausreichend erachtet. Da Tripadvisor eine komplexe URL mit automatisch generierter API für jedes angelegte Restaurant hat, ist ohne Zugriff auf diese das Scrapen mit der lediglichen Eingabe von Restaurant Name und Ort nicht einfach möglich. Daher hat sich das Projektteam gegen diese Methode und für die Eingabe der URL des zu scrapenden Restaurants entschieden. Dies könnte in einem weiteren Schritt nochmals überarbeitet werden um die Anwendung im Bereich Benutzerfreundlichkeit zu verbessern.  
+		\\
+		Ein weitere mögliche Erweiterung des Programms wäre die Ausweitung auf die gesamte Tripadvisor Plattform. Hier könnten neben Restaurant Daten auch Informationen zu Hotels, Ferienwohnungen, Flügen oder anderen Aktivitäten geparsed und in einer Datenbank gesichert werden. Die Implementierung müsste hier lediglich im Bereich der zu suchenden Attributnamen bzw. Klassen und in der Datenbankstruktur angepasst werden.
 	
 	
 	
