@@ -14,7 +14,7 @@ import tkinter as tk
 from bs4 import BeautifulSoup
 from setuptools.package_index import HREF
 from tinydb import TinyDB,Query,where
-from PIL import ImageTk, Image
+#from PIL import ImageTk, Image
 
 
 
@@ -229,7 +229,7 @@ class Web_scraping:
         #check if there already exists an entry in the Restaurans-table with the same name and the same address (these two attributes don't change/are not variable so there is a more constant way to check for duplicates)
         if tableRestaurants.contains((where('RESTAURANTNAME') == self.name.string) & (where('PLZ_ORT') == self.locality.string)): 
             #pop up a message box
-            msg = "Dieses Hotel hast du bereits gesucht und ist in der Datenbank hinterlegt!"
+            msg = "Dieses Restaurant ist bereits in der Datenbank hinterlegt!"
             popup = tk.Tk()
             popup.wm_title("!")
             label = tk.Label(popup, text=msg)
