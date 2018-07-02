@@ -320,7 +320,7 @@
 			\newline
 			Hierbei handelt es sich um eine Library für XML und HTML parsing, die zunächst als zusätzliches Paket installiert werden muss. Beim Parsen werden XML oder HTML Dateien analysiert und auf ihre einzelnen Bestandteile geprüft. So können jegliche Informationen aus diesen Dateien gesucht bzw. extrahiert werden, vorausgesetzt es sind entsprechende Tags bzw. Attributnamen vorhanden. Ohne diese kann nicht gesucht werden \cite{bib-webpython}. Diese Einfachheit und gleichzeitig große Effizienz sind der westenliche Vorteil, warum das Projekt-Team sich für die Library BeautifulSoup und deren Methoden entschieden hat.
 			\newline
-			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Website an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
+			Um das wahrscheinlich am meisten verwendeten Objekt der BeautifulSoup Library – das BeautifulSoup Object – zu initialisieren, muss diesem ein XML bzw. HTML Dokument oder, wie in unserem Fall, der zu parsenden HTML-Code übergeben werden. BeautifulSoup kann eine URL also nicht selbstständig aufrufen, sondern erst mit dem gespeicherten Quelltext der HTML-Seite arbeiten \cite{bib-bs4}. In unserem Fall wird die TripAdvisor URL des gewünschten Restaurants daher zunächst mit einer Methode der Python Library \textit{‘request'} aufgerufen. Diese sendet einen HTTP/1.1 request und pingt die Webseite an, dass Informationen extrahiert werden möchten. Sobald der Webserver eine \textit{response} sendet wird der Inhalt der URL, d.h. der HTML-Code in einer einfachen String Variable gespeichert. Erst jetzt kann ein neues BeautifulSoup Object initialisiert werden (vgl. Programmcode 4.1).
 			\begin{lstlisting} [caption={Initialisierung BeautifulSoup Object}\label{initbs4}, captionpos=b, style=Arduino]
 			def get_single_data(self,url):
 			source_code = requests.get(url)
@@ -444,7 +444,7 @@
 					\label{pic-reviewcontainer}
 				\end{figure}
 			
-				Mit dem erneuten Aufruf der Methode \textit{find\_all()} wird in einem container nach einem Link (\textit{<a>}-Tag) gesucht und gleichzeitig href auf \textit{‘True}‘ gesetzt. So stellt man sicher, dass nur Links mit href-Attribut ausgegeben werden. Bei diesem Link handelt es sich um den Teil der URL, der an die reguläre TripAdvisor Website angehängt werden muss, um die Bewertungsseite aufrufen zu können.
+				Mit dem erneuten Aufruf der Methode \textit{find\_all()} wird in einem container nach einem Link (\textit{<a>}-Tag) gesucht und gleichzeitig href auf \textit{‘True}‘ gesetzt. So stellt man sicher, dass nur Links mit href-Attribut ausgegeben werden. Bei diesem Link handelt es sich um den Teil der URL, der an die reguläre TripAdvisor Webseite angehängt werden muss, um die Bewertungsseite aufrufen zu können.
 				\\
 				Da jedoch nicht nur Informationen zur ersten gefunden Bewertung pro Seite, sondern zu allen Bewertungen extrahiert werden sollen, ist die Suchfunktion in eine weitere for-Schleife eingebunden. Diese loopt durch die vorher gespeicherte Liste \textit{review\_container}. So wird nicht nur der erste review container nach der Bewertungsseiten URL durchsucht sondern alle. Die Methode \textit{loop\_through\_review\_pages()} in Kombination mit der for-Schleife über alle Bewertungsseiten ermöglicht nun die Bewertungslinks jeder einzelnen Bewertung auszulesen.
 				\newline
@@ -764,7 +764,7 @@
 		\label{pic-URLSollnerHof}
 	\end{figure}
 	
-	Mithilfe des Preview-Buttons kann zum einen überprüft werden, ob es sich um eine syntaktische korrekte URL der Webseite \textit{TripAdvisor} handelt. Zum anderen kann der User sehen, ob es sich um das richtige Restaurant handelt. Dazu wird der Name, die Stadt und die Anzahl an durchschnittlichen Bewertungspunkten auf der GUI angezeigt:
+	Mithilfe des Preview-Buttons kann zum einen überprüft werden, ob es sich um eine syntaktische korrekte URL der Webseite \textit{TripAdvisor} handelt. Zum anderen kann der User sehen, ob es sich um das richtige Restaurant handelt. Dazu wird der Name, die Stadt und die Anzahl an durchschnittlichen Bewertungspunkten auf der Benutzeroberfläche angezeigt:
 	
 	\begin{figure}[H]
 		\centering
@@ -791,7 +791,7 @@
 		\label{pic-JSONRestaurant}
 	\end{figure}
 	
-	Zusätzlich werden insgesamt 56 Bewertungen und User in der Datenbank abgespeichert sowie drei Bewertungsbilder:
+	Zusätzlich werden insgesamt 56 Bewertungen und User sowie drei Bewertungsbilder in der Datenbank abgespeichert:
 	
 	\begin{figure}[H]
 		\centering
@@ -861,7 +861,7 @@
 
 	\chapter[Fazit und Ausblick - Anja Wolf]{Fazit und Ausblick}
 	
-		Zusammenfassend lässt sich sagen, dass die vom Projektteam aufgestellten Anforderungen an die Implementierung eines Webscrapers für die Website Tripadvisor erfüllt werden konnten. Mit diesem hat der Anwender nun die Möglichkeit, alle gespeicherten Daten zu einem Restaurant inklusive dessen Bewertungen in kürzester Zeit in einer eigenen Datenbank abzulegen und diese beliebig weiter zu verwenden. Mit dem Einsatz der Programmiersprache Python und verschiedenster Bibliotheken konnte sowohl das Ziehen als auch das Speichern der Daten in einer TinyDB Datenbank sehr effizient umgesetzt werden.  
+		Zusammenfassend lässt sich sagen, dass die vom Projektteam aufgestellten Anforderungen an die Implementierung eines Webscrapers für die Webseite Tripadvisor erfüllt werden konnten. Mit diesem hat der Anwender nun die Möglichkeit, alle gespeicherten Daten zu einem Restaurant inklusive dessen Bewertungen in kürzester Zeit in einer eigenen Datenbank abzulegen und diese beliebig weiter zu verwenden. Mit dem Einsatz der Programmiersprache Python und verschiedenster Bibliotheken konnte sowohl das Ziehen als auch das Speichern der Daten in einer TinyDB Datenbank sehr effizient umgesetzt werden.  
 		\\
 		Die Anforderung einen Eingabeparameter für das zu scrapende Restaurant wurde nach eingehender Analyse im Laufe des Projektes  überarbeitet. Ursprünglich war geplant, dass der Nutzer alleine über den Namen des Restaurants und dessen Ort das zu scrapende Restaurant auswählen kann. Allerdings enthält die individuelle URL eines Restaurants eine Restaurant-ID die nicht über einfache Stringerweiterung (um etwa den Namen des Restaurants, oder einer anderen von außen erkennbaren Logik) folgt. Diese URL ist allerdings nötig als Input für extraktion des zu scrapenden Sourcecodes einer Restaurantseite. Nach einiger Recherche zeigte sich, dass diese ID, die nötig wäre um die URL des Restaurants, in der erarbeiteten Software intern zu generieren nur über die Tripadvisor-eigene API abzufragen wäre. Keys zu dieser vergibt Tripadvisor nur unter starken Auflagen, die das Projektteam nicht erfüllt. So hat man sich in Absprache mit dem Auftraggeber darauf geeinigt, dass es in Hinsicht auf Benutzerfreundlichkeit ausreicht, dass ein Anwender, statt lediglch des Namens, die komplette URL des zu scrapenden Restaurants als Input für das Programm bereitstellt.  
 		\\
