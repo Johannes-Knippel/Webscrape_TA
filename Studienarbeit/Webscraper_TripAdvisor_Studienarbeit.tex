@@ -679,95 +679,7 @@
 				\\
 				Ist kein Eintrag vorhanden, werden die Daten zunächst in einem Array gespeichert und dann in der Datenbank abgelegt. Zuvor findet noch eine Decodierung der Rohdaten statt (vgl. Programmcode 4.7, Zeile 15).
 		
-			\chapter[Web Scraper anhand eines Beispiels - Johanna Sickendiek]{Web Scraper anhand eines Beispiels}
 		
-		Im Folgenden wird anhand eines Beispiels der Web Scraper näher erläutert. Es werden die Daten eines Restaurants in München extrahiert. Als Beispiel wurde dazu das Restaurant \textit{Sollner Hof} gewählt.
-		
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{1\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/ScreenshotSollnerHof.png}
-			\end{minipage}
-			\centering
-			\caption[Screenshot des Restaurants Sollner Hof auf TripAdvisor.de]{Screenshot des Restaurants Sollner Hof auf TripAdvisor.de}
-			\cite{bib-anzSterne}
-			\label{pic-ScreenshotSollnerHof}
-		\end{figure}
-		
-		Das Restaurant wurde insgesamt 71 Mal bewertet - davon sind 56 Kommentare verfasst worden. Die Durchschnittsbewertung liegt bei vier von fünf Sternen. 
-		Um die Daten des Restaurants zu extrahieren, muss zunächst die URL des Restaurants in die GUI eingetragen werden:
-		
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{1\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/GUISollnerHof.png}
-			\end{minipage}
-			\centering
-			\caption[Benutzeroberfläche des Web Scrapers am Beispiel Sollner Hof]{Benutzeroberfläche des Web Scrapers am Beispiel Sollner Hof}
-			\label{pic-URLSollnerHof}
-		\end{figure}
-		
-		Mithilfe des Preview-Buttons kann zum einen überprüft werden, ob es sich um eine syntaktische korrekte URL der Webseite \textit{TripAdvisor} handelt. Zum anderen kann der User sehen, ob es sich um das richtige Restaurant handelt. Dazu wird der Name, die Stadt und die Anzahl an durchschnittlichen Bewertungspunkten auf der GUI angezeigt:
-		
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{0.45\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/PreviewSollnerHof.png}
-			\end{minipage}
-			\centering
-			\caption[Vorschau am Beispiel Sollner Hof]{Vorschau am Beispiel Sollner Hof}
-			\label{pic-PreviewSollnerHof}
-		\end{figure}
-		
-		Wenn der User die Daten des Restaurants extrahieren möchte, betätigt er den Button \textit{Start Scraping}.	Wurden die Informationen bereits in der Datenbank abgespeichert, wird die folgende Information ausgegeben:
-		\textit{Dieses Restaurant ist bereits in der Datenbank hinterlegt!} Andernsfalls werden die Daten automatisch in der Datenbank abgespeichert. 
-		\\
-		Dabei wird ein Restaurant in die Tabelle \textit{Restaurants} hinzugefügt:
-		
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{0.7\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/JSONRestaurant.png}
-			\end{minipage}
-			\centering
-			\caption[Tabelle 'Restaurants' am Beispiel Sollner Hof]{Tabelle 'Restaurants' am Beispiel Sollner Hof}
-			\label{pic-JSONRestaurant}
-		\end{figure}
-		
-		Zusätzlich werden insgesamt 56 Bewertungen und User in der Datenbank abgespeichert sowie drei Bewertungsbilder:
-		
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{0.9\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/JSONReview.png}
-			\end{minipage}
-			\centering
-			\caption[Tabelle 'Reviews' am Beispiel Sollner Hof]{Tabelle 'Reviews' am Beispiel Sollner Hof}
-			\label{pic-JSONReview}
-		\end{figure}
-	
-	
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{0.3\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/JSONUser.png}
-			\end{minipage}
-			\centering
-			\caption[Tabelle 'Users' am Beispiel Sollner Hof]{Tabelle 'Users' am Beispiel Sollner Hof}
-			\label{pic-JSONUsers}
-		\end{figure}
-	
-	
-		\begin{figure}[H]
-			\centering
-			\begin{minipage}[b]{1\textwidth}
-				\includegraphics[width=\textwidth]{Bilder/JSONPic.png}
-			\end{minipage}
-			\centering
-			\caption[Tabelle 'Pictures' am Beispiel Sollner Hof]{Tabelle 'Pictures' am Beispiel Sollner Hof}
-			\label{pic-JSONPic}
-		\end{figure}
-	
 	
 	
 		
@@ -824,6 +736,94 @@
 
             \end{description}
 	
+	\chapter[Web Scraper anhand eines Beispiels - Johanna Sickendiek]{Web Scraper anhand eines Beispiels}
+	
+		Im Folgenden wird anhand eines Beispiels der Web Scraper näher erläutert. Es werden die Daten eines Restaurants in München extrahiert. Als Beispiel wurde dazu das Restaurant \textit{Sollner Hof} gewählt.
+	
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}[b]{1\textwidth}
+				\includegraphics[width=\textwidth]{Bilder/ScreenshotSollnerHof.png}
+			\end{minipage}
+			\centering
+			\caption[Screenshot des Restaurants Sollner Hof auf TripAdvisor.de]{Screenshot des Restaurants Sollner Hof auf TripAdvisor.de}
+			\cite{bib-anzSterne}
+			\label{pic-ScreenshotSollnerHof}
+		\end{figure}
+	
+	Das Restaurant wurde insgesamt 71 Mal bewertet - davon sind 56 Kommentare verfasst worden. Die Durchschnittsbewertung liegt bei vier von fünf Sternen. 
+	Um die Daten des Restaurants zu extrahieren, muss zunächst die URL des Restaurants in die GUI eingetragen werden:
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{1\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/GUISollnerHof.png}
+		\end{minipage}
+		\centering
+		\caption[Benutzeroberfläche des Web Scrapers am Beispiel Sollner Hof]{Benutzeroberfläche des Web Scrapers am Beispiel Sollner Hof}
+		\label{pic-URLSollnerHof}
+	\end{figure}
+	
+	Mithilfe des Preview-Buttons kann zum einen überprüft werden, ob es sich um eine syntaktische korrekte URL der Webseite \textit{TripAdvisor} handelt. Zum anderen kann der User sehen, ob es sich um das richtige Restaurant handelt. Dazu wird der Name, die Stadt und die Anzahl an durchschnittlichen Bewertungspunkten auf der GUI angezeigt:
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{0.45\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/PreviewSollnerHof.png}
+		\end{minipage}
+		\centering
+		\caption[Vorschau am Beispiel Sollner Hof]{Vorschau am Beispiel Sollner Hof}
+		\label{pic-PreviewSollnerHof}
+	\end{figure}
+	
+	Wenn der User die Daten des Restaurants extrahieren möchte, betätigt er den Button \textit{Start Scraping}.	Wurden die Informationen bereits in der Datenbank abgespeichert, wird die folgende Information ausgegeben:
+	\textit{Dieses Restaurant ist bereits in der Datenbank hinterlegt!} Andernsfalls werden die Daten automatisch in der Datenbank abgespeichert. 
+	\\
+	Dabei wird ein Restaurant in die Tabelle \textit{Restaurants} hinzugefügt:
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{0.7\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/JSONRestaurant.png}
+		\end{minipage}
+		\centering
+		\caption[Tabelle 'Restaurants' am Beispiel Sollner Hof]{Tabelle 'Restaurants' am Beispiel Sollner Hof}
+		\label{pic-JSONRestaurant}
+	\end{figure}
+	
+	Zusätzlich werden insgesamt 56 Bewertungen und User in der Datenbank abgespeichert sowie drei Bewertungsbilder:
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{0.9\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/JSONReview.png}
+		\end{minipage}
+		\centering
+		\caption[Tabelle 'Reviews' am Beispiel Sollner Hof]{Tabelle 'Reviews' am Beispiel Sollner Hof}
+		\label{pic-JSONReview}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{0.3\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/JSONUser.png}
+		\end{minipage}
+		\centering
+		\caption[Tabelle 'Users' am Beispiel Sollner Hof]{Tabelle 'Users' am Beispiel Sollner Hof}
+		\label{pic-JSONUsers}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[b]{1\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/JSONPic.png}
+		\end{minipage}
+		\centering
+		\caption[Tabelle 'Pictures' am Beispiel Sollner Hof]{Tabelle 'Pictures' am Beispiel Sollner Hof}
+		\label{pic-JSONPic}
+	\end{figure}
 	
 
 
